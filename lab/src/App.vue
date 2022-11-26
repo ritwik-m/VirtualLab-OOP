@@ -49,7 +49,7 @@
       <main class="flexbox">
         <Board id="board-1">
                 <p1>Customer</p1>
-                <Board id="boardxfinal">
+                <Board id="boardx">
                   <Card id="card-c1" draggable="false">
                     <p>1</p>
                 </Card>
@@ -58,16 +58,42 @@
   
             <Board id="board-2">
                 <p1>Clerk</p1>
+                <Board id="boardx2">
+                  <Card id="card-c2" draggable="false">
+                    <p>1</p>
+                </Card>
+                </Board>
             </Board>
           </main>
         </div>
   
     <div>
-      <main class="flexbox"><Board id="board-3">
-                <p1>Reservation</p1>             
+      <main class="flexbox">
+        <Board id="board-3">
+                <p1>Reservation</p1>   
+                <Board id="boardx3">
+                  <Card id="card-c3" draggable="false">
+                    <p>1</p>
+                </Card>
+                </Board>     
+                <Board id="boardx4">
+                  <Card id="card-c1" draggable="false">
+                    <p>2</p>
+                </Card>
+                </Board>     
             </Board>
             <Board id="board-4">
-                <p1>Vehicle</p1>           
+                <p1>Vehicle</p1>     
+                <Board id="boardx5">
+                  <Card id="card-c1" draggable="false">
+                    <p>1</p>
+                </Card>
+                </Board>
+                <Board id="boardx6">
+                  <Card id="card-c1" draggable="false">
+                    <p>2</p>
+                </Card>
+                </Board>      
             </Board>
           </main>
         </div>
@@ -154,7 +180,7 @@
      margin: auto;
   }
   
-  #boardx{
+  #boardx, #boardx2, #boardx3,#boardx4,#boardx5,#boardx6{
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -165,20 +191,6 @@
     margin: auto;
   }
   
-  #boardxfinal{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 320px;
-    background-color: #3b3b3b;
-    padding-right: 10px;
-    padding-left: 10px;
-    margin: auto;
-    margin-bottom: 10px;
-    border-bottom-style: solid;
-    border-width: 3px;
-    border-color: #F3F3F3;
-  }
   
   .flexbox .board .card {
      padding: 15px 25px;
