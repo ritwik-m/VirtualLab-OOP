@@ -1,14 +1,34 @@
 <template>
     <div id="app">
         <main class="flexbox">
-            <Board id="board-1">
-                <Card id="card-1" draggable="true">
+            <Board id="board-0">
+                <p>Attributes and Data Types</p>
+                <Card id="card-0" draggable="true">
                     <p>Card one</p>
                 </Card>
             </Board>
-            <Board id="board-2">
-                <Card id="card-2" draggable="true">
+            <Board id="board-1">
+                <p>Customer</p>
+                <Card id="card-1" draggable="true">
                     <p>Card two</p>
+                </Card>
+            </Board>
+            <Board id="board-2">
+                <p>Clerk</p>
+                <Card id="card-2" draggable="true">
+                    <p>Card three</p>
+                </Card>
+            </Board>
+            <Board id="board-3">
+                <p>Reservation</p>
+                <Card id="card-3" draggable="true">
+                    <p>Card four</p>
+                </Card>
+            </Board>
+            <Board id="board-4">
+                <p>Vehicle</p>
+                <Card id="card-4" draggable="true">
+                    <p>Card five</p>
                 </Card>
             </Board>
         </main>
@@ -50,7 +70,7 @@ export default {
  .flexbox .board {
      display: flex;
      flex-direction: column;
-     width: 100%;
+     width: 20%;
      max-width: 300px;
      background-color: #313131;
      padding: 15px;
