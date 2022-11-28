@@ -1,17 +1,11 @@
 function validate() {
     var ans = document.getElementById('code0').value
-    let check1 = ans.includes("public class Customer")
-    let check2 = ans.includes("public void visitOffice();")
-    let check3 = ans.includes("public String getName();")
-    let check4 = ans.includes("public void setName(String name);")
-    let check5 = ans.includes("String name;")
+    ans = ans.replace(/\s+/g, '');
 
-    let check6 = ans.includes("public class Clerk")
-    let check7 = ans.includes("String name;")
-    let check8 = ans.includes("public String getName();")
-    let check9 = ans.includes("public void setName(String name);")
-    let check10 = ans.includes("public String requestVehicle();")
-    let check11 = ans.includes("public void SignContract();")
+    let check1 = ans.includes(`publicclassCustomer{Stringname;publicvoidvisitOffice();publicStringgetName();publicvoidsetName(Stringname);}publicclassClerk{Stringname;publicStringgetName();publicvoidsetName(Stringname);publicStringrequestVehicle();publicvoidSignContract();}`)
+    let check2 = ans.includes(`publicclassClerk{Stringname;publicStringgetName();publicvoidsetName(Stringname);publicStringrequestVehicle();publicvoidSignContract();}publicclassCustomer{Stringname;publicvoidvisitOffice();publicStringgetName();publicvoidsetName(Stringname);}`)
+    let check3 = ans.includes("publicclassCustomer{Stringname;publicvoidvisitOffice();publicStringgetName();publicvoidsetName(Stringname);}")
+    let check4 = ans.includes("publicclassClerk{Stringname;publicStringgetName();publicvoidsetName(Stringname);publicStringrequestVehicle();publicvoidSignContract();}")
 
     /*
     public class Customer {
@@ -43,7 +37,7 @@ function validate() {
         return false;
     }
 
-    else if (check1 == true && check2 == true && check3 == true && check4 == true && check5 == true && check6 == true && check7 == true && check8 == true && check9 == true && check10 == true && check11 == true) {
+    else if (check1 == true || check2 == true) {
 
         document.getElementById("head").innerHTML = "Good Job!";
         document.getElementById("body").innerHTML = "You got both the classes right. Try the next two.";
@@ -52,7 +46,7 @@ function validate() {
         return false
     }
 
-    else if (check1 == true && check2 == true && check3 == true && check4 == true && check5 == true) {
+    else if (check3 == true) {
 
         document.getElementById("head").innerHTML = "Almost there!";
         document.getElementById("body").innerHTML = "You got the first class right. Try again.";
@@ -62,7 +56,7 @@ function validate() {
         return false;
     }
 
-    else if (check6 == true && check7 == true && check8 == true && check9 == true && check10 == true && check11 == true) {
+    else if (check4 == true ) {
         
         document.getElementById("head").innerHTML = "Almost there!";
         document.getElementById("body").innerHTML = "You got the second class right. Try again.";
