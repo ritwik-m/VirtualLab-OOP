@@ -50,25 +50,25 @@ export default {
       proceed with grouping of noun phrases.</p>
   </header>
   <div class="flex-horizontal">
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(6)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(7)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(8)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(9)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
@@ -77,7 +77,7 @@ export default {
   </div>
   <main class="flexbox">
 
-    <div class="drop-zone-horizontal-second" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(1)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
@@ -94,19 +94,26 @@ export default {
 
 <style scoped>
 .drop-zone {
-  width: 90%;
+  display: flex;
+  min-width: 30ch;
   margin: 25px;
   background-color: #ecf0f1;
-  height: 90%;
-  min-height: 30vh;
+  height: 20%;
+  min-height: 40vh;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   padding: 10px;
 }
 
-.flex-horizontal {
+.drop-zone .drag-el-horizontal:first-of-type {
+  background-color: #E8562A;
+  color: white;
+}
+
+.flex-horizontal{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .drag-el-horizontal {
@@ -116,39 +123,22 @@ export default {
   padding-bottom: 2vh;
   background-color: aquamarine;
   margin: 10px;
-  flex-direction: row;
   max-width: fit-content;
   cursor: pointer;
 }
 
 .drop-zone-horizontal {
+  display: flex;
   width: 90%;
   margin: 25px;
   background-color: #ecf0f1;
   height: 50%;
-  min-height: 20vh;
-  max-height: 20vh;
+  min-height: 25vh;
+  max-height: 35vh;
   overflow: scroll;
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10px;
-}
-
-.drop-zone-horizontal-second {
-  width: 90%;
-  margin: 25px;
-  background-color: #ecf0f1;
-  height: 50%;
-  min-height: 20vh;
-  max-height: 20vh;
-  overflow: scroll;
-  flex-wrap: wrap;
-  flex-direction: row;
-  padding: 10px;
-}
-
-.drop-zone-horizontal .drag-el-horizontal:first-of-type {
-  background-color: rgb(218, 80, 80);
 }
 
 .drag-el {
