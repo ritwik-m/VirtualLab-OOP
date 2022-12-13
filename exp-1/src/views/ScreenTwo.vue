@@ -4,44 +4,74 @@ export default {
   setup() {
     const items = ref([
       { id: 0, word: 'A', list: 1 },
-      { id: 1, word: 'this', list: 1 },
-      { id: 2, word: 'is', list: 1 },
-      { id: 3, word: 'amazing', list: 1 },
-      { id: 4, word: 'value', list: 1 },
-      { id: 5, word: 'for', list: 1 },
-      { id: 6, word: 'money', list: 1 },
-      { id: 7, word: 'B', list: 2 },
-      { id: 8, word: 'I', list: 2 },
-      { id: 9, word: 'think', list: 2 },
-      { id: 10, word: 'it', list: 2 },
-      { id: 11, word: 'is', list: 2 },
-      { id: 12, word: 'a', list: 2 },
-      { id: 13, word: 'good', list: 2 },
-      { id: 14, word: 'product', list: 2 },
-      { id: 15, word: 'C', list: 3 },
-      { id: 16, word: 'I', list: 3 },
-      { id: 17, word: 'am', list: 3 },
-      { id: 18, word: 'not', list: 3 },
-      { id: 19, word: 'satisfied', list: 3 },
-      { id: 20, word: 'with', list: 3 },
-      { id: 21, word: 'the', list: 3 },
-      { id: 22, word: 'product', list: 3 },
-      { id: 23, word: 'D', list: 4 },
-      { id: 24, word: 'I', list: 4 },
-      { id: 25, word: 'am', list: 4 },
-      { id: 26, word: 'very', list: 4 },
-      { id: 27, word: 'satisfied', list: 4 },
-      { id: 28, word: 'with', list: 4 },
-      { id: 29, word: 'the', list: 4 },
-      { id: 30, word: 'service', list: 4 },
-      { id: 31, word: 'E', list: 5 },
-      { id: 32, word: 'I', list: 5 },
-      { id: 33, word: 'am', list: 5 },
-      { id: 34, word: 'very', list: 5 },
-      { id: 35, word: 'satisfied', list: 5 },
-      { id: 36, word: 'with', list: 5 },
-      { id: 37, word: 'the', list: 5 },
-      { id: 38, word: 'product', list: 5 },
+      { id: 1, word: 'customer', list: 1 },
+      { id: 2, word: 'comes', list: 1 },
+      { id: 3, word: 'to', list: 1 },
+      { id: 4, word: 'the', list: 1 },
+      { id: 5, word: 'office', list: 1 },
+      { id: 6, word: 'to', list: 1 },
+      { id: 7, word: 'acquire', list: 1 },
+      { id: 8, word: 'a', list: 1 },
+      { id: 9, word: 'vehicle', list: 1 },
+      { id: 10, word: 'The', list: 2 },
+      { id: 11, word: 'clerk', list: 2 },
+      { id: 12, word: 'locates', list: 2 },
+      { id: 13, word: 'the', list: 2 },
+      { id: 14, word: 'vehicle', list: 2 },
+      { id: 15, word: 'reservation', list: 2 },
+      { id: 16, word: 'contract', list: 2 },
+      { id: 17, word: 'by', list: 2 },
+      { id: 18, word: 'means', list: 2 },
+      { id: 19, word: 'of', list: 2 },
+      { id: 20, word: 'the', list: 2 },
+      { id: 21, word: 'reservation', list: 2 },
+      { id: 22, word: 'number', list: 2 },
+      { id: 23, word: 'and', list: 2 },
+      { id: 24, word: 'or', list: 2 },
+      { id: 25, word: 'customer', list: 2 },
+      { id: 26, word: 'name', list: 2 },
+      { id: 27, word: 'The', list: 3 },
+      { id: 28, word: 'customer', list: 3 },
+      { id: 29, word: 'signs', list: 3 },
+      { id: 30, word: 'the', list: 3 },
+      { id: 31, word: 'contract', list: 3 },
+      { id: 32, word: 'and', list: 3 },
+      { id: 33, word: 'the', list: 3 },
+      { id: 34, word: 'clerk', list: 3 },
+      { id: 35, word: 'gives', list: 3 },
+      { id: 36, word: 'the', list: 3 },
+      { id: 37, word: 'key', list: 3 },
+      { id: 38, word: 'to', list: 3 },
+      { id: 39, word: 'the', list: 3 },
+      { id: 40, word: 'vehicle', list: 3 },
+      { id: 41, word: 'The', list: 4},
+      { id: 42, word: 'clerk', list: 4},
+      { id: 43, word: 'then', list: 4},
+      { id: 44, word: 'marks', list: 4},
+      { id: 45, word: 'the', list: 4},
+      { id: 46, word: 'contract', list: 4},
+      { id: 47, word: 'active', list: 4},
+      { id: 48, word: 'by', list: 4},
+      { id: 49, word: 'entering', list: 4},
+      { id: 50, word: 'the', list: 4},
+      { id: 51, word: 'vehicle', list: 4},
+      { id: 52, word: 'release', list: 4},
+      { id: 53, word: 'date', list: 4},
+      { id: 54, word: 'today\'s', list: 4},
+      { id: 55, word: 'date', list: 4},
+      { id: 56, word: 'onto', list: 4},
+      { id: 57, word: 'the', list: 4},
+      { id: 58, word: 'vehicle', list: 4},
+      { id: 59, word: 'reservation', list: 4},
+      { id: 60, word: 'contract', list: 4},
+      { id: 61, word: 'The', list: 5},
+      { id: 62, word: 'use', list: 5},
+      { id: 63, word: 'case', list: 5},
+      { id: 64, word: 'terminates', list: 5},
+      { id: 65, word: 'at', list: 5},
+      { id: 66, word: 'this', list: 5},
+      { id: 67, word: 'point', list: 5},
+      
     ])
 
     const getList = (list) => {
@@ -66,6 +96,17 @@ export default {
       getList,
       startDrag,
       onDrop
+    }
+  },
+  methods:{
+    validate(){
+      let final_list = []
+      let i = 0;
+      for (i = 6; i < 13; i++){
+        final_list.push(this.getList(i))
+      }
+      console.log(final_list)
+      this.$router.push('/screen-three')
     }
   }
 }
@@ -157,7 +198,7 @@ export default {
   <footer>
     <div id="buttons" class="relative">
       <button class="navitem">Back</button>
-      <button class="navitem">Next</button>
+      <button class="navitem" @click="validate()">Next</button>
     </div>
   </footer>
 </template>
@@ -184,23 +225,24 @@ export default {
 .drag-el-horizontal {
   padding-left: 5vh;
   padding-right: 5vh;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   background-color: aquamarine;
   margin: 10px;
+  height: fit-content;
   max-width: fit-content;
   cursor: pointer;
 }
 
 .drop-zone-horizontal {
   display: flex;
-  width: 90%;
+  width: 95%;
   margin: 25px;
   background-color: #ecf0f1;
   height: 50%;
-  min-height: 20vh;
-  max-height: 20vh;
-  overflow: scroll;
+  min-height: fit-content;
+  max-height: fit-content;
+  overflow: clip;
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10px;
@@ -232,24 +274,24 @@ export default {
 }
 
 #buttons {
-  width: 50px;
   margin: 0;
   text-align: center;
 }
 
 .relative {
-  padding: 10px;
-  position: relative;
-  background-color: #fff;
-  margin: 10px;
-}
-
+ padding: 10px;
+ display: flex;
+ width: 100%;
+ flex-direction: row;
+ justify-content: space-between;
+ background-color: #fff;
+} 
 .navitem {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 100px; 
+  height: 50px;
+  padding: 10px;
   text-align: center;
-  border: gray;
+  border: none;
   background-color: #E8562A;
   color: #fff;
   cursor: pointer;
@@ -259,7 +301,9 @@ export default {
 .navitem:hover {
   background-color: #fff;
   color: #E8562A;
+  border: 1px solid #E8562A;
   cursor: pointer;
   font-weight: bold;
 }
+
 </style>

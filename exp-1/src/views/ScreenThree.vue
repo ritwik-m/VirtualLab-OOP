@@ -12,6 +12,8 @@ export default {
       { id: 6, word: 'Vehicle reservation contract', list: 1 },
       { id: 7, word: 'Reservation number', list: 1 },
       { id: 8, word: 'Vehicle release date', list: 1 },
+      {id: 9, word: 'Reservation', list: 1},
+      {id: 10, word: 'Clerk name', list: 1},
     ])
 
     const getList = (list) => {
@@ -117,13 +119,11 @@ export default {
 }
 
 .drag-el-horizontal {
-  padding-left: 5vh;
-  padding-right: 5vh;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
   background-color: aquamarine;
   margin: 10px;
-  max-width: fit-content;
+  max-width: 30ch;
+  padding: 10px;
+  max-height: 5vh;
   cursor: pointer;
 }
 
@@ -142,7 +142,6 @@ export default {
 }
 
 .drag-el {
-  padding: 5px;
   background-color: aquamarine;
   margin: 10px;
   cursor: pointer;
@@ -167,24 +166,24 @@ export default {
 }
 
 #buttons {
-  width: 50px;
   margin: 0;
   text-align: center;
 }
 
 .relative {
-  padding: 10px;
-  position: relative;
-  background-color: #fff;
-  margin: 10px;
-}
-
+ padding: 10px;
+ display: flex;
+ width: 100%;
+ flex-direction: row;
+ justify-content: space-between;
+ background-color: #fff;
+} 
 .navitem {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 100px; 
+  height: 50px;
+  padding: 10px;
   text-align: center;
-  border: gray;
+  border: none;
   background-color: #E8562A;
   color: #fff;
   cursor: pointer;
@@ -194,7 +193,9 @@ export default {
 .navitem:hover {
   background-color: #fff;
   color: #E8562A;
+  border: 1px solid #E8562A;
   cursor: pointer;
   font-weight: bold;
 }
+
 </style>
