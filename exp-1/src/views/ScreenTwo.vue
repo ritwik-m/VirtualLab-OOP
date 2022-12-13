@@ -1,100 +1,183 @@
-<template>
-    <header style="padding: 15px;">
-      <h1>Step 2: Identifying noun phrases</h1>
-      <p>To identify noun phrases, drag words from the scenario description sentences and drop them into the noun phrase boxes. Some boxes take multiple words.</p>
-    </header>
-    <main>
-      <div class="flexbox">
-        <board_component :id="board_two">
-          
-          </board_component>
-      </div>
-      <div class="flexbox">
-        <board_component :cards="first" :id="1">
-          <card_component v-for="card in first" :key="card" :card="card" :draggable="true">
-            <p>{{ card }}</p>
-            </card_component>
-          </board_component>  
-      </div>
-      <div class="flexbox">
-        <board_component :cards="second" :id="2">
-          <card_component v-for="card in second" :key="card" :card="card" :draggable="true">
-            <p>{{ card }}</p>
-            </card_component>
-          </board_component>
-      </div>
-      <div class="flexbox">
-        <board_component :cards="third" :id="3">
-          <card_component v-for="card in third" :key="card" :card="card" :draggable="true">
-            <p>{{ card }}</p>
-            </card_component>
-          </board_component>
-      </div>
-      <div class="flexbox">
-        <board_component :cards="fourth" :id="4">
-          <card_component v-for="card in fourth" :key="card" :card="card" :draggable="true">
-            <p>{{ card }}</p>
-            </card_component>
-          </board_component>
-      </div>
-      <div class="flexbox">
-        <board_component :cards="fifth" :id="5">
-          <card_component v-for="card in fifth" :key="card" :card="card" :draggable="true">
-            <p>{{ card }}</p>
-            </card_component>
-          </board_component>
-      </div>
-      <div class="flexbox">
-        <board_component :cards="sixth" :id="6">
-          <card_component v-for="card in sixth" :key="card" :card="card" :draggable="draggable">
-            <p>{{ card }}</p>
-            </card_component>
-          </board_component>
-      </div>
-
-    </main>
-    <div id="buttons">
-      <input type="submit" value="VERIFY" class="button button4" v-on:click="validate()">
-    </div>
-</template>
-
 <script>
-import card_component from '@/components/card_component.vue';
-import board_component from '@/components/board_component.vue';
+import { ref } from 'vue'
 export default {
-  name: 'page_two',
-  components: {
-    card_component,
-    board_component,
-},
-  data() {
-    return {
-      first: ['This','is','a','test'],
-      second: ['This','is','a','test','too'],
-      third: ['This','is','a','test','too','again'],
-      fourth: ['This','is','a','test','too','again','again'],
-      fifth: ['This','is','a','test','too','again','again','again'],
-      sixth: ['This','is','a','test','too','again','again','again','again','again','again','again','again','again','again','again','again','again','again','again','again','again','again','again','again','again','again'],
+  setup() {
+    const items = ref([
+      { id: 0, word: 'A', list: 1 },
+      { id: 1, word: 'this', list: 1 },
+      { id: 2, word: 'is', list: 1 },
+      { id: 3, word: 'amazing', list: 1 },
+      { id: 3, word: 'value', list: 1 },
+      { id: 3, word: 'for', list: 1 },
+      { id: 4, word: 'money', list: 1 },
+      { id: 5, word: 'B', list: 2 },
+      { id: 6, word: 'I', list: 2 },
+      { id: 7, word: 'think', list: 2 },
+      { id: 8, word: 'it', list: 2 },
+      { id: 9, word: 'is', list: 2 },
+      { id: 10, word: 'a', list: 2 },
+      { id: 11, word: 'good', list: 2 },
+      { id: 12, word: 'product', list: 2 },
+      { id: 13, word: 'C', list: 3 },
+      { id: 14, word: 'I', list: 3 },
+      { id: 15, word: 'am', list: 3 },
+      { id: 16, word: 'not', list: 3 },
+      { id: 17, word: 'satisfied', list: 3 },
+      { id: 18, word: 'with', list: 3 },
+      { id: 19, word: 'the', list: 3 },
+      { id: 20, word: 'product', list: 3 },
+      { id: 21, word: 'D', list: 4 },
+      { id: 22, word: 'I', list: 4 },
+      { id: 23, word: 'am', list: 4 },
+      { id: 24, word: 'very', list: 4 },
+      { id: 25, word: 'satisfied', list: 4 },
+      { id: 26, word: 'with', list: 4 },
+      { id: 27, word: 'the', list: 4 },
+      { id: 28, word: 'service', list: 4 },
+      { id: 29, word: 'E', list: 5 },
+      { id: 30, word: 'I', list: 5 },
+      { id: 31, word: 'am', list: 5 },
+      { id: 32, word: 'very', list: 5 },
+      { id: 33, word: 'satisfied', list: 5 },
+      { id: 34, word: 'with', list: 5 },
+      { id: 35, word: 'the', list: 5 },
+      { id: 36, word: 'product', list: 5 },
+    ])
+
+    const getList = (list) => {
+      return items.value.filter((item) => item.list === list)
     }
-  },
-  methods: {
-    validate() {
-      alert("Hello");
+
+    const startDrag = (event, item) => {
+      console.log(item)
+      event.dataTransfer.setData('itemID', item.id)
+      event.dataTransfer.effectAllowed = 'move'
+      event.dataTransfer.dropEffect = 'move'
+    }
+
+    const onDrop = (event, list) => {
+      event.preventDefault()
+      const itemID = event.dataTransfer.getData('itemID')
+      const item = items.value.find((item) => item.id === parseInt(itemID))
+      item.list = list
+    }
+
+    return {
+      getList,
+      startDrag,
+      onDrop
     }
   }
 }
-
 </script>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
+<template class="app">
+  <header style="padding: 20px">
+    <h1>Step 2: Identifying noun phrases</h1>
+    <p>To identify noun phrases, drag words from the scenario description sentences and drop them into the noun phrase
+      boxes. Some boxes take multiple words.</p>
+  </header>
+  <div class="flex-horizontal">
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 0)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(0)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+        </div>
+    </div>
+  </div>
+  <main class="flexbox">
+   
+    <div class="drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(1)" :key="item.id" class="drag-el" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+      </div>
+    </div>
+    <div class="drop-zone" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(2)" :key="item.id" class="drag-el" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+      </div>
+    </div>
+    <div class="drop-zone" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(3)" :key="item.id" class="drag-el" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+      </div>
+    </div>
+    <div class="drop-zone" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(4)" :key="item.id" class="drag-el" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+      </div>
+    </div>
+    <div class="drop-zone" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(5)" :key="item.id" class="drag-el" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div id="buttons" class="relative">
+      <button class="navitem">Back</button>
+      <button class="navitem">Next</button>
+    </div>
+  </footer>
+</template>
+
+<style scoped>
+.drop-zone {
+  width: 50%;
+  margin: 25px;
+  background-color: #ecf0f1;
+  height: 90%;
+  min-height: 70vh;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10px;
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #f5f5f5;
+.flex-horizontal{
+  display: flex;
+  flex-direction: row;
+}
+
+.drag-el-horizontal {
+  padding-left: 5vh;
+  padding-right: 5vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: aquamarine;
+  margin: 10px;
+  flex-direction: row;
+  max-width: fit-content;
+  cursor: pointer;
+}
+
+.drop-zone-horizontal {
+  width: 90%;
+  margin: 25px;
+  background-color: #ecf0f1;
+  height: 50%;
+  min-height: 20vh;
+  max-height: 20vh;
+  overflow: scroll;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.drag-el {
+  padding: 5px;
+  background-color: aquamarine;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.drag-el:nth-last-of-type(1) {
+  margin-bottom: 0;
+
 }
 
 .flexbox {
@@ -104,81 +187,41 @@ body {
   height: 100%;
   width: 100%;
 
+  overflow: hidden;
+
   margin: 0 10;
   padding: 15px
 }
 
-.flexbox .board {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  width: 90%;
-  height: fit-content;
-  min-height: 5vh;
-
-  background-color: #313131;
-
-  padding: 15px;
-}
-
-.flexbox .first_board {
-  display: flex;
-  flex-direction: column;
-  height: 90%;
-  width: 100%;
-
-  background-color: #ebeaea;
-  margin-right: 1.5rem;
-}
-
-.flexbox .board .card {
-  padding: 15px 25px;
-  background-color: #f5f5f5;
-  text-align: center;
-  color: #313131;
-  width: fit-content;
-  cursor: pointer;
-  margin-bottom: 15px;
-  margin-right: 10px;
-}
-
-.flexbox .first_board .card {
-  padding: 15px;
-  width: 95%;
-  background-color: #f5f5f5;
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-
 #buttons {
   width: 50px;
-  margin: 15;
+  margin: 0;
   text-align: center;
 }
 
-.button {
-  border: none;
-  color: white;
-  padding: 13px 50px;
-  text-align: center;
-  text-decoration: none;
+.relative {
+  padding: 10px;
+  position: relative;
+  background-color: #fff;
+  margin: 10px;
+}
+
+.navitem {
   display: inline-block;
-  font-size: 16px;
-  margin: 50px 20px;
-  transition-duration: 0.4s;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  border: gray;
+  background-color: #E8562A;
+  color: #fff;
   cursor: pointer;
-  border-radius: 5%;
+  font-weight: bold;
 }
 
-.button4 {
-  background-color: white;
-  color: black;
-  border: 2px solid #017047;
-}
-
-.button4:hover {
-  background-color: #017047;
-  color: white;
+.navitem:hover {
+  background-color: #fff;
+  color: #E8562A;
+  cursor: pointer;
+  font-weight: bold;
 }
 </style>
