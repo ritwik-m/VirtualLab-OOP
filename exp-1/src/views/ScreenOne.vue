@@ -1,21 +1,40 @@
 <template>
-  <div>
-    <header style="padding: 15px;">
-      <h1>Step 2: Identifying noun phrases</h1>
-      <p>To identify noun phrases, drag words from the scenario description sentences and drop them into the noun phrase boxes. Some boxes take multiple words.</p>
+  <div id="home">
+    <header style="padding: 20px">
+      <h1>Step 1: Identifying the correct sequence of actions</h1>
+      <p>To map a real life scenario to code, it has to be listed in sequence. Drag and drop the sentences listed below
+        onto the blanks in the timeline given below to continue.</p>
     </header>
-    <main>
+    <main class="flexbox">
 
+      <board_component id="board-1" class="first_board">
+        <card_component v-for="(item, index) in items_left" draggable="true" :key="index" :id="item.alpha" :content="item.content">
+          <h2>{{item.alpha}}</h2>
+          <p>{{item.content}}</p>
+        </card_component> 
+      </board_component>
+
+      <board_component id="board-2">
+        
+      </board_component>
     </main>
+
+    <div id="buttons">
+      <input type="submit" value="VERIFY" class="button button4" v-on:click="validate()">
+    </div>
+
   </div>
 </template>
 
 <script>
+import board_component from '../components/board_component.vue'
+import card_component from '../components/card_component.vue'
 
 export default {
-  name: 'page_two',
+  name: 'App',
   components: {
-  
+    board_component,
+    card_component
   },
   data() {
     return {
