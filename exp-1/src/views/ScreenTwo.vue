@@ -78,59 +78,77 @@ export default {
       boxes. Some boxes take multiple words.</p>
   </header>
   <div class="flex-horizontal">
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(6)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(7)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(8)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(9)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
+    <div class="drop-zone" @drop="onDrop($event, 10)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(10)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+        </div>
+    </div>
+    <div class="drop-zone" @drop="onDrop($event, 11)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(11)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+        </div>
+    </div>
+    <div class="drop-zone" @drop="onDrop($event, 12)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(12)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+        </div>
+    </div>
   </div>
-  <main class="flexbox">
+  <main class="flex">
    
-    <div class="drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(1)" :key="item.id" class="drag-el" draggable="true"
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(1)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(2)" :key="item.id" class="drag-el" draggable="true"
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(2)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(3)" :key="item.id" class="drag-el" draggable="true"
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(3)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(4)" :key="item.id" class="drag-el" draggable="true"
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(4)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(5)" :key="item.id" class="drag-el" draggable="true"
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(5)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
@@ -146,11 +164,12 @@ export default {
 
 <style scoped>
 .drop-zone {
-  width: 50%;
+  display: flex;
+  min-width: 10ch;
   margin: 25px;
   background-color: #ecf0f1;
-  height: 90%;
-  min-height: 70vh;
+  height: 20%;
+  min-height: 10vh;
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10px;
@@ -159,6 +178,7 @@ export default {
 .flex-horizontal{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .drag-el-horizontal {
@@ -168,12 +188,12 @@ export default {
   padding-bottom: 2vh;
   background-color: aquamarine;
   margin: 10px;
-  flex-direction: row;
   max-width: fit-content;
   cursor: pointer;
 }
 
 .drop-zone-horizontal {
+  display: flex;
   width: 90%;
   margin: 25px;
   background-color: #ecf0f1;

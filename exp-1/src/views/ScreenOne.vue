@@ -3,10 +3,11 @@ import { ref } from 'vue'
 export default {
   setup() {
     const items = ref([
-      { id: 0, alpha: 'A', content: 'Card One', list: 1 },
-      { id: 1, alpha: 'B', content: 'Card Two', list: 1 },
-      { id: 2, alpha: 'C', content: 'Card Three', list: 1},
-      { id: 3, alpha: 'D', content: 'Card Four', list: 1}
+      { id: 0, alpha: 'A', content: 'A customer comes to the office to acquire a vehicle', list: 1 },
+      { id: 1, alpha: 'B', content: 'The clerk locates the vehicle reservation contract by means of the reservation', list: 1 },
+      { id: 2, alpha: 'C', content: 'The customer signs the contract and the clerk gives the keys to the vehicle.', list: 1},
+      { id: 3, alpha: 'D', content: 'The clerk then marks the the contract active by entering the vehicle release data (today\'s date) onto the vehicle reservation contract.', list: 1},
+      { id: 4, alpha: 'E', content: 'The use case terminates at ths point.',list: 1}
     ])
 
     const getList = (list) => {

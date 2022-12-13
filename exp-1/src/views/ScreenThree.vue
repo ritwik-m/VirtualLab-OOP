@@ -3,13 +3,15 @@ import { ref } from 'vue'
 export default {
   setup() {
     const items = ref([
-      { id: 0, word: 'A', list: 1 },
-      { id: 1, word: 'this', list: 1 },
-      { id: 2, word: 'is', list: 1 },
-      { id: 3, word: 'amazing', list: 1 },
-      { id: 4, word: 'value', list: 1 },
-      { id: 5, word: 'for', list: 1 },
-      { id: 6, word: 'money', list: 1 },
+      { id: 0, word: 'Customer', list: 1 },
+      { id: 1, word: 'Customer name', list: 1 },
+      { id: 2, word: 'Clerk', list: 1 },
+      { id: 3, word: 'Office', list: 1 },
+      { id: 4, word: 'Vehicle', list: 1 },
+      { id: 5, word: 'keys', list: 1 },
+      { id: 6, word: 'Vehicle reservation contract', list: 1 },
+      { id: 7, word: 'Reservation number', list: 1 },
+      { id: 8, word: 'Vehicle release date', list: 1 },
     ])
 
     const getList = (list) => {
@@ -30,10 +32,12 @@ export default {
       item.list = list
     }
 
+    
     return {
       getList,
       startDrag,
-      onDrop
+      onDrop,
+  
     }
   }
 }
@@ -73,7 +77,7 @@ export default {
   </div>
   <main class="flexbox">
 
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone-horizontal-second" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(1)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
@@ -128,6 +132,23 @@ export default {
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10px;
+}
+
+.drop-zone-horizontal-second {
+  width: 90%;
+  margin: 25px;
+  background-color: #ecf0f1;
+  height: 50%;
+  min-height: 20vh;
+  max-height: 20vh;
+  overflow: scroll;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.drop-zone-horizontal .drag-el-horizontal:first-of-type {
+  background-color: rgb(218, 80, 80);
 }
 
 .drag-el {
