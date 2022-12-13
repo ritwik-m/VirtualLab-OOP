@@ -39,7 +39,17 @@ export default {
       getList,
       startDrag,
       onDrop,
-  
+    }
+  },
+  methods:{
+    validate(){
+      let final_list = []
+      let i = 0;
+      for (i = 6; i < 10; i++){
+        final_list.push(this.getList(i))
+      }
+      console.log(final_list)
+      this.$router.push('/')
     }
   }
 }
@@ -89,7 +99,7 @@ export default {
   <footer>
     <div id="buttons" class="relative">
       <button class="navitem">Back</button>
-      <button class="navitem">Next</button>
+      <button class="navitem" @click="validate()">Next</button>
     </div>
   </footer>
 </template>
