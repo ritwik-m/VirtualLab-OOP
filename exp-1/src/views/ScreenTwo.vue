@@ -78,8 +78,26 @@ export default {
       boxes. Some boxes take multiple words.</p>
   </header>
   <div class="flex-horizontal">
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 0)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(0)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(6)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+        </div>
+    </div>
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(7)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+        </div>
+    </div>
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(8)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+        </div>
+    </div>
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(9)" :key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
