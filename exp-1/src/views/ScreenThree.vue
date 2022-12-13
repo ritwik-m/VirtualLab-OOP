@@ -1,41 +1,145 @@
-<template>
-    <main class="flexbox">
-        <board_component>
-            <card_component v-for="card in cards" :key="card" :card="card" :draggable="true" :content="card">
-                <p>{{ card }}</p>
-            </card_component>
-        </board_component>
-    </main>
-</template>
-
-
 <script>
-import card_component from '@/components/card_component.vue';
-import board_component from '@/components/board_component.vue';
+import { ref } from 'vue'
+export default {
+  setup() {
+    const items = ref([
+      { id: 0, word: 'A', list: 1 },
+      { id: 1, word: 'this', list: 1 },
+      { id: 2, word: 'is', list: 1 },
+      { id: 3, word: 'amazing', list: 1 },
+      { id: 4, word: 'value', list: 1 },
+      { id: 5, word: 'for', list: 1 },
+      { id: 6, word: 'money', list: 1 },
+    ])
 
-export default{
-    components: {
-        card_component,
-        board_component
-    },
-    data(){
-        return{
-            cards: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
-        }
-    },
-    
+    const getList = (list) => {
+      return items.value.filter((item) => item.list === list)
+    }
+
+    const startDrag = (event, item) => {
+      console.log(item)
+      event.dataTransfer.setData('itemID', item.id)
+      event.dataTransfer.effectAllowed = 'move'
+      event.dataTransfer.dropEffect = 'move'
+    }
+
+    const onDrop = (event, list) => {
+      event.preventDefault()
+      const itemID = event.dataTransfer.getData('itemID')
+      const item = items.value.find((item) => item.id === parseInt(itemID))
+      item.list = list
+    }
+
+    return {
+      getList,
+      startDrag,
+      onDrop
+    }
+  }
 }
 </script>
 
+<template class="app">
+  <header style="padding: 20px">
+    <h1>Step 3: Identifying conceptual classes and attributes</h1>
+    <p>Now that noun phrases have been identified, conceptual class names have to be identified from this list, to
+      proceed with grouping of noun phrases.</p>
+  </header>
+  <div class="flex-horizontal">
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(6)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+      </div>
+    </div>
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(7)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+      </div>
+    </div>
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(8)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+      </div>
+    </div>
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(9)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+      </div>
+    </div>
+  </div>
+  <main class="flexbox">
+
+    <div class="drop-zone-horizontal" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(1)" :key="item.id" class="drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div id="buttons" class="relative">
+      <button class="navitem">Back</button>
+      <button class="navitem">Next</button>
+    </div>
+  </footer>
+</template>
+
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
+.drop-zone {
+  width: 90%;
+  margin: 25px;
+  background-color: #ecf0f1;
+  height: 90%;
+  min-height: 30vh;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10px;
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #f5f5f5;
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.drag-el-horizontal {
+  padding-left: 5vh;
+  padding-right: 5vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: aquamarine;
+  margin: 10px;
+  flex-direction: row;
+  max-width: fit-content;
+  cursor: pointer;
+}
+
+.drop-zone-horizontal {
+  width: 90%;
+  margin: 25px;
+  background-color: #ecf0f1;
+  height: 50%;
+  min-height: 20vh;
+  max-height: 20vh;
+  overflow: scroll;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.drag-el {
+  padding: 5px;
+  background-color: aquamarine;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.drag-el:nth-last-of-type(1) {
+  margin-bottom: 0;
+
 }
 
 .flexbox {
@@ -51,77 +155,35 @@ body {
   padding: 15px
 }
 
-.flexbox .board {
-  display: flex;
-  flex-direction: column;
-
-  width: 30%;
-  height: 100%;
-  min-height: 100vh;
-
-  background-color: #313131;
-
-  padding: 15px;
-}
-
-.flexbox .first_board {
-  display: flex;
-  flex-direction: column;
-  height: 90%;
-  width: 100%;
-
-  background-color: #ebeaea;
-  margin-right: 1.5rem;
-}
-
-.flexbox .board .card {
-  padding: 15px 25px;
-  background-color: #f5f5f5;
-  width: 90%;
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-
-.flexbox .board .card p {
-  display: hidden;
-}
-
-.flexbox .first_board .card {
-  padding: 15px;
-  width: 95%;
-  background-color: #f5f5f5;
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-
 #buttons {
   width: 50px;
   margin: 0;
   text-align: center;
 }
 
-.button {
-  border: none;
-  color: white;
-  padding: 13px 50px;
-  text-align: center;
-  text-decoration: none;
+.relative {
+  padding: 10px;
+  position: relative;
+  background-color: #fff;
+  margin: 10px;
+}
+
+.navitem {
   display: inline-block;
-  font-size: 16px;
-  margin: 50px 20px;
-  transition-duration: 0.4s;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  border: gray;
+  background-color: #E8562A;
+  color: #fff;
   cursor: pointer;
-  border-radius: 5%;
+  font-weight: bold;
 }
 
-.button4 {
-  background-color: white;
-  color: black;
-  border: 2px solid #017047;
-}
-
-.button4:hover {
-  background-color: #017047;
-  color: white;
+.navitem:hover {
+  background-color: #fff;
+  color: #E8562A;
+  cursor: pointer;
+  font-weight: bold;
 }
 </style>
