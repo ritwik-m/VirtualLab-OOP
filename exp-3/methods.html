@@ -1,0 +1,127 @@
+<html>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+<script src="js/methods.js">
+
+</script>
+
+<body>
+
+    <h2 style="text-align: center; text-decoration: underline; padding: 15px; font-family: ui-serif,Georgia,Cambria,Times New Roman,Times,serif;">
+        Map the methods to their respective classes by dragging and dropping.</h2>
+
+    <main class="flexbox">
+
+        <table>
+            <tr>
+                <th>METHODS</th>
+            </tr>
+            <tr>
+                <td id="meth1" draggable="true" ondragstart="drag(event)">visitOffice():void</td>
+            </tr>
+            <tr>
+                <td id="meth2" draggable="true" ondragstart="drag(event)">getName():String</td>
+            </tr>
+            <tr>
+                <td id="meth3" draggable="true" ondragstart="drag(event)">setName(name:String):void</td>
+            </tr>
+            <tr>
+                <td id="meth4" draggable="true" ondragstart="drag(event)">getName():String</td>
+            </tr>
+            <tr>
+                <td id="meth5" draggable="true" ondragstart="drag(event)">setName(name:String):void</td>
+            </tr>
+            <tr>
+                <td id="meth6" draggable="true" ondragstart="drag(event)">requestVehicle(cObj:Customer):String</td>
+            </tr>
+            <tr>
+                <td id="meth7" draggable="true" ondragstart="drag(event)">signContract(cObj:Customer):void</td>
+            </tr>
+            <tr>
+                <td id="meth8" draggable="true" ondragstart="drag(event)">locateReservation(cName:String):String</td>
+            </tr>
+            <tr>
+                <td id="meth9" draggable="true" ondragstart="drag(event)">releaseContract():String</td>
+            </tr>
+            <tr>
+                <td id="meth10" draggable="true" ondragstart="drag(event)">updateKeyStatus(processedBy:Sring):void</td>
+            </tr>
+        </table>
+
+
+        <table id="customer">
+            <tr>
+                <th>Customer</th>
+            </tr>
+            <tr>
+                <td ondrop="drop(event)" ondragover="allowdrop(event)"></td>
+            </tr>
+            <tr>
+                <td ondrop="drop(event)" ondragover="allowdrop(event)"></td>
+            </tr>
+            <tr>
+                <td ondrop="drop(event)" ondragover="allowdrop(event)"></td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <table id="clerk">
+            <tr>
+                <th>Clerk</th>
+            </tr>
+            <tr>
+                <td ondrop="drop(event)" ondragover="allowdrop(event)"></td>
+            </tr>
+            <tr>
+                <td ondrop="drop(event)" ondragover="allowdrop(event)"></td>
+            </tr>
+            <tr>
+                <td ondrop="drop(event)" ondragover="allowdrop(event)"></td>
+            </tr>
+            <tr>
+                <td ondrop="drop(event)" ondragover="allowdrop(event)"></td>
+            </tr>
+        </table>
+
+        <br><br>
+
+
+        <table id="reserve">
+            <tr>
+                <th>Reservation</th>
+            </tr>
+            <tr>
+                <td ondrop="drop(event)" ondragover="allowdrop(event)"></td>
+            </tr>
+            <tr>
+                <td ondrop="drop(event)" ondragover="allowdrop(event)"></td>
+            </tr>
+        </table>
+
+        <br><br>
+
+
+        <table id="vehicle">
+            <tr>
+                <th>Vehicle</th>
+            </tr>
+            <tr>
+                <td ondrop="drop(event)" ondragover="allowdrop(event)"></td>
+            </tr>
+        </table>
+
+
+        <br><br>
+
+
+    </main>
+
+
+    <input type="submit" class="button4" style="margin-left: 40%;" onclick="valid()">
+    <button class="button4" onClick="window.location.reload();">Reset</button>
+
+
+</body>
+
+</html>
