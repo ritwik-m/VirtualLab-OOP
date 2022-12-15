@@ -63,25 +63,25 @@ export default {
   </header>
   <div class="flex-horizontal">
     <div class="drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(6)" :key="item.id" class="drag-el-horizontal" draggable="true"
+      <div v-for="item in getList(6)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
     <div class="drop-zone" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(7)" :key="item.id" class="drag-el-horizontal" draggable="true"
+      <div v-for="item in getList(7)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
     <div class="drop-zone" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(8)" :key="item.id" class="drag-el-horizontal" draggable="true"
+      <div v-for="item in getList(8)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
     <div class="drop-zone" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(9)" :key="item.id" class="drag-el-horizontal" draggable="true"
+      <div v-for="item in getList(9)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
@@ -107,18 +107,19 @@ export default {
 <style scoped>
 .drop-zone {
   display: flex;
-  min-width: 30ch;
-  margin: 25px;
-  background-color: #ecf0f1;
-  height: 20%;
-  min-height: 40vh;
+  min-width: 35ch;
+  margin: 10px;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
+  height: 60%;
+  min-height: 30vh;
   flex-wrap: wrap;
   flex-direction: column;
+  border-radius: 10px;
   padding: 10px;
 }
 
 .drop-zone .drag-el-horizontal:first-of-type {
-  background-color: #E8562A;
+  background-color: #6D71FA;
   color: white;
 }
 
@@ -126,26 +127,38 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
+
 .drag-el-horizontal {
-  background-color: aquamarine;
+  padding-left: 3vh;
+  padding-right: 3vh;
+  border-radius: 10px;
   margin: 10px;
-  max-width: 30ch;
-  padding: 10px;
-  max-height: 5vh;
+  background-color: white;
+  height: fit-content;
+  max-width: fit-content;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
   cursor: pointer;
+}
+
+.identified{
+   max-width: 100%;
 }
 
 .drop-zone-horizontal {
   display: flex;
-  width: 90%;
-  margin: 25px;
-  background-color: #ecf0f1;
+  width: 95%;
+  margin: 10px;
+  margin-bottom: 25px;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
+  background-color: #F9FAFE;
   height: 50%;
-  min-height: 25vh;
-  max-height: 35vh;
-  overflow: scroll;
+  min-height: fit-content;
+  border-radius: 10px;
+  max-height: fit-content;
+  overflow: clip;
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10px;

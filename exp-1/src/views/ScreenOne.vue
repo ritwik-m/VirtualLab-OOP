@@ -65,20 +65,33 @@ export default {
     <div class="drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(1)" :key="item.id" class="drag-el" draggable="true"
         @dragstart="startDrag($event, item)">
-        <h3>{{ item.alpha }}</h3>
-        <p>{{ item.content }}</p>
+        <div class="aplha">
+          <h3>{{ item.alpha }}</h3>
+        </div>
+        <div class="cardtext">
+          <p>{{ item.content }}</p>
+        </div>
       </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent style="max-width: 30ch;">
-      <div class="drag-el" style="text-align: center;">
+    <div class="drop-zone" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
+      <div class="drag-el">
+        <div class="aplha" style="text-align: center; width: 100%; color: white;">
         <h3> START </h3>
       </div>
-      <div v-for="item in getList(2)" :key="item.alpha" class="drag-el" draggable="true"
-        @dragstart="startDrag($event, item)" style="text-align: center;">
-        <h3>{{ item.alpha }}</h3>
       </div>
-      <div class="drag-el" style="text-align: center;">
+      <div v-for="item in getList(2)" :key="item.alpha" class="drag-el" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <div class="aplha">
+          <h3>{{ item.alpha }}</h3>
+        </div>
+        <div class="cardtext">
+          <p>{{ item.content }}</p>
+        </div>
+      </div>
+      <div class="drag-el">
+        <div class="aplha" style="text-align: center; color: white; width: 100%;">
         <h3> END </h3>
+      </div>
       </div>
     </div>
   </main>
@@ -90,25 +103,51 @@ export default {
 </template>
 
 <style scoped>
+
 .drop-zone {
   width: 50%;
   margin: 25px;
-  background-color: #ecf0f1;
   height: 90%;
   min-height: 70vh;
+  background-color: #F9FAFE;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
+  border-radius: 10px;
   padding: 10px;
 }
 
 .drag-el {
-  padding: 5px;
-  background-color: aquamarine;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin: 10px;
+  position: relative;
 }
 
-.drag-el:nth-last-of-type(1) {
-  margin-bottom: 0;
-
+.drag-el .aplha {
+  width: fit-content;
+  height: 50%;
+  position: relative;
+  top: 0;
+  right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  background-color: #6D71FA;
+  color: white;
 }
+
+.drag-el .cardtext{
+  width: 100%;
+  position: relative;
+  left: 0px;
+  border-radius: 10px;
+  height: 100%;
+  padding: 20px;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
+  background-color: #fff;
+}
+
 
 .flexbox {
   display: flex;
