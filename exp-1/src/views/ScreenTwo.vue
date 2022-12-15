@@ -118,6 +118,10 @@ export default {
     <p>To identify noun phrases, drag words from the scenario description sentences and drop them into the noun phrase
       boxes. Some boxes take multiple words.</p>
   </header>
+  <div style="padding: 0;">
+    <h3 style="margin-left: 15px; margin-bottom: 0">Sample: </h3>
+    <img src="../assets/sample-1.png" alt="Sample image" class="image">
+  </div>
   <div class="flex-horizontal">
     <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(6)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
@@ -206,6 +210,16 @@ export default {
 </template>
 
 <style scoped>
+
+.image{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 15%;
+  height: auto;
+  padding: 0;
+}
 
 .identify-box{
   background-color: #fff;

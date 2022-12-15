@@ -12,8 +12,8 @@ export default {
       { id: 6, word: 'Vehicle reservation contract', list: 1 },
       { id: 7, word: 'Reservation number', list: 1 },
       { id: 8, word: 'Vehicle release date', list: 1 },
-      {id: 9, word: 'Reservation', list: 1},
-      {id: 10, word: 'Clerk name', list: 1},
+      { id: 9, word: 'Reservation', list: 1 },
+      { id: 10, word: 'Clerk name', list: 1 },
     ])
 
     const getList = (list) => {
@@ -34,18 +34,18 @@ export default {
       item.list = list
     }
 
-    
+
     return {
       getList,
       startDrag,
       onDrop,
     }
   },
-  methods:{
-    validate(){
+  methods: {
+    validate() {
       let final_list = []
       let i = 0;
-      for (i = 6; i < 10; i++){
+      for (i = 6; i < 10; i++) {
         final_list.push(this.getList(i))
       }
       console.log(final_list)
@@ -58,8 +58,8 @@ export default {
 <template class="app">
   <header style="padding: 20px">
     <h1>Step 3: Identifying conceptual classes and attributes</h1>
-    <p>Now that noun phrases have been identified, conceptual class names have to be identified from this list, to
-      proceed with grouping of noun phrases.</p>
+    <p>To identify conceptual classes and related attributes, drag phrases from the bottom and place them in boxes.
+      First phrase is the class name.</p>
   </header>
   <div class="flex-horizontal">
     <div class="drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
@@ -123,7 +123,7 @@ export default {
   color: white;
 }
 
-.flex-horizontal{
+.flex-horizontal {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -143,8 +143,8 @@ export default {
   cursor: pointer;
 }
 
-.identified{
-   max-width: 100%;
+.identified {
+  max-width: 100%;
 }
 
 .drop-zone-horizontal {
@@ -194,15 +194,16 @@ export default {
 }
 
 .relative {
- padding: 10px;
- display: flex;
- width: 100%;
- flex-direction: row;
- justify-content: space-between;
- background-color: #fff;
-} 
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
 .navitem {
-  width: 100px; 
+  width: 100px;
   height: 50px;
   padding: 10px;
   text-align: center;
@@ -220,5 +221,4 @@ export default {
   cursor: pointer;
   font-weight: bold;
 }
-
 </style>
