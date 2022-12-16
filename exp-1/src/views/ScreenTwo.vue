@@ -102,10 +102,17 @@ export default {
     validate(){
       let final_list = []
       let i = 0;
+      let j = 0;
       for (i = 6; i < 13; i++){
         final_list.push(this.getList(i))
       }
       console.log(final_list)
+      for(j = 0; j < final_list.length; j++){
+        for (i = 0; i < final_list[j].length;i++){
+        console.log(final_list[j][i].word)
+        }
+      }
+    
       this.$router.push('/screen-three')
     }
   }
