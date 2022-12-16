@@ -156,7 +156,7 @@ export default {
         btn12.style.backgroundColor = "green";
         this.display[11] = "none";
         this.display[12] = "inherit";
-        this.cue = `Congratulations you have successfully completed learning to implement classes.`;
+        this.cue = `Congratulations you have successfully completed learning to implement classes. The final code for the class is given below.`;
       }
       else{
         this.button_value = this.button_text;
@@ -461,6 +461,93 @@ export default {
         <br>&emsp;&emsp;&emsp;<input spellcheck="false" id="t14" maxlength="10" style="width: 90px;" v-model="t14"> = 9999999999L;
       <br>}<br>
       <button class="button-9" id="btn12" @click="validate_twelve()"> {{ button_value }} </button>
+      </div>
+
+      <div class="codebox" id="codebox" :style="{display: display[12]}">
+        <pre>
+public class Customer {
+	
+	private int customerID;
+	private String email;
+	private String custName;
+	private long phone;
+	private String city;
+	public static int customerCount=0; 
+	
+	public Customer()
+	{
+		customerCount++;
+		this.customerID=customerCount;
+	}
+	
+	public Customer(String custName, String email) {
+		this();
+		this.custName = custName;
+		this.email=email;
+	}
+	
+	public Customer(String custName, long phone) {
+		this();
+		this.custName = custName;
+		this.setPhone(phone);
+	}
+	
+	public Customer(String custName, String email, long phone) {
+		this();
+		this.custName = custName;
+		this.email=email;
+		this.setPhone(phone);
+	}
+
+	public String getcustName() {
+		return custName;
+	}
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public long getPhone() {
+		return phone;
+	}
+
+	public void setPhone(long phone) {
+		
+		if(phone >= 0000000000L && phone &lt;= 9999999999L)
+			this.phone = phone;
+		else
+			this.phone = 9999999999L;
+		
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	public int getcustomerID() {
+		return customerID;
+	}
+	
+	public String toString()
+	{
+          return "[ID: "+ getcustomerID()+ ",
+          Name: "+getcustName()+
+          ", Email: "+getEmail()+", Phone: "+getPhone()+
+          ", City: "+getCity()+" ]";
+	}
+}
+
+        </pre>
+	
       </div>
 
 
