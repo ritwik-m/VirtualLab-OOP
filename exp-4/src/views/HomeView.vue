@@ -3,8 +3,13 @@ export default {
 
   methods: {
     validate_one() {
-      if (this.one == "class") {
-        this.button_value = "Correct"
+      if (this.one == "class" && this.two == "Customer") {
+        this.button_value = "Correct. Next"
+        btn.style.backgroundColor = "green";
+      }
+      else{
+        this.button_value = "Incorrect. Try again"
+        btn.style.backgroundColor = "red";
       }
     }
 
@@ -23,7 +28,7 @@ export default {
 
 </script>
 
-<template>
+<template class="app">
 
   <main>
 
@@ -31,7 +36,7 @@ export default {
       <div class="column">
         <h1 style="padding: 25px;">Fill in the Java code for the following updated Customer class.</h1>
         <h2 style="padding: 25px;">You only have to fill in the spaces provided.</h2>
-        <img src="class1.png" id="picID" style="padding-left: 150px; height: 450px;">
+        <img src="src/assets/class1.png" id="picID" style="padding-left: 150px; height: 450px;">
       </div>
       <div class="column">
         <h1 style="padding: 25px;">Enter your code here .</h1>
@@ -40,8 +45,8 @@ export default {
         <div class="codebox" id="codebox">
           public
           <input spellcheck="false" maxlength="5" style="width: 50px;" v-model="one">
-
-          <!-- <input spellcheck="false" id="two" maxlength="8" style="width: 70px;">
+          <input spellcheck="false" id="two" maxlength="8" style="width: 70px;" v-model="two">{<br>
+          }<!-- 
                 <input hidden spellcheck="false" id="three" maxlength="6" style="width: 50px;"> 
                 <input hidden spellcheck="false" id="four" maxlength="4" style="width: 45px;">
                 <input hidden spellcheck="false" id="five" maxlength="6" style="width: 50px;"> 
@@ -60,17 +65,21 @@ export default {
     </div>
   </main>
 </template>
+
+
 <style scoped>
 * {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+   url(.\fonts\Montserrat-VariableFont_wght.ttf) format("truetype");
 }
 
-h1 {
-  font-weight: bold;
+h1,h2,p {
+  font-family: 'Montserrat', sans-serif;
   color: rgb(0, 3, 40);
 }
 
@@ -86,18 +95,6 @@ h1 {
   clear: both;
 }
 
-a {
-  display: block;
-  width: 150px;
-  position: relative;
-  margin: 10px auto;
-  text-align: center;
-  background-color: #0f72e5;
-  border-radius: 20px;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 8px 0;
-}
 
 .codebox {
   height: 80%;
