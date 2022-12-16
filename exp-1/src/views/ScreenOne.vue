@@ -3,7 +3,7 @@ import { ref } from 'vue'
 export default {
   setup() {
     const items = ref([
-      { id: 0, alpha: 'A', content: 'A customer comes to the office to acquire a vehicle', list: 1 },
+      { id: 0, alpha: ' ', content: 'A customer comes to the office to acquire a vehicle', list: 1 },
       { id: 1, alpha: 'B', content: 'The clerk locates the vehicle reservation contract by means of the reservation', list: 1 },
       { id: 2, alpha: 'C', content: 'The customer signs the contract and the clerk gives the keys to the vehicle.', list: 1 },
       { id: 3, alpha: 'D', content: 'The clerk then marks the the contract active by entering the vehicle release data (today\'s date) onto the vehicle reservation contract.', list: 1 },
@@ -105,10 +105,13 @@ export default {
 <style scoped>
 
 .drop-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 50%;
+  max-width: 600px;
   margin: 25px;
-  height: 90%;
-  min-height: 70vh;
+  min-height: 80vh;
   background-color: #F9FAFE;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
   border-radius: 10px;
@@ -125,8 +128,8 @@ export default {
 }
 
 .drag-el .aplha {
-  width: fit-content;
-  height: 50%;
+  width: 20px;
+  height: 60px;
   position: relative;
   top: 0;
   right: 20;
@@ -135,6 +138,7 @@ export default {
   border-radius: 5px;
   background-color: #6D71FA;
   color: white;
+  z-index: 66;
 }
 
 .drag-el .cardtext{
@@ -142,7 +146,6 @@ export default {
   position: relative;
   left: 0px;
   border-radius: 10px;
-  height: 100%;
   padding: 20px;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
   background-color: #fff;
@@ -155,6 +158,8 @@ export default {
 
   height: 100%;
   width: 100%;
+  flex-wrap: wrap;
+  min-width:100px;
 
   overflow: hidden;
 
