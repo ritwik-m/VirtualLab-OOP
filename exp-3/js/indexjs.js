@@ -1,19 +1,25 @@
 function allowdrop(ev) {
     ev.preventDefault();
 }
+
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
+
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data).cloneNode(true));
 }
+
 function drop2(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 }
+
+//Validation is done by mapping all table rows with their id's
+
 function validate() {
     var cust1 = document.getElementById("c1").innerText;
     var cust2 = document.getElementById("c2").innerText;
@@ -51,11 +57,15 @@ function validate() {
 
     if (customer_valid && clerk_valid && reservation_valid) {
         console.log("three valid");
-        window.alert("valid");
-        window.open("relations.html");
+        document.getElementById("head").innerHTML = "Good Job";
+        document.getElementById("body").innerHTML = "You got all the attributes and datatypes in the right classes";
+        document.getElementById("link").innerHTML = "Go next";
+        document.querySelector(".popup").style.display = "block";
     }
     else {
-        window.alert("invalid");
+        document.getElementById("head").innerHTML = "Try again";
+        document.getElementById("body").innerHTML = "The attributes and datatypes are not matched in their classes";
+        document.querySelector(".popup").style.display = "block";
         console.log(clerk1);
         console.log(clerk2);
         console.log(clerk_valid);

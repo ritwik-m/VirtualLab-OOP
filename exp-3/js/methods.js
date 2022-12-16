@@ -27,6 +27,14 @@ function valid() {
     var vehicle_valid = vehicle.contains(document.getElementById("meth10"))
 
     if (cust_valid && celrk_valid && reservation_valid && vehicle_valid) {
-        window.alert("Good job you got the class methods right");
+        document.getElementById("head").innerHTML = "Good Job";
+        document.getElementById("body").innerHTML = "You got all the class methods right<br> You have successfully completed this experiment";
+        document.querySelector(".popup").style.display = "block";
+    }
+
+    else{
+        document.getElementById("head").innerHTML = "Try again";
+        document.getElementById("body").innerHTML = "The methods don't seem to match the right classes.";
+        document.querySelector(".popup").style.display = "block";
     }
 }
