@@ -32,12 +32,17 @@ function valid() {
     console.log(inp1 + inp2 + inp3);
     
     if (res) {
-        window.alert("Valid");
+        document.getElementById("head").innerHTML = "Good Job";
+        document.getElementById("body").innerHTML = "You got all the relations and cardinality right";
+        document.getElementById("link").innerHTML = "Go next";
+        document.querySelector(".popup").style.display = "block";
         console.log("Valid");
         window.open(methods.html);
     }
     else {
-        window.alert("Invalid");
+        document.getElementById("head").innerHTML = "Try again";
+        document.getElementById("body").innerHTML = "The relations and cardinality don't seem to be right<br>Check if the relation names exactly match as given";
+        document.querySelector(".popup").style.display = "block";
         console.log(inp1 + inp2 + inp3);
         console.log("Invalid");
     }

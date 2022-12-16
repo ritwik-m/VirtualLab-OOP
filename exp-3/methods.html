@@ -7,6 +7,14 @@
 
 <body>
 
+    <!-- popup box -->
+    <div class="popup">
+        <button id="close">&times;</button>
+        <h2 id="head"></h2>
+        <p id = "body">
+        </p>
+    </div>
+
     <h2 style="text-align: center; text-decoration: underline; padding: 15px; font-family: ui-serif,Georgia,Cambria,Times New Roman,Times,serif;">
         Map the methods to their respective classes by dragging and dropping.</h2>
 
@@ -123,5 +131,12 @@
 
 
 </body>
+
+<!-- Script below is for the close button in popup to work -->
+<script>
+    document.querySelector("#close").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+});
+</script>
 
 </html>
