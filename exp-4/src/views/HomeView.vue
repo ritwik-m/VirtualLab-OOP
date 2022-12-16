@@ -4,23 +4,176 @@ export default {
   methods: {
     validate_one() {
       if (this.one == "class" && this.two == "Customer") {
-        this.button_value = "Correct. Next"
-        btn.style.backgroundColor = "green";
+        this.button_value = this.button_text_right;
+        btn2.style.backgroundColor = "green";
+        this.display[0] = "none";
+        this.display[1] = "inherit";
+        this.cue = `Create new attribute "custName"`;
+      }
+      
+      else{
+        this.button_value = this.button_text;
+        btn1.style.backgroundColor = "red";
+      }
+    },
+
+    validate_two(){
+      if (this.three == "String" && this.four == "custName") {
+        this.button_value = this.button_text_right;
+        btn3.style.backgroundColor = "green";
+        this.display[1] = "none";
+        this.display[2] = "inherit";
+        this.cue = `Create new attribute "customerID"`;
       }
       else{
-        this.button_value = "Incorrect. Try again"
-        btn.style.backgroundColor = "red";
+        this.button_value = this.button_text;
+        btn2.style.backgroundColor = "red";
       }
-    }
+    },
 
+    validate_three(){
+      if (this.five == "int" && this.six == "customerID"){
+        this.button_value = this.button_text_right;
+        btn4.style.backgroundColor = "green";
+        this.display[2] = "none";
+        this.display[3] = "inherit";
+        this.cue = `Create new attribute "email"`;
+      }
+      else{
+        this.button_value = this.button_text;
+        btn3.style.backgroundColor = "red";
+      }
+    },
+    validate_four(){
+      if (this.seven == "String" && this.eight == "email"){
+        this.button_value = this.button_text_right;
+        btn5.style.backgroundColor = "green";
+        this.display[3] = "none";
+        this.display[4] = "inherit";
+        this.cue = `Create new attribute "phone"`;
+      }
+      else{
+        this.button_value = this.button_text;
+        btn4.style.backgroundColor = "red";
+      }
+    },
+    validate_five(){
+      if (this.nine == "long" && this.ten == "phone"){
+        this.button_value = this.button_text_right;
+        btn6.style.backgroundColor = "green";
+        this.display[4] = "none";
+        this.display[5] = "inherit";
+        this.cue = `Create new attribute "city"`;
+      }
+      else{
+        this.button_value = this.button_text;
+        btn5.style.backgroundColor = "red";
+      }
+    },
+    validate_six(){
+      if (this.eleven == "String" && this.twelve == "city"){
+        this.button_value = this.button_text_right;
+        btn7.style.backgroundColor = "green";
+        this.display[5] = "none";
+        this.display[6] = "inherit";
+        this.cue = `Create new static attribute "customerCount" of type int and set value to 0`;
+      }
+      else{
+        this.button_value = this.button_text;
+        btn6.style.backgroundColor = "red";
+      }
+    },
+    validate_seven(){
+      if (this.thirteen == "static" && this.fourteen == "int" && this.fifteen == "customerCount=0"){
+        this.button_value = this.button_text_right;
+        btn8.style.backgroundColor = "green";
+        this.display[6] = "none";
+        this.display[7] = "inherit";
+        this.cue = `Increment customerCount by 1 in default constructor and assign it to customerID`;
+      }
+      else{
+        this.button_value = this.button_text;
+        btn7.style.backgroundColor = "red";
+      }
+    },
+    validate_eight(){
+      if (this.sixteen == "customerCount++" && this.seventeen == "this"){
+        this.button_value = this.button_text_right;
+        btn9.style.backgroundColor = "green";
+        this.display[7] = "none";
+        this.display[8] = "inherit";
+        this.cue = `Add parameterized constructor with parameters 1.custName and 2.email and assign values using "this operator"`;
+      }
+      else{
+        this.button_value = this.button_text;
+        btn8.style.backgroundColor = "red";
+      }
+    },
+    validate_nine(){
+      if (this.eighteen == "String custName" && this.nineteen == "String email" && this.twenty == "this" && this.t1 == "this"){
+        this.button_value = this.button_text_right;
+        btn10.style.backgroundColor = "green";
+        this.display[8] = "none";
+        this.display[9] = "inherit";
+        this.cue = `Add parameterized constructor with parameters 1.custName and 2.phone and assign values using "this operator". Now assume a method "setPhone" exists to assign value to phone.`;
+      }
+      else{
+        this.button_value = this.button_text;
+        btn9.style.backgroundColor = "red";
+      }
+    },
+    validate_ten(){
+      if (this.t2 == "String custName" && this.t3== "long phone" && this.t4 == "this" && this.t5 == `setPhone(phone)`){
+        this.button_value = this.button_text_right;
+        btn11.style.backgroundColor = "green";
+        this.display[9] = "none";
+        this.display[10] = "inherit";
+        this.cue = `Create a getter method for custName and return the value.`;
+      }
+      else{
+        this.button_value = this.button_text;
+        btn10.style.backgroundColor = "red";
+      }
+    },
+
+    validate_eleven(){
+      if (this.t6 == "getcustName" && this.t7 == "return custName"){
+        this.button_value = this.button_text_right;
+        btn12.style.backgroundColor = "green";
+        this.display[10] = "none";
+        this.display[11] = "inherit";
+        this.cue = `Create a setter method for phone as setPhone`;
+      }
+      else{
+        this.button_value = this.button_text;
+        btn11.style.backgroundColor = "red";
+      }
+    },
+
+    validate_twelve(){
+      if (this.t8 == "void" && this.t9 == "setPhone" && this.t10 == "long phone" && this.t11 == "if" && this.t12 == "this.phone" && this.t13 == "else" && this.t14 == "this.phone"){
+        this.button_value = this.button_text_right;
+        btn12.style.backgroundColor = "green";
+        this.display[11] = "none";
+        this.display[12] = "inherit";
+        this.cue = `Congratulations you have successfully completed learning to implement classes.`;
+      }
+      else{
+        this.button_value = this.button_text;
+        btn12.style.backgroundColor = "red";
+      }
+    },
   },
   data() {
     return {
       id: 'container',
       class: 'wrapper',
-      one: "",
-      message: '',
-      button_value: 'Next'
+      cue : 'Create a class "Customer"',
+      button_value: 'Next',
+      button_text: "Incorrect. Try again",
+      button_text_right: "Correct. Next",
+      correct: false,
+      display: ["inherit","none","none","none","none","none","none","none","none","none","none","none","none","none","none",]
     }
   }
 
@@ -40,27 +193,277 @@ export default {
       </div>
       <div class="column">
         <h1 style="padding: 25px;">Enter your code here .</h1>
-        <p id="cue" style="font-weight: bold; padding: 10px; text-decoration: underline;">Create class named Customer
+        <p id="cue" style="font-weight: bold; padding: 10px; text-decoration: underline;"> {{ cue }}
         </p>
-        <div class="codebox" id="codebox">
+
+
+        <div class="codebox" id="codebox" :style="{display: display[0]}">
           public
-          <input spellcheck="false" maxlength="5" style="width: 50px;" v-model="one">
+          <input spellcheck="false" maxlength="5" style="width: 50px;" v-model='one'>
           <input spellcheck="false" id="two" maxlength="8" style="width: 70px;" v-model="two">{<br>
-          }<!-- 
-                <input hidden spellcheck="false" id="three" maxlength="6" style="width: 50px;"> 
-                <input hidden spellcheck="false" id="four" maxlength="4" style="width: 45px;">
-                <input hidden spellcheck="false" id="five" maxlength="6" style="width: 50px;"> 
-                <input hidden spellcheck="false" id="six" maxlength="4" style="width: 45px;">
-                <input hidden spellcheck="false" id="seven" maxlength="4" style="width: 45px;">
-                <input hidden spellcheck="false" id="eight" maxlength="4" style="width: 45px">
-                <input hidden spellcheck="false" id="nine" maxlength="4" style="width: 45px">
-                <input hidden spellcheck="false" id="ten" maxlength="4" style="width: 45px">
-                <input hidden spellcheck="false" id="eleven" maxlength="4" style="width:45px">
-                <input hidden spellcheck="false" id="twelve" maxlength="4" style="width : 45px">{
-                    <br>
-                    &emsp;} -->
+          } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button></div>
+        <div class="codebox" id="codebox" :style="{display: display[1]}">
+          public class Customer{
+            <br>&emsp;private
+          
+          <input spellcheck="false" id="three" maxlength="6" style="width: 50px;" v-model="three"> 
+          <input spellcheck="false" id="four" maxlength="8" style="width: 75px;" v-model="four">;
+        <br>}<br>
+        <button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
         </div>
-        <button class="button-9" id="btn" @click="validate_one()"> {{ button_value }} </button>
+
+        <div class="codebox" id="codebox" :style="{display: display[2]}">
+          public class Customer{
+            <br>&emsp;private String custName;
+            <br>&emsp;private
+          <input spellcheck="false" id="five" maxlength="3" style="width: 25px;" v-model="five"> 
+          <input spellcheck="false" id="six" maxlength="11" style="width: 90px;" v-model="six">;
+        <br>}<br>
+        <button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
+      </div>
+
+      <div class="codebox" id="codebox" :style="{display: display[3]}">
+          public class Customer{
+            <br>&emsp;private String custName;
+            <br>&emsp;private int customerID;
+            <br>&emsp;private
+          <input spellcheck="false" id="seven" maxlength="6" style="width: 50px;" v-model="seven"> 
+          <input spellcheck="false" id="eight" maxlength="5" style="width: 42px;" v-model="eight">;
+        <br>}<br>
+        <button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" id="codebox" :style="{display: display[4]}">
+          public class Customer{
+            <br>&emsp;private String custName;
+            <br>&emsp;private int customerID;
+            <br>&emsp;private String email;
+            <br>&emsp;private
+          <input spellcheck="false" id="nine" maxlength="4" style="width: 35px;" v-model="nine"> 
+          <input spellcheck="false" id="ten" maxlength="5" style="width: 45px;" v-model="ten">;
+        <br>}<br>
+        <button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
+
+      </div>
+
+      <div class="codebox" id="codebox" :style="{display: display[5]}">
+          public class Customer{
+            <br>&emsp;private String custName;
+            <br>&emsp;private int customerID;
+            <br>&emsp;private String email;
+            <br>&emsp;private long phone;
+            <br>&emsp;private
+          <input spellcheck="false" id="eleven" maxlength="6" style="width: 50px;" v-model="eleven"> 
+          <input spellcheck="false" id="twelve" maxlength="4" style="width: 35px;" v-model="twelve">;
+        <br>}<br>
+        <button class="button-9" id="btn6" @click="validate_six()"> {{ button_value }} </button>
+      </div>
+
+      <div class="codebox" id="codebox" :style="{display: display[6]}">
+        public class Customer{
+          <br>&emsp;private String custName;
+          <br>&emsp;private int customerID;
+          <br>&emsp;private String email;
+          <br>&emsp;private long phone;
+          <br>&emsp;private String city;
+          <br>&emsp;public
+        <input spellcheck="false" id="thirteen" maxlength="6" style="width: 50px;" v-model="thirteen"> 
+        <input spellcheck="false" id="fourteen" maxlength="3" style="width: 25px;" v-model="fourteen"> 
+        <input spellcheck="false" id="fifteen" maxlength="15" style="width: 120px;" v-model="fifteen">;
+      <br>}<br>
+      <button class="button-9" id="btn7" @click="validate_seven()"> {{ button_value }} </button>
+      </div>
+
+      <div class="codebox" id="codebox" :style="{display: display[7]}">
+        public class Customer{
+          <br>&emsp;private String custName;
+          <br>&emsp;private int customerID;
+          <br>&emsp;private String email;
+          <br>&emsp;private long phone;
+          <br>&emsp;private String city;
+          <br>&emsp;public static int customerCount=0;
+          <br><br>&emsp;public Customer()<br>&emsp;{<br>&emsp;&emsp;
+        <input spellcheck="false" id="sixteen" maxlength="15" style="width: 120px;" v-model="sixteen">;
+        <br>&emsp;&emsp;
+        <input spellcheck="false" id="seventeen" maxlength="4" style="width: 30px;" v-model="seventeen">.customerID = customerCount;
+        <br>&emsp;&emsp;}
+      <br>}<br>
+      <button class="button-9" id="btn8" @click="validate_eight()"> {{ button_value }} </button>
+      </div>
+
+      <div class="codebox" id="codebox" :style="{display: display[8]}">
+        public class Customer{
+          <br>&emsp;private String custName;
+          <br>&emsp;private int customerID;
+          <br>&emsp;private String email;
+          <br>&emsp;private long phone;
+          <br>&emsp;private String city;
+          <br>&emsp;public static int customerCount=0;
+          <br><br>&emsp;public Customer()<br>&emsp;{<br>&emsp;&emsp;
+          customerCount++;
+          <br>&emsp;&emsp;this.customerID = customerCount;
+          <br>&emsp;}
+          <br>
+          <br>&emsp;public Customer(
+        <input spellcheck="false" id="eighteen" maxlength="15" style="width: 120px;" v-model="eighteen">, 
+        <input spellcheck="false" id="nineteen" maxlength="12" style="width: 100px;" v-model="nineteen">){
+          <br>&emsp;&emsp;
+        <input spellcheck="false" id="twenty" maxlength="4" style="width: 30px;" v-model="twenty">.custName = custName;
+        <br>&emsp;&emsp;
+        <input spellcheck="false" id="t1" maxlength="4" style="width: 30px;" v-model="t1">.email = email;
+        <br>&emsp;&emsp;}
+      <br>}<br>
+      <button class="button-9" id="btn9" @click="validate_nine()"> {{ button_value }} </button>
+      </div>
+      
+
+      <div class="codebox" id="codebox" :style="{display: display[9]}">
+        <pre>public class Customer {
+	
+	private int customerID;
+	private String email;
+	private String custName;
+	private long phone;
+	private String city;
+	public static int customerCount=0; 
+	
+	public Customer()
+	{
+		customerCount++;
+		this.customerID=customerCount;
+	}
+	
+	public Customer(String custName, String email) {
+		this();
+		this.custName = custName;
+		this.email=email;
+	}</pre>
+	
+	&emsp;public Customer(
+        <input spellcheck="false" id="t2" maxlength="15" style="width: 120px;" v-model="t2">, 
+        <input spellcheck="false" id="t3" maxlength="10" style="width: 85px;" v-model="t3">){
+          <br>&emsp;&emsp;
+        <input spellcheck="false" id="t4" maxlength="4" style="width: 30px;" v-model="t4">.custName = custName;
+        <br>&emsp;&emsp;
+        this.<input spellcheck="false" id="t5" maxlength="15" style="width: 120px;" v-model="t5">;
+        <br>&emsp;&emsp;}
+      <br>}<br>
+      <button class="button-9" id="btn10" @click="validate_ten()"> {{ button_value }} </button>
+      </div>
+
+      <div class="codebox" id="codebox" :style="{display: display[10]}">
+        <pre>public class Customer {
+	
+	private int customerID;
+	private String email;
+	private String custName;
+	private long phone;
+	private String city;
+	public static int customerCount=0; 
+	
+	public Customer()
+	{
+		customerCount++;
+		this.customerID=customerCount;
+	}
+	
+	public Customer(String custName, String email) {
+		this();
+		this.custName = custName;
+		this.email=email;
+	}
+	
+	public Customer(String custName, long phone) {
+		this();
+		this.custName = custName;
+		this.setPhone(phone);
+	}
+	
+	public Customer(String custName, String email, long phone) {
+		this();
+		this.custName = custName;
+		this.email=email;
+		this.setPhone(phone);
+	}</pre>
+	
+	&emsp;public String
+        <input spellcheck="false" id="t6" maxlength="11" style="width: 95px;" v-model="t6">() {
+          <br>&emsp;&emsp;
+        <input spellcheck="false" id="t7" maxlength="15" style="width: 130px;" v-model="t7">;
+        <br>&emsp;&emsp;}
+      <br>}<br>
+      <button class="button-9" id="btn11" @click="validate_eleven()"> {{ button_value }} </button>
+      </div>
+
+      <div class="codebox" id="codebox" :style="{display: display[11]}">
+        <pre>public class Customer {
+	
+	private int customerID;
+	private String email;
+	private String custName;
+	private long phone;
+	private String city;
+	public static int customerCount=0; 
+	
+	public Customer()
+	{
+		customerCount++;
+		this.customerID=customerCount;
+	}
+	
+	public Customer(String custName, String email) {
+		this();
+		this.custName = custName;
+		this.email=email;
+	}
+	
+	public Customer(String custName, long phone) {
+		this();
+		this.custName = custName;
+		this.setPhone(phone);
+	}
+	
+	public Customer(String custName, String email, long phone) {
+		this();
+		this.custName = custName;
+		this.email=email;
+		this.setPhone(phone);
+	}
+
+	public String getcustName() {
+		return custName;
+	}
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public long getPhone() {
+		return phone;
+	}</pre>
+	
+	&emsp;public
+        <input spellcheck="false" id="t8" maxlength="4" style="width: 35px;" v-model="t8">
+        <input spellcheck="false" id="t9" maxlength="8" style="width: 70px;" v-model="t9">(
+        <input spellcheck="false" id="t10" maxlength="10" style="width: 90px;" v-model="t10">) {
+
+
+          <br>&emsp;&emsp;
+        <input spellcheck="false" id="t11" maxlength="2" style="width: 15px;" v-model="t11">(phone >= 0000000000L && phone &lt;= 9999999999L)
+        <br>&emsp;&emsp;&emsp;<input spellcheck="false" id="t12" maxlength="10" style="width: 90px;" v-model="t12"> = phone;
+        <br>&emsp;&emsp;
+        <input spellcheck="false" id="t13" maxlength="4" style="width: 35px;" v-model="t13">
+        <br>&emsp;&emsp;&emsp;<input spellcheck="false" id="t14" maxlength="10" style="width: 90px;" v-model="t14"> = 9999999999L;
+      <br>}<br>
+      <button class="button-9" id="btn12" @click="validate_twelve()"> {{ button_value }} </button>
+      </div>
+
+
       </div>
     </div>
   </main>
