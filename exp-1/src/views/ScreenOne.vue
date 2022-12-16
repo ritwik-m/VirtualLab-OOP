@@ -3,14 +3,15 @@ import { ref } from 'vue'
 export default {
   setup() {
     const items = ref([
-      { id: 0, alpha: ' ', content: 'A customer comes to the office to acquire a vehicle', list: 1 },
-      { id: 1, alpha: 'B', content: 'The clerk locates the vehicle reservation contract by means of the reservation', list: 1 },
-      { id: 2, alpha: 'C', content: 'The customer signs the contract and the clerk gives the keys to the vehicle.', list: 1 },
-      { id: 3, alpha: 'D', content: 'The clerk then marks the the contract active by entering the vehicle release data (today\'s date) onto the vehicle reservation contract.', list: 1 },
-      { id: 4, alpha: 'E', content: 'The use case terminates at ths point.', list: 1 }
+      { id: 0, order: 1, alpha: ' ', content: 'A customer comes to the office to acquire a vehicle', list: 1 },
+      { id: 1, order: 2, alpha: ' ', content: 'The clerk locates the vehicle reservation contract by means of the reservation', list: 1 },
+      { id: 2, order: 3, alpha: ' ', content: 'The customer signs the contract and the clerk gives the keys to the vehicle.', list: 1 },
+      { id: 3, order: 4, alpha: ' ', content: 'The clerk then marks the the contract active by entering the vehicle release data (today\'s date) onto the vehicle reservation contract.', list: 1 },
+      { id: 4, order: 5, alpha: ' ', content: 'The use case terminates at ths point.', list: 1 }
     ])
 
     const getList = (list) => {
+      items.value.sort((a, b) => a.order - b.order)
       return items.value.filter((item) => item.list === list)
     }
 
@@ -49,6 +50,27 @@ export default {
       }
       else {
         alert("Please drag all the sentences to the timeline")
+      }
+    },
+    getNum(v){
+      let n = v.length;
+      let index = Math.floor(Math.random() % n);
+      let num = v[index];
+
+      v[index] = v[n - 1];
+      v.splice(n - 1, 1);
+
+      return num;
+    },
+
+    generateRandom(n){
+      let v = [];
+
+      for (let i = 0; i < n; i++)
+        v.push(i + 1);
+
+      while (v.length > 0) {
+        console.log(this.getNum(v));
       }
     }
   },
