@@ -177,6 +177,7 @@ export default {
 .flexbox {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: row;
 
   height: 100%;
   width: 100%;
