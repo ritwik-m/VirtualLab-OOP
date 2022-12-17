@@ -43,7 +43,7 @@ export default {
       { id: 37, word: 'key', list: 3 },
       { id: 38, word: 'to', list: 3 },
       { id: 39, word: 'the', list: 3 },
-      { id: 40, word: 'vehicle', list: 3 },
+      { id: 40, word: 'customer', list: 3 },
       { id: 41, word: 'The', list: 4},
       { id: 42, word: 'clerk', list: 4},
       { id: 43, word: 'then', list: 4},
@@ -98,103 +98,158 @@ export default {
       onDrop
     }
   },
+  data() {
+    return {
+      valid: true
+    }
+  },
   methods:{
     validate(){
       let final_list = []
       let i = 0;
-      for (i = 6; i < 13; i++){
+      let j = 0;
+      for (i = 6; i < 12; i++){
         final_list.push(this.getList(i))
       }
       console.log(final_list)
-      this.$router.push('/screen-three')
+      for(j = 0; j < final_list.length; j++){
+        let word = ''
+        for (i = 0; i < final_list[j].length;i++){
+          word = word + final_list[j][i].word + ' '
+        }
+        final_list[j] = word
+      }
+
+      let final_string = final_list.join(' ')
+
+      if(!final_string.includes('locates the vehicle')){
+        this.valid = false
+        console.log('Locate the vehicle not found')
+      }
+
+      if(!final_string.includes('marks the contract active')){
+        this.valid = false
+        console.log('Marks the contract active not found')
+      }
+
+      if(!final_string.includes('acquire a vehicle')){
+        this.valid = false
+        console.log('Acquire a vehicle not found')
+      }
+
+
+      if(!final_string.includes('signs the contract')){
+        this.valid = false
+        console.log('Signs the contract not found')
+      }
+
+      if(!final_string.includes('gives the keys')){
+        this.valid = false
+        console.log('Gives the keys not found')
+      }
+
+      if(!final_string.includes('vehicle type is not available')){
+        this.valid = false
+        console.log('Vehicle type is not available name not found')
+      }
+
+     
+      if(this.valid){
+        this.$router.push('/screen-three')
+      }
+      else{
+        console.log('There\'s some mistake')
+      }
+
+      console.log(final_string)
     }
   }
 }
 </script>
 
-<template class="app">
+<template class="app"> 
   <header style="padding: 20px">
     <h1>Step 1: Identifying verb phrases</h1>
-    <p>To identify verb phrases, drag words from the scenario description sentences and drop them into the noun phrase
-      boxes. Some boxes take multiple words.</p>
+    <p>To identify verb phrases, drag words from the scenario description sentences and drop them into the noun phrase boxes. Some boxes take multiple words.</p>
   </header>
+  <div style="padding: 0;">
+    <h3 style="margin-left: 15px; margin-bottom: 0">Sample: </h3>
+    <img src="../assets/sample-1.png" alt="Sample image" class="image">
+  </div>
+
+  <div class="flexbox">
   <div class="flex-horizontal">
-    <div class="drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(6)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(6)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(7)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="identify-box drop-zone" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(7)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(8)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="identify-box drop-zone" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(8)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(9)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="identify-box drop-zone" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(9)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 10)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(10)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="identify-box drop-zone" @drop="onDrop($event, 10)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(10)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 11)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(11)" :key="item.id" class="drag-el-horizontal" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <p>{{ item.word }}</p>
-        </div>
-    </div>
-    <div class="drop-zone" @drop="onDrop($event, 12)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(12)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="identify-box drop-zone" @drop="onDrop($event, 11)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(11)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
   </div>
   <main class="flex">
-   
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(1)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="to-identify drop-zone-horizontal" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(1)" :key="item.id" class="unidentified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(2)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="to-identify drop-zone-horizontal" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(2)" :key="item.id" class="unidentified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(3)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="to-identify drop-zone-horizontal" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(3)" :key="item.id" class="unidentified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(4)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="to-identify drop-zone-horizontal" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(4)" :key="item.id" class="unidentified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone-horizontal" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(5)" :key="item.id" class="drag-el-horizontal" draggable="true"
+    <div class="to-identify drop-zone-horizontal" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(5)" :key="item.id" class="unidentified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
+    
   </main>
+</div>
   <footer>
     <div id="buttons" class="relative">
       <button class="navitem">Back</button>
@@ -204,72 +259,104 @@ export default {
 </template>
 
 <style scoped>
+
+.image{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 15%;
+  height: auto;
+  padding: 0;
+}
+
+.identify-box{
+  background-color: #fff;
+}
+
+.to-identify{
+  background-color: #F9FAFE;
+}
+.identified{
+  background-color: #6D71FA;
+  color: white;
+}
+
+.unidentified{
+  background-color: #fff;
+  color: black;
+}
+
 .drop-zone {
   display: flex;
-  min-width: 10ch;
-  margin: 25px;
-  background-color: #ecf0f1;
-  height: 20%;
+  /* width: fit-content; */
+  min-width: 40ch;
+  max-width: 60ch;
+  margin: 5px;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
+  max-height: fit-content;
+  align-items: center;
+  justify-content: center;
   min-height: 10vh;
   flex-wrap: wrap;
   flex-direction: row;
-  padding: 10px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .flex-horizontal{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
+  justify-content:flex-start;
 }
 
 .drag-el-horizontal {
-  padding-left: 5vh;
-  padding-right: 5vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  background-color: aquamarine;
-  margin: 10px;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  border-radius: 10px;
+  margin: 5px;
   height: fit-content;
   max-width: fit-content;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
   cursor: pointer;
 }
 
 .drop-zone-horizontal {
   display: flex;
-  width: 95%;
-  margin: 25px;
-  background-color: #ecf0f1;
-  height: 50%;
-  min-height: fit-content;
+  max-width: 1000px;
+  min-width: 700px;
+  margin: 10px;
+  margin-bottom: 25px;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
+  background-color: #F9FAFE;
+  min-height: 10vh;
+  border-radius: 10px;
   max-height: fit-content;
-  overflow: clip;
+  overflow: auto;
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10px;
 }
 
-.drag-el {
-  padding: 5px;
-  background-color: aquamarine;
-  margin: 10px;
-  cursor: pointer;
+.drag-el-horizontal:nth-last-child(){
+  margin-bottom: 0;
 }
 
-.drag-el:nth-last-of-type(1) {
+.drag-el:nth-last-child(){
   margin-bottom: 0;
-
 }
 
 .flexbox {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 
   height: 100%;
   width: 100%;
 
   overflow: hidden;
 
-  margin: 0 10;
+  margin: 0;
   padding: 15px
 }
 

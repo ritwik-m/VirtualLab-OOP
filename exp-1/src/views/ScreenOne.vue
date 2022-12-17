@@ -4,9 +4,9 @@ export default {
   setup() {
     const items = ref([
       { id: 0, order: 1, alpha: ' ', content: 'A customer comes to the office to acquire a vehicle', list: 1 },
-      { id: 1, order: 2, alpha: ' ', content: 'The clerk locates the vehicle reservation contract by means of the reservation', list: 1 },
+      { id: 1, order: 2, alpha: ' ', content: 'The clerk locates the vehicle reservation contract by means of the reservation number and/or customer name. [Exception: Required vehicle type is not available due to late arrivals.]', list: 1 },
       { id: 2, order: 3, alpha: ' ', content: 'The customer signs the contract and the clerk gives the keys to the vehicle.', list: 1 },
-      { id: 3, order: 4, alpha: ' ', content: 'The clerk then marks the the contract active by entering the vehicle release data (today\'s date) onto the vehicle reservation contract.', list: 1 },
+      { id: 3, order: 4, alpha: ' ', content: 'The clerk then marks the contract active by entering the vehicle release data (today\'s date) onto the vehicle reservation contract.', list: 1 },
       { id: 4, order: 5, alpha: ' ', content: 'The use case terminates at ths point.', list: 1 }
     ])
 
@@ -83,7 +83,9 @@ export default {
     <p>To map a real life scenario to code, it has to be listed in sequence. Drag and drop the sentences listed below
       onto the blanks in the timeline given below to continue.</p>
   </header>
-  <main class="flexbox">
+  <main>
+    <div class="flex-parent">
+    <div class="flexbox">
     <div class="drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(1)" :key="item.id" class="drag-el" draggable="true"
         @dragstart="startDrag($event, item)">
@@ -95,12 +97,14 @@ export default {
         </div>
       </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
-      <div class="drag-el">
+  </div>
+  <div class="flexbox">
+    <div class="drag-el">
         <div class="aplha" style="text-align: center; width: 100%; color: white;">
         <h3> START </h3>
       </div>
       </div>
+    <div class="drop-zone-single" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(2)" :key="item.alpha" class="drag-el" draggable="true"
         @dragstart="startDrag($event, item)">
         <div class="aplha">
@@ -110,9 +114,55 @@ export default {
           <p>{{ item.content }}</p>
         </div>
       </div>
-      <div class="drag-el">
+    </div>
+    <div class="drop-zone-single" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(3)" :key="item.alpha" class="drag-el" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <div class="aplha">
+          <h3>{{ item.alpha }}</h3>
+        </div>
+        <div class="cardtext">
+          <p>{{ item.content }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="drop-zone-single" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(4)" :key="item.alpha" class="drag-el" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <div class="aplha">
+          <h3>{{ item.alpha }}</h3>
+        </div>
+        <div class="cardtext">
+          <p>{{ item.content }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="drop-zone-single" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(5)" :key="item.alpha" class="drag-el" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <div class="aplha">
+          <h3>{{ item.alpha }}</h3>
+        </div>
+        <div class="cardtext">
+          <p>{{ item.content }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="drop-zone-single" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(6)" :key="item.alpha" class="drag-el" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <div class="aplha">
+          <h3>{{ item.alpha }}</h3>
+        </div>
+        <div class="cardtext">
+          <p>{{ item.content }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="drag-el">
         <div class="aplha" style="text-align: center; color: white; width: 100%;">
         <h3> END </h3>
+      </div>
       </div>
       </div>
     </div>
@@ -130,10 +180,22 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 50%;
-  max-width: 600px;
-  margin: 25px;
+  min-width: fit-content;
+  max-width: 650px;
+  margin: 5px;
   min-height: 80vh;
+  background-color: #F9FAFE;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.drop-zone-single {
+  min-width: 500px;
+  max-width: 650px;
+  margin: 10px;
+  min-height: 10vh;
+  max-height: fit-content;
   background-color: #F9FAFE;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
   border-radius: 10px;
@@ -173,11 +235,15 @@ export default {
   background-color: #fff;
 }
 
+.flex-parent{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 
 .flexbox {
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
+  flex-direction: column;
 
   height: 100%;
   width: 100%;

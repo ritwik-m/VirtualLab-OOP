@@ -178,6 +178,7 @@ export default {
         this.$router.push('/screen-three')
       }
       else{
+        alert('There\'s some mistake')
         console.log('There\'s some mistake')
       }
 
@@ -197,6 +198,7 @@ export default {
     <h3 style="margin-left: 15px; margin-bottom: 0">Sample: </h3>
     <img src="../assets/sample-1.png" alt="Sample image" class="image">
   </div>
+  <div class="flexbox">
   <div class="flex-horizontal">
     <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(6)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
@@ -294,6 +296,7 @@ export default {
       </div>
     </div>
   </main>
+</div>
   <footer>
     <div id="buttons" class="relative">
       <button class="navitem">Back</button>
@@ -333,29 +336,34 @@ export default {
 
 .drop-zone {
   display: flex;
-  min-width: 18ch;
-  margin: 10px;
+  /* width: fit-content; */
+  min-width: 40ch;
+  max-width: 60ch;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
-  height: 20%;
+  max-height: fit-content;
   min-height: 10vh;
   flex-wrap: wrap;
   flex-direction: row;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .flex-horizontal{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  height: 100%;
+  justify-content:space-evenly;
 }
 
 .drag-el-horizontal {
-  padding-left: 3vh;
-  padding-right: 3vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
   border-radius: 10px;
-  margin: 10px;
+  margin: 5px;
   height: fit-content;
   max-width: fit-content;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
@@ -364,31 +372,39 @@ export default {
 
 .drop-zone-horizontal {
   display: flex;
-  width: 95%;
+  max-width: 1000px;
+  min-width: 700px;
   margin: 10px;
   margin-bottom: 25px;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
   background-color: #F9FAFE;
-  height: 50%;
-  min-height: fit-content;
+  min-height: 10vh;
   border-radius: 10px;
   max-height: fit-content;
-  overflow: clip;
+  overflow: auto;
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10px;
 }
 
+.drag-el-horizontal:nth-last-child(){
+  margin-bottom: 0;
+}
+
+.drag-el:nth-last-child(){
+  margin-bottom: 0;
+}
+
 .flexbox {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 
   height: 100%;
   width: 100%;
 
   overflow: hidden;
 
-  margin: 0 10;
+  margin: 0;
   padding: 15px
 }
 
