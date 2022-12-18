@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+.flex-horizontal{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+
 .popup{
   background: white;
   width: 420px;
@@ -49,7 +56,7 @@ p1 {
   margin-top: 15px;
   text-align: center;
   text-decoration: underline;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   font-weight: bold;
 }
 
@@ -58,8 +65,8 @@ p {
 }
 
 body {
-  background-color: rgb(200, 219, 228);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F9FAFE;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
 .flexbox {
@@ -67,22 +74,43 @@ body {
   justify-content: space-between;
   margin: 0 auto;
   padding: 15px;
+
 }
 
 .flexbox table {
   display: flex;
   flex-direction: column;
-  background-color: #313131;
+  background-color: #F9FAFE;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
   padding: 10px;
   margin: auto;
-  border-radius: 25px;
+  border-radius: 15px;
+
+}
+
+.flexbox1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+
+.flexbox1 table {
+  display: flex;
+  flex-direction: column;
+  background-color: #F9FAFE;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
+  padding: 10px;
+  margin: auto;
+  border-radius: 15px;
 
 }
 
 th {
-  color: rgb(164, 196, 240);
   padding: 15px;
-  text-decoration: underline;
+  font-weight:300;
+  text-transform: none;
 }
 
 tr,
@@ -104,7 +132,10 @@ td {
 #dt3,
 #dt4,
 #dt5 {
-  background-color: #F3F3F3;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
+  
 }
 
 #meth1,
@@ -117,7 +148,9 @@ td {
 #meth8,
 #meth9,
 #meth10 {
-  background-color: #F3F3F3;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
 
@@ -129,6 +162,7 @@ td {
 
 .button4 {
   background-color: white;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
   color: black;
   border: 2px solid #017047;
   border: none;
@@ -147,6 +181,7 @@ td {
 
 .button4:hover {
   background-color: #017047;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
   color: white;
 }
 
@@ -160,40 +195,40 @@ td {
   margin-left: 35%;
   margin-top: 7%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
 }
 
 .inp2 {
   margin-left: 35%;
   margin-top: 25%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
 }
 
 .inp3 {
   margin-left: 19%;
   margin-top: 16.5%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
 }
 
 .inp4 {
   margin-left: 62%;
   margin-top: 16.5%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
 }
 
 .inp5 {
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   margin-top: 17%;
   margin-left: 43%;
 }
 
 .inp6 {
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   margin-left: 30%;
   margin-top: 20%;
 }
@@ -202,7 +237,7 @@ td {
   margin-left: 26%;
   margin-top: 10%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 }
 
@@ -210,7 +245,7 @@ td {
   margin-left: 50%;
   margin-top: 10%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 }
 
@@ -218,7 +253,7 @@ td {
   margin-left: 30%;
   margin-top: 28%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 }
 
@@ -226,7 +261,7 @@ td {
   margin-left: 50%;
   margin-top: 28%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 
 }
@@ -235,7 +270,7 @@ td {
   margin-left: 16%;
   margin-top: 13%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 }
 
@@ -243,7 +278,7 @@ td {
   margin-left: 16%;
   margin-top: 19%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 
 }
@@ -252,7 +287,7 @@ td {
   margin-left: 58%;
   margin-top: 13%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 
 }
@@ -261,7 +296,7 @@ td {
   margin-left: 58%;
   margin-top: 20%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 
 }
@@ -270,7 +305,7 @@ td {
   margin-left: 26%;
   margin-top: 14%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 
 }
@@ -279,7 +314,7 @@ td {
   margin-left: 50%;
   margin-top: 24%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 }
 
@@ -287,7 +322,7 @@ td {
   margin-left: 50%;
   margin-top: 14%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 
 }
@@ -296,7 +331,7 @@ td {
   margin-left: 30%;
   margin-top: 24%;
   position: absolute;
-  background-color: #ebf3ff;
+  background-color: #ffffff;
   width: 25px;
 
 }

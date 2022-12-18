@@ -6,21 +6,21 @@
 
 
 <body>
-     <!-- popup box -->
+    <!-- popup box -->
     <div class="popup">
         <button id="close">&times;</button>
         <h2 id="head"></h2>
-        <p id = "body">
+        <p id="body">
         </p>
         <a href="relations.html" id="link" style="text-align: right; padding-right: 10px;"></a>
     </div>
 
-    <h2 style="text-align: center; text-decoration: underline; padding: 15px; font-family: ui-serif,Georgia,Cambria,Times New Roman,Times,serif;">
-    Map the elements and respective datatypes to their classes by dragging and dropping.</h2>
+    <h2 style="padding: 25px;">
+        Map the elements and respective datatypes to their classes by dragging and dropping.</h2>
     <main class="flexbox">
         <table>
             <tr>
-                <th>ATTRIBUTES</th>
+                <th>Attributes</th>
             </tr>
             <tr>
                 <td id="attr1" draggable="true" ondragstart="drag(event)">cname</td>
@@ -48,10 +48,97 @@
             </tr>
         </table>
 
+        <div class="flex-horizontal">
+
+
+            <div>
+                <h3 style="margin-bottom: 10px; margin-left: 4px;">Customer</h3>
+
+                <table id="cust">
+
+                    <tr>
+                        <th>Attributes</th>
+                        <th>Datatypes</th>
+                    </tr>
+                    <tr>
+                        <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="c1"></td>
+                        <td ondrop="drop(event)" ondragover="allowdrop(event)" id="c2"></td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 10px; margin-left: 4px;">Clerk</h3>
+
+                <table id="clerk">
+
+                    <tr>
+                        <th>Attributes</th>
+                        <th>Datatypes</th>
+                    </tr>
+                    <tr>
+                        <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="cl1"></td>
+                        <td ondrop="drop(event)" ondragover="allowdrop(event)" id="cl2"></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
+
+            <div>
+            <h3 style="margin-bottom: 10px; margin-left: 4px;">Reservation</h3>
+
+            <table id="reservation">
+
+                <tr>
+                    <th>Attributes</th>
+                    <th>Datatypes</th>
+                </tr>
+                <tr>
+                    <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="r1"></td>
+                    <td ondrop="drop(event)" ondragover="allowdrop(event)" id="r2"></td>
+                </tr>
+                <tr>
+                    <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="r3"></td>
+                    <td ondrop="drop(event)" ondragover="allowdrop(event)" id="r4"></td>
+                </tr>
+                <tr>
+                    <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="r5"></td>
+                    <td ondrop="drop(event)" ondragover="allowdrop(event)" id="r6"></td>
+                </tr>
+                <tr>
+                    <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="r7"></td>
+                    <td ondrop="drop(event)" ondragover="allowdrop(event)" id="r8"></td>
+                </tr>
+            </table>
+        </div>
+            <br>
+            <br>
+<div>
+            <h3 style="margin-bottom: 10px; margin-left: 4px;">Vehicle</h3>
+
+            <table>
+
+                <tr>
+                    <th>Attributes</th>
+                    <th>Datatypes</th>
+                </tr>
+                <tr>
+                    <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="v1"></td>
+                    <td ondrop="drop(event)" ondragover="allowdrop(event)" id="v2"></td>
+                </tr>
+                <tr>
+                    <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="v3"></td>
+                    <td ondrop="drop(event)" ondragover="allowdrop(event)" id="v4"></td>
+                </tr>
+            </table>
+</div>
+        </div>
 
         <table>
             <tr>
-                <th>DATATYPES</th>
+                <th>Datatypes</th>
             </tr>
             <tr>
                 <td id="dt1" draggable="true" ondragstart="drag(event)">int</td>
@@ -70,88 +157,6 @@
             </tr>
         </table>
 
-        <table id="cust">
-            <tr>
-                <th colspan="2">CUSTOMER</th>
-            </tr>
-            <tr>
-                <th>ATTRIBUTES</th>
-                <th>DATATYPES</th>
-            </tr>
-            <tr>
-                <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="c1"></td>
-                <td ondrop="drop(event)" ondragover="allowdrop(event)" id="c2"></td>
-            </tr>
-        </table>
-        <br>
-        <br>
-
-
-        <table id="clerk">
-            <tr>
-                <th colspan="2">CLERK</th>
-            </tr>
-            <tr>
-                <th>ATTRIBUTES</th>
-                <th>DATATYPES</th>
-            </tr>
-            <tr>
-                <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="cl1"></td>
-                <td ondrop="drop(event)" ondragover="allowdrop(event)" id="cl2"></td>
-            </tr>
-        </table>
-
-        <br>
-        <br>
-
-
-        <table id="reservation">
-            <tr>
-                <th colspan="2">RESERVATION</th>
-            </tr>
-            <tr>
-                <th>ATTRIBUTES</th>
-                <th>DATATYPES</th>
-            </tr>
-            <tr>
-                <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="r1"></td>
-                <td ondrop="drop(event)" ondragover="allowdrop(event)" id="r2"></td>
-            </tr>
-            <tr>
-                <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="r3"></td>
-                <td ondrop="drop(event)" ondragover="allowdrop(event)" id="r4"></td>
-            </tr>
-            <tr>
-                <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="r5"></td>
-                <td ondrop="drop(event)" ondragover="allowdrop(event)" id="r6"></td>
-            </tr>
-            <tr>
-                <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="r7"></td>
-                <td ondrop="drop(event)" ondragover="allowdrop(event)" id="r8"></td>
-            </tr>
-        </table>
-
-        <br>
-        <br>
-
-        <table>
-            <tr>
-                <th colspan="2">VEHICLE</th>
-            </tr>
-            <tr>
-                <th>ATTRIBUTES</th>
-                <th>DATATYPES</th>
-            </tr>
-            <tr>
-                <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="v1"></td>
-                <td ondrop="drop(event)" ondragover="allowdrop(event)" id="v2"></td>
-            </tr>
-            <tr>
-                <td ondrop="drop2(event)" ondragover="allowdrop(event)" id="v3"></td>
-                <td ondrop="drop(event)" ondragover="allowdrop(event)" id="v4"></td>
-            </tr>
-        </table>
-
     </main>
     <input type="submit" class="button4" style="margin-left: 40%;" onclick="validate()">
     <button class="button4" onClick="window.location.reload();">Reset</button>
@@ -160,9 +165,9 @@
 </body>
 
 <script>
-    document.querySelector("#close").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
-});
+    document.querySelector("#close").addEventListener("click", function () {
+        document.querySelector(".popup").style.display = "none";
+    });
 </script>
 
 </html>
