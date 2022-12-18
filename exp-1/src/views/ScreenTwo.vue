@@ -43,7 +43,7 @@ export default {
       { id: 37, word: 'key', list: 3 },
       { id: 38, word: 'to', list: 3 },
       { id: 39, word: 'the', list: 3 },
-      { id: 40, word: 'vehicle', list: 3 },
+      { id: 40, word: 'customer', list: 3 },
       { id: 41, word: 'The', list: 4},
       { id: 42, word: 'clerk', list: 4},
       { id: 43, word: 'then', list: 4},
@@ -98,22 +98,91 @@ export default {
       onDrop
     }
   },
+  data() {
+    return {
+      valid: true
+    }
+  },
   methods:{
     validate(){
       let final_list = []
       let i = 0;
       let j = 0;
-      for (i = 6; i < 13; i++){
+      for (i = 6; i < 16; i++){
         final_list.push(this.getList(i))
       }
       console.log(final_list)
       for(j = 0; j < final_list.length; j++){
+        let word = ''
         for (i = 0; i < final_list[j].length;i++){
-        console.log(final_list[j][i].word)
+          word = word + final_list[j][i].word + ' '
         }
+        final_list[j] = word
       }
-    
-      this.$router.push('/screen-three')
+
+      let final_string = final_list.join(' ')
+
+      if(!final_string.includes('customer')){
+        this.valid = false
+        console.log('Customer not found')
+      }
+
+      if(!final_string.includes('clerk')){
+        this.valid = false
+        console.log('Clerk not found')
+      }
+
+      if(!final_string.includes('office')){
+        this.valid = false
+        console.log('Office not found')
+      }
+
+
+      if(!final_string.includes('vehicle')){
+        this.valid = false
+        console.log('Vehicle not found')
+      }
+
+      if(!final_string.includes('reservation')){
+        this.valid = false
+        console.log('Reservation not found')
+      }
+
+      if(!final_string.includes('customer name')){
+        this.valid = false
+        console.log('Customer name not found')
+      }
+
+      if(!final_string.includes('key')){
+        this.valid = false
+        console.log('Key not found')
+      }
+
+      if(!final_string.includes('vehicle reservation contract')){
+        this.valid = false
+        console.log('Vehicle reservation contract not found')
+      }
+
+      if(!final_string.includes('reservation number')){
+        this.valid = false
+        console.log('Reservation number not found')
+      }
+
+      if(!final_string.includes('vehicle release date')){
+        this.valid = false
+        console.log('Vehicle release date not found')
+      }
+
+  
+      if(this.valid){
+        this.$router.push('/screen-three')
+      }
+      else{
+        alert('There\'s some mistake')
+        console.log('There\'s some mistake')
+      }
+
+      console.log(final_string)
     }
   }
 }
@@ -129,6 +198,7 @@ export default {
     <h3 style="margin-left: 15px; margin-bottom: 0">Sample: </h3>
     <img src="../assets/sample-1.png" alt="Sample image" class="image">
   </div>
+  <div class="flexbox">
   <div class="flex-horizontal">
     <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(6)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
@@ -172,6 +242,24 @@ export default {
         <p>{{ item.word }}</p>
         </div>
     </div>
+    <div class="identify-box drop-zone" @drop="onDrop($event, 13)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(13)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+        </div>
+    </div>
+    <div class="identify-box drop-zone" @drop="onDrop($event, 14)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(14)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+        </div>
+    </div>
+    <div class="identify-box drop-zone" @drop="onDrop($event, 15)" @dragenter.prevent @dragover.prevent>
+      <div v-for="item in getList(15)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+        @dragstart="startDrag($event, item)">
+        <p>{{ item.word }}</p>
+        </div>
+    </div>
   </div>
   <main class="flex">
     <div style="height: 60px">
@@ -208,6 +296,7 @@ export default {
       </div>
     </div>
   </main>
+</div>
   <footer>
     <div id="buttons" class="relative">
       <button class="navitem">Back</button>
@@ -247,29 +336,34 @@ export default {
 
 .drop-zone {
   display: flex;
-  min-width: 18ch;
-  margin: 10px;
+  /* width: fit-content; */
+  min-width: 40ch;
+  max-width: 60ch;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
-  height: 20%;
+  max-height: fit-content;
   min-height: 10vh;
   flex-wrap: wrap;
   flex-direction: row;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .flex-horizontal{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  height: 100%;
+  justify-content:space-evenly;
 }
 
 .drag-el-horizontal {
-  padding-left: 3vh;
-  padding-right: 3vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
   border-radius: 10px;
-  margin: 10px;
+  margin: 5px;
   height: fit-content;
   max-width: fit-content;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
@@ -278,31 +372,39 @@ export default {
 
 .drop-zone-horizontal {
   display: flex;
-  width: 95%;
+  max-width: 1000px;
+  min-width: 700px;
   margin: 10px;
   margin-bottom: 25px;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
   background-color: #F9FAFE;
-  height: 50%;
-  min-height: fit-content;
+  min-height: 10vh;
   border-radius: 10px;
   max-height: fit-content;
-  overflow: clip;
+  overflow: auto;
   flex-wrap: wrap;
   flex-direction: row;
   padding: 10px;
 }
 
+.drag-el-horizontal:nth-last-child(){
+  margin-bottom: 0;
+}
+
+.drag-el:nth-last-child(){
+  margin-bottom: 0;
+}
+
 .flexbox {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 
   height: 100%;
   width: 100%;
 
   overflow: hidden;
 
-  margin: 0 10;
+  margin: 0;
   padding: 15px
 }
 

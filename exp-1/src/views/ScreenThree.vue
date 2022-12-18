@@ -4,15 +4,15 @@ export default {
   setup() {
     const items = ref([
       { id: 0, word: 'Customer', list: 1 },
-      { id: 1, word: 'Customer name', list: 1 },
+      { id: 1, word: 'Reservation', list: 1 },
       { id: 2, word: 'Clerk', list: 1 },
-      { id: 3, word: 'Office', list: 1 },
-      { id: 4, word: 'Vehicle', list: 1 },
-      { id: 5, word: 'keys', list: 1 },
-      { id: 6, word: 'Vehicle reservation contract', list: 1 },
-      { id: 7, word: 'Reservation number', list: 1 },
-      { id: 8, word: 'Vehicle release date', list: 1 },
-      { id: 9, word: 'Reservation', list: 1 },
+      { id: 3, word: 'Vehicle', list: 1 },
+      { id: 4, word: 'Customer name', list: 1 },
+      { id: 5, word: 'Office', list: 1 },
+      { id: 6, word: 'Key', list: 1 },
+      { id: 7, word: 'Vehicle reservation contract', list: 1 },
+      { id: 8, word: 'Reservation number', list: 1 },
+      { id: 9, word: 'Vehicle release date', list: 1 },
       { id: 10, word: 'Clerk name', list: 1 },
     ])
 
@@ -49,10 +49,28 @@ export default {
         final_list.push(this.getList(i))
       }
       console.log(final_list)
-      this.$router.push('/')
+      let j = 0;
+      let final_string = ''
+      for(i=0;i<final_list.length;i++){
+        let final_word = ''
+        for(j=0;j<final_list[i].length;j++){
+        final_word = final_word + final_list[i][j].word + ' '
+        }
+        final_string = final_string + final_word + ' '
+      }
+      console.log(final_string)
+      
+      if(final_string.includes('Customer Customer name') && final_string.includes('Reservation Vehicle reservation contract Reservation number Vehicle release date') && final_string.includes('Clerk Office Clerk name')&& final_string.includes('Vehicle Key')){
+        alert('Correct')
+        this.$router.push('/')
+      }
+      else{
+        alert('Incorrect')
+      }
     }
   }
 }
+
 </script>
 
 <template class="app">
@@ -90,7 +108,7 @@ export default {
   <main class="flexbox">
 
     <div class="drop-zone-horizontal" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(1)" :key="item.id" class="drag-el-horizontal" draggable="true"
+      <div v-for="item in getList(1)" :Key="item.id" class="drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
