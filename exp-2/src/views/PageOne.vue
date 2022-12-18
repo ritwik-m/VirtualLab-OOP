@@ -71,6 +71,18 @@ export default {
       { id: 65, word: 'at', list: 5},
       { id: 66, word: 'this', list: 5},
       { id: 67, word: 'point', list: 5},
+      { id: 69, word: 'Exception', list: 2},
+      { id: 70, word: 'required', list: 2},
+      { id: 71, word: 'vehicle', list: 2},
+      { id: 72, word: 'type', list: 2},
+      { id: 73, word: 'is', list: 2},
+      { id: 74, word: 'not', list: 2},
+      { id: 75, word: 'available', list: 2},
+      { id: 76, word: 'due', list: 2},
+      { id: 77, word: 'to', list: 2},
+      { id: 78, word: 'late', list: 2},
+      { id: 79, word: 'arrivals', list: 2},
+
       
     ])
 
@@ -143,7 +155,7 @@ export default {
         console.log('Signs the contract not found')
       }
 
-      if(!final_string.includes('gives the keys')){
+      if(!final_string.includes('gives the key')){
         this.valid = false
         console.log('Gives the keys not found')
       }
@@ -155,6 +167,7 @@ export default {
 
      
       if(this.valid){
+        alert('Correct')
         this.$router.push('/screen-three')
       }
       else{
@@ -371,7 +384,6 @@ export default {
  width: 100%;
  flex-direction: row;
  justify-content: space-between;
- background-color: #fff;
 } 
 .navitem {
   width: 100px; 
