@@ -1,6 +1,6 @@
 # VirtualLab-OOP
 
-
+https://pcpartpicker.com/list/VvCHZw
 
 ## Getting started
 
