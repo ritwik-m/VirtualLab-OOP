@@ -1,3 +1,5 @@
+
+
 <script>
 import { ref } from 'vue'
 export default {
@@ -73,6 +75,11 @@ export default {
       { id: 67, word: 'point', list: 5},
       
     ])
+
+    //Wrong elements 
+    //Missing phrases
+    //remove space between identified words
+    
 
     const getList = (list) => {
       return items.value.filter((item) => item.list === list)
