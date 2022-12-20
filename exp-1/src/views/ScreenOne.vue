@@ -3,15 +3,14 @@ import { ref } from 'vue'
 export default {
   setup() {
     const items = ref([
-      { id: 0, order: 1, alpha: ' ', content: 'A customer comes to the office to acquire a vehicle', list: 1 },
-      { id: 1, order: 2, alpha: ' ', content: 'The clerk locates the vehicle reservation contract by means of the reservation number and/or customer name. [Exception: Required vehicle type is not available due to late arrivals.]', list: 1 },
-      { id: 2, order: 3, alpha: ' ', content: 'The customer signs the contract and the clerk gives the keys to the vehicle.', list: 1 },
-      { id: 3, order: 4, alpha: ' ', content: 'The clerk then marks the contract active by entering the vehicle release data (today\'s date) onto the vehicle reservation contract.', list: 1 },
-      { id: 4, order: 5, alpha: ' ', content: 'The use case terminates at ths point.', list: 1 }
+    { id: 5, alpha: ' ', order: 4, content: 'The clerk then marks the contract active by entering the vehicle release data (today\'s date) onto the vehicle reservation contract.', list: 1 },
+      { id: 0, alpha: ' ', order: 5, content: 'A customer comes to the office to acquire a vehicle', list: 1 },
+      { id: 12, alpha: ' ', order: 2, content: 'The customer signs the contract and the clerk gives the keys to the vehicle.', list: 1 },
+      { id: 2, alpha: ' ', order: 1, content: 'The use case terminates at ths point.', list: 1 },
+      { id: 5, alpha: ' ', order: 3, content: 'The clerk locates the vehicle reservation contract by means of the reservation number and/or customer name. [Exception: Required vehicle type is not available due to late arrivals.]', list: 1 },
     ])
 
     const getList = (list) => {
-      items.value.sort((a, b) => a.order - b.order)
       return items.value.filter((item) => item.list === list)
     }
 
@@ -36,43 +35,34 @@ export default {
     }
   },
   methods: {
-    shuffleArray(array) {
-      for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-      }
-    },
     validate() {
-      if (this.getList(2).length == 5) {
+      let final_list = []
+      let i = 0
+      for (let i = 2; i < 7; i++) {
+        final_list.push(this.getList(i))
+      }
+      console.log(final_list)
+
+      let j = 0;
+      let final_string = ''
+      for (i = 0; i < final_list.length; i++) {
+        let final_word = ''
+        for (j = 0; j < final_list[i].length; j++) {
+          final_word = final_word + final_list[i][j].content + ' '
+        }
+        final_string = final_string + final_word + ' '
+      }
+      console.log(final_string)
+      let answer = "A customer comes to the office to acquire a vehicle  The clerk locates the vehicle reservation contract by means of the reservation number and/or customer name. [Exception: Required vehicle type is not available due to late arrivals.]  The customer signs the contract and the clerk gives the keys to the vehicle.  The clerk then marks the contract active by entering the vehicle release data (today's date) onto the vehicle reservation contract.  The use case terminates at ths point."
+      if (final_string.localeCompare(answer)) {
+        alert("Correct")
         this.$router.push('/screen-two')
       }
+
       else {
-        alert("Please drag all the sentences to the timeline")
+        alert('No, sorry')
       }
     },
-    getNum(v){
-      let n = v.length;
-      let index = Math.floor(Math.random() % n);
-      let num = v[index];
-
-      v[index] = v[n - 1];
-      v.splice(n - 1, 1);
-
-      return num;
-    },
-
-    generateRandom(n){
-      let v = [];
-
-      for (let i = 0; i < n; i++)
-        v.push(i + 1);
-
-      while (v.length > 0) {
-        console.log(this.getNum(v));
-      }
-    }
   },
 }
 </script>
@@ -85,85 +75,85 @@ export default {
   </header>
   <main>
     <div class="flex-parent">
-    <div class="flexbox">
-    <div class="drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(1)" :key="item.id" class="drag-el" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <div class="aplha">
-          <h3>{{ item.alpha }}</h3>
-        </div>
-        <div class="cardtext">
-          <p>{{ item.content }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="flexbox">
-    <div class="drag-el">
-        <div class="aplha" style="text-align: center; width: 100%; color: white;">
-        <h3> START </h3>
-      </div>
-      </div>
-    <div class="drop-zone-single" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(2)" :key="item.alpha" class="drag-el" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <div class="aplha">
-          <h3>{{ item.alpha }}</h3>
-        </div>
-        <div class="cardtext">
-          <p>{{ item.content }}</p>
+      <div class="flexbox">
+        <div class="drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
+          <div v-for="item in getList(1)" :key="item.order" class="drag-el" draggable="true"
+            @dragstart="startDrag($event, item)">
+            <div class="aplha">
+              <h3>{{ item.alpha }}</h3>
+            </div>
+            <div class="cardtext">
+              <p>{{ item.content }}</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="drop-zone-single" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(3)" :key="item.alpha" class="drag-el" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <div class="aplha">
-          <h3>{{ item.alpha }}</h3>
+      <div class="flexbox">
+        <div class="drag-el">
+          <div class="aplha" style="text-align: center; width: 100%; color: white;">
+            <h3> START </h3>
+          </div>
         </div>
-        <div class="cardtext">
-          <p>{{ item.content }}</p>
+        <div class="drop-zone-single" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
+          <div v-for="item in getList(2)" :key="item.alpha" class="drag-el" draggable="true"
+            @dragstart="startDrag($event, item)">
+            <div class="aplha">
+              <h3>{{ item.alpha }}</h3>
+            </div>
+            <div class="cardtext">
+              <p>{{ item.content }}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="drop-zone-single" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(4)" :key="item.alpha" class="drag-el" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <div class="aplha">
-          <h3>{{ item.alpha }}</h3>
+        <div class="drop-zone-single" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
+          <div v-for="item in getList(3)" :key="item.alpha" class="drag-el" draggable="true"
+            @dragstart="startDrag($event, item)">
+            <div class="aplha">
+              <h3>{{ item.alpha }}</h3>
+            </div>
+            <div class="cardtext">
+              <p>{{ item.content }}</p>
+            </div>
+          </div>
         </div>
-        <div class="cardtext">
-          <p>{{ item.content }}</p>
+        <div class="drop-zone-single" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
+          <div v-for="item in getList(4)" :key="item.alpha" class="drag-el" draggable="true"
+            @dragstart="startDrag($event, item)">
+            <div class="aplha">
+              <h3>{{ item.alpha }}</h3>
+            </div>
+            <div class="cardtext">
+              <p>{{ item.content }}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="drop-zone-single" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(5)" :key="item.alpha" class="drag-el" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <div class="aplha">
-          <h3>{{ item.alpha }}</h3>
+        <div class="drop-zone-single" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
+          <div v-for="item in getList(5)" :key="item.alpha" class="drag-el" draggable="true"
+            @dragstart="startDrag($event, item)">
+            <div class="aplha">
+              <h3>{{ item.alpha }}</h3>
+            </div>
+            <div class="cardtext">
+              <p>{{ item.content }}</p>
+            </div>
+          </div>
         </div>
-        <div class="cardtext">
-          <p>{{ item.content }}</p>
+        <div class="drop-zone-single" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
+          <div v-for="item in getList(6)" :key="item.alpha" class="drag-el" draggable="true"
+            @dragstart="startDrag($event, item)">
+            <div class="aplha">
+              <h3>{{ item.alpha }}</h3>
+            </div>
+            <div class="cardtext">
+              <p>{{ item.content }}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="drop-zone-single" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(6)" :key="item.alpha" class="drag-el" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <div class="aplha">
-          <h3>{{ item.alpha }}</h3>
+        <div class="drag-el">
+          <div class="aplha" style="text-align: center; color: white; width: 100%;">
+            <h3> END </h3>
+          </div>
         </div>
-        <div class="cardtext">
-          <p>{{ item.content }}</p>
-        </div>
-      </div>
-    </div>
-    <div class="drag-el">
-        <div class="aplha" style="text-align: center; color: white; width: 100%;">
-        <h3> END </h3>
-      </div>
-      </div>
       </div>
     </div>
   </main>
@@ -175,7 +165,6 @@ export default {
 </template>
 
 <style scoped>
-
 .drop-zone {
   display: flex;
   flex-direction: column;
@@ -225,7 +214,7 @@ export default {
   z-index: 66;
 }
 
-.drag-el .cardtext{
+.drag-el .cardtext {
   width: 100%;
   position: relative;
   left: 0px;
@@ -235,7 +224,7 @@ export default {
   background-color: #fff;
 }
 
-.flex-parent{
+.flex-parent {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -248,7 +237,7 @@ export default {
   height: 100%;
   width: 100%;
   flex-wrap: wrap;
-  min-width:100px;
+  min-width: 100px;
 
   overflow: hidden;
 
