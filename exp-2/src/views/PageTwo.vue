@@ -3,87 +3,18 @@ import { ref } from 'vue'
 export default {
   setup() {
     const items = ref([
-      { id: 0, word: 'A', list: 1 },
-      { id: 1, word: 'customer', list: 6 },
-      { id: 2, word: 'comes', list: 6 },
-      { id: 3, word: 'to', list: 6 },
-      { id: 4, word: 'the', list: 6 },
-      { id: 5, word: 'office', list: 6 },
-      { id: 6, word: 'to', list: 1 },
-      { id: 7, word: 'acquire', list: 1 },
-      { id: 8, word: 'a', list: 1 },
-      { id: 9, word: 'vehicle', list: 1 },
-      { id: 10, word: 'The', list: 2 },
-      { id: 11, word: 'clerk', list: 2 },
-      { id: 12, word: 'locates', list: 2 },
-      { id: 13, word: 'the', list: 2 },
-      { id: 14, word: 'vehicle', list: 2 },
-      { id: 15, word: 'reservation', list: 2 },
-      { id: 16, word: 'contract', list: 2 },
-      { id: 17, word: 'by', list: 2 },
-      { id: 18, word: 'means', list: 2 },
-      { id: 19, word: 'of', list: 2 },
-      { id: 20, word: 'the', list: 2 },
-      { id: 21, word: 'reservation', list: 2 },
-      { id: 22, word: 'number', list: 2 },
-      { id: 23, word: 'and', list: 2 },
-      { id: 24, word: 'or', list: 2 },
-      { id: 25, word: 'customer', list: 2 },
-      { id: 26, word: 'name', list: 2 },
-      { id: 27, word: 'The', list: 3 },
-      { id: 28, word: 'customer', list: 3 },
-      { id: 29, word: 'signs', list: 3 },
-      { id: 30, word: 'the', list: 3 },
-      { id: 31, word: 'contract', list: 3 },
-      { id: 32, word: 'and', list: 3 },
-      { id: 33, word: 'the', list: 3 },
-      { id: 34, word: 'clerk', list: 3 },
-      { id: 35, word: 'gives', list: 3 },
-      { id: 36, word: 'the', list: 3 },
-      { id: 37, word: 'key', list: 3 },
-      { id: 38, word: 'to', list: 3 },
-      { id: 39, word: 'the', list: 3 },
-      { id: 40, word: 'customer', list: 3 },
-      { id: 41, word: 'The', list: 4},
-      { id: 42, word: 'clerk', list: 4},
-      { id: 43, word: 'then', list: 4},
-      { id: 44, word: 'marks', list: 4},
-      { id: 45, word: 'the', list: 4},
-      { id: 46, word: 'contract', list: 4},
-      { id: 47, word: 'active', list: 4},
-      { id: 48, word: 'by', list: 4},
-      { id: 49, word: 'entering', list: 4},
-      { id: 50, word: 'the', list: 4},
-      { id: 51, word: 'vehicle', list: 4},
-      { id: 52, word: 'release', list: 4},
-      { id: 53, word: 'date', list: 4},
-      { id: 54, word: 'today\'s', list: 4},
-      { id: 55, word: 'date', list: 4},
-      { id: 56, word: 'onto', list: 4},
-      { id: 57, word: 'the', list: 4},
-      { id: 58, word: 'vehicle', list: 4},
-      { id: 59, word: 'reservation', list: 4},
-      { id: 60, word: 'contract', list: 4},
-      { id: 61, word: 'The', list: 5},
-      { id: 62, word: 'use', list: 5},
-      { id: 63, word: 'case', list: 5},
-      { id: 64, word: 'terminates', list: 5},
-      { id: 65, word: 'at', list: 5},
-      { id: 66, word: 'this', list: 5},
-      { id: 67, word: 'point', list: 5},
-      { id: 69, word: 'Exception', list: 2},
-      { id: 70, word: 'required', list: 2},
-      { id: 71, word: 'vehicle', list: 2},
-      { id: 72, word: 'type', list: 2},
-      { id: 73, word: 'is', list: 2},
-      { id: 74, word: 'not', list: 2},
-      { id: 75, word: 'available', list: 2},
-      { id: 76, word: 'due', list: 2},
-      { id: 77, word: 'to', list: 2},
-      { id: 78, word: 'late', list: 2},
-      { id: 79, word: 'arrivals', list: 2},
-
-      
+      { id: 6, word: 'requestVehicle', list: 13 },
+      { id: 7, word: 'signContract', list: 13 },
+      { id: 8, word: '[wait for Vehicle]', list: 13 },
+      { id: 9, word: 'locateReservation', list: 13 },
+      { id: 10, word: 'initiateContract', list: 13 },
+      { id: 11, word: 'releaseContract', list: 13 },
+      { id: 12, word: 'updateKeyStatus', list: 13 },
+      { id: 13, word: '[key handed over]', list: 13 },
+      { id: 14, word: '[to give keys]', list: 13 },
+      { id: 15, word: '[vehicle on trip]', list: 13 },
+      { id: 16, word: '[vehicle available]', list: 13 },
+      { id: 17, word: '[reservation released]', list: 13 },
     ])
 
     const getList = (list) => {
@@ -115,66 +46,55 @@ export default {
       valid: true
     }
   },
-  methods:{
-    validate(){
-      let final_list = []
-      let i = 0;
-      let j = 0;
-      for (i = 6; i < 12; i++){
-        final_list.push(this.getList(i))
-      }
-      console.log(final_list)
-      for(j = 0; j < final_list.length; j++){
-        let word = ''
-        for (i = 0; i < final_list[j].length;i++){
-          word = word + final_list[j][i].word + ' '
-        }
-        final_list[j] = word
+  methods: {
+    validate() {
+      let acquire = ''
+      let signs = ''
+      let locate = ''
+      let mark = ''
+      let give = ''
+      let vehicle = ''
+      
+      for (let i = 0; i< this.getList(1).length; i++) {
+        acquire = acquire + this.getList(1)[i].word
       }
 
-      let final_string = final_list.join(' ')
-
-      if(!final_string.includes('locates the vehicle')){
-        this.valid = false
-        console.log('Locate the vehicle not found')
+      for (let i = 0; i< this.getList(2).length; i++) {
+        signs = signs + this.getList(2)[i].word
       }
 
-      if(!final_string.includes('marks the contract active')){
-        this.valid = false
-        console.log('Marks the contract active not found')
+      for (let i = 0; i< this.getList(3).length; i++) {
+        locate = locate + this.getList(3)[i].word
       }
 
-      if(!final_string.includes('acquire a vehicle')){
-        this.valid = false
-        console.log('Acquire a vehicle not found')
+      for (let i = 0; i< this.getList(4).length; i++) {
+        mark = mark + this.getList(4)[i].word
+      }
+
+      for (let i = 0; i< this.getList(5).length; i++) {
+        give = give + (this.getList(5)[i].word)
+      }
+
+      for (let i = 0; i< this.getList(6).length; i++) {
+        vehicle = vehicle + this.getList(6)[i].word
+      }
+
+      console.log(acquire)
+      console.log(signs)
+      console.log(locate)
+      console.log(mark)
+      console.log(give)
+      console.log(vehicle)
+
+      if (acquire === 'requestVehicle[wait for Vehicle]' && signs === 'signContract' && locate === 'locateReservation' && mark === 'initiateContractreleaseContractupdateKeyStatus[key handed over]' && give === '[to give keys]' && vehicle === '[vehicle on trip][vehicle available][reservation released]') {
+        console.log('success')
+        alert('Success')
+        this.$router.push('/page-three')
+      } else {
+        alert('Please try again')
       }
 
 
-      if(!final_string.includes('signs the contract')){
-        this.valid = false
-        console.log('Signs the contract not found')
-      }
-
-      if(!final_string.includes('gives the key')){
-        this.valid = false
-        console.log('Gives the keys not found')
-      }
-
-      if(!final_string.includes('vehicle type is not available')){
-        this.valid = false
-        console.log('Vehicle type is not available name not found')
-      }
-
-     
-      if(this.valid){
-        alert('Correct')
-        this.$router.push('/screen-three')
-      }
-      else{
-        console.log('There\'s some mistake')
-      }
-
-      console.log(final_string)
     }
   }
 }
@@ -182,88 +102,128 @@ export default {
 
 
 <template class="app">
-    <header style="padding: 20px">
+  <header style="padding: 20px">
     <h1>Step 3: Finetuning verb phrases</h1>
-    <p>To identify verb phrases, drag words from the scenario description sentences and drop them into the noun phrase boxes. Some boxes take multiple words.</p>
+    <p>To identify verb phrases, drag words from the scenario description sentences and drop them into the noun phrase
+      boxes. Some boxes take multiple words.</p>
   </header>
-    <main>
-        <div class="flexbox">
-            <div class="flex-between">
-                <h3>Customer</h3>
-    <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(6)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <p>{{ item.word }}</p>
-        </div>
-    </div>
-    <h3>Reservation</h3>
-    <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(6)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <p>{{ item.word }}</p>
-        </div>
-    </div>
-</div>
-    <div class="flex-between">
-        <h3>Customer</h3>
-        <div class="flex-horizontal">
-        
-        <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(6)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <p>{{ item.word }}</p>
-        </div>
-        </div>
-        <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(6)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <p>{{ item.word }}</p>
-        </div>
-    </div>
-    </div>
-    <div>
-    <h3>Office</h3>
+  <main>
+    <div class="flex">
     <div class="flex-horizontal">
-        
-        <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(6)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <p>{{ item.word }}</p>
+      <div class="outer-box">
+
+        <h3>Customer</h3>
+        <div class="flex-between">
+          <div class="unidentified drag-el-horizontal" draggable="false">
+            <p style="font-weight: 500; padding-left: 15px; font-size:medium;">Acquire a vehicle</p>
+
+            <div class="drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
+              <div v-for="item in getList(1)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+                @dragstart="startDrag($event, item)">
+                <p>{{ item.word }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="unidentified drag-el-horizontal" draggable="false">
+            <p style="font-weight: 500; padding-left: 15px; font-size:medium;">Signs contract</p>
+
+            <div class="drop-zone" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
+              <div v-for="item in getList(2)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+                @dragstart="startDrag($event, item)">
+                <p>{{ item.word }}</p>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </div>
+
+      <div class="outer-box">
+
+        <h3>Clerk</h3>
+        <div class="flex-between">
+          <div class="unidentified drag-el-horizontal" draggable="false">
+            <p style="font-weight: 500; padding-left: 15px; font-size:medium;">Locates the vehicle</p>
+
+            <div class="drop-zone" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
+              <div v-for="item in getList(3)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+                @dragstart="startDrag($event, item)">
+                <p>{{ item.word }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="unidentified drag-el-horizontal" draggable="false">
+            <p style="font-weight: 500; padding-left: 15px; font-size:medium;">Marks the contract active</p>
+
+            <div class="drop-zone" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
+              <div v-for="item in getList(4)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+                @dragstart="startDrag($event, item)">
+                <p>{{ item.word }}</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(6)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <p>{{ item.word }}</p>
+      </div>
+
+      <div class="outer-box">
+        <h3>Vehicle</h3>
+        <div class="flex-between">
+          <div class="unidentified drag-el-horizontal" draggable="false">
+            <p style="font-weight: 500; padding-left: 15px; font-size:medium;">Give the keys</p>
+            <div class="drop-zone" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
+              <div v-for="item in getList(5)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+                @dragstart="startDrag($event, item)">
+                <p>{{ item.word }}</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    </div>
-</div>
+      </div>
+
+      <div class="outer-box">
+        <h3>Reservation</h3>
+        <div class="flex-between">
+          <div class="unidentified drag-el-horizontal" draggable="false">
+            <p style="font-weight: 500; padding-left: 15px; font-size:medium;">Vehicle type is not available</p>
+            <div class="drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
+              <div v-for="item in getList(6)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+                @dragstart="startDrag($event, item)">
+                <p>{{ item.word }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
-    <div class="flex-between">
-        <h3>Customer</h3>
-    <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(6)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <p>{{ item.word }}</p>
+
+    <div class="outer-box">
+        <h3>Fine Tuned Verbs</h3>
+        <div class="flex-between">
+          <div class="unidentified drag-el-horizontal" draggable="false">
+            <div class="drop-zone" @drop="onDrop($event, 13)" @dragenter.prevent @dragover.prevent>
+              <div v-for="item in getList(13)" :key="item.id" class="unidentified drag-el-horizontal" draggable="true"
+                @dragstart="startDrag($event, item)">
+                <p>{{ item.word }}</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <h3>Reservation</h3>
-    <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(6)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
-        @dragstart="startDrag($event, item)">
-        <p>{{ item.word }}</p>
-        </div>
-    </div>
-</div>
+      </div>
+
   </div>
-    </main>
+  </main>
+  <footer>
+    <div id="buttons" class="relative">
+      <button class="navitem">Back</button>
+      <button class="navitem" @click="validate()">Next</button>
+    </div>
+  </footer>
 </template>
 
 <style scoped>
-
-.image{
+.image {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -273,53 +233,83 @@ export default {
   padding: 0;
 }
 
-.identify-box{
+.identify-box {
   background-color: #fff;
 }
 
-.to-identify{
-  background-color: #F9FAFE;
-}
-.identified{
+.identified {
   background-color: #6D71FA;
   color: white;
 }
 
-.unidentified{
+.unidentified {
   background-color: #fff;
   color: black;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
-.flex-between{
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: auto;
-    gap: 10px;
+.flex-between {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: auto;
+  gap: 10px;
+  background-color: #F9FAFE;
 }
 
 .drop-zone {
   display: flex;
   /* width: fit-content; */
-  min-width: 40ch;
-  max-width: 60ch;
+  min-width: 30ch;
+  max-width: 600px;
   margin: 5px;
   height: fit-content;
-  box-shadow: 2px 3px 10px 2px #D7DFFF;
+  /* box-shadow: 2px 3px 10px 2px #D7DFFF; */
   max-height: fit-content;
-  min-height: 10vh;
+  min-height: 8vh;
   flex-wrap: wrap;
   flex-direction: column;
   border-radius: 10px;
   padding: 5px;
 }
 
-.flex-horizontal{
+.drop-zone-no-shadow {
+  display: flex;
+  min-width: 30ch;
+  max-width: 60ch;
+  margin: 5px;
+  height: fit-content;
+  max-height: fit-content;
+  min-height: 5vh;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.flex-horizontal {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content:flex-start;
+  justify-content: flex-start;
+}
+
+.flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.outer-box {
+  padding: 20px;
+  background-color: #F9FAFE;
+  /* box-shadow: 1px 2px 5px 1px #D7DFFF; */
+  max-width: 600px;
+  min-width: fit-content;
+  border-radius: 10px;
+
 }
 
 .drag-el-horizontal {
@@ -327,10 +317,11 @@ export default {
   padding-right: 2vh;
   border-radius: 10px;
   margin: 5px;
-  text-align: center;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   height: fit-content;
   max-width: inherit;
-  box-shadow: 2px 3px 10px 2px #D7DFFF;
+  /* box-shadow: 2px 3px 10px 2px #D7DFFF; */
   cursor: pointer;
 }
 
@@ -351,11 +342,11 @@ export default {
   padding: 10px;
 }
 
-.drag-el-horizontal:nth-last-child(){
+.drag-el-horizontal:nth-last-child() {
   margin-bottom: 0;
 }
 
-.drag-el:nth-last-child(){
+.drag-el:nth-last-child() {
   margin-bottom: 0;
 }
 
@@ -378,14 +369,15 @@ export default {
 }
 
 .relative {
- padding: 10px;
- display: flex;
- width: 100%;
- flex-direction: row;
- justify-content: space-between;
-} 
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .navitem {
-  width: 100px; 
+  width: 100px;
   height: 50px;
   padding: 10px;
   text-align: center;
@@ -403,6 +395,5 @@ export default {
   cursor: pointer;
   font-weight: bold;
 }
-
 </style>
 
