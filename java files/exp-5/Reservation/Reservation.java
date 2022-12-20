@@ -1,14 +1,19 @@
 package Reservation;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Reservation {
-    private final Customer customer;
-    private final Vehicle vehicle;
+    //declaring all attributes of the reservation class
+
+    private final Customer customer; //Here the aggregation relationship between the Reservation class and the customer class is established
+
+    private final Vehicle vehicle; //Here the aggregation relationship between the Reservation class and the vehicle class is established
+
     private String contractStatus;
     private Date releaseDate;
 
+
+    //Parameterized constructor of the reservation class using customer and vehicle class objects.
     public Reservation(Customer customer, Vehicle vehicle, String contractStatus, Date releaseDate) {
         this.customer = customer;
         this.vehicle = vehicle;
@@ -16,25 +21,21 @@ public class Reservation {
         this.releaseDate = releaseDate;
     }
 
-    static ArrayList<Reservation> reservations = new ArrayList<>();
-
-    public static void addReservation(Reservation reservation) {
-        reservations.add(reservation);
-    }
-
+    //Method to locate any reservation for a customer
     public Reservation locateReservation(String cName) {
 
-        for (Reservation reservation : reservations) {
-            if (reservation.customer.getCustomerName().equals(cName)) {
-                return reservation;
-            }
+        if (reservation.customer.getCustomerName().equals(cName)) {
+            return reservation;
         }
-
-        System.out.println("No reservation found for " + cName);
-        return null;
+    
+        else{
+            System.out.println("No reservation found for " + cName);
+            return null;
+        }
 
     }
 
+    //Method to release a contract of a customer's reservation
     public void releaseContract(String cName) {
         Reservation reservation = locateReservation(cName);
         if (reservation != null) {
