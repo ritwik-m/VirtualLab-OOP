@@ -8,7 +8,6 @@ export default {
         btn2.style.backgroundColor = "green";
         this.display[0] = "none";
         this.display[1] = "inherit";
-        this.cue = `Create new attribute "custName"`;
       }
 
       else {
@@ -23,7 +22,6 @@ export default {
         btn3.style.backgroundColor = "green";
         this.display[1] = "none";
         this.display[2] = "inherit";
-        this.cue = `Create new attribute "customerID"`;
       }
       else {
         this.button_value = this.button_text;
@@ -37,7 +35,6 @@ export default {
         btn4.style.backgroundColor = "green";
         this.display[2] = "none";
         this.display[3] = "inherit";
-        this.cue = `Create new attribute "email"`;
       }
       else {
         this.button_value = this.button_text;
@@ -50,7 +47,6 @@ export default {
         btn5.style.backgroundColor = "green";
         this.display[3] = "none";
         this.display[4] = "inherit";
-        this.cue = `Create new attribute "phone"`;
       }
       else {
         this.button_value = this.button_text;
@@ -63,7 +59,6 @@ export default {
         btn6.style.backgroundColor = "green";
         this.display[4] = "none";
         this.display[5] = "inherit";
-        this.cue = `Create new attribute "city"`;
       }
       else {
         this.button_value = this.button_text;
@@ -76,7 +71,6 @@ export default {
         btn7.style.backgroundColor = "green";
         this.display[5] = "none";
         this.display[6] = "inherit";
-        this.cue = `Create new static attribute "customerCount" of type int and set value to 0`;
       }
       else {
         this.button_value = this.button_text;
@@ -89,7 +83,6 @@ export default {
         btn8.style.backgroundColor = "green";
         this.display[6] = "none";
         this.display[7] = "inherit";
-        this.cue = `Increment customerCount by 1 in default constructor and assign it to customerID`;
       }
       else {
         this.button_value = this.button_text;
@@ -102,7 +95,6 @@ export default {
         btn9.style.backgroundColor = "green";
         this.display[7] = "none";
         this.display[8] = "inherit";
-        this.cue = `Add parameterized constructor with parameters 1.custName and 2.email and assign values using "this operator"`;
       }
       else {
         this.button_value = this.button_text;
@@ -115,7 +107,6 @@ export default {
         btn10.style.backgroundColor = "green";
         this.display[8] = "none";
         this.display[9] = "inherit";
-        this.cue = `Add parameterized constructor with parameters 1.custName and 2.phone and assign values using "this operator". Now assume a method "setPhone" exists to assign value to phone.`;
       }
       else {
         this.button_value = this.button_text;
@@ -128,7 +119,6 @@ export default {
         btn11.style.backgroundColor = "green";
         this.display[9] = "none";
         this.display[10] = "inherit";
-        this.cue = `Create a getter method for custName and return the value.`;
       }
       else {
         this.button_value = this.button_text;
@@ -142,7 +132,6 @@ export default {
         btn12.style.backgroundColor = "green";
         this.display[10] = "none";
         this.display[11] = "inherit";
-        this.cue = `Create a setter method for phone as setPhone`;
       }
       else {
         this.button_value = this.button_text;
@@ -168,7 +157,6 @@ export default {
     return {
       id: 'container',
       class: 'wrapper',
-      cue: 'Create a class "Customer"',
       button_value: 'Next',
       button_text: "Incorrect. Try again",
       button_text_right: "Correct. Next",
@@ -185,22 +173,463 @@ export default {
 
   <main>
 
-    <div class="row">
+    <div class="row" style="font-family: 'Montserrat' sans-serif;">
       <div class="column">
         <h1 style="padding: 25px;">Fill in the Java code for the following updated Customer class.</h1>
         <h2 style="padding: 25px;">You only have to fill in the spaces provided.</h2>
-        <img src="src/assets/class1.png" id="picID" style="padding-left: 150px; height: 450px;">
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[0] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark0>Class Customer</mark0> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            - custName: String
+            <br>
+            - customerID: int
+            <br>
+            - email: String
+            <br>
+            - phone: long
+            <br>
+            - city: String
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            + getcustName(): String
+            <br>
+            + getcustomerID(): int
+            <br>
+            + getEmail(): String
+            <br>
+            + getPhone(): long
+            <br>
+            + getCity(): String
+            <br>
+            + setEmail(): void
+            <br>
+            + setPhone(): void
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[1] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark0>- custName: String</mark0>
+            <br>
+            - customerID: int
+            <br>
+            - email: String
+            <br>
+            - phone: long
+            <br>
+            - city: String
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            + getcustName(): String
+            <br>
+            + getcustomerID(): int
+            <br>
+            + getEmail(): String
+            <br>
+            + getPhone(): long
+            <br>
+            + getCity(): String
+            <br>
+            + setEmail(): void
+            <br>
+            + setPhone(): void
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[2] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>- custName: String</mark1>
+            <br>
+            <mark0>- customerID: int</mark0>
+            <br>
+            - email: String
+            <br>
+            - phone: long
+            <br>
+            - city: String
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            + getcustName(): String
+            <br>
+            + getcustomerID(): int
+            <br>
+            + getEmail(): String
+            <br>
+            + getPhone(): long
+            <br>
+            + getCity(): String
+            <br>
+            + setEmail(): void
+            <br>
+            + setPhone(): void
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[3] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>- custName: String</mark1>
+            <br>
+            <mark1>- customerID: int</mark1>
+            <br>
+            <mark0>- email: String</mark0>
+            <br>
+            - phone: long
+            <br>
+            - city: String
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            + getcustName(): String
+            <br>
+            + getcustomerID(): int
+            <br>
+            + getEmail(): String
+            <br>
+            + getPhone(): long
+            <br>
+            + getCity(): String
+            <br>
+            + setEmail(): void
+            <br>
+            + setPhone(): void
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[4] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>- custName: String</mark1>
+            <br>
+            <mark1>- customerID: int</mark1>
+            <br>
+            <mark1>- email: String</mark1>
+            <br>
+            <mark0>- phone: long</mark0>
+            <br>
+            - city: String
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            + getcustName(): String
+            <br>
+            + getcustomerID(): int
+            <br>
+            + getEmail(): String
+            <br>
+            + getPhone(): long
+            <br>
+            + getCity(): String
+            <br>
+            + setEmail(): void
+            <br>
+            + setPhone(): void
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[5] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>- custName: String</mark1>
+            <br>
+            <mark1>- customerID: int</mark1>
+            <br>
+            <mark1>- email: String</mark1>
+            <br>
+            <mark1>- phone: long</mark1>
+            <br>
+            <mark0>- city: String</mark0>
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            + getcustName(): String
+            <br>
+            + getcustomerID(): int
+            <br>
+            + getEmail(): String
+            <br>
+            + getPhone(): long
+            <br>
+            + getCity(): String
+            <br>
+            + setEmail(): void
+            <br>
+            + setPhone(): void
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[6] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>- custName: String</mark1>
+            <br>
+            <mark1>- customerID: int</mark1>
+            <br>
+            <mark1>- email: String</mark1>
+            <br>
+            <mark1>- phone: long</mark1>
+            <br>
+            <mark1>- city: String</mark1>
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            + getcustName(): String
+            <br>
+            + getcustomerID(): int
+            <br>
+            + getEmail(): String
+            <br>
+            + getPhone(): long
+            <br>
+            + getCity(): String
+            <br>
+            + setEmail(): void
+            <br>
+            + setPhone(): void
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[7] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>- custName: String</mark1>
+            <br>
+            <mark1>- customerID: int</mark1>
+            <br>
+            <mark1>- email: String</mark1>
+            <br>
+            <mark1>- phone: long</mark1>
+            <br>
+            <mark1>- city: String</mark1>
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            + getcustName(): String
+            <br>
+            + getcustomerID(): int
+            <br>
+            + getEmail(): String
+            <br>
+            + getPhone(): long
+            <br>
+            + getCity(): String
+            <br>
+            + setEmail(): void
+            <br>
+            + setPhone(): void
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[8] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>- custName: String</mark1>
+            <br>
+            <mark1>- customerID: int</mark1>
+            <br>
+            <mark1>- email: String</mark1>
+            <br>
+            <mark1>- phone: long</mark1>
+            <br>
+            <mark1>- city: String</mark1>
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            + getcustName(): String
+            <br>
+            + getcustomerID(): int
+            <br>
+            + getEmail(): String
+            <br>
+            + getPhone(): long
+            <br>
+            + getCity(): String
+            <br>
+            + setEmail(): void
+            <br>
+            + setPhone(): void
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[9] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>- custName: String</mark1>
+            <br>
+            <mark1>- customerID: int</mark1>
+            <br>
+            <mark1>- email: String</mark1>
+            <br>
+            <mark1>- phone: long</mark1>
+            <br>
+            <mark1>- city: String</mark1>
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            + getcustName(): String
+            <br>
+            + getcustomerID(): int
+            <br>
+            + getEmail(): String
+            <br>
+            + getPhone(): long
+            <br>
+            + getCity(): String
+            <br>
+            + setEmail(): void
+            <br>
+            + setPhone(): void
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[10] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>- custName: String</mark1>
+            <br>
+            <mark1>- customerID: int</mark1>
+            <br>
+            <mark1>- email: String</mark1>
+            <br>
+            <mark1>- phone: long</mark1>
+            <br>
+            <mark1>- city: String</mark1>
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            <mark0>+ getcustName(): String</mark0>
+            <br>
+            + getcustomerID(): int
+            <br>
+            + getEmail(): String
+            <br>
+            + getPhone(): long
+            <br>
+            + getCity(): String
+            <br>
+            + setEmail(): void
+            <br>
+            + setPhone(): void
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[11] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>- custName: String</mark1>
+            <br>
+            <mark1>- customerID: int</mark1>
+            <br>
+            <mark1>- email: String</mark1>
+            <br>
+            <mark1>- phone: long</mark1>
+            <br>
+            <mark1>- city: String</mark1>
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            <mark1>+ getcustName(): String</mark1>
+            <br>
+            <mark1>+ getcustomerID(): int</mark1>
+            <br>
+            <mark1>+ getEmail(): String</mark1>
+            <br>
+            <mark1>+ getPhone(): long</mark1>
+            <br>
+            <mark1>+ getCity(): String</mark1>
+            <br>
+            <mark1>+ setEmail(): void</mark1>
+            <br>
+            <mark0>+ setPhone(): void</mark0>
+            <br>
+            + setCity(): void
+          </div>
+        </div>
+
+        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[12] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+           <mark1>Class Customer</mark1> 
+          </div>
+          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>- custName: String</mark1>
+            <br>
+            <mark1>- customerID: int</mark1>
+            <br>
+            <mark1>- email: String</mark1>
+            <br>
+            <mark1>- phone: long</mark1>
+            <br>
+            <mark1>- city: String</mark1>
+          </div>
+          <div style="padding: 15px; line-height: 40px;">
+            <mark1>+ getcustName(): String</mark1>
+            <br>
+            <mark1>+ getcustomerID(): int</mark1>
+            <br>
+            <mark1>+ getEmail(): String</mark1>
+            <br>
+            <mark1>+ getPhone(): long</mark1>
+            <br>
+            <mark1>+ getCity(): String</mark1>
+            <br>
+            <mark1>+ setEmail(): void</mark1>
+            <br>
+            <mark1>+ setPhone(): void</mark1>
+            <br>
+            <mark1>+ setCity(): void</mark1>
+          </div>
+        </div>
+
+        
+
       </div>
       <div class="column">
         <h1 style="padding: 25px;">Enter your code here .</h1>
-        <p id="cue" style="font-weight: bold; padding: 10px; text-decoration: underline;"> {{ cue }}
-        </p>
-
 
         <div class="codebox" id="codebox" :style="{ display: display[0] }">
           public
           <input spellcheck="false" maxlength="5" style="width: 50px;" v-model='one'>
-          <input spellcheck="false" id="two" maxlength="8" style="width: 70px;" v-model="two">{<br>
+          <input spellcheck="false" id="two" maxlength="8" style="width: 70px;" v-model="two">{ <p id="comment">//Create a class "Customer"</p><br>
           } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
         </div>
         <div class="codebox" id="codebox" :style="{ display: display[1] }">
@@ -208,7 +637,7 @@ export default {
           <br>&emsp;private
 
           <input spellcheck="false" id="three" maxlength="6" style="width: 50px;" v-model="three">
-          <input spellcheck="false" id="four" maxlength="8" style="width: 75px;" v-model="four">;
+          <input spellcheck="false" id="four" maxlength="8" style="width: 75px;" v-model="four">;<p id="comment">//Create new attribute "custName"</p>
           <br>}<br>
           <button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
         </div>
@@ -219,6 +648,7 @@ export default {
           <br>&emsp;private
           <input spellcheck="false" id="five" maxlength="3" style="width: 25px;" v-model="five">
           <input spellcheck="false" id="six" maxlength="11" style="width: 90px;" v-model="six">;
+          <p id="comment">//Create new attribute "customerID"</p>
           <br>}<br>
           <button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
         </div>
@@ -230,6 +660,7 @@ export default {
           <br>&emsp;private
           <input spellcheck="false" id="seven" maxlength="6" style="width: 50px;" v-model="seven">
           <input spellcheck="false" id="eight" maxlength="5" style="width: 42px;" v-model="eight">;
+          <p id="comment">//Create new attribute "email"</p>
           <br>}<br>
           <button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
         </div>
@@ -242,6 +673,7 @@ export default {
           <br>&emsp;private
           <input spellcheck="false" id="nine" maxlength="4" style="width: 35px;" v-model="nine">
           <input spellcheck="false" id="ten" maxlength="5" style="width: 45px;" v-model="ten">;
+          <p id="comment">//Create new attribute "phone" of type long</p>
           <br>}<br>
           <button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
 
@@ -256,6 +688,7 @@ export default {
           <br>&emsp;private
           <input spellcheck="false" id="eleven" maxlength="6" style="width: 50px;" v-model="eleven">
           <input spellcheck="false" id="twelve" maxlength="4" style="width: 35px;" v-model="twelve">;
+          <p id="comment">//Create new attribute "city"</p>
           <br>}<br>
           <button class="button-9" id="btn6" @click="validate_six()"> {{ button_value }} </button>
         </div>
@@ -271,19 +704,23 @@ export default {
           <input spellcheck="false" id="thirteen" maxlength="6" style="width: 50px;" v-model="thirteen">
           <input spellcheck="false" id="fourteen" maxlength="3" style="width: 25px;" v-model="fourteen">
           <input spellcheck="false" id="fifteen" maxlength="15" style="width: 120px;" v-model="fifteen">;
+          <p id="comment">//Create new static attribute "customerCount" of type int and set value to 0</p>
           <br>}<br>
           <button class="button-9" id="btn7" @click="validate_seven()"> {{ button_value }} </button>
         </div>
 
         <div class="codebox" id="codebox" :style="{ display: display[7] }">
-          public class Customer{
-          <br>&emsp;private String custName;
-          <br>&emsp;private int customerID;
-          <br>&emsp;private String email;
-          <br>&emsp;private long phone;
-          <br>&emsp;private String city;
-          <br>&emsp;public static int customerCount=0;
-          <br><br>&emsp;public Customer()<br>&emsp;{<br>&emsp;&emsp;
+          <pre>public class Customer {
+	
+	private int customerID;
+	private String email;
+	private String custName;
+	private long phone;
+	private String city;
+	public static int customerCount=0; </pre>
+  <br><br>
+          <p id="comment">//Increment customerCount by 1 in default constructor and assign it to customerID</p>
+          &emsp;public Customer()<br>&emsp;{<br>&emsp;&emsp;
           <input spellcheck="false" id="sixteen" maxlength="15" style="width: 120px;" v-model="sixteen">;
           <br>&emsp;&emsp;
           <input spellcheck="false" id="seventeen" maxlength="4" style="width: 30px;" v-model="seventeen">.customerID =
@@ -294,18 +731,23 @@ export default {
         </div>
 
         <div class="codebox" id="codebox" :style="{ display: display[8] }">
-          public class Customer{
-          <br>&emsp;private String custName;
-          <br>&emsp;private int customerID;
-          <br>&emsp;private String email;
-          <br>&emsp;private long phone;
-          <br>&emsp;private String city;
-          <br>&emsp;public static int customerCount=0;
-          <br><br>&emsp;public Customer()<br>&emsp;{<br>&emsp;&emsp;
-          customerCount++;
-          <br>&emsp;&emsp;this.customerID = customerCount;
-          <br>&emsp;}
+          <pre>public class Customer {
+	
+	private int customerID;
+	private String email;
+	private String custName;
+	private long phone;
+	private String city;
+	public static int customerCount=0; 
+	
+	public Customer()
+	{
+		customerCount++;
+		this.customerID=customerCount;
+	}</pre>
+
           <br>
+          <p id="comment">//Add parameterized constructor with parameters 1.custName and 2.email and assign values using "this operator"</p>
           <br>&emsp;public Customer(
           <input spellcheck="false" id="eighteen" maxlength="15" style="width: 120px;" v-model="eighteen">,
           <input spellcheck="false" id="nineteen" maxlength="12" style="width: 100px;" v-model="nineteen">){
@@ -342,6 +784,9 @@ export default {
 		this.email=email;
 	}</pre>
 
+          <br><br>
+          <p id="comment">//Add parameterized constructor with parameters 1.custName and 2.phone and assign values //using "this operator".<br>
+            //Now assume a method "setPhone" exists to assign value to phone.</p>
           &emsp;public Customer(
           <input spellcheck="false" id="t2" maxlength="15" style="width: 120px;" v-model="t2">,
           <input spellcheck="false" id="t3" maxlength="10" style="width: 85px;" v-model="t3">){
@@ -388,7 +833,8 @@ export default {
 		this.email=email;
 		this.setPhone(phone);
 	}</pre>
-
+          <br><br>
+          <p id="comment">//Create a getter method for custName and return the value.</p>
           &emsp;public String
           <input spellcheck="false" id="t6" maxlength="11" style="width: 95px;" v-model="t6">() {
           <br>&emsp;&emsp;
@@ -449,7 +895,8 @@ export default {
 	public long getPhone() {
 		return phone;
 	}</pre>
-
+          <br><br>
+          <p id="comment">//Create a setter method for phone as setPhone</p>
           &emsp;public
           <input spellcheck="false" id="t8" maxlength="4" style="width: 35px;" v-model="t8">
           <input spellcheck="false" id="t9" maxlength="8" style="width: 70px;" v-model="t9">(
@@ -593,11 +1040,30 @@ p {
   clear: both;
 }
 
+mark1{
+  background-color: rgb(228, 252, 231);
+  box-shadow: 1px 6px 17px -1px rgb(137, 255, 135);
+  color: black;
+  padding: 5px;
+}
+
+mark0{
+  box-shadow: 1px 6px 15px 2px rgba(247,255,178,1);
+  color: black;
+  padding: 5px;
+}
+
+#comment{
+  font-style: italic;
+  color: gray;
+}
+
 
 .codebox {
   height: 80%;
   width: 90%;
-  background-color: aliceblue;
+  background-color: #F9FAFE;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
 
