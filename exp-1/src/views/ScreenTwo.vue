@@ -72,14 +72,13 @@ export default {
       { id: 64, word: 'terminates', list: 5},
       { id: 65, word: 'at', list: 5},
       { id: 66, word: 'this', list: 5},
-      { id: 67, word: 'point', list: 5},
-      
+      { id: 67, word: 'point', list: 5},    
     ])
 
-    //Wrong elements 
-    //Missing phrases
-    //remove space between identified words
-    
+    //TODO: Errors for Wrong elements 
+    //TODO: Errors for Missing phrases
+    //TODO: remove space between identified words
+
 
     const getList = (list) => {
       return items.value.filter((item) => item.list === list)
@@ -244,25 +243,25 @@ export default {
         </div>
     </div>
     <div class="identify-box drop-zone" @drop="onDrop($event, 12)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(12)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+      <div v-for="item in getList(12)" :key="item.id" class="identified drag-el-horizontal" draggable="true" 
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
     <div class="identify-box drop-zone" @drop="onDrop($event, 13)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(13)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+      <div v-for="item in getList(13)" :key="item.id" class="identified drag-el-horizontal" draggable="true" 
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
     <div class="identify-box drop-zone" @drop="onDrop($event, 14)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(14)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+      <div v-for="item in getList(14)" :key="item.id" class="identified drag-el-horizontal" draggable="true" 
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
     <div class="identify-box drop-zone" @drop="onDrop($event, 15)" @dragenter.prevent @dragover.prevent>
-      <div v-for="item in getList(15)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
+      <div v-for="item in getList(15)" :key="item.id" class="identified drag-el-horizontal" draggable="true" 
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
@@ -326,19 +325,24 @@ export default {
 
 .identify-box{
   background-color: #fff;
+  border-radius: 5px;
 }
 
 .to-identify{
   background-color: #F9FAFE;
+  margin: 5px;
 }
 .identified{
   background-color: #6D71FA;
   color: white;
+  border-radius:0px;
 }
 
 .unidentified{
   background-color: #fff;
   color: black;
+  margin: 5px;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
 .drop-zone {
@@ -354,7 +358,6 @@ export default {
   min-height: 10vh;
   flex-wrap: wrap;
   flex-direction: row;
-  border-radius: 10px;
   padding: 5px;
 }
 
@@ -369,12 +372,10 @@ export default {
 .drag-el-horizontal {
   padding-left: 2vh;
   padding-right: 2vh;
-  border-radius: 10px;
-  margin: 5px;
   height: fit-content;
   max-width: fit-content;
-  box-shadow: 2px 3px 10px 2px #D7DFFF;
   cursor: pointer;
+  border-radius: inherit;
 }
 
 .drop-zone-horizontal {

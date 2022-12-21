@@ -5,9 +5,9 @@ export default {
     const items = ref([
     { id: 5, alpha: ' ', order: 4, content: 'The clerk then marks the contract active by entering the vehicle release data (today\'s date) onto the vehicle reservation contract.', list: 1 },
       { id: 0, alpha: ' ', order: 5, content: 'A customer comes to the office to acquire a vehicle', list: 1 },
-      { id: 12, alpha: ' ', order: 2, content: 'The customer signs the contract and the clerk gives the keys to the vehicle.', list: 1 },
+      { id: 4, alpha: ' ', order: 2, content: 'The customer signs the contract and the clerk gives the keys to the vehicle.', list: 1 },
       { id: 2, alpha: ' ', order: 1, content: 'The use case terminates at ths point.', list: 1 },
-      { id: 5, alpha: ' ', order: 3, content: 'The clerk locates the vehicle reservation contract by means of the reservation number and/or customer name. [Exception: Required vehicle type is not available due to late arrivals.]', list: 1 },
+      { id: 6, alpha: ' ', order: 3, content: 'The clerk locates the vehicle reservation contract by means of the reservation number and/or customer name. [Exception: Required vehicle type is not available due to late arrivals.]', list: 1 },
     ])
 
     const getList = (list) => {

@@ -178,9 +178,11 @@ export default {
         <h1 style="padding: 25px;">Fill in the Java code for the following updated Customer class.</h1>
         <h2 style="padding: 25px;">You only have to fill in the spaces provided.</h2>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[0] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[0] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark0>Class Customer</mark0> 
+            <mark0>Class Customer</mark0>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             - custName: String
@@ -212,9 +214,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[1] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[1] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark0>- custName: String</mark0>
@@ -246,9 +250,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[2] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[2] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
@@ -280,9 +286,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[3] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[3] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
@@ -314,9 +322,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[4] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[4] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
@@ -348,9 +358,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[5] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[5] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
@@ -382,9 +394,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[6] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[6] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
@@ -416,9 +430,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[7] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[7] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
@@ -450,9 +466,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[8] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[8] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
@@ -484,9 +502,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[9] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[9] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
@@ -518,9 +538,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[10] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[10] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
@@ -552,9 +574,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[11] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[11] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
@@ -586,9 +610,11 @@ export default {
           </div>
         </div>
 
-        <div style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;" :style="{ display: display[12] }">
+        <div
+          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[12] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-           <mark1>Class Customer</mark1> 
+            <mark1>Class Customer</mark1>
           </div>
           <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
@@ -620,7 +646,7 @@ export default {
           </div>
         </div>
 
-        
+
 
       </div>
       <div class="column">
@@ -629,7 +655,8 @@ export default {
         <div class="codebox" id="codebox" :style="{ display: display[0] }">
           public
           <input spellcheck="false" maxlength="5" style="width: 50px;" v-model='one'>
-          <input spellcheck="false" id="two" maxlength="8" style="width: 70px;" v-model="two">{ <p id="comment">//Create a class "Customer"</p><br>
+          <input spellcheck="false" id="two" maxlength="8" style="width: 70px;" v-model="two">{ <p id="comment">//Create
+            a class "Customer"</p><br>
           } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
         </div>
         <div class="codebox" id="codebox" :style="{ display: display[1] }">
@@ -637,7 +664,8 @@ export default {
           <br>&emsp;private
 
           <input spellcheck="false" id="three" maxlength="6" style="width: 50px;" v-model="three">
-          <input spellcheck="false" id="four" maxlength="8" style="width: 75px;" v-model="four">;<p id="comment">//Create new attribute "custName"</p>
+          <input spellcheck="false" id="four" maxlength="8" style="width: 75px;" v-model="four">;<p id="comment">
+            //Create new attribute "custName"</p>
           <br>}<br>
           <button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
         </div>
@@ -718,7 +746,7 @@ export default {
 	private long phone;
 	private String city;
 	public static int customerCount=0; </pre>
-  <br><br>
+          <br><br>
           <p id="comment">//Increment customerCount by 1 in default constructor and assign it to customerID</p>
           &emsp;public Customer()<br>&emsp;{<br>&emsp;&emsp;
           <input spellcheck="false" id="sixteen" maxlength="15" style="width: 120px;" v-model="sixteen">;
@@ -747,7 +775,8 @@ export default {
 	}</pre>
 
           <br>
-          <p id="comment">//Add parameterized constructor with parameters 1.custName and 2.email and assign values using "this operator"</p>
+          <p id="comment">//Add parameterized constructor with parameters 1.custName and 2.email and assign values using
+            "this operator"</p>
           <br>&emsp;public Customer(
           <input spellcheck="false" id="eighteen" maxlength="15" style="width: 120px;" v-model="eighteen">,
           <input spellcheck="false" id="nineteen" maxlength="12" style="width: 100px;" v-model="nineteen">){
@@ -785,7 +814,8 @@ export default {
 	}</pre>
 
           <br><br>
-          <p id="comment">//Add parameterized constructor with parameters 1.custName and 2.phone and assign values //using "this operator".<br>
+          <p id="comment">//Add parameterized constructor with parameters 1.custName and 2.phone and assign values
+            //using "this operator".<br>
             //Now assume a method "setPhone" exists to assign value to phone.</p>
           &emsp;public Customer(
           <input spellcheck="false" id="t2" maxlength="15" style="width: 120px;" v-model="t2">,
@@ -1013,12 +1043,15 @@ public class Customer {
 <style scoped>
 * {
   box-sizing: border-box;
+  background-color: #F9FAFE;
 }
 
 @font-face {
   font-family: "Montserrat";
   src: local("Montserrat"),
     url(.\fonts\Montserrat-VariableFont_wght.ttf) format("truetype");
+
+  /* add a terminal font here - inconsolata? */
 }
 
 h1,
@@ -1040,32 +1073,53 @@ p {
   clear: both;
 }
 
-mark1{
-  background-color: rgb(228, 252, 231);
-  box-shadow: 1px 6px 17px -1px rgb(137, 255, 135);
+mark1 {
+  background-color: rgb(176, 230, 183);
+  box-shadow: 1px 6px 15px 2px rgb(160, 222, 159);
   color: black;
-  padding: 5px;
+  border-radius: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-mark0{
-  box-shadow: 1px 6px 15px 2px rgba(247,255,178,1);
+mark0 {
+  box-shadow: 1px 6px 15px 2px rgb(249, 255, 191);
+  background-color: rgb(231, 238, 162);
   color: black;
-  padding: 5px;
+  border-radius: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-#comment{
+#comment {
+  margin-left: 15px;
   font-style: italic;
   color: gray;
+  font-size: small;
 }
 
 
 .codebox {
   height: 80%;
   width: 90%;
+  padding: 25px;
+  border-radius: 10px;
   background-color: #F9FAFE;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
+input{
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+}
 
 /* CSS */
 .button-9 {
