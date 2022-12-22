@@ -9,6 +9,16 @@ const router = createRouter({
       name: 'screen-one',
       component: ScreenOne
     },
+    {
+      path: '/screen-two',
+      name: 'screen-two',
+      component: () => import('../views/ScreenTwo.vue')
+    },
+    {
+      path: '/screen-three',
+      name: 'screen-three',
+      component: () => import('../views/ScreenThree.vue')
+    }
   ]
 })
 
