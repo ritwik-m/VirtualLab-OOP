@@ -26,25 +26,27 @@ export default{
     data: () => {
         return{
             code: [`<h1>Test</h1>`,`<h2>Test</h2>`],
-            lineCounter: 0
+            lineCounter: 0,
         }
     },
 
     methods: {
-        addLine() {
-            this.lineCounter++;
-            this.validate();
-        },
-
         validate(){
-            return this.render(1);
+            this.lineCounter++;
+            console.log(this.lineCounter)
+            return this.render(this.lineCounter);
         },
 
         render(j){
             let html = "";
             for(let i=0;i<=j;i++){
+                if(i>=this.code.length){
+                    break;
+                }
                 html += this.code[i];
+
             }
+            console.log(html)
             return html;
         }
     }
