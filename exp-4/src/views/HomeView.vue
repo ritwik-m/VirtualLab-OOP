@@ -654,8 +654,8 @@ export default {
 
         <div class="codebox" id="codebox" :style="{ display: display[0] }">
           public
-          <input spellcheck="false" maxlength="5" style="width: 50px;" v-model='one'>
-          <input spellcheck="false" id="two" maxlength="8" style="width: 70px;" v-model="two">{ <p id="comment">//Create
+          <input spellcheck="false" maxlength="5" style="width: 70px;" v-model='one'>
+          <input spellcheck="false" id="two" maxlength="8" style="width: 90px;" v-model="two">{ <p id="comment">//Create
             a class "Customer"</p><br>
           } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
         </div>
@@ -663,8 +663,8 @@ export default {
           public class Customer{
           <br>&emsp;private
 
-          <input spellcheck="false" id="three" maxlength="6" style="width: 50px;" v-model="three">
-          <input spellcheck="false" id="four" maxlength="8" style="width: 75px;" v-model="four">;<p id="comment">
+          <input spellcheck="false" id="three" maxlength="6" style="width: 75px;" v-model="three">
+          <input spellcheck="false" id="four" maxlength="8" style="width: 90px;" v-model="four">;<p id="comment">
             //Create new attribute "custName"</p>
           <br>}<br>
           <button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
@@ -674,8 +674,8 @@ export default {
           public class Customer{
           <br>&emsp;private String custName;
           <br>&emsp;private
-          <input spellcheck="false" id="five" maxlength="3" style="width: 25px;" v-model="five">
-          <input spellcheck="false" id="six" maxlength="11" style="width: 90px;" v-model="six">;
+          <input spellcheck="false" id="five" maxlength="3" style="width: 40px;" v-model="five">
+          <input spellcheck="false" id="six" maxlength="11" style="width: 110px;" v-model="six">;
           <p id="comment">//Create new attribute "customerID"</p>
           <br>}<br>
           <button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
@@ -686,8 +686,8 @@ export default {
           <br>&emsp;private String custName;
           <br>&emsp;private int customerID;
           <br>&emsp;private
-          <input spellcheck="false" id="seven" maxlength="6" style="width: 50px;" v-model="seven">
-          <input spellcheck="false" id="eight" maxlength="5" style="width: 42px;" v-model="eight">;
+          <input spellcheck="false" id="seven" maxlength="6" style="width: 65px;" v-model="seven">
+          <input spellcheck="false" id="eight" maxlength="5" style="width: 60px;" v-model="eight">;
           <p id="comment">//Create new attribute "email"</p>
           <br>}<br>
           <button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
@@ -699,8 +699,8 @@ export default {
           <br>&emsp;private int customerID;
           <br>&emsp;private String email;
           <br>&emsp;private
-          <input spellcheck="false" id="nine" maxlength="4" style="width: 35px;" v-model="nine">
-          <input spellcheck="false" id="ten" maxlength="5" style="width: 45px;" v-model="ten">;
+          <input spellcheck="false" id="nine" maxlength="4" style="width: 50px;" v-model="nine">
+          <input spellcheck="false" id="ten" maxlength="5" style="width: 65px;" v-model="ten">;
           <p id="comment">//Create new attribute "phone" of type long</p>
           <br>}<br>
           <button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
@@ -714,8 +714,8 @@ export default {
           <br>&emsp;private String email;
           <br>&emsp;private long phone;
           <br>&emsp;private
-          <input spellcheck="false" id="eleven" maxlength="6" style="width: 50px;" v-model="eleven">
-          <input spellcheck="false" id="twelve" maxlength="4" style="width: 35px;" v-model="twelve">;
+          <input spellcheck="false" id="eleven" maxlength="6" style="width: 65px;" v-model="eleven">
+          <input spellcheck="false" id="twelve" maxlength="4" style="width: 50px;" v-model="twelve">;
           <p id="comment">//Create new attribute "city"</p>
           <br>}<br>
           <button class="button-9" id="btn6" @click="validate_six()"> {{ button_value }} </button>
@@ -729,9 +729,9 @@ export default {
           <br>&emsp;private long phone;
           <br>&emsp;private String city;
           <br>&emsp;public
-          <input spellcheck="false" id="thirteen" maxlength="6" style="width: 50px;" v-model="thirteen">
-          <input spellcheck="false" id="fourteen" maxlength="3" style="width: 25px;" v-model="fourteen">
-          <input spellcheck="false" id="fifteen" maxlength="15" style="width: 120px;" v-model="fifteen">;
+          <input spellcheck="false" id="thirteen" maxlength="6" style="width: 65px;" v-model="thirteen">
+          <input spellcheck="false" id="fourteen" maxlength="3" style="width: 40px;" v-model="fourteen">
+          <input spellcheck="false" id="fifteen" maxlength="15" style="width: 135px;" v-model="fifteen">;
           <p id="comment">//Create new static attribute "customerCount" of type int and set value to 0</p>
           <br>}<br>
           <button class="button-9" id="btn7" @click="validate_seven()"> {{ button_value }} </button>
@@ -749,9 +749,9 @@ export default {
           <br><br>
           <p id="comment">//Increment customerCount by 1 in default constructor and assign it to customerID</p>
           &emsp;public Customer()<br>&emsp;{<br>&emsp;&emsp;
-          <input spellcheck="false" id="sixteen" maxlength="15" style="width: 120px;" v-model="sixteen">;
+          <input spellcheck="false" id="sixteen" maxlength="15" style="width: 135px;" v-model="sixteen">;
           <br>&emsp;&emsp;
-          <input spellcheck="false" id="seventeen" maxlength="4" style="width: 30px;" v-model="seventeen">.customerID =
+          <input spellcheck="false" id="seventeen" maxlength="4" style="width: 45px;" v-model="seventeen">.customerID =
           customerCount;
           <br>&emsp;&emsp;}
           <br>}<br>
@@ -778,13 +778,13 @@ export default {
           <p id="comment">//Add parameterized constructor with parameters 1.custName and 2.email and assign values using
             "this operator"</p>
           <br>&emsp;public Customer(
-          <input spellcheck="false" id="eighteen" maxlength="15" style="width: 120px;" v-model="eighteen">,
+          <input spellcheck="false" id="eighteen" maxlength="15" style="width: 130px;" v-model="eighteen">,
           <input spellcheck="false" id="nineteen" maxlength="12" style="width: 100px;" v-model="nineteen">){
           <br>&emsp;&emsp;
-          <input spellcheck="false" id="twenty" maxlength="4" style="width: 30px;" v-model="twenty">.custName =
+          <input spellcheck="false" id="twenty" maxlength="4" style="width: 45px;" v-model="twenty">.custName =
           custName;
           <br>&emsp;&emsp;
-          <input spellcheck="false" id="t1" maxlength="4" style="width: 30px;" v-model="t1">.email = email;
+          <input spellcheck="false" id="t1" maxlength="4" style="width: 45px;" v-model="t1">.email = email;
           <br>&emsp;&emsp;}
           <br>}<br>
           <button class="button-9" id="btn9" @click="validate_nine()"> {{ button_value }} </button>
@@ -818,12 +818,12 @@ export default {
             //using "this operator".<br>
             //Now assume a method "setPhone" exists to assign value to phone.</p>
           &emsp;public Customer(
-          <input spellcheck="false" id="t2" maxlength="15" style="width: 120px;" v-model="t2">,
-          <input spellcheck="false" id="t3" maxlength="10" style="width: 85px;" v-model="t3">){
+          <input spellcheck="false" id="t2" maxlength="15" style="width: 130px;" v-model="t2">,
+          <input spellcheck="false" id="t3" maxlength="10" style="width: 95px;" v-model="t3">){
           <br>&emsp;&emsp;
-          <input spellcheck="false" id="t4" maxlength="4" style="width: 30px;" v-model="t4">.custName = custName;
+          <input spellcheck="false" id="t4" maxlength="4" style="width: 45px;" v-model="t4">.custName = custName;
           <br>&emsp;&emsp;
-          this.<input spellcheck="false" id="t5" maxlength="15" style="width: 120px;" v-model="t5">;
+          this.<input spellcheck="false" id="t5" maxlength="15" style="width: 130px;" v-model="t5">;
           <br>&emsp;&emsp;}
           <br>}<br>
           <button class="button-9" id="btn10" @click="validate_ten()"> {{ button_value }} </button>
@@ -866,7 +866,7 @@ export default {
           <br><br>
           <p id="comment">//Create a getter method for custName and return the value.</p>
           &emsp;public String
-          <input spellcheck="false" id="t6" maxlength="11" style="width: 95px;" v-model="t6">() {
+          <input spellcheck="false" id="t6" maxlength="11" style="width: 110px;" v-model="t6">() {
           <br>&emsp;&emsp;
           <input spellcheck="false" id="t7" maxlength="15" style="width: 130px;" v-model="t7">;
           <br>&emsp;&emsp;}
@@ -928,18 +928,18 @@ export default {
           <br><br>
           <p id="comment">//Create a setter method for phone as setPhone</p>
           &emsp;public
-          <input spellcheck="false" id="t8" maxlength="4" style="width: 35px;" v-model="t8">
-          <input spellcheck="false" id="t9" maxlength="8" style="width: 70px;" v-model="t9">(
-          <input spellcheck="false" id="t10" maxlength="10" style="width: 90px;" v-model="t10">) {
+          <input spellcheck="false" id="t8" maxlength="4" style="width: 50px;" v-model="t8">
+          <input spellcheck="false" id="t9" maxlength="8" style="width: 85px;" v-model="t9">(
+          <input spellcheck="false" id="t10" maxlength="10" style="width: 95px;" v-model="t10">) {
 
 
           <br>&emsp;&emsp;
-          <input spellcheck="false" id="t11" maxlength="2" style="width: 15px;" v-model="t11">(phone >= 0000000000L &&
+          <input spellcheck="false" id="t11" maxlength="2" style="width: 30px;" v-model="t11">(phone >= 0000000000L &&
           phone &lt;= 9999999999L)
           <br>&emsp;&emsp;&emsp;<input spellcheck="false" id="t12" maxlength="10" style="width: 90px;" v-model="t12"> =
           phone;
           <br>&emsp;&emsp;
-          <input spellcheck="false" id="t13" maxlength="4" style="width: 35px;" v-model="t13">
+          <input spellcheck="false" id="t13" maxlength="4" style="width: 50px;" v-model="t13">
           <br>&emsp;&emsp;&emsp;<input spellcheck="false" id="t14" maxlength="10" style="width: 90px;" v-model="t14"> =
           9999999999L;
           <br>}<br>
