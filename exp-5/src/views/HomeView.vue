@@ -1,22 +1,30 @@
 <script>
-import ButtonCounter from '../components/SampleComponent.vue'
-import ButtonCounter2 from '../components/SampleComponent2.vue'
+import CustomerView from '../components/CustomerViewComponent.vue'
+import ReservationView from '../components/ReservationViewComponent.vue'
+import VehicleView from '../components/VehicleViewComponent.vue'
+import InstructionsView from '../components/InstructionsViewComponent.vue'
 
 export default {
   components: {
-    ButtonCounter,
-    ButtonCounter2
+    CustomerView,
+    ReservationView,
+    VehicleView,
+    InstructionsView
   },
   data(){
     return {
-      componentSelect: "ButtonCounter"
+      componentSelect: "InstructionsView"
     }
   }
 }
 </script>
 
 <template>
-  <button @click="componentSelect='ButtonCounter'">Button Counter 1</button>
-  <button @click="componentSelect='ButtonCounter2'">Button Counter 2</button>
-  <component v-bind:is="componentSelect" />
+  <button @click="componentSelect='CustomerView'">Customer View</button>
+  <button @click="componentSelect='ReservationView'">Reservation View</button>
+  <button @click="componentSelect='VehicleView'">Vehicle View</button>
+  <KeepAlive>
+    <component v-bind:is="componentSelect" />
+  </KeepAlive>
+  
 </template>

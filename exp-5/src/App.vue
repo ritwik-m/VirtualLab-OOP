@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/">Screen One</router-link>
+    <router-link to="/">Screen One</router-link> |
     <router-link to="/test">Test</router-link>
   </nav>
   <router-view/>
