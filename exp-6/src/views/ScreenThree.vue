@@ -29,21 +29,34 @@ export default {
       }
     },
 
-    validate_three(){
-        if (this.four === "void" && this.five === "requestVehicle" && this.six==="System" && this.seven === "out" && this.eight === "println"){
-            this.button_value = this.button_text_right;
-            btn3.style.backgroundColor = "green";
-            this.display[2] = "none";
-            this.display[3] = "inherit";
-        }
-        else {
-            this.button_value = this.button_text;
-            btn3.style.backgroundColor = "red";
-        }
-        console.log("validate_three")
-    }
+    validate_three() {
+      if (this.four === "void" && this.five === "requestVehicle" && this.six === "System" && this.seven === "out" && this.eight === "println") {
+        this.button_value = this.button_text_right;
+        btn3.style.backgroundColor = "green";
+        this.display[2] = "none";
+        this.display[3] = "inherit";
+      }
+      else {
+        this.button_value = this.button_text;
+        btn3.style.backgroundColor = "red";
+      }
+      console.log("validate_three")
+    },
 
-    
+    validate_four() {
+      if (this.nine === "void" && this.ten === "signContract" && this.eleven === "System" && this.twelve === "out" && this.thirteen === "println") {
+        this.button_value = this.button_text_right;
+        btn4.style.backgroundColor = "green";
+      }
+      else {
+        this.button_value = this.button_text;
+        btn4.style.backgroundColor = "red";
+      }
+      console.log("validate_four")
+    },
+
+
+
   },
   data() {
     return {
@@ -67,8 +80,8 @@ export default {
 
     <div class="row" style="font-family: Montserrat">
       <div class="column">
-        <h1 style="padding: 25px;">Fill in the Java code for the following Clerk class.</h1>
-        <h2 style="padding: 25px;">You only have to fill in the spaces provided.</h2>
+        <h1 style="padding-left: 25px;">Fill in the Java code for the following Clerk class.</h1>
+        <p style="padding-left: 25px; padding-bottom: 25px;">You only have to fill in the spaces provided.</p>
 
         <div
           style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
@@ -97,7 +110,7 @@ export default {
             + setPhoneNumber(): void
             <br>
             + getEmail(): String
-            <br>            
+            <br>
             + setEmail(): void
             <br>
             + getDepartment(): String
@@ -141,7 +154,7 @@ export default {
             + setPhoneNumber(): void
             <br>
             + getEmail(): String
-            <br>            
+            <br>
             + setEmail(): void
             <br>
             + getDepartment(): String
@@ -185,7 +198,7 @@ export default {
             <mark1>+ setPhoneNumber(): void</mark1>
             <br>
             <mark1>+ getEmail(): String</mark1>
-            <br>            
+            <br>
             <mark1>+ setEmail(): void</mark1>
             <br>
             <mark1>+ getDepartment(): String</mark1>
@@ -202,29 +215,76 @@ export default {
           </div>
         </div>
 
+        <div
+          style="margin-left: 15%; height: fit-content; width:fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[3] }">
+          <div style="height : fit-content; border-bottom: 1px solid black; text-align: center; padding: 15px;">
+            <mark1>Class Clerk</mark1>
+          </div>
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 60px;">
+            <mark1>- address: String</mark1>
+            <br>
+            <mark1>- phoneNumber: String</mark1>
+            <br>
+            <mark1>- email: String</mark1>
+            <br>
+            <mark1>- department: String</mark1>
+            <br>
+            <mark1>- position: String</mark1>
+          </div>
+          <div style="padding: 15px; line-height: 60px;">
+            <mark1>+ getAddress(): String</mark1>
+            <br>
+            <mark1>+ setAddress(): void</mark1>
+            <br>
+            <mark1>+ getPhoneNumber(): String</mark1>
+            <br>
+            <mark1>+ setPhoneNumber(): void</mark1>
+            <br>
+            <mark1>+ getEmail(): String</mark1>
+            <br>
+            <mark1>+ setEmail(): void</mark1>
+            <br>
+            <mark1>+ getDepartment(): String</mark1>
+            <br>
+            <mark1>+ setDepartment(): void</mark1>
+            <br>
+            <mark1>+ getPosition(): void</mark1>
+            <br>
+            <mark1>+ setPosition(): void</mark1>
+            <br>
+            <mark1>+ requestVehicle(): void</mark1>
+            <br>
+            <mark0>+ signContract(): void</mark0>
+          </div>
+        </div>
+
 
 
       </div>
       <div class="column">
-        <h1 style="padding: 25px;">Enter your code here .</h1>
+        <h1>Enter your code here .</h1>
+        <p style="padding-bottom: 25px">Follow instructions provided in the comments</p>
 
         <div class="codebox" id="codebox" :style="{ display: display[0] }">
           public class
           <input spellcheck="false" maxlength="8" style="width: 90px;" v-model='one'>
-          <input spellcheck="false" id="two" maxlength="7" style="width: 85px;" v-model="two"> Person{ <p id="comment">//Create
+          <input spellcheck="false" id="two" maxlength="7" style="width: 85px;" v-model="two"> Person{ <p id="comment">
+            //Create
             a class "Clerk" that inherits "Person" class</p><br>
           } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
         </div>
 
         <div class="codebox" id="codebox" :style="{ display: display[1] }">
-        <pre>public class Clerk extends Person{
+          <pre>public class Clerk extends Person{
 
     private String address;
     private String phoneNumber;
     private String email;
     private String department;
     private String position;</pre>
-        <br>&emsp;public Clerk(String name, String address, String phoneNumber, String email, String department, String position){
+          <br>&emsp;public Clerk(String name, String address, String phoneNumber, String email, String department,
+          String position){
           <br>&emsp;&emsp;
           <input spellcheck="false" id="three" maxlength="11" style="width: 110px;" v-model="three">;
           <br>&emsp;&emsp;this.address = address;
@@ -233,14 +293,14 @@ export default {
           <br>&emsp;&emsp;this.department = department;
           <br>&emsp;&emsp;this.position = position;
           <br>&emsp;
-        };<p id="comment">
+          };<p id="comment">
             //Using the correct keyword, obtain the value of parent class' constructor for the "name" attribute</p>
           <br>}<br>
           <button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
         </div>
 
         <div class="codebox" id="codebox" :style="{ display: display[2] }">
-        <pre>public class Clerk extends Person{
+          <pre>public class Clerk extends Person{
 
     private String address;
     private String phoneNumber;
@@ -298,14 +358,96 @@ export default {
     }
 </pre>
 
-<div class="codebox" id="codebox" :style="{ display: display[2] }">
-          public
-          <input spellcheck="false"  id="four" maxlength="4" style="width: 90px;" v-model='four'>
-          <input spellcheck="false" id="five" maxlength="14" style="width: 85px;" v-model="five"> (){ <p id="comment">//Create a function 'requestVehicle()' that allows the clerk to request a vehicle and prints a log message</p><br>
+          <div id="codebox" :style="{ display: display[2] }">
+            public
+            <input spellcheck="false" id="four" maxlength="4" style="width: 90px;" v-model='four'>
+            <input spellcheck="false" id="five" maxlength="14" style="width: 85px;" v-model="five"> (){ <p id="comment">
+              //Create a function 'requestVehicle()' that allows the clerk to request a vehicle and prints a log message
+            </p><br>
 
-          <input spellcheck="false" id="six" maxlength="6" style="width: 90px" v-model="six">.<input spellcheck="false" id="seven" style="width: 70px" maxlength="3" v-model="seven">.<input spellcheck="false" id="eight" maxlength="7" style="width: 80px" v-model="eight">("Requesting a vehicle"); <br>
-          } <br><button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
+            <input spellcheck="false" id="six" maxlength="6" style="width: 90px" v-model="six">.<input
+              spellcheck="false" id="seven" style="width: 70px" maxlength="3" v-model="seven">.<input spellcheck="false"
+              id="eight" maxlength="7" style="width: 80px" v-model="eight">("Requesting a vehicle"); <br>
+            } <br><button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
+          </div>
+
         </div>
+
+        <div class="codebox" id="codebox" :style="{ display: display[3] }">
+          <pre>public class Clerk extends Person{
+
+    private String address;
+    private String phoneNumber;
+    private String email;
+    private String department;
+    private String position;
+
+    public Customer(String name, String address, String phoneNumber, String email){
+        super(name);
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.department = department;
+        this.position = position;
+    }
+
+    public String getAddress(){
+        return address;
+    }
+
+    public void setAddress(String address){
+        this.address = address;
+    }
+
+    public String getPhoneNumber(){
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    } 
+
+    public String getDepartment() {
+            return department;
+    }
+
+    public void setDepartment(String department) {
+            this.department = department;
+    }
+
+    public String getPosition() {
+            return position;
+    }
+
+    public void setPosition(String position) {
+            this.position = position;
+    }
+
+    public void requestVehicle(){
+        System.out.println("Requesting a vehicle");
+    }
+</pre>
+
+          <div id="codebox" :style="{ display: display[3] }">
+            public
+            <input spellcheck="false" id="nine" maxlength="4" style="width: 90px;" v-model="nine">
+            <input spellcheck="false" id="ten" maxlength="14" style="width: 85px;" v-model="ten"> (){ <p id="comment">
+              //Create a function 'signContract()' that allows the clerk to sign a contract and prints a log message
+            </p><br>
+
+            <input spellcheck="false" id="eleven" maxlength="6" style="width: 90px" v-model="eleven">.<input
+              spellcheck="false" id="twelve" style="width: 70px" maxlength="3" v-model="twelve">.<input spellcheck="false"
+              id="thirteen" maxlength="7" style="width: 80px" v-model="thirteen">("Sign contract"); <br>
+            } <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
+          </div>
 
         </div>
 
@@ -348,9 +490,9 @@ p {
   clear: both;
 }
 
-input{
-    min-width: 80px;
-    width: fit-content;
+input {
+  min-width: 80px;
+  width: fit-content;
 }
 
 mark1 {
@@ -392,7 +534,7 @@ mark0 {
   box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
-input{
+input {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 4px;

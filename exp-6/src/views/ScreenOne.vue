@@ -97,16 +97,16 @@ export default {
         <h2 style="padding: 25px;">You only have to fill in the spaces provided.</h2>
 
         <div
-          style="margin-left: 15%; height: 200px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[0] }">
-          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; text-align: center; padding: 15px;">
             <mark0>Class Person</mark0>
           </div>
-          <div style="height : 50px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             - name: String
             <br>
           </div>
-          <div style="padding: 15px; line-height: 40px;">
+          <div style="padding: 15px; line-height: 50px;">
             + getName(): String
             <br>
             + setName(): void

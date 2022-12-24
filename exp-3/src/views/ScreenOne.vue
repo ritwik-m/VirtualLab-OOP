@@ -3,18 +3,21 @@ import { ref } from 'vue'
 export default {
   setup() {
     const items = ref([
-      { id: 0, word: 'rName', list: 1 },
-      { id: 1, word: 'regNum', list: 1 },
-      { id: 2, word: 'keyStatus', list: 1 },
-      { id: 3, word: 'customerObj', list: 1 },
-      { id: 4, word: 'vehicleObj', list: 1 },
-      { id: 5, word: 'contractStatus', list: 1 },
-      { id: 6, word: 'releaseDate', list: 1 },
-      { id: 7, word: 'String', list: 13},
-      { id: 8, word: 'Date', list: 13},
-      { id: 9, word: 'Customer', list: 13},
-      {id: 10, word: 'Vehicle', list: 13},
-      {id: 11, word: 'int', list: 13}
+      {id: 0, word: 'cName', list: 1},
+      { id: 1, word: 'rName', list: 1 },
+      { id: 2, word: 'regNum', list: 1 },
+      { id: 3, word: 'keyStatus', list: 1 },
+      { id: 4, word: 'customerObj', list: 1 },
+      { id: 5, word: 'vehicleObj', list: 1 },
+      { id: 6, word: 'contractStatus', list: 1 },
+      { id: 7, word: 'releaseDate', list: 1 },
+      { id: 8, word: 'String', list: 13},
+      { id: 9, word: 'Date', list: 13},
+      { id: 10, word: 'Customer', list: 13},
+      {id: 11, word: 'Vehicle', list: 13},
+      {id: 12, word: 'int', list: 13},
+      { id: 13, word: 'String', list: 13},
+      { id: 14, word: 'String', list: 13},
     ])
 
     const getList = (list) => {
@@ -122,12 +125,13 @@ export default {
 
 <template class="app">
     <header style="padding: 20px">
-    <h1>Step 3: Finetuning verb phrases</h1>
-    <p>To identify verb phrases, drag words from the scenario description sentences and drop them into the noun phrase boxes. Some boxes take multiple words.</p>
+    <h1>Step 1: Associating functions and return types</h1>
+    <p>Map the elements and respective datatypes to their classes by dragging and dropping.</p>
   </header>
     <main>
         <div class="flexbox">
             <div class="flex-between">
+              <h3>Variables</h3>
     <div class="identify-box drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(1)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
@@ -139,13 +143,17 @@ export default {
     <div class="flex-between">
         <h3>Customer</h3>
         <div class="flex-horizontal">
-        
+          <div class="outer-box">
+            <p>Variable</p>
         <div class="identify-box drop-zone" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(5)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
         </div>
+      </div>
+      <div class="outer-box">
+            <p>Datatype</p>
         <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(6)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
@@ -153,65 +161,84 @@ export default {
         </div>
     </div>
     </div>
+    </div>
+    <div style="height: 50px;"></div>
     <div>
     <h3>Clerk</h3>
     <div class="flex-horizontal">
-        
+      <div class="outer-box">
+            <p>Variable</p>
         <div class="identify-box drop-zone" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(7)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
         </div>
+        </div>
+        <div class="outer-box">
+            <p>Datatype</p>
         <div class="identify-box drop-zone" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(8)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
+        </div>
     </div>
 </div>
+<div style="height: 50px;"></div>
 <div>
     <h3>Vehicle</h3>
     <div class="flex-horizontal">
-        
+      <div class="outer-box">
+            <p>Variable</p>
         <div class="identify-box drop-zone" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(9)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
         </div>
+      </div>
+      <div class="outer-box">
+            <p>Variable</p>
         <div class="identify-box drop-zone" @drop="onDrop($event, 10)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(10)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
+      </div>
     </div>
 </div>
+<div style="height: 50px;"></div>
 <div>
     <h3>Reservation</h3>
+ 
     <div class="flex-horizontal">
-        
+      <div class="outer-box">
+            <p>Variable</p>
         <div class="identify-box drop-zone" @drop="onDrop($event, 11)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(11)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
         </div>
+      </div>
+      <div class="outer-box">
+            <p>Variable</p>
         <div class="identify-box drop-zone" @drop="onDrop($event, 12)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(12)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
         </div>
     </div>
+      </div>
     </div>
 </div>
 
     </div>
     <div class="flex-between">
-        <div style="height: 60px;">
-        </div>
+        <h3>Variables</h3>
     <div class="identify-box drop-zone" @drop="onDrop($event, 13)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(13)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
@@ -237,14 +264,21 @@ export default {
 
 .identify-box{
   background-color: #fff;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
 .to-identify{
   background-color: #F9FAFE;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
+ 
 }
 .identified{
   background-color: #6D71FA;
   color: white;
+}
+
+h3{
+  margin-bottom: 0px;
 }
 
 .unidentified{
@@ -264,7 +298,7 @@ export default {
 .drop-zone {
   display: flex;
   /* width: fit-content; */
-  min-width: 30ch;
+  min-width: 20ch;
   max-width: 60ch;
   margin: 5px;
   height: fit-content;
@@ -277,6 +311,18 @@ export default {
   padding: 5px;
 }
 
+.outer-box{
+  padding: 5px;
+    background-color: #F9FAFE;
+    box-shadow: 1px 2px 5px 1px #D7DFFF;
+    max-width: 600px;
+    min-width: fit-content;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .flex-horizontal{
   display: flex;
   flex-direction: row;
@@ -285,9 +331,9 @@ export default {
 }
 
 .drag-el-horizontal {
-  padding-left: 2vh;
-  padding-right: 2vh;
-  border-radius: 10px;
+  padding-left: 1vh;
+  padding-right: 1vh;
+  border-radius: 5px;
   margin: 5px;
   text-align: center;
   height: fit-content;
@@ -305,7 +351,7 @@ export default {
   box-shadow: 2px 3px 10px 2px #D7DFFF;
   background-color: #F9FAFE;
   min-height: 10vh;
-  border-radius: 10px;
+  border-radius: 5px;
   max-height: fit-content;
   overflow: auto;
   flex-wrap: wrap;
