@@ -1,4 +1,4 @@
-<template>
+<template class="app">
     <div class="codebox">
     <pre>
       public class Customer {
@@ -90,9 +90,9 @@
     
     
     <style scoped>
-      * {
-  box-sizing: border-box;
-  background-color: #F9FAFE;
+
+.app{
+    background-color: #F9FAFE;
 }
 
 @font-face {
@@ -122,38 +122,10 @@ p {
   clear: both;
 }
 
-mark1 {
-  background-color: rgb(176, 230, 183);
-  box-shadow: 1px 6px 15px 2px rgb(160, 222, 159);
-  color: black;
-  border-radius: 10px;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-mark0 {
-  box-shadow: 1px 6px 15px 2px rgb(249, 255, 191);
-  background-color: rgb(231, 238, 162);
-  color: black;
-  border-radius: 10px;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-#comment {
-  margin-left: 15px;
-  font-style: italic;
-  color: gray;
-  font-size: small;
-}
-
 
 .codebox {
-  height: 80%;
+  margin: 30px;
+  height: fit-content;
   width: 90%;
   padding: 25px;
   border-radius: 10px;
@@ -161,14 +133,6 @@ mark0 {
   box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
-input{
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 4px;
-  font-size: 14px;
-  background-color: white;
-  color: black;
-}
 
 /* CSS */
 .button-9 {

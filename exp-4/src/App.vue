@@ -15,6 +15,10 @@
   background-color: #F9FAFE;
 }
 
+*{
+  background-color: #F9FAFE;
+}
+
 nav {
   padding: 30px;
 }

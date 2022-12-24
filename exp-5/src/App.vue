@@ -1,4 +1,4 @@
-<template>
+<template class="app">
   <nav>
     <router-link to="/">Screen One</router-link> |
     <router-link to="/test">Test</router-link>
@@ -7,11 +7,15 @@
 </template>
 
 <style scoped>
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  background-color: #F9FAFE;
+}
+
+*{
   background-color: #F9FAFE;
 }
 
