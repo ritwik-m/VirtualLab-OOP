@@ -1,7 +1,8 @@
 <template>
   <nav>
-    <router-link to="/">Screen One</router-link>
-    <router-link to="/test">Screen Two</router-link>
+    <router-link to="/">Screen One</router-link> |
+    <router-link to="/screen-two">Screen Two</router-link> |
+    <router-link to="/screen-three">Screen Three</router-link>
   </nav>
   <router-view/>
 </template>

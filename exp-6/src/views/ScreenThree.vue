@@ -3,7 +3,7 @@ export default {
 
   methods: {
     validate_one() {
-      if (this.one == "Customer" && this.two == "extends") {
+      if (this.one == "Clerk" && this.two == "extends") {
         this.button_value = this.button_text_right;
         btn2.style.backgroundColor = "green";
         this.display[0] = "none";
@@ -29,6 +29,20 @@ export default {
       }
     },
 
+    validate_three(){
+        if (this.four === "void" && this.five === "requestVehicle" && this.six==="System" && this.seven === "out" && this.eight === "println"){
+            this.button_value = this.button_text_right;
+            btn3.style.backgroundColor = "green";
+            this.display[2] = "none";
+            this.display[3] = "inherit";
+        }
+        else {
+            this.button_value = this.button_text;
+            btn3.style.backgroundColor = "red";
+        }
+        console.log("validate_three")
+    }
+
     
   },
   data() {
@@ -53,96 +67,138 @@ export default {
 
     <div class="row" style="font-family: Montserrat">
       <div class="column">
-        <h1 style="padding: 25px;">Fill in the Java code for the following updated Customer class.</h1>
+        <h1 style="padding: 25px;">Fill in the Java code for the following Clerk class.</h1>
         <h2 style="padding: 25px;">You only have to fill in the spaces provided.</h2>
 
         <div
-          style="margin-left: 15%; height: 500px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[0] }">
-          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-            <mark0>Class Customer</mark0>
+          <div style="height : fit-content; border-bottom: 1px solid black; text-align: center; padding: 15px;">
+            <mark0>Class Clerk</mark0>
           </div>
-          <div style="height : 150px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             - address: String
             <br>
             - phoneNumber: String
             <br>
             - email: String
+            <br>
+            - department: String
+            <br>
+            - position: String
           </div>
-          <div style="padding: 15px; line-height: 40px;">
+          <div style="padding: 15px; line-height: 60px;">
             + getAddress(): String
             <br>
             + setAddress(): void
             <br>
             + getPhoneNumber(): String
             <br>
-            + setPhone(): void
+            + setPhoneNumber(): void
             <br>
             + getEmail(): String
             <br>            
             + setEmail(): void
             <br>
-            + visitOffice(): void
+            + getDepartment(): String
+            <br>
+            + setDepartment(): void
+            <br>
+            + getPosition(): String
+            <br>
+            + setPosition(): void
+            <br>
+            + requestVehicle(): void
+            <br>
+            + signContract(): void
           </div>
         </div>
 
         <div
-          style="margin-left: 15%; height: 500px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[1] }">
-          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-            <mark1>Class Customer</mark1>
+          <div style="height : fit-content; border-bottom: 1px solid black; text-align: center; padding: 15px;">
+            <mark1>Class Clerk</mark1>
           </div>
-          <div style="height : 150px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 60px;">
             - address: String
             <br>
             - phoneNumber: String
             <br>
             - email: String
+            <br>
+            - department: String
+            <br>
+            - position: String
           </div>
-          <div style="padding: 15px; line-height: 40px;">
+          <div style="padding: 15px; line-height: 60px;">
             + getAddress(): String
             <br>
             + setAddress(): void
             <br>
             + getPhoneNumber(): String
             <br>
-            + setPhone(): void
+            + setPhoneNumber(): void
             <br>
             + getEmail(): String
             <br>            
             + setEmail(): void
             <br>
-            + visitOffice(): void
+            + getDepartment(): String
+            <br>
+            + setDepartment(): void
+            <br>
+            + getPosition(): String
+            <br>
+            + setPosition(): void
+            <br>
+            + requestVehicle(): void
+            <br>
+            + signContract(): void
           </div>
         </div>
 
         <div
-          style="margin-left: 15%; height: 500px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width:fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[2] }">
-          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
-            <mark1>Class Customer</mark1>
+          <div style="height : fit-content; border-bottom: 1px solid black; text-align: center; padding: 15px;">
+            <mark1>Class Clerk</mark1>
           </div>
-          <div style="height : 150px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 60px;">
             <mark1>- address: String</mark1>
             <br>
             <mark1>- phoneNumber: String</mark1>
             <br>
             <mark1>- email: String</mark1>
+            <br>
+            <mark1>- department: String</mark1>
+            <br>
+            <mark1>- position: String</mark1>
           </div>
-          <div style="padding: 15px; line-height: 40px;">
+          <div style="padding: 15px; line-height: 60px;">
             <mark1>+ getAddress(): String</mark1>
             <br>
             <mark1>+ setAddress(): void</mark1>
             <br>
             <mark1>+ getPhoneNumber(): String</mark1>
             <br>
-            <mark1>+ setPhone(): void</mark1>
+            <mark1>+ setPhoneNumber(): void</mark1>
             <br>
             <mark1>+ getEmail(): String</mark1>
             <br>            
             <mark1>+ setEmail(): void</mark1>
             <br>
-            <mark1>+ visitOffice(): void</mark1>
+            <mark1>+ getDepartment(): String</mark1>
+            <br>
+            <mark1>+ setDepartment(): void</mark1>
+            <br>
+            <mark1>+ getPosition(): void</mark1>
+            <br>
+            <mark1>+ setPosition(): void</mark1>
+            <br>
+            <mark0>+ requestVehicle(): void</mark0>
+            <br>
+            <div>+ signContract(): void</div>
           </div>
         </div>
 
@@ -156,71 +212,100 @@ export default {
           public class
           <input spellcheck="false" maxlength="8" style="width: 90px;" v-model='one'>
           <input spellcheck="false" id="two" maxlength="7" style="width: 85px;" v-model="two"> Person{ <p id="comment">//Create
-            a class "Customer" that inherits "Person" class</p><br>
+            a class "Clerk" that inherits "Person" class</p><br>
           } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
         </div>
 
         <div class="codebox" id="codebox" :style="{ display: display[1] }">
-        <pre>public class Customer extends Person{
+        <pre>public class Clerk extends Person{
 
-private String address;
-private String phoneNumber;
-private String email;</pre>
-        <br>&emsp;public Customer(String name, String address, String phoneNumber, String email){
+    private String address;
+    private String phoneNumber;
+    private String email;
+    private String department;
+    private String position;</pre>
+        <br>&emsp;public Clerk(String name, String address, String phoneNumber, String email, String department, String position){
           <br>&emsp;&emsp;
           <input spellcheck="false" id="three" maxlength="11" style="width: 110px;" v-model="three">;
           <br>&emsp;&emsp;this.address = address;
           <br>&emsp;&emsp;this.phoneNumber = phoneNumber;
           <br>&emsp;&emsp;this.email = email;
+          <br>&emsp;&emsp;this.department = department;
+          <br>&emsp;&emsp;this.position = position;
           <br>&emsp;
         };<p id="comment">
-            //Using the correct keyword, obtain the value of parent class' constructor for "name" attribute</p>
+            //Using the correct keyword, obtain the value of parent class' constructor for the "name" attribute</p>
           <br>}<br>
           <button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
         </div>
 
         <div class="codebox" id="codebox" :style="{ display: display[2] }">
-        <pre>public class Customer extends Person{
+        <pre>public class Clerk extends Person{
 
-private String address;
-private String phoneNumber;
-private String email;
+    private String address;
+    private String phoneNumber;
+    private String email;
+    private String department;
+    private String position;
 
-public Customer(String name, String address, String phoneNumber, String email){
-    super(name);
-    this.address = address;
-    this.phoneNumber = phoneNumber;
-    this.email = email;
-}
+    public Customer(String name, String address, String phoneNumber, String email){
+        super(name);
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.department = department;
+        this.position = position;
+    }
 
-public String getAddress(){
-    return address;
-}
+    public String getAddress(){
+        return address;
+    }
 
-public void setAddress(String address){
-    this.address = address;
-}
+    public void setAddress(String address){
+        this.address = address;
+    }
 
-public String getPhoneNumber(){
-    return phoneNumber;
-}
+    public String getPhoneNumber(){
+        return phoneNumber;
+    }
 
-public void setPhoneNumber(String phoneNumber){
-    this.phoneNumber = phoneNumber;
-}
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
+    }
 
-public String getEmail(){
-    return email;
-}
+    public String getEmail(){
+        return email;
+    }
 
-public void setEmail(String email){
-    this.email = email;
-}
+    public void setEmail(String email){
+        this.email = email;
+    } 
 
-public void visitOffice(){
-    System.out.println("Customer " + getName() + " is visiting the office.");
-}
-}</pre>
+    public String getDepartment() {
+            return department;
+    }
+
+    public void setDepartment(String department) {
+            this.department = department;
+    }
+
+    public String getPosition() {
+            return position;
+    }
+
+    public void setPosition(String position) {
+            this.position = position;
+    }
+</pre>
+
+<div class="codebox" id="codebox" :style="{ display: display[2] }">
+          public
+          <input spellcheck="false"  id="four" maxlength="4" style="width: 90px;" v-model='four'>
+          <input spellcheck="false" id="five" maxlength="14" style="width: 85px;" v-model="five"> (){ <p id="comment">//Create a function 'requestVehicle()' that allows the clerk to request a vehicle and prints a log message</p><br>
+
+          <input spellcheck="false" id="six" maxlength="6" style="width: 90px" v-model="six">.<input spellcheck="false" id="seven" style="width: 70px" maxlength="3" v-model="seven">.<input spellcheck="false" id="eight" maxlength="7" style="width: 80px" v-model="eight">("Requesting a vehicle"); <br>
+          } <br><button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
+        </div>
 
         </div>
 
@@ -261,6 +346,11 @@ p {
   content: "";
   display: table;
   clear: both;
+}
+
+input{
+    min-width: 80px;
+    width: fit-content;
 }
 
 mark1 {

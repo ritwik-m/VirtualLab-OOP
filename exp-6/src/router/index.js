@@ -1,18 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'screen-one',
+      component: () => import('../views/ScreenOne.vue')
     },
     {
-      path: '/test',
-      name: 'test',
-      component: () => import('../views/TestView.vue')
+      path: '/screen-two',
+      name: 'screen-two',
+      component: () => import('../views/ScreenTwo.vue')
+    },
+    {
+      path: '/screen-three',
+      name: 'screen-three',
+      component: () => import('../views/ScreenThree.vue')
     }
     
   ]
