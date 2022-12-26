@@ -40,9 +40,29 @@ export default {
     }
 
     const onDrop = (event, list) => {
-      event.preventDefault()
-      const itemID = event.dataTransfer.getData('itemID')
-      const item = items.value.find((item) => item.id === parseInt(itemID))
+      event.preventDefault();
+      const itemID = event.dataTransfer.getData('itemID');
+      const idx = items.value.find((item) => item.id === parseInt(itemID));
+
+      ///Ignore if dropping in same list
+      if (items.value[idx].list === list) return;
+
+      /// if duplicated item, delete 
+      if (items.value[idx].duplicateOf === list) {
+        items.value.splice(idx, 1);
+        return;
+      }
+
+      ///duplicate items that belong to list 13
+      if (items.value[idx].list === 13)
+        items.value.push({
+          id: items.value.length,
+          word: items.value[idx].word,
+          list: list,
+          duplicateOf: items.value[idx].list
+        });
+
+      else items.value[idx].list = list;
       item.list = list
     }
 
