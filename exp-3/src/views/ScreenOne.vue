@@ -324,17 +324,17 @@ h3{
   height: fit-content;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
   max-height: fit-content;
-  min-height: 10vh;
+  min-height: 7vh;
   flex-wrap: wrap;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px;
 }
 
 .outer-box{
   padding: 5px;
     background-color: #F9FAFE;
-    box-shadow: 1px 2px 5px 1px #D7DFFF;
+    /* box-shadow: 1px 2px 5px 1px #D7DFFF; */
     max-width: 600px;
     min-width: fit-content;
     border-radius: 5px;
