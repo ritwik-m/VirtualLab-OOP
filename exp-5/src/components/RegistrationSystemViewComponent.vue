@@ -42,7 +42,7 @@ export default {
       }
     },
     validate_four() {
-      if (this.seven == "String" && this.eight == "email") {
+      if (this.eight == "Vehicle" && this.nine == "Vehicle" && this.ten == "1234") {
         this.button_value = this.button_text_right;
         btn5.style.backgroundColor = "green";
         this.display[3] = "none";
@@ -54,7 +54,7 @@ export default {
       }
     },
     validate_five() {
-      if (this.nine == "long" && this.ten == "phone") {
+      if (this.eleven == "Reservation" && this.twelve == "cobj[0]" && this.thirteen == "vobj") {
         this.button_value = this.button_text_right;
         btn6.style.backgroundColor = "green";
         this.display[4] = "none";
@@ -66,9 +66,9 @@ export default {
       }
     },
     validate_six() {
-      if (this.eleven == "String" && this.twelve == "city") {
+      if (this.fourteen == "setBookingDate" && this.fifteen == "getVehicleObj" && this.sixteen == "updateKeyStatus") {
         this.button_value = this.button_text_right;
-        btn7.style.backgroundColor = "green";
+        btn6.style.backgroundColor = "green";
         this.display[5] = "none";
         this.display[6] = "inherit";
       }
@@ -77,81 +77,7 @@ export default {
         btn6.style.backgroundColor = "red";
       }
     },
-    validate_seven() {
-      if (this.thirteen == "static" && this.fourteen == "int" && this.fifteen == "customerCount=0") {
-        this.button_value = this.button_text_right;
-        btn8.style.backgroundColor = "green";
-        this.display[6] = "none";
-        this.display[7] = "inherit";
-      }
-      else {
-        this.button_value = this.button_text;
-        btn7.style.backgroundColor = "red";
-      }
-    },
-    validate_eight() {
-      if (this.sixteen == "customerCount++" && this.seventeen == "this") {
-        this.button_value = this.button_text_right;
-        btn9.style.backgroundColor = "green";
-        this.display[7] = "none";
-        this.display[8] = "inherit";
-      }
-      else {
-        this.button_value = this.button_text;
-        btn8.style.backgroundColor = "red";
-      }
-    },
-    validate_nine() {
-      if (this.eighteen == "String custName" && this.nineteen == "String email" && this.twenty == "this" && this.t1 == "this") {
-        this.button_value = this.button_text_right;
-        btn10.style.backgroundColor = "green";
-        this.display[8] = "none";
-        this.display[9] = "inherit";
-      }
-      else {
-        this.button_value = this.button_text;
-        btn9.style.backgroundColor = "red";
-      }
-    },
-    validate_ten() {
-      if (this.t2 == "String custName" && this.t3 == "long phone" && this.t4 == "this" && this.t5 == `setPhone(phone)`) {
-        this.button_value = this.button_text_right;
-        btn11.style.backgroundColor = "green";
-        this.display[9] = "none";
-        this.display[10] = "inherit";
-      }
-      else {
-        this.button_value = this.button_text;
-        btn10.style.backgroundColor = "red";
-      }
-    },
-
-    validate_eleven() {
-      if (this.t6 == "getcustName" && this.t7 == "return custName") {
-        this.button_value = this.button_text_right;
-        btn12.style.backgroundColor = "green";
-        this.display[10] = "none";
-        this.display[11] = "inherit";
-      }
-      else {
-        this.button_value = this.button_text;
-        btn11.style.backgroundColor = "red";
-      }
-    },
-
-    validate_twelve() {
-      if (this.t8 == "void" && this.t9 == "setPhone" && this.t10 == "long phone" && this.t11 == "if" && this.t12 == "this.phone" && this.t13 == "else" && this.t14 == "this.phone") {
-        this.button_value = this.button_text_right;
-        btn12.style.backgroundColor = "green";
-        this.display[11] = "none";
-        this.display[12] = "inherit";
-        this.cue = `Congratulations you have successfully completed learning to implement classes. The final code for the class is given below.`;
-      }
-      else {
-        this.button_value = this.button_text;
-        btn12.style.backgroundColor = "red";
-      }
-    },
+    
   },
   data() {
     return {
@@ -258,28 +184,60 @@ public class TestDriver {
               </div>
       
               <div class="codebox" id="codebox" :style="{ display: display[4] }">
-                <pre>public class Person {
-      
-      public String name;
-      
-      public Person(String name){
-          this.name = name;
-      }
-      
-      public String getName(){
-          return name;
-      }
-      </pre>    &emsp;public void
-                <input spellcheck="false" maxlength="7" style="width: 85px;" v-model='eleven'>(
-                <input spellcheck="false" maxlength="6" style="width: 75px;" v-model='twelve'>)
-                <input spellcheck="false" maxlength="4" style="width: 60px;" v-model='thirteen'>){
+                <pre>
+import java.util.Scanner;
+import java.util.Date;
+
+public class TestDriver {
+
+	public static void main(String[] args) {
+		Customer[] cobj= new Customer[3];
+		cobj[0]=new Customer("ABC", "abc@gmail.com");
+		cobj[1]=new Customer("DEF", 8654678976L);
+		cobj[2]=new Customer("GHI", "ghi@gmail.com", 1234567890L);
+		cobj[0].setCity("Coimbatore");
+		cobj[1].setCity("Coimbatore");
+		cobj[2].setCity("Chennai");
+		Vehicle vobj=new Vehicle(1234);
+      </pre>    &emsp;&emsp;&emsp;Reservation robj= new 
+                <input spellcheck="false" maxlength="11" style="width: 115px;" v-model='eleven'>(
+                <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='twelve'>, 
+                <input spellcheck="false" maxlength="4" style="width: 60px;" v-model='thirteen'> );
                 <br>&emsp;&emsp;
-                <input spellcheck="false" maxlength="9" style="width: 100px;" v-model='fourteen'> = name;
                 <br>&emsp;}
-                <p id="comment">//Create a setName method</p><br>
+                <p id="comment">//Create a Reservation object with first Customer object and Vehicle object</p><br>
                 } <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
               </div>
+              
+              <div class="codebox" id="codebox" :style="{ display: display[5] }">
+                <pre>
+import java.util.Scanner;
+import java.util.Date;
+
+public class TestDriver {
+
+	public static void main(String[] args) {
+		Customer[] cobj= new Customer[3];
+		cobj[0]=new Customer("ABC", "abc@gmail.com");
+		cobj[1]=new Customer("DEF", 8654678976L);
+		cobj[2]=new Customer("GHI", "ghi@gmail.com", 1234567890L);
+		cobj[0].setCity("Coimbatore");
+		cobj[1].setCity("Coimbatore");
+		cobj[2].setCity("Chennai");
+		Vehicle vobj=new Vehicle(1234);
+		Reservation robj= new Reservation(cobj[0],vobj);
+      </pre>    &emsp;&emsp;&emsp;&emsp;robj.
+                <input spellcheck="false" maxlength="14" style="width: 140px;" v-model='fourteen'>(new Date());
+                <br>&emsp;&emsp;&emsp;&emsp;robj.
+                <input spellcheck="false" maxlength="13" style="width: 130px;" v-model='fifteen'>().
+                <input spellcheck="false" maxlength="15" style="width: 150px;" v-model='sixteen'>());
+                <br>&emsp;&emsp;
+                <br>&emsp;}
+                <p id="comment">//Call the function to set a booking date and update the key status of vehicle object</p><br>
+                } <br><button class="button-9" id="btn6" @click="validate_six()"> {{ button_value }} </button>
+              </div>
       
+
             </div>
           </div>
           </main>
