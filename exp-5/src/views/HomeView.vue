@@ -23,6 +23,7 @@ export default {
 
 <template>
   <main class="app">
+  <button @click="componentSelect='InstructionsView'">Instructions</button>
   <button @click="componentSelect='CustomerView'">Customer View</button>
   <button @click="componentSelect='ReservationView'">Reservation View</button>
   <button @click="componentSelect='VehicleView'">Vehicle View</button>
@@ -43,10 +44,15 @@ export default {
 }
 
 button{
+  margin-top: 30px;
   border: none;
   padding: 20px;
+  margin-left: 5px;
   background-color: #2c3e50;
-  margin-left: 30px;
   color: white;
+}
+
+button:first-of-type{
+  margin-left: 30px;
 }
 </style>

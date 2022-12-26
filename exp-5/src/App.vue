@@ -1,9 +1,7 @@
-<template class="app">
-  <nav>
-    <router-link to="/">Screen One</router-link> |
-    <router-link to="/test">Test</router-link>
-  </nav>
+<template>
+  <main class="app">
   <router-view/>
+  </main> 
 </template>
 
 <style scoped>
