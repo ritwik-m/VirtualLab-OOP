@@ -3,16 +3,18 @@
 </script>
 
 <template>
+  <main class="app">
   <nav>
     <router-link to="/">Screen One</router-link> |
     <router-link to="/screen-two">Screen Two</router-link> |
     <router-link to="/screen-three">Screen Three</router-link>
   </nav>
   <router-view/>
+</main>
 </template>
 
 <style scoped>
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
