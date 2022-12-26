@@ -53,8 +53,8 @@ export default {
 
     <div class="row" style="font-family: Montserrat">
       <div class="column">
-        <h1 style="padding: 25px;">Fill in the Java code for the following updated Customer class.</h1>
-        <h2 style="padding: 25px;">You only have to fill in the spaces provided.</h2>
+        <h1 style="padding-left: 25px; padding-bottom: 0px;">Fill in the Java code for the following updated Customer class.</h1>
+        <p style="padding-left: 25px;">You only have to fill in the spaces provided.</p>
 
         <div
           style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
@@ -150,7 +150,8 @@ export default {
 
       </div>
       <div class="column">
-        <h1 style="padding: 25px;">Enter your code here .</h1>
+        <h1 style="padding-left: 0px;">Enter your code here .</h1>
+        <p style="padding-bottom: 25px;">Follow instructions provided in the comments</p>
 
         <div class="codebox" id="codebox" :style="{ display: display[0] }">
           public class
