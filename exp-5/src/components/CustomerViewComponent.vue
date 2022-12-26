@@ -1,4 +1,5 @@
-<template class="app">
+<template>
+  <main class="app">
     <div class="codebox">
     <pre>
       public class Customer {
@@ -82,6 +83,7 @@
     
     </pre>
 </div>
+  </main>
     </template>
     
     <script>

@@ -21,7 +21,8 @@ export default {
 }
 </script>
 
-<template class="app">
+<template>
+  <main class="app">
   <button @click="componentSelect='CustomerView'">Customer View</button>
   <button @click="componentSelect='ReservationView'">Reservation View</button>
   <button @click="componentSelect='VehicleView'">Vehicle View</button>
@@ -29,6 +30,7 @@ export default {
   <KeepAlive>
     <component v-bind:is="componentSelect" />
   </KeepAlive>
+  </main>
   
 </template>
 
@@ -37,6 +39,7 @@ export default {
 
 .app{
   background-color: #F9FAFE;
+  min-height: 1024px;
 }
 
 button{

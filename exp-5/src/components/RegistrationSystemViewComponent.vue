@@ -95,7 +95,7 @@ export default {
 
 </script>
 <template>
-    <main>
+    <main class="app">
     <div class="row">
             
             <div class="column">
@@ -309,6 +309,7 @@ mark0 {
 .codebox {
   height: 80%;
   width: 90%;
+  margin: 25px;
   padding: 25px;
   border-radius: 10px;
   background-color: #F9FAFE;

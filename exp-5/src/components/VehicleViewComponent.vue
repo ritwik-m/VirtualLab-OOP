@@ -1,4 +1,5 @@
 <template>
+	<main class="app">
     <div class="codebox">
     <pre>
 
@@ -34,6 +35,7 @@ public class Vehicle {
 
     </pre>
 </div>
+</main>
 </template>
     
 <script>
@@ -42,6 +44,12 @@ public class Vehicle {
     
     
 <style scoped>
+
+* {
+  box-sizing: border-box;
+  background-color: #F9FAFE;
+}
+
 .codebox {
     height: 80%;
     width: 90%;
@@ -51,4 +59,10 @@ public class Vehicle {
     background-color: #F9FAFE;
     box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
+
+.app{
+    background-color: #F9FAFE;
+}
+
+
 </style>
