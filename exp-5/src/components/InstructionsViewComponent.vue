@@ -3,9 +3,9 @@
         <div class="box">
             <h1>Instructions</h1>
             <ol>
-                <li class="arrow">Thing 1</li>
-                <li class="arrow">Thing 2</li>
-                <li class="arrow">Thing 3</li>
+                <li class="arrow">Customer, Reservation and Vehicle classes have been implemented and are to be checked.</li>
+                <li class="arrow">You can refer to the class diagram in the section above at any time.</li>
+                <li class="arrow">Now work on implementing the Registration System that connects all these classes.</li>
             </ol>
         </div>
     </main>

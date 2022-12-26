@@ -53,7 +53,7 @@ export default {
         final_string = final_string + final_word + ' '
       }
       console.log(final_string)
-      let answer = "A customer comes to the office to acquire a vehicle  The clerk locates the vehicle reservation contract by means of the reservation number and/or customer name. [Exception: Required vehicle type is not available due to late arrivals.]  The customer signs the contract and the clerk gives the keys to the vehicle.  The clerk then marks the contract active by entering the vehicle release data (today's date) onto the vehicle reservation contract.  The use case terminates at ths point."
+      let answer = "A customer comes to the office to acquire a vehicle  The clerk locates the vehicle reservation contract by means of the reservation number and/or customer name. [Exception: Required vehicle type is not available due to late arrivals.]  The customer signs the contract and the clerk gives the keys to the vehicle.  The clerk then marks the contract active by entering the vehicle release data (today's date) onto the vehicle reservation contract.  The use case terminates at ths point.  "
       if (final_string === answer) {
         alert("Correct")
         this.$router.push('/screen-two')

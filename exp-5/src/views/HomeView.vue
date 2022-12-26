@@ -4,6 +4,7 @@ import ReservationView from '../components/ReservationViewComponent.vue'
 import VehicleView from '../components/VehicleViewComponent.vue'
 import InstructionsView from '../components/InstructionsViewComponent.vue'
 import RegistrationView from '../components/RegistrationSystemViewComponent.vue'
+import ClassView from '../components/ClassDiagramView.vue'
 
 export default {
   components: {
@@ -11,7 +12,8 @@ export default {
     ReservationView,
     VehicleView,
     InstructionsView,
-    RegistrationView
+    RegistrationView,
+    ClassView
   },
   data(){
     return {
@@ -28,6 +30,7 @@ export default {
   <button @click="componentSelect='ReservationView'">Reservation View</button>
   <button @click="componentSelect='VehicleView'">Vehicle View</button>
   <button @click="componentSelect='RegistrationView'">Registration System View</button>
+  <button @click="componentSelect='ClassView'">Class diagram</button>
   <KeepAlive>
     <component v-bind:is="componentSelect" />
   </KeepAlive>
