@@ -98,7 +98,6 @@ export default {
     <main class="app">
       <div class = "row">
         <div class="column">
-          <h2>Title</h2>
           <div class="codebox">
             <h5>Aggregation: </h5>
             <p>Write a demo class to create a customer array with 3 objects. Customer objects are created with the availability of only email, then only phone and last customer with both email and phone number.  Assign the city of the first two customers is Coimbatore and remaining customers is Chennai. Create a vehicle object with a registration number. A customer in Coimbatore does a reservation of the vehicle for current date.  Also release the vehicle. </p>
