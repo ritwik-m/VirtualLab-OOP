@@ -3,15 +3,15 @@ import { ref } from 'vue'
 export default {
     setup() {
         const items = ref([
-            { id: 6, word: 'visitOffice():void', list: 13 },
-            { id: 7, word: 'getName():String', list: 13 },
-            { id: 8, word: 'setName(name:String):void', list: 13 },
-            { id: 9, word: 'getName():String', list: 13 },
-            { id: 10, word: 'setName(name:String):void', list: 13 },
-            { id: 11, word: 'requestVehicle(cObj:Customer):String', list: 13 },
-            { id: 12, word: 'signContract(cObj:Customer):void', list: 13 },
-            { id: 13, word: 'locateReservation(cName:String):String', list: 13 },
-            { id: 14, word: 'releaseContract():String', list: 13 },
+            { id: 12, word: 'visitOffice():void', list: 13 },
+            { id: 10, word: 'getName():String', list: 13 },
+            { id: 6, word: 'setName(name:String):void', list: 13 },
+            { id: 31, word: 'getName():String', list: 13 },
+            { id: 4, word: 'setName(name:String):void', list: 13 },
+            { id: 7, word: 'requestVehicle(cObj:Customer):String', list: 13 },
+            { id: 13, word: 'signContract(cObj:Customer):void', list: 13 },
+            { id: 1, word: 'locateReservation(cName:String):String', list: 13 },
+            { id: 5, word: 'releaseContract():String', list: 13 },
             { id: 15, word: 'updateKeyStatus(processedBy:String):void', list: 13 },
         ])
 
@@ -278,7 +278,7 @@ export default {
 .drag-el-horizontal {
     padding-left: 2vh;
     padding-right: 2vh;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 5px;
     padding-top: 1vh;
     padding-bottom: 1vh;

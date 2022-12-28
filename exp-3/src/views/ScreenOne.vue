@@ -16,8 +16,6 @@ export default {
       { id: 10, word: 'Customer', list: 13},
       {id: 11, word: 'Vehicle', list: 13},
       {id: 12, word: 'int', list: 13},
-      { id: 13, word: 'String', list: 13},
-      { id: 14, word: 'String', list: 13},
     ])
 
     const getList = (list) => {
@@ -42,7 +40,7 @@ export default {
     const onDrop = (event, list) => {
       event.preventDefault();
       const itemID = event.dataTransfer.getData('itemID');
-      const idx = items.value.find((item) => item.id === parseInt(itemID));
+      const idx = items.value.findIndex((item) => item.id === parseInt(itemID));
 
       ///Ignore if dropping in same list
       if (items.value[idx].list === list) return;
@@ -63,7 +61,6 @@ export default {
         });
 
       else items.value[idx].list = list;
-      item.list = list
     }
 
     return {
@@ -267,6 +264,12 @@ export default {
     </div>
 </div>
   </div>
+  <footer>
+    <div id="buttons" class="relative">
+      <button class="navitem">Back</button>
+      <button class="navitem" @click="validate()">Next</button>
+    </div>
+  </footer>
     </main>
 </template>
 

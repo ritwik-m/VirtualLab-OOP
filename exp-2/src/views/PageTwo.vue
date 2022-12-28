@@ -3,18 +3,18 @@ import { ref } from 'vue'
 export default {
   setup() {
     const items = ref([
-      { id: 6, word: 'requestVehicle', list: 13 },
-      { id: 7, word: 'signContract', list: 13 },
-      { id: 8, word: '[wait for Vehicle]', list: 13 },
-      { id: 9, word: 'locateReservation', list: 13 },
-      { id: 10, word: 'initiateContract', list: 13 },
-      { id: 11, word: 'releaseContract', list: 13 },
-      { id: 12, word: 'updateKeyStatus', list: 13 },
-      { id: 13, word: '[key handed over]', list: 13 },
-      { id: 14, word: '[to give keys]', list: 13 },
-      { id: 15, word: '[vehicle on trip]', list: 13 },
-      { id: 16, word: '[vehicle available]', list: 13 },
-      { id: 17, word: '[reservation released]', list: 13 },
+      { id: 7, word: 'requestVehicle', list: 13 },
+      { id: 14, word: 'signContract', list: 13 },
+      { id: 17, word: '[wait for Vehicle]', list: 13 },
+      { id: 10, word: 'locateReservation', list: 13 },
+      { id: 1, word: 'initiateContract', list: 13 },
+      { id: 5, word: 'releaseContract', list: 13 },
+      { id: 20, word: 'updateKeyStatus', list: 13 },
+      { id: 3, word: '[key handed over]', list: 13 },
+      { id: 15, word: '[to give keys]', list: 13 },
+      { id: 8, word: '[vehicle on trip]', list: 13 },
+      { id: 3, word: '[vehicle available]', list: 13 },
+      { id: 4, word: '[reservation released]', list: 13 },
     ])
 
     const getList = (list) => {

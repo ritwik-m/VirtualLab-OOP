@@ -3,7 +3,7 @@ import CustomerView from '../components/CustomerViewComponent.vue'
 import ReservationView from '../components/ReservationViewComponent.vue'
 import VehicleView from '../components/VehicleViewComponent.vue'
 import InstructionsView from '../components/InstructionsViewComponent.vue'
-import RegistrationView from '../components/RegistrationSystemViewComponent.vue'
+import ReservationView from '../components/ReservationSystemViewComponent.vue'
 import ClassView from '../components/ClassDiagramView.vue'
 
 export default {
@@ -12,7 +12,7 @@ export default {
     ReservationView,
     VehicleView,
     InstructionsView,
-    RegistrationView,
+    ReservationView,
     ClassView
   },
   data(){
@@ -29,7 +29,7 @@ export default {
   <button @click="componentSelect='CustomerView'">Customer View</button>
   <button @click="componentSelect='ReservationView'">Reservation View</button>
   <button @click="componentSelect='VehicleView'">Vehicle View</button>
-  <button @click="componentSelect='RegistrationView'">Registration System View</button>
+  <button @click="componentSelect='ReservationView'">Reservation System View</button>
   <button @click="componentSelect='ClassView'">Class diagram</button>
   <KeepAlive>
     <component v-bind:is="componentSelect" />
