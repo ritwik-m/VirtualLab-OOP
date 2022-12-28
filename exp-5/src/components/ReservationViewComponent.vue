@@ -1,6 +1,197 @@
+<script>
+export default {
+
+  methods: {
+    validate_one() {
+      if (this.one == "final" && this.two == "int" && this.three == "reservationID") {
+        this.button_value = this.button_text_right;
+        btn2.style.backgroundColor = "green";
+        this.display[0] = "none";
+        this.display[1] = "inherit";
+      }
+
+      else {
+        this.button_value = this.button_text;
+        btn1.style.backgroundColor = "red";
+      }
+    },
+
+    validate_two() {
+      if (this.four == "Customer" && this.five == "customerObj") {
+        this.button_value = this.button_text_right;
+        btn3.style.backgroundColor = "green";
+        this.display[1] = "none";
+        this.display[2] = "inherit";
+      }
+      else {
+        this.button_value = this.button_text;
+        btn2.style.backgroundColor = "red";
+      }
+    },
+
+    validate_three() {
+      if (this.six == "Vehicle" && this.seven == "vehicleObj") {
+        this.button_value = this.button_text_right;
+        btn4.style.backgroundColor = "green";
+        this.display[2] = "none";
+        this.display[3] = "inherit";
+      }
+      else {
+        this.button_value = this.button_text;
+        btn3.style.backgroundColor = "red";
+      }
+    },
+    validate_four() {
+      if (this.eight == "Customer" && this.nine == "customerObj" && this.ten == "Vehicle" && this.eleven == "vehicleObj" ) {
+        this.button_value = this.button_text_right;
+        btn5.style.backgroundColor = "green";
+        this.display[3] = "none";
+        this.display[4] = "inherit";
+      }
+      else {
+        this.button_value = this.button_text;
+        btn4.style.backgroundColor = "red";
+      }
+    },
+    validate_five() {
+      if (this.twelve == "reservationCount++" && this.thirteen == "reservationID" && this.fourteen == "reservationCount") {
+        this.button_value ="Good Job you're done here";
+        btn5.style.backgroundColor = "green";
+        this.display[4] = "none";
+        this.display[5] = "inherit";
+      }
+      else {
+        this.button_value = this.button_text;
+        btn5.style.backgroundColor = "red";
+      }
+    },
+    
+  },
+  data() {
+    return {
+      id: 'container',
+      class: 'wrapper',
+      button_value: 'Next',
+      button_text: "Incorrect. Try again",
+      button_text_right: "Correct. Next",
+      correct: false,
+      display: ["inherit", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none",]
+    }
+  }
+
+}
+
+</script>
+
 <template>
-    <div class="codebox">
-    <pre>
+    <main class="app">
+    <div class="row">
+            
+      <div class="column">
+              <h1 style="padding: 25px; padding-bottom: 0px;">Enter your code here .</h1>
+              <p style="padding: 25px; padding-top: 0px">Follow instructions provided in the comments</p>
+      
+              <div class="codebox" id="codebox" :style="{ display: display[0] }">
+                <pre>
+import java.util.Date;
+
+public class Reservation {
+</pre>&emsp;&emsp;&emsp;private
+                <input spellcheck="false" maxlength="5" style="width: 60px;" v-model='one'>
+                <input spellcheck="false" maxlength="3" style="width: 45px;" v-model="two">
+                <input spellcheck="false" maxlength="13" style="width: 130px;" v-model="three">;
+                <p id="comment">//Create attribute reservationID of type final int</p><br>
+                } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
+              </div>
+      
+              <div class="codebox" id="codebox" :style="{ display: display[1] }">
+                <pre>
+import java.util.Date;
+
+public class Reservation {
+	private final int reservationID;
+                </pre>
+                <br>&emsp;&emsp;&emsp;private
+                <input spellcheck="false" maxlength="8" style="width: 90px;" v-model='four'>
+                <input spellcheck="false" maxlength="11" style="width: 110px;" v-model='five'>;
+                <p id="comment">//Create a new Customer object called customerObj</p><br>
+                } <br><button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
+              </div>
+      
+              <div class="codebox" id="codebox" :style="{ display: display[2] }">
+                <pre>
+import java.util.Date;
+
+public class Reservation {
+	private final int reservationID;
+	private Customer customerObj;
+
+      </pre>
+          <br>&emsp;&emsp;&emsp;private 
+                <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='six'>
+                <input spellcheck="false" maxlength="10" style="width: 100px;" v-model='seven'>;
+                <br>&emsp;
+                <p id="comment">//Create a new vehicle object called "vehicleObj"</p><br>&emsp;
+                <br>
+                } <br><button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
+              </div>
+      
+
+
+              <div class="codebox" id="codebox" :style="{ display: display[3] }">
+                <pre>
+import java.util.Date;
+
+public class Reservation {
+	private final int reservationID;
+	private Customer customerObj;
+	private Vehicle vehicleObj;
+	private String contractStatus;
+	private Date bookingDate;
+	private Date releaseDate;
+	private static int reservationCount=0;
+
+      </pre>    &emsp;&emsp;&emsp;public Reservation(
+                <input spellcheck="false" maxlength="8" style="width: 85px;" v-model='eight'>
+                <input spellcheck="false" maxlength="11" style="width: 105px;" v-model='nine'>, 
+                <input spellcheck="false" maxlength="7" style="width: 70px;" v-model='ten'>
+                <input spellcheck="false" maxlength="10" style="width:110px;" v-model='eleven'>)
+                
+                <br>&emsp;
+                <p id="comment">//Create a constructor for Reservation class with Customer and Vehicle objects to establish aggregation</p><br>
+                } <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
+              </div>
+      
+              <div class="codebox" id="codebox" :style="{ display: display[4] }">
+                <pre>
+import java.util.Date;
+
+public class Reservation {
+	private final int reservationID;
+	private Customer customerObj;
+	private Vehicle vehicleObj;
+	private String contractStatus;
+	private Date bookingDate;
+	private Date releaseDate;
+	private static int reservationCount=0;
+	
+	public Reservation(Customer customerObj, Vehicle vehicleObj) {
+		this.customerObj = customerObj;
+		this.vehicleObj = vehicleObj;
+      </pre>    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input spellcheck="false" maxlength="18" style="width: 160px;" v-model='twelve'>;
+                <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                this.
+                <input spellcheck="false" maxlength="13" style="width: 110px;" v-model='thirteen'>
+                <input spellcheck="false" maxlength="16" style="width: 140px;" v-model='fourteen'>;
+                <br>&emsp;&emsp;
+                <br>&emsp;}
+                <p id="comment">//Increment the reservationCount by 1 and assign it to reservationID</p><br>
+                } <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
+              </div>
+              
+              <div class="codebox" id="codebox" :style="{ display: display[5] }">
+                <pre>
 import java.util.Date;
 
 public class Reservation {
@@ -59,8 +250,13 @@ public class Reservation {
 	}
 	
 }
-    </pre>
-    </div>  
+
+      </pre> <br><button class="button-9" id="btn6"> {{ button_value }} </button>
+              </div>
+      
+            </div>
+            </div>
+    </main>
     </template>
     
     <script>
@@ -91,7 +287,7 @@ p {
 
 .column {
   float: left;
-  width: 50%;
+  width: 60%;
 }
 
 /* Clear floats after the columns */
@@ -133,7 +329,7 @@ mark0 {
 
 .codebox {
   height: 80%;
-  width: 90%;
+  width: 100%;
   padding: 25px;
   border-radius: 10px;
   margin: 25px;
