@@ -96,6 +96,14 @@ export default {
 </script>
 <template>
     <main class="app">
+      <div class = "row">
+        <div class="column">
+          <div class="codebox">
+            <h5>Aggregation: </h5>
+            <p>Write a demo class to create a customer array with 3 objects. Customer objects are created with the availability of only email, then only phone and last customer with both email and phone number.  Assign the city of the first two customers is Coimbatore and remaining customers is Chennai. Create a vehicle object with a registration number. A customer in Coimbatore does a reservation of the vehicle for current date.  Also release the vehicle. </p>
+          </div>
+        </div>
+      </div>
     <div class="row">
             
             <div class="column">
@@ -237,7 +245,7 @@ public class TestDriver {
                 <p id="comment">//Call the function to set a booking date and update the key status of vehicle object</p><br>
                 } <br><button class="button-9" id="btn6" @click="validate_six()"> {{ button_value }} </button>
               </div>
-      
+              
 
             </div>
           </div>
@@ -276,6 +284,7 @@ p {
   display: table;
   clear: both;
 }
+
 
 mark1 {
   background-color: rgb(176, 230, 183);
