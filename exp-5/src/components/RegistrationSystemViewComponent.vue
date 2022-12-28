@@ -99,7 +99,8 @@ export default {
     <div class="row">
             
             <div class="column">
-              <h1 style="padding: 25px;">Enter your code here .</h1>
+              <h1 style="padding: 25px; padding-bottom: 0px;">Enter your code here .</h1>
+              <p style="padding: 25px; padding-top: 0px">Follow instructions provided in the comments</p>
       
               <div class="codebox" id="codebox" :style="{ display: display[0] }">
                 <pre>

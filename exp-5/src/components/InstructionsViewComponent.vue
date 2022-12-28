@@ -3,9 +3,9 @@
         <div class="box">
             <h1>Instructions</h1>
             <ol>
-                <li class="arrow">Customer, Reservation and Vehicle classes have been implemented and are to be checked.</li>
-                <li class="arrow">You can refer to the class diagram in the section above at any time.</li>
-                <li class="arrow">Now work on implementing the Registration System that connects all these classes.</li>
+                <li class="">To combine the different classes as shown in the diagram, we will be creating a Reservation System class.</li>
+                <li class="arrow">Customer, Reservation and Vehicle classes have been implemented and are to be referred to.</li>
+                <li class="arrow">Switch between instructions, classes and the class diagram by clicking on the respective elements in the top navigation bar.</li>
             </ol>
         </div>
     </main>
@@ -22,17 +22,17 @@
   background-color: #F9FAFE;
   min-height: 960px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .box{
     height: 80%;
-    min-height: 768px;
+    min-height: 600px;
     width: 100%;
     padding: 25px;
     border-radius: 10px;
-    margin: 25px;
+    margin: 30px;
     margin-top: 15px;
     line-height: 60px;
     background-color: #F9FAFE;

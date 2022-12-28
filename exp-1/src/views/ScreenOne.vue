@@ -181,7 +181,7 @@ export default {
 
 .drop-zone-single {
   min-width: 500px;
-  max-width: 650px;
+  /* max-width: 650px; */
   margin: 10px;
   min-height: 10vh;
   max-height: fit-content;

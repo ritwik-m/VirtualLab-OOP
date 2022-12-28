@@ -200,12 +200,13 @@ export default {
     <p>To identify noun phrases, drag words from the scenario description sentences and drop them into the noun phrase
       boxes. Some boxes take multiple words.</p>
   </header>
-  <div style="padding: 0;">
+  <div style="padding: 0; margin-left: 25ch;">
     <h3 style="margin-left: 15px; margin-bottom: 0">Sample: </h3>
     <img src="../assets/sample-1.png" alt="Sample image" class="image">
   </div>
   <div class="flexbox">
   <div class="flex-horizontal">
+    <h2>Noun phrases</h2>
     <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(6)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
@@ -268,9 +269,7 @@ export default {
     </div>
   </div>
   <main class="flex">
-    <div style="height: 60px">
-
-    </div>
+    <h2>Sentences</h2>
     <div class="to-identify drop-zone-horizontal" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
       <div v-for="item in getList(1)" :key="item.id" class="unidentified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
@@ -348,14 +347,14 @@ export default {
 .drop-zone {
   display: flex;
   /* width: fit-content; */
-  min-width: 40ch;
+  min-width: 20ch;
   max-width: 60ch;
   align-items: center;
   justify-content: center;
   margin: 5px;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
   max-height: fit-content;
-  min-height: 10vh;
+  min-height: 8vh;
   flex-wrap: wrap;
   flex-direction: row;
   padding: 5px;
@@ -405,7 +404,7 @@ export default {
 
 .flexbox {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
 
   height: 100%;
   width: 100%;

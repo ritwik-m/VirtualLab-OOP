@@ -40,9 +40,29 @@ export default {
     }
 
     const onDrop = (event, list) => {
-      event.preventDefault()
-      const itemID = event.dataTransfer.getData('itemID')
-      const item = items.value.find((item) => item.id === parseInt(itemID))
+      event.preventDefault();
+      const itemID = event.dataTransfer.getData('itemID');
+      const idx = items.value.find((item) => item.id === parseInt(itemID));
+
+      ///Ignore if dropping in same list
+      if (items.value[idx].list === list) return;
+
+      /// if duplicated item, delete 
+      if (items.value[idx].duplicateOf === list) {
+        items.value.splice(idx, 1);
+        return;
+      }
+
+      ///duplicate items that belong to list 13
+      if (items.value[idx].list === 13)
+        items.value.push({
+          id: items.value.length,
+          word: items.value[idx].word,
+          list: list,
+          duplicateOf: items.value[idx].list
+        });
+
+      else items.value[idx].list = list;
       item.list = list
     }
 
@@ -304,17 +324,17 @@ h3{
   height: fit-content;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
   max-height: fit-content;
-  min-height: 10vh;
+  min-height: 7vh;
   flex-wrap: wrap;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px;
 }
 
 .outer-box{
   padding: 5px;
     background-color: #F9FAFE;
-    box-shadow: 1px 2px 5px 1px #D7DFFF;
+    /* box-shadow: 1px 2px 5px 1px #D7DFFF; */
     max-width: 600px;
     min-width: fit-content;
     border-radius: 5px;

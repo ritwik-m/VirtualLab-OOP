@@ -73,7 +73,8 @@ export default {
 
 </script>
 
-<template class="app">
+<template>
+  <main class="app">
   <header style="padding: 20px">
     <h1>Step 3: Identifying conceptual classes and attributes</h1>
     <p>To identify conceptual classes and related attributes, drag phrases from the bottom and place them in boxes.
@@ -120,9 +121,15 @@ export default {
       <button class="navitem" @click="validate()">Next</button>
     </div>
   </footer>
+</main>
 </template>
 
 <style scoped>
+
+.app{
+  min-height: 100vh;
+  background-color: #F9FAFE;
+}
 .drop-zone {
   display: flex;
   min-width: 35ch;
@@ -217,7 +224,6 @@ export default {
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #fff;
 }
 
 .navitem {
