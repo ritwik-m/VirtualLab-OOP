@@ -42,7 +42,7 @@ export default {
       }
     },
     validate_four() {
-      if (this.eight == "Customer" && this.nine == "customerObj" && this.ten == "Vehicle" && this.eleven == "vehicleObj" ) {
+      if (this.eight == "Customer" && this.nine == "customerObj" && this.ten == "Vehicle" && this.eleven == "vehicleObj") {
         this.button_value = this.button_text_right;
         btn5.style.backgroundColor = "green";
         this.display[3] = "none";
@@ -55,7 +55,7 @@ export default {
     },
     validate_five() {
       if (this.twelve == "reservationCount++" && this.thirteen == "reservationID" && this.fourteen == "reservationCount") {
-        this.button_value ="Good Job you're done here";
+        this.button_value = "Good Job you're done here";
         btn5.style.backgroundColor = "green";
         this.display[4] = "none";
         this.display[5] = "inherit";
@@ -65,7 +65,7 @@ export default {
         btn5.style.backgroundColor = "red";
       }
     },
-    
+
   },
   data() {
     return {
@@ -84,42 +84,42 @@ export default {
 </script>
 
 <template>
-    <main class="app">
+  <main class="app">
     <div class="row">
-            
+
       <div class="column">
-              <h1 style="padding: 25px; padding-bottom: 0px;">Enter your code here .</h1>
-              <p style="padding: 25px; padding-top: 0px">Follow instructions provided in the comments</p>
-      
-              <div class="codebox" id="codebox" :style="{ display: display[0] }">
-                <pre>
+        <h1 style="padding: 25px; padding-bottom: 0px;">Enter your code here .</h1>
+        <p style="padding: 25px; padding-top: 0px">Follow instructions provided in the comments</p>
+
+        <div class="codebox" id="codebox" :style="{ display: display[0] }">
+          <pre>
 import java.util.Date;
 
 public class Reservation {
 </pre>&emsp;&emsp;&emsp;private
-                <input spellcheck="false" maxlength="5" style="width: 60px;" v-model='one'>
-                <input spellcheck="false" maxlength="3" style="width: 45px;" v-model="two">
-                <input spellcheck="false" maxlength="13" style="width: 130px;" v-model="three">;
-                <p id="comment">//Create attribute reservationID of type final int</p><br>
-                } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
-              </div>
-      
-              <div class="codebox" id="codebox" :style="{ display: display[1] }">
-                <pre>
+          <input spellcheck="false" maxlength="5" style="width: 60px;" v-model='one'>
+          <input spellcheck="false" maxlength="3" style="width: 45px;" v-model="two">
+          <input spellcheck="false" maxlength="13" style="width: 130px;" v-model="three">;
+          <p id="comment">//Create attribute reservationID of type final int</p><br>
+          } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" id="codebox" :style="{ display: display[1] }">
+          <pre>
 import java.util.Date;
 
 public class Reservation {
 	private final int reservationID;
                 </pre>
-                <br>&emsp;&emsp;&emsp;private
-                <input spellcheck="false" maxlength="8" style="width: 90px;" v-model='four'>
-                <input spellcheck="false" maxlength="11" style="width: 110px;" v-model='five'>;
-                <p id="comment">//Create a new Customer object called customerObj</p><br>
-                } <br><button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
-              </div>
-      
-              <div class="codebox" id="codebox" :style="{ display: display[2] }">
-                <pre>
+          <br>&emsp;&emsp;&emsp;private
+          <input spellcheck="false" maxlength="8" style="width: 90px;" v-model='four'>
+          <input spellcheck="false" maxlength="11" style="width: 110px;" v-model='five'>;
+          <p id="comment">//Create a new Customer object called customerObj</p><br>
+          } <br><button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" id="codebox" :style="{ display: display[2] }">
+          <pre>
 import java.util.Date;
 
 public class Reservation {
@@ -127,19 +127,19 @@ public class Reservation {
 	private Customer customerObj;
 
       </pre>
-          <br>&emsp;&emsp;&emsp;private 
-                <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='six'>
-                <input spellcheck="false" maxlength="10" style="width: 100px;" v-model='seven'>;
-                <br>&emsp;
-                <p id="comment">//Create a new vehicle object called "vehicleObj"</p><br>&emsp;
-                <br>
-                } <br><button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
-              </div>
-      
+          <br>&emsp;&emsp;&emsp;private
+          <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='six'>
+          <input spellcheck="false" maxlength="10" style="width: 100px;" v-model='seven'>;
+          <br>&emsp;
+          <p id="comment">//Create a new vehicle object called "vehicleObj"</p><br>&emsp;
+          <br>
+          } <br><button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
+        </div>
 
 
-              <div class="codebox" id="codebox" :style="{ display: display[3] }">
-                <pre>
+
+        <div class="codebox" id="codebox" :style="{ display: display[3] }">
+          <pre>
 import java.util.Date;
 
 public class Reservation {
@@ -151,19 +151,20 @@ public class Reservation {
 	private Date releaseDate;
 	private static int reservationCount=0;
 
-      </pre>    &emsp;&emsp;&emsp;public Reservation(
-                <input spellcheck="false" maxlength="8" style="width: 85px;" v-model='eight'>
-                <input spellcheck="false" maxlength="11" style="width: 105px;" v-model='nine'>, 
-                <input spellcheck="false" maxlength="7" style="width: 70px;" v-model='ten'>
-                <input spellcheck="false" maxlength="10" style="width:110px;" v-model='eleven'>)
-                
-                <br>&emsp;
-                <p id="comment">//Create a constructor for Reservation class with Customer and Vehicle objects to establish aggregation</p><br>
-                } <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
-              </div>
-      
-              <div class="codebox" id="codebox" :style="{ display: display[4] }">
-                <pre>
+      </pre> &emsp;&emsp;&emsp;public Reservation(
+          <input spellcheck="false" maxlength="8" style="width: 85px;" v-model='eight'>
+          <input spellcheck="false" maxlength="11" style="width: 105px;" v-model='nine'>,
+          <input spellcheck="false" maxlength="7" style="width: 70px;" v-model='ten'>
+          <input spellcheck="false" maxlength="10" style="width:110px;" v-model='eleven'>)
+
+          <br>&emsp;
+          <p id="comment">//Create a constructor for Reservation class with Customer and Vehicle objects to establish
+            aggregation</p><br>
+          } <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" id="codebox" :style="{ display: display[4] }">
+          <pre>
 import java.util.Date;
 
 public class Reservation {
@@ -178,20 +179,20 @@ public class Reservation {
 	public Reservation(Customer customerObj, Vehicle vehicleObj) {
 		this.customerObj = customerObj;
 		this.vehicleObj = vehicleObj;
-      </pre>    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                <input spellcheck="false" maxlength="18" style="width: 160px;" v-model='twelve'>;
-                <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                this.
-                <input spellcheck="false" maxlength="13" style="width: 110px;" v-model='thirteen'>
-                <input spellcheck="false" maxlength="16" style="width: 140px;" v-model='fourteen'>;
-                <br>&emsp;&emsp;
-                <br>&emsp;}
-                <p id="comment">//Increment the reservationCount by 1 and assign it to reservationID</p><br>
-                } <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
-              </div>
-              
-              <div class="codebox" id="codebox" :style="{ display: display[5] }">
-                <pre>
+      </pre> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <input spellcheck="false" maxlength="18" style="width: 160px;" v-model='twelve'>;
+          <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          this.
+          <input spellcheck="false" maxlength="13" style="width: 110px;" v-model='thirteen'>
+          <input spellcheck="false" maxlength="16" style="width: 140px;" v-model='fourteen'>;
+          <br>&emsp;&emsp;
+          <br>&emsp;}
+          <p id="comment">//Increment the reservationCount by 1 and assign it to reservationID</p><br>
+          } <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" id="codebox" :style="{ display: display[5] }">
+          <pre>
 import java.util.Date;
 
 public class Reservation {
@@ -252,20 +253,59 @@ public class Reservation {
 }
 
       </pre> <br><button class="button-9" id="btn6"> {{ button_value }} </button>
-              </div>
-      
-            </div>
-            </div>
-    </main>
-    </template>
+        </div>
+
+      </div>
+
+      <div class="column" style="position:relative; left:5%; width: fit-content;">
+        <div
+          style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[0] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+            <mark1>Class Reservation</mark1>
+          </div>
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark0>-reservationID: int </mark0>
+            <br>
+            -customerObj: Customer
+            <br>
+            -vehicleObj: vehicle
+            <br>
+            -contractStatus: String
+            <br>
+            +booking Date: Date
+            <br>
+            -releaseDate: Date
+            <br>
+            -reservationCount: int
+          </div>
+
+          <div style="padding: 15px; line-height: 40px;">
+            +Reservation(Customer customerObj, Vehicle vehicleObj)
+            <br>
+            +setContractStatus(String contractStatus): void
+            <br>
+            +getContractStatus(): String
+            <br>
+            +releaseContract(): String
+            <br>
+            +getReleaseDate(): Date
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+</template>
     
     <script>
     
     </script>
     
     
-    <style scoped>
-        * {
+<style scoped>
+* {
   box-sizing: border-box;
   background-color: #F9FAFE;
 }
@@ -337,7 +377,7 @@ mark0 {
   box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
-input{
+input {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 4px;
@@ -383,4 +423,4 @@ input{
 .button-9:focus {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
 }
-    </style>
+</style>
