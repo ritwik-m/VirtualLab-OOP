@@ -96,7 +96,7 @@ export default {
 </script>
 <template>
     <main class="app">
-      <div class = "row">
+      <div class = "column" style="position:fixed; top: 30%; left: 60%;">
         <div class="column">
           <div class="codebox">
             <h5>Aggregation: </h5>
