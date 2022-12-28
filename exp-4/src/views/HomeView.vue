@@ -169,9 +169,9 @@ export default {
 
 </script>
 
-<template class="app">
+<template>
 
-  <main>
+  <main  class="app">
 
     <div class="row" style="font-family: 'Montserrat' sans-serif;">
       <div class="column">
@@ -179,12 +179,12 @@ export default {
         <h2 style="padding: 25px;">You only have to fill in the spaces provided.</h2>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[0] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark0>Class Customer</mark0>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             - custName: String
             <br>
             - customerID: int
@@ -194,6 +194,8 @@ export default {
             - phone: long
             <br>
             - city: String
+            <br>
+            - customerCount: static int
           </div>
           <div style="padding: 15px; line-height: 40px;">
             + getcustName(): String
@@ -215,12 +217,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[1] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark0>- custName: String</mark0>
             <br>
             - customerID: int
@@ -230,6 +232,8 @@ export default {
             - phone: long
             <br>
             - city: String
+            <br>
+            - customerCount: static int
           </div>
           <div style="padding: 15px; line-height: 40px;">
             + getcustName(): String
@@ -251,12 +255,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[2] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
             <br>
             <mark0>- customerID: int</mark0>
@@ -266,6 +270,8 @@ export default {
             - phone: long
             <br>
             - city: String
+            <br>
+            - customerCount: static int
           </div>
           <div style="padding: 15px; line-height: 40px;">
             + getcustName(): String
@@ -287,12 +293,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[3] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
             <br>
             <mark1>- customerID: int</mark1>
@@ -302,6 +308,8 @@ export default {
             - phone: long
             <br>
             - city: String
+            <br>
+            - customerCount: static int
           </div>
           <div style="padding: 15px; line-height: 40px;">
             + getcustName(): String
@@ -323,12 +331,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[4] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
             <br>
             <mark1>- customerID: int</mark1>
@@ -338,6 +346,8 @@ export default {
             <mark0>- phone: long</mark0>
             <br>
             - city: String
+            <br>
+            - customerCount: static int
           </div>
           <div style="padding: 15px; line-height: 40px;">
             + getcustName(): String
@@ -359,12 +369,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[5] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
             <br>
             <mark1>- customerID: int</mark1>
@@ -374,6 +384,8 @@ export default {
             <mark1>- phone: long</mark1>
             <br>
             <mark0>- city: String</mark0>
+            <br>
+            - customerCount: static int
           </div>
           <div style="padding: 15px; line-height: 40px;">
             + getcustName(): String
@@ -395,12 +407,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[6] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
             <br>
             <mark1>- customerID: int</mark1>
@@ -410,6 +422,8 @@ export default {
             <mark1>- phone: long</mark1>
             <br>
             <mark1>- city: String</mark1>
+            <br>
+            <mark0>- customerCount: static int</mark0>
           </div>
           <div style="padding: 15px; line-height: 40px;">
             + getcustName(): String
@@ -431,12 +445,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[7] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
             <br>
             <mark1>- customerID: int</mark1>
@@ -446,6 +460,8 @@ export default {
             <mark1>- phone: long</mark1>
             <br>
             <mark1>- city: String</mark1>
+            <br>
+            <mark1>- customerCount: static int</mark1>
           </div>
           <div style="padding: 15px; line-height: 40px;">
             + getcustName(): String
@@ -467,12 +483,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[8] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
             <br>
             <mark1>- customerID: int</mark1>
@@ -482,6 +498,8 @@ export default {
             <mark1>- phone: long</mark1>
             <br>
             <mark1>- city: String</mark1>
+            <br>
+            <mark1>- customerCount: static int</mark1>
           </div>
           <div style="padding: 15px; line-height: 40px;">
             + getcustName(): String
@@ -503,12 +521,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[9] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
             <br>
             <mark1>- customerID: int</mark1>
@@ -518,6 +536,8 @@ export default {
             <mark1>- phone: long</mark1>
             <br>
             <mark1>- city: String</mark1>
+            <br>
+            <mark1>- customerCount: static int</mark1>
           </div>
           <div style="padding: 15px; line-height: 40px;">
             + getcustName(): String
@@ -539,12 +559,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[10] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
             <br>
             <mark1>- customerID: int</mark1>
@@ -554,6 +574,8 @@ export default {
             <mark1>- phone: long</mark1>
             <br>
             <mark1>- city: String</mark1>
+            <br>
+            <mark1>- customerCount: static int</mark1>
           </div>
           <div style="padding: 15px; line-height: 40px;">
             <mark0>+ getcustName(): String</mark0>
@@ -575,12 +597,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[11] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
             <br>
             <mark1>- customerID: int</mark1>
@@ -590,6 +612,8 @@ export default {
             <mark1>- phone: long</mark1>
             <br>
             <mark1>- city: String</mark1>
+            <br>
+            <mark1>- customerCount: static int</mark1>
           </div>
           <div style="padding: 15px; line-height: 40px;">
             <mark1>+ getcustName(): String</mark1>
@@ -611,12 +635,12 @@ export default {
         </div>
 
         <div
-          style="margin-left: 15%; height: 600px; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 250px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[12] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Customer</mark1>
           </div>
-          <div style="height : 215px; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
             <mark1>- custName: String</mark1>
             <br>
             <mark1>- customerID: int</mark1>
@@ -626,6 +650,8 @@ export default {
             <mark1>- phone: long</mark1>
             <br>
             <mark1>- city: String</mark1>
+            <br>
+            <mark1>- customerCount: static int</mark1>
           </div>
           <div style="padding: 15px; line-height: 40px;">
             <mark1>+ getcustName(): String</mark1>
@@ -1043,6 +1069,11 @@ public class Customer {
 <style scoped>
 * {
   box-sizing: border-box;
+  background-color: #F9FAFE;
+}
+
+.app{
+  min-height: 1000px;
   background-color: #F9FAFE;
 }
 

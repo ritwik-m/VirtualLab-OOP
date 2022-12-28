@@ -19,6 +19,11 @@ const routes = [
     path: '/screen-three',
     name: 'screen-three',
     component: () => import(/* webpackChunkName: "scren-three" */ '../views/ScreenThree.vue')
+  },
+  {
+    path: '/screen-four',
+    name: 'screen-four',
+    component: () => import(/* webpackChunkName: "scren-three" */ '../views/ScreenFour.vue')
   }
 ]
 
