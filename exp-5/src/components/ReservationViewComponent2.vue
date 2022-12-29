@@ -42,7 +42,7 @@ export default {
       }
     },
     validate_four() {
-      if (this.eight == "Customer" && this.nine == "customerObj" && this.ten == "Vehicle" && this.eleven == "vehicleObj") {
+      if (this.eight == "String" && this.nine == "customerName" && this.ten == "long" && this.eleven == "phone" && this.twelve == "Vehicle" && this.thirteen == "vehicleObj") {
         this.button_value = this.button_text_right;
         btn5.style.backgroundColor = "green";
         this.display[3] = "none";
@@ -152,14 +152,16 @@ public class Reservation {
 	private static int reservationCount=0;
 
       </pre> &emsp;&emsp;&emsp;public Reservation(
-          <input spellcheck="false" maxlength="8" style="width: 85px;" v-model='eight'>
-          <input spellcheck="false" maxlength="11" style="width: 105px;" v-model='nine'>,
-          <input spellcheck="false" maxlength="7" style="width: 70px;" v-model='ten'>
-          <input spellcheck="false" maxlength="10" style="width:110px;" v-model='eleven'>)
+          <input spellcheck="false" maxlength="6" style="width: 85px;" v-model='eight'>
+          <input spellcheck="false" maxlength="12" style="width: 105px;" v-model='nine'>,
+          <input spellcheck="false" maxlength="4" style="width: 60px;" v-model='ten'>
+          <input spellcheck="false" maxlength="5" style="width:70px;" v-model='eleven'>,
+          <input spellcheck="false" maxlength="7" style="width: 90px;" v-model='twelve'>,
+          <input spellcheck="false" maxlength="10" style="width: 100px;" v-model='thirteen'>,)
 
           <br>&emsp;
-          <p id="comment">//Create a constructor for Reservation class with Customer and Vehicle objects to establish
-            aggregation</p><br>
+          <p id="comment">//Create a constructor for Reservation class with by passing Customer parameters and Vehicle object to establish
+            composition</p><br>
           } <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
         </div>
 
@@ -176,11 +178,12 @@ public class Reservation {
 	private Date releaseDate;
 	private static int reservationCount=0;
 	
-	public Reservation(Customer customerObj, Vehicle vehicleObj) {
-		this.customerObj = customerObj;
+  <!--new Customer(customerName, phone);-->
+	public Reservation(String customerName, long phone, Vehicle vehicleObj) {
+		this.customerObj = <!--new--> Customer(<!--customerName, phone-->);
 		this.vehicleObj = vehicleObj;
       </pre> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-          <input spellcheck="false" maxlength="18" style="width: 160px;" v-model='twelve'>;
+          <input spellcheck="false" maxlength="18" style="width: 160px;" v-model='fouteen'>;
           <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           this.
           <input spellcheck="false" maxlength="13" style="width: 110px;" v-model='thirteen'>
