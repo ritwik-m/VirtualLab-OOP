@@ -37,33 +37,46 @@ export default {
   methods: {
     validate() {
       let final_list = []
-      let i = 0
+      // let i = 0
       for (let i = 2; i < 7; i++) {
         final_list.push(this.getList(i))
       }
       console.log(final_list)
 
-      let j = 0;
-      let final_string = ''
-      for (i = 0; i < final_list.length; i++) {
-        let final_word = ''
-        for (j = 0; j < final_list[i].length; j++) {
-          final_word = final_word + final_list[i][j].content + ' '
-        }
-        final_string = final_string + final_word + ' '
-      }
-      console.log(final_string)
-      let answer = "A customer comes to the office to acquire a vehicle  The clerk locates the vehicle reservation contract by means of the reservation number and/or customer name. [Exception: Required vehicle type is not available due to late arrivals.]  The customer signs the contract and the clerk gives the keys to the vehicle.  The clerk then marks the contract active by entering the vehicle release data (today's date) onto the vehicle reservation contract.  The use case terminates at ths point.  "
-      if (final_string === answer) {
-        alert("Correct")
-        this.$router.push('/screen-two')
+      if(!final_list[0][0].id == 0){
+        this.valid[0] = false
       }
 
-      else {
-        alert('No, sorry')
+      if(!final_list[1][0].id == 6){
+        this.valid[1] = false
+      }
+
+      if(!final_list[2][0].id == 4){
+        this.valid[2] = false
+      }
+
+      if(!final_list[3][0].id == 5){
+        this.valid[3] = false
+      }
+
+      if(!final_list[4][0].id == 2){
+        this.valid[4] = false
+      }
+
+      else{
+        for(let i=0;i<5;i++)
+        {
+          this.valid[i] = true
+        }
       }
     },
   },
+  data() {
+    return {
+      valid: [false, true, true, true, true],
+      validated: true
+    }
+  }
 }
 </script>
 
@@ -79,7 +92,7 @@ export default {
         <div class="drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
           <div v-for="item in getList(1)" :key="item.order" class="drag-el" draggable="true"
             @dragstart="startDrag($event, item)">
-            <div class="aplha">
+            <div class="aplha unidentified">
               <h3>{{ item.alpha }}</h3>
             </div>
             <div class="cardtext">
@@ -89,26 +102,21 @@ export default {
         </div>
       </div>
       <div class="flexbox">
-        <div class="drag-el">
-          <div class="aplha" style="text-align: center; width: 100%; color: white;">
-            <h3> START </h3>
-          </div>
-        </div>
         <div class="drop-zone-single" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
-          <div v-for="item in getList(2)" :key="item.alpha" class="drag-el" draggable="true"
+          <div v-for="item in getList(2)" :key="item.alpha" class="drag-el" draggable="true" id="1-box"
             @dragstart="startDrag($event, item)">
-            <div class="aplha">
+            <div class="aplha" :class="{ alphaCorrect: (validated && valid[0]), alphainCorrect: (validated && !valid[0]), unidentified: !validated }">
               <h3>{{ item.alpha }}</h3>
             </div>
-            <div class="cardtext">
+            <div class="cardtext  textCorrect">
               <p>{{ item.content }}</p>
             </div>
           </div>
         </div>
         <div class="drop-zone-single" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
-          <div v-for="item in getList(3)" :key="item.alpha" class="drag-el" draggable="true"
+          <div v-for="item in getList(3)" :key="item.alpha" class="drag-el" draggable="true" id="2-box"
             @dragstart="startDrag($event, item)">
-            <div class="aplha">
+            <div class="aplha unidentified">
               <h3>{{ item.alpha }}</h3>
             </div>
             <div class="cardtext">
@@ -117,18 +125,18 @@ export default {
           </div>
         </div>
         <div class="drop-zone-single" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
-          <div v-for="item in getList(4)" :key="item.alpha" class="drag-el" draggable="true"
+          <div v-for="item in getList(4)" :key="item.alpha" class="drag-el" draggable="true" id="3-box"
             @dragstart="startDrag($event, item)">
-            <div class="aplha">
+            <div class="aplha alphainCorrect">
               <h3>{{ item.alpha }}</h3>
             </div>
-            <div class="cardtext">
+            <div class="cardtext textIncorrect">
               <p>{{ item.content }}</p>
             </div>
           </div>
         </div>
         <div class="drop-zone-single" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
-          <div v-for="item in getList(5)" :key="item.alpha" class="drag-el" draggable="true"
+          <div v-for="item in getList(5)" :key="item.alpha" class="drag-el" draggable="true" id="4-box"
             @dragstart="startDrag($event, item)">
             <div class="aplha">
               <h3>{{ item.alpha }}</h3>
@@ -139,7 +147,7 @@ export default {
           </div>
         </div>
         <div class="drop-zone-single" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
-          <div v-for="item in getList(6)" :key="item.alpha" class="drag-el" draggable="true"
+          <div v-for="item in getList(6)" :key="item.alpha" class="drag-el" draggable="true" id="5-box"
             @dragstart="startDrag($event, item)">
             <div class="aplha">
               <h3>{{ item.alpha }}</h3>
@@ -147,11 +155,6 @@ export default {
             <div class="cardtext">
               <p>{{ item.content }}</p>
             </div>
-          </div>
-        </div>
-        <div class="drag-el">
-          <div class="aplha" style="text-align: center; color: white; width: 100%;">
-            <h3> END </h3>
           </div>
         </div>
       </div>
@@ -196,7 +199,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 10px;
+  gap: 10px;
   position: relative;
 }
 
@@ -209,20 +212,44 @@ export default {
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 5px;
-  background-color: #6D71FA;
   color: white;
   z-index: 66;
+}
+
+
+.textIncorrect{
+  color: #CB3434;
+  border: #CB3434 1px solid;
 }
 
 .drag-el .cardtext {
   width: 100%;
   position: relative;
   left: 0px;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 5px;
+  padding: 10px;
   box-shadow: 2px 3px 10px 2px #D7DFFF;
   background-color: #fff;
 }
+
+
+.textCorrect{
+  border: solid 1px #098248;
+  color: #098248;
+}
+
+.unidentified{
+  background-color: #6D71FA;
+}
+
+.alphaCorrect{
+  background-color: #098248;
+}
+
+.alphainCorrect{
+  background-color: #CB3434;
+}
+
 
 .flex-parent {
   display: flex;

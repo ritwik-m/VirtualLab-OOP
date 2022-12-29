@@ -41,11 +41,18 @@ export default {
     },
     data() {
         return {
-            valid: true
+            valid: [false,false,false,false],
+            validated: false
         }
     },
     methods: {
         validate() {
+            this.validated = true;
+
+            for(let i=0;i<4;i++){
+                this.valid[i] = false;
+            }
+            
             let customer = ''
             let clerk = ''
             let vehicle = ''
@@ -67,18 +74,24 @@ export default {
                 reservation = reservation + this.getList(4)[i].word
             }
 
-            if (customer === "visitOffice():voidgetName():StringsetName(name:String):void"
-                && clerk === "getName():StringsetName(name:String):voidrequestVehicle(cObj:Customer):StringsignContract(cObj:Customer):void"
-                && vehicle === "updateKeyStatus(processedBy:String):void"
-                && reservation === "locateReservation(cName:String):StringreleaseContract():String") {
-                alert("Success!")
-                this.$router.push('/screen-three')
+            if (customer.includes("visitOffice():void") && customer.includes("getName():String") && customer.includes("setName(name:String):void"))
+                 {
+                this.valid[0] = true;
             }
 
-            else {
-                alert("Please drag all the functions into the class boxes")
+            if (clerk.includes("getName():String") && clerk.includes("setName(name:String):void") && clerk.includes("requestVehicle(cObj:Customer):String") && clerk.includes("signContract(cObj:Customer):void")) {
+                this.valid[1] = true;
             }
 
+            if(vehicle.includes("updateKeyStatus(processedBy:String):void")) {
+                this.valid[2] = true;
+            }
+
+            if(reservation.includes("locateReservation(cName:String):String") && reservation.includes("releaseContract():String") ) {
+                this.valid[3] = true;
+            }
+
+            console.log(this.validated)
             console.log(customer)
             console.log(clerk)
             console.log(vehicle)
@@ -104,7 +117,7 @@ export default {
                     <div class="flex-horizontal">
                         <div class="outer-box">
                             <h3>Customer</h3>
-                            <div class="unidentified drag-el-horizontal" draggable="false">
+                            <div class="unidentified drag-el-horizontal" draggable="false" :class="{correct: (validated && valid[0]), incorrect: (validated && !valid[0])}">
 
                                 <div class="drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
                                     <div v-for="item in getList(1)" :key="item.id"
@@ -119,7 +132,7 @@ export default {
 
                         <div class="outer-box">
                             <h3>Clerk</h3>
-                            <div class="unidentified drag-el-horizontal" draggable="false">
+                            <div class="unidentified drag-el-horizontal" draggable="false" :class="{correct: (validated && valid[1]), incorrect: (validated && !valid[1])}">
 
                                 <div class="drop-zone" @drop="onDrop($event, 2)" @dragenter.prevent @dragover.prevent>
                                     <div v-for="item in getList(2)" :key="item.id"
@@ -137,7 +150,7 @@ export default {
                         <div class="outer-box">
                             <h3>Vehicle</h3>
 
-                            <div class="unidentified drag-el-horizontal" draggable="false">
+                            <div class="unidentified drag-el-horizontal" draggable="false" :class="{correct: (validated && valid[2]), incorrect: (validated && !valid[2])}">
 
                                 <div class="drop-zone" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
                                     <div v-for="item in getList(3)" :key="item.id"
@@ -153,7 +166,7 @@ export default {
                         <div class="outer-box">
                             <h3>Reservation</h3>
 
-                            <div class="unidentified drag-el-horizontal" draggable="false">
+                            <div class="unidentified drag-el-horizontal" draggable="false" :class="{correct: (validated && valid[3]), incorrect: (validated && !valid[3])}">
 
                                 <div class="drop-zone" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
                                     <div v-for="item in getList(4)" :key="item.id"
@@ -219,6 +232,14 @@ export default {
     background-color: #fff;
     color: black;
     box-shadow: 2px 3px 10px 2px #D7DFFF;
+}
+
+.incorrect{
+  border: 1px solid #CB3434;
+}
+
+.correct{
+  border: 1px solid #32A962;
 }
 
 .flex-between {

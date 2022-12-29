@@ -26,10 +26,10 @@ export default {
 <template>
   <main class="app">
   <button @click="componentSelect='InstructionsView'">Instructions</button>
-  <button @click="componentSelect='CustomerView'">Customer View</button>
-  <button @click="componentSelect='ReservationView'">Reservation View</button>
-  <button @click="componentSelect='VehicleView'">Vehicle View</button>
-  <button @click="componentSelect='ReservationSystemView'">Reservation System View</button>
+  <button @click="componentSelect='CustomerView'">Customer Class</button>
+  <button @click="componentSelect='ReservationView'">Reservation Class</button>
+  <button @click="componentSelect='VehicleView'">Vehicle Class</button>
+  <button @click="componentSelect='ReservationSystemView'">Reservation System Class</button>
   <button @click="componentSelect='ClassView'">Class diagram</button>
   <KeepAlive>
     <component v-bind:is="componentSelect" />

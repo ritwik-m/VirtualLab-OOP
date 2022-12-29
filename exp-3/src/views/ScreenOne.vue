@@ -137,10 +137,10 @@ export default {
     else if(!vehicle.includes('keyStatus String'))
         alert("There's a type mismatch in the Vehicle class.")
 
-    else if(!vehicle.includes('customerObj Customer'))
+    else if(!reservation.includes('customerObj Customer'))
         alert("There's a type mismatch in the Vehicle class.")
 
-    else if(!vehicle.includes('vehicleObj Vehicle'))
+    else if(!reservation.includes('vehicleObj Vehicle'))
         alert("There's a type mismatch in the Vehicle class.")
 
     else if(!reservation.includes('contractStatus String'))
@@ -163,7 +163,7 @@ export default {
 
 <template class="app">
   <header style="padding: 20px">
-    <h1>Step 1: Associating functions and return types</h1>
+    <h1>Step 1: Associating variables and datatypes</h1>
     <p>Map the elements and respective datatypes to their classes by dragging and dropping.</p>
   </header>
   <main>
@@ -238,7 +238,7 @@ export default {
               </div>
             </div>
             <div class="outer-box">
-              <p>Variable</p>
+              <p>Datatype</p>
               <div class="identify-box drop-zone" @drop="onDrop($event, 10)" @dragenter.prevent @dragover.prevent>
                 <div v-for="item in getList(10)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
                   @dragstart="startDrag($event, item)">
@@ -263,7 +263,7 @@ export default {
               </div>
             </div>
             <div class="outer-box">
-              <p>Variable</p>
+              <p>Datatype</p>
               <div class="identify-box drop-zone" @drop="onDrop($event, 12)" @dragenter.prevent @dragover.prevent>
                 <div v-for="item in getList(12)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
                   @dragstart="startDrag($event, item)">
@@ -338,6 +338,7 @@ h3 {
   width: auto;
   gap: 10px;
 }
+
 
 .drop-zone {
   display: flex;

@@ -1,6 +1,6 @@
 <template>
     <main>
-        
+        <img src="..\..\assets\time_sequence.png"/>
     </main>
 </template>
 
