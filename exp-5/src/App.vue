@@ -1,5 +1,9 @@
 <template>
   <main class="app">
+    <nav>
+    <router-link to="/">Screen One</router-link> |
+    <router-link to="/screen-two">Screen Two</router-link> |
+  </nav>
   <router-view/>
   </main> 
 </template>
