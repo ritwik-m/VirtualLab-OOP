@@ -4,7 +4,21 @@
             <img style= "max-width: 800px;" src="..\..\assets\Frame 1.png"/>
         </div>
         <div class="codebox" style="max-width: 300px;">
-        <!--Create an unordered -->
+            <ul>
+                <li>1 : requestVehicle</li>
+                <li>2 : locateReservation(customer 1)</li>
+                <li>4 [Wait for Vehicle] :</li>
+                <li>3 [Vehicle on Trip] :</li>
+                <li>6 : initiateContract</li>
+                <li>5 [Vehicle available] :</li>
+                <li>7 : SignContract</li>
+                <li>8 : releaseContract</li>
+                <li>9 [Reservation released] :</li>
+                <li>10 : updateKeyStatus</li>
+                <li>11 [To Give Key] :</li>
+                <li>12 [Key HandedOver] :</li>
+            </ul>
+
         </div>
     </main>
 </template>

@@ -159,8 +159,9 @@ export default {
       class: 'wrapper',
       button_value: 'Next',
       button_text: "Incorrect. Try again",
-      button_text_right: "Correct. Next",
+      button_text_right: "Next",
       correct: false,
+      valid: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
       display: ["inherit", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none",]
     }
   }
