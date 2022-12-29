@@ -1,19 +1,19 @@
 <template>
   <main class="app">
     <div class="codebox" style="align-items: center; justify-content: center; display: flex;">
-<img src="src\assets\ans.jpg">
+      <img src="src\assets\ans.jpg">
 
-    </div>  
-    </main>
-    </template>
+    </div>
+  </main>
+</template>
     
-    <script>
+<script>
+
+</script>
     
-    </script>
     
-    
-    <style scoped>
-        * {
+<style scoped>
+* {
   box-sizing: border-box;
   background-color: #F9FAFE;
 }
@@ -44,10 +44,10 @@ p {
   box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
-.app{
+.app {
   background-color: #F9FAFE;
   display: flex;
   justify-content: center;
   /* align-items: center; */
 }
-    </style>
+</style>
