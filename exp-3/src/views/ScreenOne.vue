@@ -71,17 +71,25 @@ export default {
   },
   data() {
     return {
-      valid: true
+      valid: [false, false, false, false],
+      validated: false
+
     }
   },
   methods: {
     validate() {
+      this.validated = true;
+
+      for (let i = 0; i < 4; i++) {
+        this.valid[i] = false
+      }
+
       let customer = []
       let vehicle = []
       let clerk = []
       let reservation = []
       let i = 0;
-      let j = 0;
+
       if (this.getList(5).length != this.getList(6).length) {
         console.log('The number of variables and datatypes should match.')
         alert('The number of variables and datatypes should match.')
@@ -125,36 +133,48 @@ export default {
         console.log(reservation)
       }
 
-      if(!customer.includes('customerName String'))
-        alert("There's a type mismatch in the Customer class.")
+      {
+        if (customer.includes("customerName String")) {
+          this.valid[0] = true;
+          console.log(this.valid[0])
+        }
 
-    else if(!clerk.includes('clerkName String'))
-        alert("There's a type mismatch in the Clerk class.")
+        if (clerk.includes("clerkName String")) {
+          this.valid[1] = true;
 
-    else if(!vehicle.includes('regNum int'))
-        alert("There's a type mismatch in the Vehicle class.")
+        }
 
-    else if(!vehicle.includes('keyStatus String'))
-        alert("There's a type mismatch in the Vehicle class.")
+        if (vehicle.includes("regNum int") && vehicle.includes("keyStatus String")) {
+          this.valid[2] = true;
+        }
 
-    else if(!reservation.includes('customerObj Customer'))
-        alert("There's a type mismatch in the Vehicle class.")
+        if (reservation.includes("customerObj Customer") && reservation.includes("vehicleObj Vehicle") && reservation.includes("contractStatus String") && reservation.includes("releaseDate Date")) {
+          this.valid[3] = true;
+        }
+      }
 
-    else if(!reservation.includes('vehicleObj Vehicle'))
-        alert("There's a type mismatch in the Vehicle class.")
+      {
 
-    else if(!reservation.includes('contractStatus String'))
-        alert("There's a type mismatch in the Reservation class.")
+        if (this.valid[0] && this.valid[1] && this.valid[2] && this.valid[3]) {
+          alert("You have successfully completed the exercise!");
+        }
 
-    else if(!reservation.includes('releaseDate Date'))
-        alert("There's a type mismatch in the Reservation class.")
+        else if (this.valid[0] == false) {
+          alert("There is a type mismatch / missing entry in Customer")
+        }
 
-    else{
-      alert('Success')
-      this.$router.push('/screen-two')
-    }
-        
+        else if (this.valid[1] == false) {
+          alert("There is a type mismatch / missing entry in Clerk")
+        }
 
+        else if (this.valid[2] == false) {
+          alert("There is a type mismatch / missing entry in Vehicle")
+        }
+
+        else if (this.valid[3] == false) {
+          alert("There is a type mismatch / missing entry in Reservation")
+        }
+      }
     }
   }
 }
@@ -183,7 +203,9 @@ export default {
         <div class="flex-horizontal">
           <div class="outer-box">
             <p>Variable</p>
-            <div class="identify-box drop-zone" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
+            <div class="identify-box drop-zone"
+              :class="{ correct: (validated && valid[0]), incorrect: (validated && !valid[0]) }"
+              @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
               <div v-for="item in getList(5)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
                 @dragstart="startDrag($event, item)">
                 <p>{{ item.word }}</p>
@@ -192,7 +214,9 @@ export default {
           </div>
           <div class="outer-box">
             <p>Datatype</p>
-            <div class="identify-box drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
+            <div class="identify-box drop-zone"
+              :class="{ correct: (validated && valid[0]), incorrect: (validated && !valid[0]) }"
+              @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
               <div v-for="item in getList(6)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
                 @dragstart="startDrag($event, item)">
                 <p>{{ item.word }}</p>
@@ -206,7 +230,9 @@ export default {
           <div class="flex-horizontal">
             <div class="outer-box">
               <p>Variable</p>
-              <div class="identify-box drop-zone" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
+              <div class="identify-box drop-zone"
+                :class="{ correct: (validated && valid[1]), incorrect: (validated && !valid[1]) }"
+                @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
                 <div v-for="item in getList(7)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
                   @dragstart="startDrag($event, item)">
                   <p>{{ item.word }}</p>
@@ -215,7 +241,9 @@ export default {
             </div>
             <div class="outer-box">
               <p>Datatype</p>
-              <div class="identify-box drop-zone" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
+              <div class="identify-box drop-zone"
+                :class="{ correct: (validated && valid[1]), incorrect: (validated && !valid[1]) }"
+                @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
                 <div v-for="item in getList(8)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
                   @dragstart="startDrag($event, item)">
                   <p>{{ item.word }}</p>
@@ -230,7 +258,9 @@ export default {
           <div class="flex-horizontal">
             <div class="outer-box">
               <p>Variable</p>
-              <div class="identify-box drop-zone" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
+              <div class="identify-box drop-zone"
+                :class="{ correct: (validated && valid[2]), incorrect: (validated && !valid[2]) }"
+                @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
                 <div v-for="item in getList(9)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
                   @dragstart="startDrag($event, item)">
                   <p>{{ item.word }}</p>
@@ -239,7 +269,9 @@ export default {
             </div>
             <div class="outer-box">
               <p>Datatype</p>
-              <div class="identify-box drop-zone" @drop="onDrop($event, 10)" @dragenter.prevent @dragover.prevent>
+              <div class="identify-box drop-zone"
+                :class="{ correct: (validated && valid[2]), incorrect: (validated && !valid[2]) }"
+                @drop="onDrop($event, 10)" @dragenter.prevent @dragover.prevent>
                 <div v-for="item in getList(10)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
                   @dragstart="startDrag($event, item)">
                   <p>{{ item.word }}</p>
@@ -255,7 +287,9 @@ export default {
           <div class="flex-horizontal">
             <div class="outer-box">
               <p>Variable</p>
-              <div class="identify-box drop-zone" @drop="onDrop($event, 11)" @dragenter.prevent @dragover.prevent>
+              <div class="identify-box drop-zone" @drop="onDrop($event, 11)"
+                :class="{ correct: (validated && valid[3]), incorrect: (validated && !valid[3]) }" @dragenter.prevent
+                @dragover.prevent>
                 <div v-for="item in getList(11)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
                   @dragstart="startDrag($event, item)">
                   <p>{{ item.word }}</p>
@@ -264,7 +298,9 @@ export default {
             </div>
             <div class="outer-box">
               <p>Datatype</p>
-              <div class="identify-box drop-zone" @drop="onDrop($event, 12)" @dragenter.prevent @dragover.prevent>
+              <div class="identify-box drop-zone"
+                :class="{ correct: (validated && valid[3]), incorrect: (validated && !valid[3]) }"
+                @drop="onDrop($event, 12)" @dragenter.prevent @dragover.prevent>
                 <div v-for="item in getList(12)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
                   @dragstart="startDrag($event, item)">
                   <p>{{ item.word }}</p>
@@ -328,6 +364,14 @@ h3 {
 .unidentified {
   background-color: #fff;
   color: black;
+}
+
+.incorrect {
+  border: 1px solid #CB3434;
+}
+
+.correct {
+  border: 1px solid #32A962;
 }
 
 .flex-between {
