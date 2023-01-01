@@ -294,6 +294,186 @@ public class Reservation {
 
         </div>
 
+        <div
+          style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[1] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+            <mark1>Class Reservation</mark1>
+          </div>
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>-reservationID: int </mark1>
+            <br>
+            <mark0>-customerObj: Customer</mark0>
+            <br>
+            -vehicleObj: vehicle
+            <br>
+            -contractStatus: String
+            <br>
+            +booking Date: Date
+            <br>
+            -releaseDate: Date
+            <br>
+            -reservationCount: int
+          </div>
+
+          <div style="padding: 15px; line-height: 40px;">
+            +Reservation(Customer customerObj, Vehicle vehicleObj)
+            <br>
+            +setContractStatus(String contractStatus): void
+            <br>
+            +getContractStatus(): String
+            <br>
+            +releaseContract(): String
+            <br>
+            +getReleaseDate(): Date
+          </div>
+
+        </div>
+
+        <div
+          style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[2] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+            <mark1>Class Reservation</mark1>
+          </div>
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>-reservationID: int </mark1>
+            <br>
+            <mark1>-customerObj: Customer</mark1>
+            <br>
+            <mark0>-vehicleObj: vehicle</mark0>
+            <br>
+            -contractStatus: String
+            <br>
+            +booking Date: Date
+            <br>
+            -releaseDate: Date
+            <br>
+            -reservationCount: int
+          </div>
+
+          <div style="padding: 15px; line-height: 40px;">
+            +Reservation(Customer customerObj, Vehicle vehicleObj)
+            <br>
+            +setContractStatus(String contractStatus): void
+            <br>
+            +getContractStatus(): String
+            <br>
+            +releaseContract(): String
+            <br>
+            +getReleaseDate(): Date
+          </div>
+
+        </div>
+
+        <div
+          style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[3] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+            <mark1>Class Reservation</mark1>
+          </div>
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>-reservationID: int </mark1>
+            <br>
+            <mark1>-customerObj: Customer</mark1>
+            <br>
+            <mark1>-vehicleObj: vehicle</mark1>
+            <br>
+            <mark1>-contractStatus: String</mark1>
+            <br>
+            <mark1>+booking Date: Date</mark1>
+            <br>
+            <mark1>-releaseDate: Date</mark1>
+            <br>
+            <mark1>-reservationCount: int</mark1>
+          </div>
+
+          <div style="padding: 15px; line-height: 40px;">
+            <mark0>+Reservation(Customer customerObj, Vehicle vehicleObj)</mark0>
+            <br>
+            +setContractStatus(String contractStatus): void
+            <br>
+            +getContractStatus(): String
+            <br>
+            +releaseContract(): String
+            <br>
+            +getReleaseDate(): Date
+          </div>
+
+        </div>
+
+        <div
+          style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[4] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+            <mark1>Class Reservation</mark1>
+          </div>
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>-reservationID: int </mark1>
+            <br>
+            <mark1>-customerObj: Customer</mark1>
+            <br>
+            <mark1>-vehicleObj: vehicle</mark1>
+            <br>
+            <mark1>-contractStatus: String</mark1>
+            <br>
+            <mark1>+booking Date: Date</mark1>
+            <br>
+            <mark1>-releaseDate: Date</mark1>
+            <br>
+            <mark1>-reservationCount: int</mark1>
+          </div>
+
+          <div style="padding: 15px; line-height: 40px;">
+            <mark0>+Reservation(Customer customerObj, Vehicle vehicleObj)</mark0>
+            <br>
+            +setContractStatus(String contractStatus): void
+            <br>
+            +getContractStatus(): String
+            <br>
+            +releaseContract(): String
+            <br>
+            +getReleaseDate(): Date
+          </div>
+
+        </div>
+
+        <div
+          style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[5] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+            <mark1>Class Reservation</mark1>
+          </div>
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>-reservationID: int </mark1>
+            <br>
+            <mark1>-customerObj: Customer</mark1>
+            <br>
+            <mark1>-vehicleObj: vehicle</mark1>
+            <br>
+            <mark1>-contractStatus: String</mark1>
+            <br>
+            <mark1>+booking Date: Date</mark1>
+            <br>
+            <mark1>-releaseDate: Date</mark1>
+            <br>
+            <mark1>-reservationCount: int</mark1>
+          </div>
+
+          <div style="padding: 15px; line-height: 40px;">
+            <mark1>+Reservation(Customer customerObj, Vehicle vehicleObj)</mark1>
+            <br>
+            <mark1>+setContractStatus(String contractStatus): void</mark1>
+            <br>
+            <mark1>+getContractStatus(): String</mark1>
+            <br>
+            <mark1>+releaseContract(): String</mark1>
+            <br>
+            <mark1>+getReleaseDate(): Date</mark1>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </main>
