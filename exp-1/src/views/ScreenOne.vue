@@ -37,44 +37,80 @@ export default {
   methods: {
     validate() {
       let final_list = []
+
+      for(let i=0;i<5;i++){
+        this.valid[i] = false
+      }
+
+      this.validated = true;
       // let i = 0
       for (let i = 2; i < 7; i++) {
         final_list.push(this.getList(i))
       }
       console.log(final_list)
 
-      if(!final_list[0][0].id == 0){
-        this.valid[0] = false
+      if(final_list.length!=5){
+        alert("Please drag all the sentences into the timeline")
+        this.validated=false;
+        return
       }
 
-      if(!final_list[1][0].id == 6){
-        this.valid[1] = false
-      }
-
-      if(!final_list[2][0].id == 4){
-        this.valid[2] = false
-      }
-
-      if(!final_list[3][0].id == 5){
-        this.valid[3] = false
-      }
-
-      if(!final_list[4][0].id == 2){
-        this.valid[4] = false
+      if(final_list[0][0].id == 0){
+        this.valid[0] = true
+        console.log(final_list[0][0].id)
       }
 
       else{
-        for(let i=0;i<5;i++)
-        {
-          this.valid[i] = true
-        }
+        this.valid[0] = false
       }
+
+      if(final_list[1][0].id == 6){
+        this.valid[1] = true
+      }
+
+      else{
+        this.valid[1] = false
+      }
+
+      if(final_list[2][0].id == 4){
+        this.valid[2] = true
+      }
+
+      else{
+        this.valid[2] = false
+      }
+
+      if(final_list[3][0].id == 5){
+        this.valid[3] = true
+      }
+
+      else{
+        this.valid[3] = false
+      }
+
+      if(final_list[4][0].id == 2){
+        this.valid[4] = true
+      }
+
+      else{
+        this.valid[4] = false
+      }
+
+      if(this.valid[0] && this.valid[1] && this.valid[2] && this.valid[3] && this.valid[4]){
+        alert("Correct")
+        this.$router.push('/screen-two')
+      }
+
+      else{
+        alert("Incorrect, try again!")
+      }
+
     },
   },
   data() {
     return {
-      valid: [false, true, true, true, true],
-      validated: true
+      valid: [false,false,false,false,false],
+      validated: false
     }
   }
 }
@@ -108,7 +144,7 @@ export default {
             <div class="aplha" :class="{ alphaCorrect: (validated && valid[0]), alphainCorrect: (validated && !valid[0]), unidentified: !validated }">
               <h3>{{ item.alpha }}</h3>
             </div>
-            <div class="cardtext  textCorrect">
+            <div class="cardtext" :class="{ textCorrect: (validated && valid[0]), textIncorrect: (validated && !valid[0]), unidentified: !validated }">
               <p>{{ item.content }}</p>
             </div>
           </div>
@@ -116,10 +152,10 @@ export default {
         <div class="drop-zone-single" @drop="onDrop($event, 3)" @dragenter.prevent @dragover.prevent>
           <div v-for="item in getList(3)" :key="item.alpha" class="drag-el" draggable="true" id="2-box"
             @dragstart="startDrag($event, item)">
-            <div class="aplha unidentified">
+            <div class="aplha" :class="{ alphaCorrect: (validated && valid[1]), alphainCorrect: (validated && !valid[1]), unidentified: !validated }">
               <h3>{{ item.alpha }}</h3>
             </div>
-            <div class="cardtext">
+            <div class="cardtext" :class="{ textCorrect: (validated && valid[1]), textIncorrect: (validated && !valid[1]), unidentified: !validated }">
               <p>{{ item.content }}</p>
             </div>
           </div>
@@ -127,10 +163,10 @@ export default {
         <div class="drop-zone-single" @drop="onDrop($event, 4)" @dragenter.prevent @dragover.prevent>
           <div v-for="item in getList(4)" :key="item.alpha" class="drag-el" draggable="true" id="3-box"
             @dragstart="startDrag($event, item)">
-            <div class="aplha alphainCorrect">
+            <div class="aplha" :class="{ alphaCorrect: (validated && valid[2]), alphainCorrect: (validated && !valid[2]), unidentified: !validated }">
               <h3>{{ item.alpha }}</h3>
             </div>
-            <div class="cardtext textIncorrect">
+            <div class="cardtext" :class="{ textCorrect: (validated && valid[2]), textIncorrect: (validated && !valid[2]), unidentified: !validated }">
               <p>{{ item.content }}</p>
             </div>
           </div>
@@ -138,10 +174,10 @@ export default {
         <div class="drop-zone-single" @drop="onDrop($event, 5)" @dragenter.prevent @dragover.prevent>
           <div v-for="item in getList(5)" :key="item.alpha" class="drag-el" draggable="true" id="4-box"
             @dragstart="startDrag($event, item)">
-            <div class="aplha">
+            <div class="aplha" :class="{ alphaCorrect: (validated && valid[3]), alphainCorrect: (validated && !valid[3]), unidentified: !validated }">
               <h3>{{ item.alpha }}</h3>
             </div>
-            <div class="cardtext">
+            <div class="cardtext" :class="{ textCorrect: (validated && valid[3]), textIncorrect: (validated && !valid[3]), unidentified: !validated }">
               <p>{{ item.content }}</p>
             </div>
           </div>
@@ -149,10 +185,10 @@ export default {
         <div class="drop-zone-single" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
           <div v-for="item in getList(6)" :key="item.alpha" class="drag-el" draggable="true" id="5-box"
             @dragstart="startDrag($event, item)">
-            <div class="aplha">
+            <div class="aplha" :class="{ alphaCorrect: (validated && valid[4]), alphainCorrect: (validated && !valid[4]), unidentified: !validated }">
               <h3>{{ item.alpha }}</h3>
             </div>
-            <div class="cardtext">
+            <div class="cardtext" :class="{ textCorrect: (validated && valid[4]), textIncorrect: (validated && !valid[4]), unidentified: !validated }">
               <p>{{ item.content }}</p>
             </div>
           </div>
@@ -255,6 +291,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin: 10px;
 }
 
 .flexbox {
