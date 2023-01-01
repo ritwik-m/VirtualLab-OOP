@@ -215,7 +215,7 @@ export default {
 8 : releaseContract
 9 [Reservation released] :
 10 : updateKeyStatus
-11 [To Give Key] :
+11 [To Give Key] : 
 12 [Key HandedOver] : -->
                     <div class="row" style="margin-top:35px">
                         <div class="codebox" style="max-width: 350px;" :style="{ display: display[0] }" >

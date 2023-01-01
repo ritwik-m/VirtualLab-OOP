@@ -107,7 +107,7 @@ export default {
 <template class="app">
     <header style="padding: 20px">
         <h1>Step 2: Classifying functions into classes</h1>
-        <p>To classofy functions into classes, drag functions from the right corner and drop them into the class boxes.
+        <p>To classify functions into classes, drag functions from the right corner and drop them into the class boxes.
         </p>
     </header>
     <main>
