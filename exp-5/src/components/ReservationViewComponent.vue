@@ -479,10 +479,6 @@ public class Reservation {
   </main>
 </template>
     
-    <script>
-    
-    </script>
-    
     
 <style scoped>
 * {

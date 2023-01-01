@@ -1,7 +1,8 @@
 <template>
   <nav>
-    <router-link to="/">Cass Diagram</router-link> |
+    <router-link to="/">Class Diagram</router-link> |
     <router-link to="/code">Code</router-link> |
+    <router-link to="/output">output</router-link>
   </nav>
   <router-view/>
 </template>
