@@ -1,7 +1,7 @@
 <template>
     <main class="app">
       <div class="codebox" style="align-items: center; justify-content: center; display: flex;">
-  <img src="src\assets\ans_composition.jpg">
+  <img src="src\assets\composition_ans.png">
   
       </div>  
       </main>

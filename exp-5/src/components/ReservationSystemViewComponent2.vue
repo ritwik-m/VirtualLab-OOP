@@ -3,7 +3,7 @@ export default {
 
   methods: {
     validate_one() {
-      if (this.one == "Customer[]" && this.two == "Customer[3]") {
+      if (this.one == "Vehicle" && this.two == "5678") {
         this.button_value = this.button_text_right;
         btn2.style.backgroundColor = "green";
         this.display[0] = "none";
@@ -17,7 +17,7 @@ export default {
     },
 
     validate_two() {
-      if (this.three == "new" && this.four == "ABC" && this.five == "abc@gmail.com") {
+      if (this.three == "Reservation" && this.four == "rObjComposition" && this.five == "vobj") {
         this.button_value = this.button_text_right;
         btn3.style.backgroundColor = "green";
         this.display[1] = "none";
@@ -30,7 +30,7 @@ export default {
     },
 
     validate_three() {
-      if (this.six == "setCity" && this.seven == "Coimbatore") {
+      if (this.six == "getCustomerObj" && this.seven == "setCity") {
         this.button_value = this.button_text_right;
         btn4.style.backgroundColor = "green";
         this.display[2] = "none";
@@ -42,7 +42,7 @@ export default {
       }
     },
     validate_four() {
-      if (this.eight == "Vehicle" && this.nine == "Vehicle" && this.ten == "1234") {
+      if (this.eight == "setBookingDate" && this.nine == "new" && this.ten == "Date()") {
         this.button_value = this.button_text_right;
         btn5.style.backgroundColor = "green";
         this.display[3] = "none";
@@ -54,9 +54,9 @@ export default {
       }
     },
     validate_five() {
-      if (this.eleven == "Reservation" && this.twelve == "cobj[0]" && this.thirteen == "vobj") {
+      if (this.eleven == "getVehicleObj" && this.twelve == "updateKeyStatus") {
         this.button_value = this.button_text_right;
-        btn6.style.backgroundColor = "green";
+        btn5.style.backgroundColor = "green";
         this.display[4] = "none";
         this.display[5] = "inherit";
       }
@@ -65,19 +65,7 @@ export default {
         btn5.style.backgroundColor = "red";
       }
     },
-    validate_six() {
-      if (this.fourteen == "setBookingDate" && this.fifteen == "getVehicleObj" && this.sixteen == "updateKeyStatus") {
-        this.button_value = this.button_text_right;
-        btn6.style.backgroundColor = "green";
-        this.display[5] = "none";
-        this.display[6] = "inherit";
-      }
-      else {
-        this.button_value = this.button_text;
-        btn6.style.backgroundColor = "red";
-      }
-    },
-    
+
   },
   data() {
     return {
@@ -95,161 +83,145 @@ export default {
 
 </script>
 <template>
-    <main class="app">
-      <div class = "column" style="position:fixed; top: 30%; left: 60%;">
-        <div class="column">
-          <div class="codebox">
-            <h5>Composition: </h5>
-            <p>Write a demo class that creates a vehicle object with a registration number. Create a reservation object that does a reservation of the vehicle for current date by providing customerName, email and/or phone number. Later set the city as Coimbatore.  Also release the vehicle.</p>
-          </div>
+  <main class="app">
+    <div class="column" style="position:fixed; top: 30%; left: 60%;">
+      <div class="column">
+        <div class="codebox">
+          <h5>Composition: </h5>
+          <p>Write a demo class that creates a vehicle object with a registration number. Create a reservation object
+            that does a reservation of the vehicle for current date by providing customerName, email and/or phone
+            number. Later set the city as Coimbatore. Also release the vehicle.</p>
         </div>
       </div>
+    </div>
     <div class="row">
-            
-            <div class="column">
-              <h1 style="padding: 25px; padding-bottom: 0px;">Enter your code here .</h1>
-              <p style="padding: 25px; padding-top: 0px">Follow instructions provided in the comments</p>
-      
-              <div class="codebox" id="codebox" :style="{ display: display[0] }">
-                <pre>
+
+      <div class="column">
+        <h1 style="padding: 25px; padding-bottom: 0px;">Enter your code here .</h1>
+        <p style="padding: 25px; padding-top: 0px">Follow instructions provided in the comments</p>
+
+        <div class="codebox" id="codebox" :style="{ display: display[0] }">
+          <pre>
 import java.util.Scanner;
 import java.util.Date;
 
 public class TestDriver {
 
     public static void main(String[] args) {</pre>&emsp;
-                <input spellcheck="false" maxlength="10" style="width: 100px;" v-model='one'> cobj = new   
-                <input spellcheck="false" id="two" maxlength="11" style="width: 105px;" v-model="two">{ <p id="comment">//Create
-                  an array of Customer objects with 3 array-objects</p><br>
-                } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
-              </div>
-      
-              <div class="codebox" id="codebox" :style="{ display: display[1] }">
-                <pre>
+          <input spellcheck="false" maxlength="7" style="width: 80px;" v-model='one'> vobj = new Vehicle(
+          <input spellcheck="false" id="two" maxlength="4" style="width: 60px;" v-model="two">)
+          <p id="comment">//Create
+            a Vehicle object with regNum 5678</p><br>
+          } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" id="codebox" :style="{ display: display[1] }">
+          <pre>
 import java.util.Scanner;
 import java.util.Date;
 
 public class TestDriver {
 
     public static void main(String[] args) {
-        Customer[] cobj= new Customer[3];
+      Vehicle vobj = new Vehicle(5678);
                 </pre>
-                <br>&emsp;&emsp;&emsp;cobj[0] = 
-                <input spellcheck="false" maxlength="3" style="width: 49px;" v-model='three'> Customer("
-                <input spellcheck="false" maxlength="3" style="width: 50px;" v-model='four'>", "
-                <input spellcheck="false" maxlength="13" style="width: 130px;" v-model='five'>")
-                <p id="comment">//Create a new Customer object using name as "ABC" and email "abc@gmail.com"</p><br>
-                } <br><button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
-              </div>
-      
-              <div class="codebox" id="codebox" :style="{ display: display[2] }">
-                <pre>
+          <br>&emsp;&emsp;&emsp;
+          <input spellcheck="false" maxlength="11" style="width: 100px;" v-model='three'>
+          <input spellcheck="false" maxlength="15" style="width: 130px;" v-model='four'> = new Reservation("JKL",
+          999999999,
+          <input spellcheck="false" maxlength="4" style="width: 50px;" v-model='five'>);
+          <p id="comment">//Create a new Reservation object "rObjComposition" and pass vobj</p><br>
+          } <br><button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" id="codebox" :style="{ display: display[2] }">
+          <pre>
 import java.util.Scanner;
 import java.util.Date;
 
 public class TestDriver {
 
-    public static void main(String[] args) {
-        Customer[] cobj= new Customer[3];
-        cobj[0]=new Customer("ABC", "abc@gmail.com");
-        cobj[1]=new Customer("DEF", 8654678976L);
-        cobj[2]=new Customer("GHI", "ghi@gmail.com", 1234567890L);
+	public static void main(String[] args) {
+		Vehicle vobj = new Vehicle(5678);
+		Reservation rObjComposition = new Reservation("JKL", 999999999, vobj);
       
       </pre>
-          <br>&emsp;&emsp;&emsp;cobj[0].
-                <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='six'>(
-                <input spellcheck="false" maxlength="10" style="width: 110px;" v-model='seven'>);
-                <br>&emsp;
-                <p id="comment">//Set the City of first object to "Coimbatore"</p><br>&emsp;}
-                <br>
-                } <br><button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
-              </div>
-      
+          <br>&emsp;&emsp;&emsp;rObjComposition.
+          <input spellcheck="false" maxlength="14" style="width: 125px;" v-model='six'>().
+          <input spellcheck="false" maxlength="7" style="width: 70px;" v-model='seven'>("Coimbatore");
+          <br>&emsp;
+          <p id="comment">//Get the customer object and set the City to "Coimbatore"</p><br>&emsp;}
+          <br>
+          } <br><button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
+        </div>
 
 
-              <div class="codebox" id="codebox" :style="{ display: display[3] }">
-                <pre>
-import java.util.Scanner;
-import java.util.Date;
 
-public class TestDriver {
-
-    public static void main(String[] args) {
-        Customer[] cobj= new Customer[3];
-        cobj[0]=new Customer("ABC", "abc@gmail.com");
-        cobj[1]=new Customer("DEF", 8654678976L);
-        cobj[2]=new Customer("GHI", "ghi@gmail.com", 1234567890L);
-        cobj[0].setCity("Coimbatore");
-        cobj[1].setCity("Coimbatore");
-        cobj[2].setCity("Chennai");
-      </pre>    &emsp;&emsp;&emsp;
-                <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='eight'> vobj = new
-                <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='nine'>(
-                <input spellcheck="false" maxlength="4" style="width: 60px;" v-model='ten'>;)
-                
-                <br>&emsp;}
-                <p id="comment">//Create a new Vehicle object with value "1234"</p><br>
-                } <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
-              </div>
-      
-              <div class="codebox" id="codebox" :style="{ display: display[4] }">
-                <pre>
+        <div class="codebox" id="codebox" :style="{ display: display[3] }">
+          <pre>
 import java.util.Scanner;
 import java.util.Date;
 
 public class TestDriver {
 
 	public static void main(String[] args) {
-		Customer[] cobj= new Customer[3];
-		cobj[0]=new Customer("ABC", "abc@gmail.com");
-		cobj[1]=new Customer("DEF", 8654678976L);
-		cobj[2]=new Customer("GHI", "ghi@gmail.com", 1234567890L);
-		cobj[0].setCity("Coimbatore");
-		cobj[1].setCity("Coimbatore");
-		cobj[2].setCity("Chennai");
-		Vehicle vobj=new Vehicle(1234);
-      </pre>    &emsp;&emsp;&emsp;Reservation robj= new 
-                <input spellcheck="false" maxlength="11" style="width: 115px;" v-model='eleven'>(
-                <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='twelve'>, 
-                <input spellcheck="false" maxlength="4" style="width: 60px;" v-model='thirteen'> );
-                <br>&emsp;&emsp;
-                <br>&emsp;}
-                <p id="comment">//Create a Reservation object with first Customer object and Vehicle object</p><br>
-                } <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
-              </div>
-              
-              <div class="codebox" id="codebox" :style="{ display: display[5] }">
-                <pre>
+		Vehicle vobj = new Vehicle(5678);
+		Reservation rObjComposition = new Reservation("JKL", 999999999, vobj);
+		rObjComposition.getCustomerObj().setCity("Coimbatore");
+      </pre> &emsp;&emsp;&emsp;
+          rObjComposition.
+          <input spellcheck="false" maxlength="14" style="width: 130px;" v-model='eight'>(
+          <input spellcheck="false" maxlength="3" style="width: 50px;" v-model='nine'>
+          <input spellcheck="false" maxlength="6" style="width: 65px;" v-model='ten'>);
+
+          <br>&emsp;}
+          <p id="comment">//Call the method to set a booking date as new Date()</p><br>
+          } <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" id="codebox" :style="{ display: display[4] }">
+          <pre>
 import java.util.Scanner;
 import java.util.Date;
 
 public class TestDriver {
 
 	public static void main(String[] args) {
-		Customer[] cobj= new Customer[3];
-		cobj[0]=new Customer("ABC", "abc@gmail.com");
-		cobj[1]=new Customer("DEF", 8654678976L);
-		cobj[2]=new Customer("GHI", "ghi@gmail.com", 1234567890L);
-		cobj[0].setCity("Coimbatore");
-		cobj[1].setCity("Coimbatore");
-		cobj[2].setCity("Chennai");
-		Vehicle vobj=new Vehicle(1234);
-		Reservation robj= new Reservation(cobj[0],vobj);
-      </pre>    &emsp;&emsp;&emsp;&emsp;robj.
-                <input spellcheck="false" maxlength="14" style="width: 140px;" v-model='fourteen'>(new Date());
-                <br>&emsp;&emsp;&emsp;&emsp;robj.
-                <input spellcheck="false" maxlength="13" style="width: 130px;" v-model='fifteen'>().
-                <input spellcheck="false" maxlength="15" style="width: 150px;" v-model='sixteen'>());
-                <br>&emsp;&emsp;
-                <br>&emsp;}
-                <p id="comment">//Call the function to set a booking date and update the key status of vehicle object</p><br>
-                } <br><button class="button-9" id="btn6" @click="validate_six()"> {{ button_value }} </button>
-              </div>
-              
+		Vehicle vobj = new Vehicle(5678);
+		Reservation rObjComposition = new Reservation("JKL", 999999999, vobj);
+		rObjComposition.getCustomerObj().setCity("Coimbatore");
+		rObjComposition.setBookingDate(new Date());
+      </pre> &emsp;&emsp;&emsp;rObjComposition.
+          <input spellcheck="false" maxlength="13" style="width: 120px;" v-model='eleven'>().
+          <input spellcheck="false" maxlength="15" style="width: 140px;" v-model='twelve'>();
+          <br>&emsp;&emsp;
+          <br>&emsp;}
+          <p id="comment">//Get the Vehicle Object and call the method to update key status</p><br>
+          } <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
+        </div>
 
-            </div>
-          </div>
-          </main>
+        <div class="codebox" id="codebox" :style="{ display: display[5] }">
+          <pre>
+import java.util.Scanner;
+import java.util.Date;
+
+public class TestDriver {
+
+	public static void main(String[] args) {
+		Vehicle vobj = new Vehicle(5678);
+		Reservation rObjComposition = new Reservation("JKL", 999999999, vobj);
+		rObjComposition.getCustomerObj().setCity("Coimbatore");
+		rObjComposition.setBookingDate(new Date());
+		rObjComposition.getVehicleObj().updateKeyStatus();
+		}
+	}
+      </pre>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
 </template>
 
 <style scoped>
@@ -326,7 +298,7 @@ mark0 {
   box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
-input{
+input {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 4px;

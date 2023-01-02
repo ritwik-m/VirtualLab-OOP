@@ -2,51 +2,11 @@
 export default {
 
   methods: {
-    validate_one() {
-      if (this.one == "final" && this.two == "int" && this.three == "reservationID") {
-        this.button_value = this.button_text_right;
-        btn2.style.backgroundColor = "green";
-        this.display[0] = "none";
-        this.display[1] = "inherit";
-      }
-
-      else {
-        this.button_value = this.button_text;
-        btn1.style.backgroundColor = "red";
-      }
-    },
-
-    validate_two() {
-      if (this.four == "Customer" && this.five == "customerObj") {
-        this.button_value = this.button_text_right;
-        btn3.style.backgroundColor = "green";
-        this.display[1] = "none";
-        this.display[2] = "inherit";
-      }
-      else {
-        this.button_value = this.button_text;
-        btn2.style.backgroundColor = "red";
-      }
-    },
-
-    validate_three() {
-      if (this.six == "Vehicle" && this.seven == "vehicleObj") {
-        this.button_value = this.button_text_right;
-        btn4.style.backgroundColor = "green";
-        this.display[2] = "none";
-        this.display[3] = "inherit";
-      }
-      else {
-        this.button_value = this.button_text;
-        btn3.style.backgroundColor = "red";
-      }
-    },
     validate_four() {
       if (this.eight == "String" && this.nine == "customerName" && this.ten == "long" && this.eleven == "phone" && this.twelve == "Vehicle" && this.thirteen == "vehicleObj") {
         this.button_value = this.button_text_right;
-        btn5.style.backgroundColor = "green";
-        this.display[3] = "none";
-        this.display[4] = "inherit";
+        this.display[0] = "none";
+        this.display[1] = "block";
       }
       else {
         this.button_value = this.button_text;
@@ -54,16 +14,23 @@ export default {
       }
     },
     validate_five() {
-      if (this.twelve == "reservationCount++" && this.thirteen == "reservationID" && this.fourteen == "reservationCount") {
-        this.button_value = "Good Job you're done here";
-        btn5.style.backgroundColor = "green";
-        this.display[4] = "none";
-        this.display[5] = "inherit";
+      if (this.fourteen == "new" && this.fifteen == "customerName" && this.sixteen == "phone") {
+        this.display[1] = "none";
+        this.display[2] = "block";
       }
       else {
-        this.button_value = this.button_text;
-        btn5.style.backgroundColor = "red";
+        alert("incorrect")
       }
+    },
+    validate_six() {
+        this.button_value = "Next";
+        this.display[2] = "none";
+        this.display[3] = "block";
+    },
+    validate_seven() {
+        this.button_value = "Next";
+        this.display[3] = "none";
+        this.display[4] = "block";
     },
 
   },
@@ -75,7 +42,7 @@ export default {
       button_text: "Incorrect. Try again",
       button_text_right: "Correct. Next",
       correct: false,
-      display: ["inherit", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none",]
+      display: ["block", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]
     }
   }
 
@@ -91,54 +58,9 @@ export default {
         <h1 style="padding: 25px; padding-bottom: 0px;">Enter your code here .</h1>
         <p style="padding: 25px; padding-top: 0px">Follow instructions provided in the comments</p>
 
+        
+
         <div class="codebox" id="codebox" :style="{ display: display[0] }">
-          <pre>
-import java.util.Date;
-
-public class Reservation {
-</pre>&emsp;&emsp;&emsp;private
-          <input spellcheck="false" maxlength="5" style="width: 60px;" v-model='one'>
-          <input spellcheck="false" maxlength="3" style="width: 45px;" v-model="two">
-          <input spellcheck="false" maxlength="13" style="width: 130px;" v-model="three">;
-          <p id="comment">//Create attribute reservationID of type final int</p><br>
-          } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
-        </div>
-
-        <div class="codebox" id="codebox" :style="{ display: display[1] }">
-          <pre>
-import java.util.Date;
-
-public class Reservation {
-	private final int reservationID;
-                </pre>
-          <br>&emsp;&emsp;&emsp;private
-          <input spellcheck="false" maxlength="8" style="width: 90px;" v-model='four'>
-          <input spellcheck="false" maxlength="11" style="width: 110px;" v-model='five'>;
-          <p id="comment">//Create a new Customer object called customerObj</p><br>
-          } <br><button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
-        </div>
-
-        <div class="codebox" id="codebox" :style="{ display: display[2] }">
-          <pre>
-import java.util.Date;
-
-public class Reservation {
-	private final int reservationID;
-	private Customer customerObj;
-
-      </pre>
-          <br>&emsp;&emsp;&emsp;private
-          <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='six'>
-          <input spellcheck="false" maxlength="10" style="width: 100px;" v-model='seven'>;
-          <br>&emsp;
-          <p id="comment">//Create a new vehicle object called "vehicleObj"</p><br>&emsp;
-          <br>
-          } <br><button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
-        </div>
-
-
-
-        <div class="codebox" id="codebox" :style="{ display: display[3] }">
           <pre>
 import java.util.Date;
 
@@ -156,13 +78,124 @@ public class Reservation {
           <input spellcheck="false" maxlength="12" style="width: 105px;" v-model='nine'>,
           <input spellcheck="false" maxlength="4" style="width: 60px;" v-model='ten'>
           <input spellcheck="false" maxlength="5" style="width:70px;" v-model='eleven'>,
-          <input spellcheck="false" maxlength="7" style="width: 90px;" v-model='twelve'>,
+          <input spellcheck="false" maxlength="7" style="width: 90px;" v-model='twelve'>
           <input spellcheck="false" maxlength="10" style="width: 100px;" v-model='thirteen'>,)
 
           <br>&emsp;
           <p id="comment">//Create a constructor for Reservation class with by passing Customer parameters and Vehicle object to establish
             composition</p><br>
           } <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" id="codebox" :style="{ display: display[1] }">
+          <pre>
+import java.util.Date;
+
+public class Reservation {
+	private final int reservationID;
+	private Customer customerObj;
+	private Vehicle vehicleObj;
+	private String contractStatus;
+	private Date bookingDate;
+	private Date releaseDate;
+	private static int reservationCount=0;
+	
+	public Reservation(String customerName, long phone, Vehicle vehicleObj) {
+    </pre>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+		this.customerObj = 
+    <input spellcheck="false" maxlength="3" style="width: 50px;" v-model='fourteen'><!--new-->
+    Customer(<input spellcheck="false" maxlength="12" style="width: 120px;" v-model='fifteen'>,
+    <input spellcheck="false" maxlength="5" style="width: 70px;" v-model='sixteen'>
+    <!--customerName, phone-->);
+    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+		this.vehicleObj = vehicleObj;
+    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    reservationCount++;
+    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+		this.reservationID=reservationCount;
+
+       &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <br>&emsp;&emsp;
+          <br>&emsp;}
+          <p id="comment">//Assign new Customer object with customerName and phone values to customerObj - enforcing composition</p><br>
+          } <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" id="codebox" :style="{ display: display[2] }">
+          <pre>
+import java.util.Date;
+
+public class Reservation {
+	private final int reservationID;
+	private Customer customerObj;
+	private Vehicle vehicleObj;
+	private String contractStatus;
+	private Date bookingDate;
+	private Date releaseDate;
+	private static int reservationCount=0;
+	
+	public Reservation(String customerName, long phone, Vehicle vehicleObj) {
+		this.customerObj = new Customer(customerName, phone);
+		this.vehicleObj = vehicleObj;
+		reservationCount++;
+		this.reservationID=reservationCount;
+	}
+
+	public Reservation(String customerName, String email, Vehicle vehicleObj){
+		this.customerObj = new Customer(customerName, email);
+		this.vehicleObj = vehicleObj;
+		reservationCount++;
+		this.reservationID=reservationCount;
+	}
+    </pre>
+    
+          <br>&emsp;&emsp;
+          <br>&emsp;}
+          <p id="comment" style="font-weight: bold;">//Here the second constructor using customerName and email is created similarly - enforcing composition</p><br>
+          } <br><button class="button-9" id="btn6" @click="validate_six()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" id="codebox" :style="{ display: display[3] }">
+          <pre>
+import java.util.Date;
+
+public class Reservation {
+	private final int reservationID;
+	private Customer customerObj;
+	private Vehicle vehicleObj;
+	private String contractStatus;
+	private Date bookingDate;
+	private Date releaseDate;
+	private static int reservationCount=0;
+	
+	public Reservation(String customerName, long phone, Vehicle vehicleObj) {
+		this.customerObj = new Customer(customerName, phone);
+		this.vehicleObj = vehicleObj;
+		reservationCount++;
+		this.reservationID=reservationCount;
+	}
+
+	public Reservation(String customerName, String email, Vehicle vehicleObj){
+		this.customerObj = new Customer(customerName, email);
+		this.vehicleObj = vehicleObj;
+		reservationCount++;
+		this.reservationID=reservationCount;
+	}
+
+  public Reservation(String customerName, String email, long phone, Vehicle vehicleObj){
+		this.customerObj = new Customer(customerName, email, phone);
+		this.vehicleObj = vehicleObj;
+		reservationCount++;
+		this.reservationID=reservationCount;
+	}
+    </pre>
+    
+          <br>&emsp;&emsp;
+          <br>&emsp;}
+          <p id="comment" style="font-weight: bold;">//Here the third constructor using customerName email and phone is created similarly - enforcing composition</p><br>
+          } <br><button class="button-9" id="btn7" @click="validate_seven()"> {{ button_value }} </button>
         </div>
 
         <div class="codebox" id="codebox" :style="{ display: display[4] }">
@@ -178,37 +211,23 @@ public class Reservation {
 	private Date releaseDate;
 	private static int reservationCount=0;
 	
-  <!--new Customer(customerName, phone);-->
+
 	public Reservation(String customerName, long phone, Vehicle vehicleObj) {
-		this.customerObj = <!--new--> Customer(<!--customerName, phone-->);
+		this.customerObj = new Customer(customerName, phone);
 		this.vehicleObj = vehicleObj;
-      </pre> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-          <input spellcheck="false" maxlength="18" style="width: 160px;" v-model='fouteen'>;
-          <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-          this.
-          <input spellcheck="false" maxlength="13" style="width: 110px;" v-model='thirteen'>
-          <input spellcheck="false" maxlength="16" style="width: 140px;" v-model='fourteen'>;
-          <br>&emsp;&emsp;
-          <br>&emsp;}
-          <p id="comment">//Increment the reservationCount by 1 and assign it to reservationID</p><br>
-          } <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
-        </div>
+		reservationCount++;
+		this.reservationID=reservationCount;
+	}
 
-        <div class="codebox" id="codebox" :style="{ display: display[5] }">
-          <pre>
-import java.util.Date;
+	public Reservation(String customerName, String email, Vehicle vehicleObj){
+		this.customerObj = new Customer(customerName, email);
+		this.vehicleObj = vehicleObj;
+		reservationCount++;
+		this.reservationID=reservationCount;
+	}
 
-public class Reservation {
-	private final int reservationID;
-	private Customer customerObj;
-	private Vehicle vehicleObj;
-	private String contractStatus;
-	private Date bookingDate;
-	private Date releaseDate;
-	private static int reservationCount=0;
-	
-	public Reservation(Customer customerObj, Vehicle vehicleObj) {
-		this.customerObj = customerObj;
+	public Reservation(String customerName, String email, long phone, Vehicle vehicleObj){
+		this.customerObj = new Customer(customerName, email, phone);
 		this.vehicleObj = vehicleObj;
 		reservationCount++;
 		this.reservationID=reservationCount;
@@ -255,36 +274,40 @@ public class Reservation {
 	
 }
 
-      </pre> <br><button class="button-9" id="btn6"> {{ button_value }} </button>
+      </pre> <br>
         </div>
 
       </div>
 
       <div class="column" style="position:relative; left:5%; width: fit-content;">
         <div
-          style="margin-left: 15%; height: fit-content; width: fit-content; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          style="margin-left: 15%; height: fit-content; width: 400px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
           :style="{ display: display[0] }">
           <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
             <mark1>Class Reservation</mark1>
           </div>
           <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
-            <mark0>-reservationID: int </mark0>
+            <mark1>-reservationID: int </mark1>
             <br>
-            -customerObj: Customer
+            <mark1>-customerObj: Customer</mark1>
             <br>
-            -vehicleObj: vehicle
+            <mark1>-vehicleObj: vehicle</mark1>
             <br>
-            -contractStatus: String
+            <mark1>-contractStatus: String</mark1>
             <br>
-            +booking Date: Date
+            <mark1>+booking Date: Date</mark1>
             <br>
-            -releaseDate: Date
+            <mark1>-releaseDate: Date</mark1>
             <br>
-            -reservationCount: int
+            <mark1>-reservationCount: int</mark1>
           </div>
 
           <div style="padding: 15px; line-height: 40px;">
-            +Reservation(Customer customerObj, Vehicle vehicleObj)
+            <mark0>+Reservation(String customerName, long phone, Vehicle vehicleObj)</mark0>
+            <br>
+            +Reservation(String customerName, String email, Vehicle vehicleObj)
+            <br>
+            +Reservation(String customerName, String email, long phone, Vehicle vehicleObj)
             <br>
             +setContractStatus(String contractStatus): void
             <br>
@@ -293,6 +316,166 @@ public class Reservation {
             +releaseContract(): String
             <br>
             +getReleaseDate(): Date
+          </div>
+
+        </div>
+
+        <div
+          style="margin-left: 15%; height: fit-content; width: 400px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[1] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+            <mark1>Class Reservation</mark1>
+          </div>
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>-reservationID: int </mark1>
+            <br>
+            <mark1>-customerObj: Customer</mark1>
+            <br>
+            <mark1>-vehicleObj: vehicle</mark1>
+            <br>
+            <mark1>-contractStatus: String</mark1>
+            <br>
+            <mark1>+booking Date: Date</mark1>
+            <br>
+            <mark1>-releaseDate: Date</mark1>
+            <br>
+            <mark1>-reservationCount: int</mark1>
+          </div>
+
+          <div style="padding: 15px; line-height: 40px;">
+            <mark0>+Reservation(String customerName, long phone, Vehicle vehicleObj)</mark0>
+            <br>
+            +Reservation(String customerName, String email, Vehicle vehicleObj)
+            <br>
+            +Reservation(String customerName, String email, long phone, Vehicle vehicleObj)
+            <br>
+            +setContractStatus(String contractStatus): void
+            <br>
+            +getContractStatus(): String
+            <br>
+            +releaseContract(): String
+            <br>
+            +getReleaseDate(): Date
+          </div>
+
+        </div>
+
+        <div
+          style="margin-left: 15%; height: fit-content; width: 400px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[2] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+            <mark1>Class Reservation</mark1>
+          </div>
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>-reservationID: int </mark1>
+            <br>
+            <mark1>-customerObj: Customer</mark1>
+            <br>
+            <mark1>-vehicleObj: vehicle</mark1>
+            <br>
+            <mark1>-contractStatus: String</mark1>
+            <br>
+            <mark1>+booking Date: Date</mark1>
+            <br>
+            <mark1>-releaseDate: Date</mark1>
+            <br>
+            <mark1>-reservationCount: int</mark1>
+          </div>
+
+          <div style="padding: 15px; line-height: 40px;">
+            <mark1>+Reservation(String customerName, long phone, Vehicle vehicleObj)</mark1>
+            <br>
+            <mark0>+Reservation(String customerName, String email, Vehicle vehicleObj)</mark0>
+            <br>
+            +Reservation(String customerName, String email, long phone, Vehicle vehicleObj)
+            <br>
+            +setContractStatus(String contractStatus): void
+            <br>
+            +getContractStatus(): String
+            <br>
+            +releaseContract(): String
+            <br>
+            +getReleaseDate(): Date
+          </div>
+
+        </div>
+
+        <div
+          style="margin-left: 15%; height: fit-content; width: 400px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[3] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+            <mark1>Class Reservation</mark1>
+          </div>
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>-reservationID: int </mark1>
+            <br>
+            <mark1>-customerObj: Customer</mark1>
+            <br>
+            <mark1>-vehicleObj: vehicle</mark1>
+            <br>
+            <mark1>-contractStatus: String</mark1>
+            <br>
+            <mark1>+booking Date: Date</mark1>
+            <br>
+            <mark1>-releaseDate: Date</mark1>
+            <br>
+            <mark1>-reservationCount: int</mark1>
+          </div>
+
+          <div style="padding: 15px; line-height: 40px;">
+            <mark1>+Reservation(String customerName, long phone, Vehicle vehicleObj)</mark1>
+            <br>
+            <mark1>+Reservation(String customerName, String email, Vehicle vehicleObj)</mark1>
+            <br>
+            <mark0>+Reservation(String customerName, String email, long phone, Vehicle vehicleObj)</mark0>
+            <br>
+            +setContractStatus(String contractStatus): void
+            <br>
+            +getContractStatus(): String
+            <br>
+            +releaseContract(): String
+            <br>
+            +getReleaseDate(): Date
+          </div>
+
+        </div>
+
+        <div
+          style="margin-left: 15%; height: fit-content; width: 400px; border: 1px solid black; background-color: #F9FAFE; box-shadow: 2px 3px 10px 2px #D7DFFF;"
+          :style="{ display: display[4] }">
+          <div style="height : 45px; border-bottom: 1px solid black; text-align: center; padding-top: 15px;">
+            <mark1>Class Reservation</mark1>
+          </div>
+          <div style="height : fit-content; border-bottom: 1px solid black; padding: 15px; line-height: 40px;">
+            <mark1>-reservationID: int </mark1>
+            <br>
+            <mark1>-customerObj: Customer</mark1>
+            <br>
+            <mark1>-vehicleObj: vehicle</mark1>
+            <br>
+            <mark1>-contractStatus: String</mark1>
+            <br>
+            <mark1>+booking Date: Date</mark1>
+            <br>
+            <mark1>-releaseDate: Date</mark1>
+            <br>
+            <mark1>-reservationCount: int</mark1>
+          </div>
+
+          <div style="padding: 15px; line-height: 40px;">
+            <mark1>+Reservation(String customerName, long phone, Vehicle vehicleObj)</mark1>
+            <br>
+            <mark1>+Reservation(String customerName, String email, Vehicle vehicleObj)</mark1>
+            <br>
+            <mark1>+Reservation(String customerName, String email, long phone, Vehicle vehicleObj)</mark1>
+            <br>
+            <mark1>+setContractStatus(String contractStatus): void</mark1>
+            <br>
+            <mark1>+getContractStatus(): String</mark1>
+            <br>
+            <mark1>+releaseContract(): String</mark1>
+            <br>
+            <mark1>+getReleaseDate(): Date</mark1>
           </div>
 
         </div>
