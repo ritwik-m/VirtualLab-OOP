@@ -181,14 +181,14 @@ export default {
 </script>
 
 
-<template class="app">
+<template>
   <header style="padding: 20px">
     <h1>Step 1: Associating variables and datatypes</h1>
     <p>Map the elements and respective datatypes to their classes by dragging and dropping.</p>
   </header>
   <main>
     <div class="flexbox">
-      <div class="flex-between">
+      <div class="flex-between sticky">
         <h3>Variables</h3>
         <div class="identify-box drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
           <div v-for="item in getList(1)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
@@ -311,7 +311,7 @@ export default {
         </div>
 
       </div>
-      <div class="flex-between">
+      <div class="flex-between sticky">
         <h3>Datatypes</h3>
         <div class="identify-box drop-zone" @drop="onDrop($event, 13)" @dragenter.prevent @dragover.prevent>
           <div v-for="item in getList(13)" :key="item.id" class="to-identify drag-el-horizontal" draggable="true"
@@ -352,6 +352,13 @@ export default {
 
 }
 
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
 .identified {
   background-color: #6D71FA;
   color: white;
@@ -379,8 +386,10 @@ h3 {
   flex-direction: column;
   margin-left: 10px;
   margin-right: 10px;
+  align-self: flex-start;
   width: auto;
   gap: 10px;
+  border: #32A962 1px solid;
 }
 
 
@@ -460,8 +469,8 @@ h3 {
   display: flex;
   justify-content: space-between;
 
-  height: 100%;
-  width: 98%;
+  /* height: 100%; */
+  /* width: 98%; */
 
   overflow: hidden;
 
