@@ -48,81 +48,114 @@
         <div class="column" style="margin-left: 100px">
             <div class="row">
                 <div class="codebox" style="max-width: 300px;">
-                    Content goes here...
+                    <ul>
+                        <li>customerID, integer</li>
+                        <li>email, string</li>
+                        <li>phone, long integer</li>
+                        <li>city, string</li>
+                        <li>customerCount, integer</li>
+                        <li>getCustName(), string</li>
+                        <li>getCustomerID(), integer</li>
+                        <li>getEmail(), string</li>
+                        <li>getPhone(), long integer</li>
+                        <li>getCity(), string</li>
+                        <li>setEmail(), void</li>
+                        <li>setPhone(), void</li>
+                        <li>setCity(), void</li>
+                    </ul>
+                    
+
                 </div>
             </div>
             <div class="row" style="margin-top:35px">
-                <div style="max-width: 350px;" :style="{ display: display[0] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_one()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[1] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_two()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[2] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_three()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[3] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_four()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[4] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_five()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[5] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_six()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[6] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_seven()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[7] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_eight()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[8] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_nine()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[9] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_ten()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[10] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_eleven()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[11] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_twelve()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[12] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_thirteen()"> Next </button>
-                </div>
-                <div style="max-width: 350px;" :style="{ display: display[13] }">
-                    <br>
-                    <br>
-                    <button class="button-9" id="btn1" @click="validate_fourteen()"> Next </button>
-                </div>
-                </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[0] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        1. <input v-model="one">
+                        <button class="button-9" id="btn1" @click="validate_one()"> Validate </button>
+                    </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[1] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        2. <input v-model="two">
+                        <button class="button-9" id="btn2" @click="validate_two()"> Validate </button>
+                    </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[2] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        3. <input v-model="three">
+                        <button class="button-9" id="btn3" @click="validate_three()"> Validate </button>
+                    </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[3] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        4. <input v-model="four">
+                        <button class="button-9" @click="validate_four()"> Validate </button>
+                    </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[4] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        5. <input v-model="five">
+                        <button class="button-9" id="btn1" @click="validate_five()"> Validate </button>
+                    </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[5] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        6. <input v-model="six">
+                        <button class="button-9" id="btn1" @click="validate_six()"> Validate </button>
+                    </div>
+                    <!--Write codebox divs that request for input from the user as done above for a total of 12 times-->
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[6] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        7. <input v-model="seven">
+                        <button class="button-9" id="btn1" @click="validate_seven()"> Validate </button>
+                    </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[7] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        8. <input v-model="eight">
+                        <button class="button-9" id="btn1" @click="validate_eight()"> Validate </button>
+                    </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[8] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        9. <input v-model="nine">
+                        <button class="button-9" id="btn1" @click="validate_nine()"> Validate </button>
+                    </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[9] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        10. <input v-model="ten">
+                        <button class="button-9" id="btn1" @click="validate_ten()"> Validate </button>
+                    </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[10] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        11. <input v-model="eleven">
+                        <button class="button-9" id="btn1" @click="validate_eleven()"> Validate </button>
+                    </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[11] }">
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
+                        <br>
+                        <br>
+                        12. <input v-model="twelve">
+                        <button class="button-9" id="btn1" @click="validate_twelve()"> Validate </button>
+                        </div>
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[12] }">
+                    </div>
+            </div>
             </div>
         </div>
     </main>
@@ -133,62 +166,105 @@
 export default{
     methods: {
         validate_one(){
-            this.display[0] = "none";
+            if(this.one == "customerID: int"){
+                this.display[0] = "none";
             this.display[1] = "block";
+            }
+
+            else{
+                alert("Wrong Answer");
+            }
+            
         },
         validate_two(){
-            this.display[1] = "none";
-            this.display[2] = "block";
+            if(this.two == "email: String"){
+                this.display[1] = "none";
+                this.display[2] = "block";}
+            else{
+                alert("Wrong Answer");
+            }
+            
         },
         validate_three(){
-            this.display[2] = "none";
-            this.display[3] = "block";
+            if(this.three== "phone: long"){
+                this.display[2] = "none";
+                this.display[3] = "block";}
+            else{
+                alert("Wrong Answer");
+            }
         },
         validate_four(){
-            this.display[3] = "none";
-            this.display[4] = "block";
+            if(this.four == "city: String"){
+                this.display[3] = "none";
+                this.display[4] = "block";}
+            else{
+                alert("Wrong Answer");
+            }
         },
         validate_five(){
-            this.display[4] = "none";
-            this.display[5] = "block";
+            if(this.five == "customerCount: int"){
+                this.display[4] = "none";
+                this.display[5] = "block";}
+            else{
+                alert("Wrong Answer");
+            }
         },
         validate_six(){
-            this.display[5] = "none";
-            this.display[6] = "block";
+            if(this.six == "getCustomerID(): int"){
+                this.display[5] = "none";
+                this.display[6] = "block";}
+            else{
+                alert("Wrong Answer");
+            }
         },
         validate_seven(){
-            this.display[6] = "none";
-            this.display[7] = "block";
+            if(this.seven == "getEmail(): String"){
+                this.display[6] = "none";
+                this.display[7] = "block";}
+            else{
+                alert("Wrong Answer");
+            }
         },
         validate_eight(){
-            this.display[7] = "none";
-            this.display[8] = "block";
+            if(this.eight == "getPhone(): long"){
+                this.display[7] = "none";
+                this.display[8] = "block";}
+            else{
+                alert("Wrong Answer");
+            }
         },
         validate_nine(){
-            this.display[8] = "none";
-            this.display[9] = "block";
+            if(this.nine == "getCity(): String"){
+                this.display[8] = "none";
+                this.display[9] = "block";}
+            else{
+                alert("Wrong Answer");
+            }
         },
         validate_ten(){
-            this.display[9] = "none";
-            this.display[10] = "block";
+            if(this.ten == "setEmail(): void"){
+                this.display[9] = "none";
+                this.display[10] = "block";}
+            else{
+                alert("Wrong Answer");
+            }
         },
         validate_eleven(){
-            this.display[10] = "none";
-            this.display[11] = "block";
+            if(this.eleven == "setPhone(): void"){
+                this.display[10] = "none";
+                this.display[11] = "block";}
+            else{
+                alert("Wrong Answer");
+            }
         },
         validate_twelve(){
-            this.display[11] = "none";
-            this.display[12] = "block";
+            if(this.twelve == "setCity(): void"){
+                this.display[11] = "none";
+                this.display[12] = "block";}
+            else{
+                alert("Wrong Answer");
+            };
         },
-        validate_thirteen(){
-            this.display[12] = "none";
-            this.display[13] = "block";
-        },
-        validate_fourteen(){
-            this.display[13] = "none";
-            this.display[14] = "block";
-        },
-
     },
     data() {
     return {

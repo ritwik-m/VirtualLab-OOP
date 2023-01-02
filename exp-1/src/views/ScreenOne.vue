@@ -45,9 +45,16 @@ export default {
       this.validated = true;
       // let i = 0
       for (let i = 2; i < 7; i++) {
+        console.log(this.getList(i))
+        if(this.getList(i).length==0){
+          alert("Please drag all the sentences into the timeline")
+          this.validated=false;
+          return
+        }
         final_list.push(this.getList(i))
       }
       console.log(final_list)
+      console.log(final_list.length)
 
       if(final_list.length!=5){
         alert("Please drag all the sentences into the timeline")
@@ -57,7 +64,6 @@ export default {
 
       if(final_list[0][0].id == 0){
         this.valid[0] = true
-        console.log(final_list[0][0].id)
       }
 
       else{

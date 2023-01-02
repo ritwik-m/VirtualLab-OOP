@@ -100,17 +100,16 @@ export default {
         <div class="column">
           <div class="codebox">
             <h5>Aggregation: </h5>
-            <ul>
+            <ul style="line-height: 125%;">
               <li>Write a demo class to create a customer array with 3 objects. </li>
-              <li></li>
+              <li>Customer objects are created with the availability of <b>only email</b>, 
+              then <b>only phone</b> and last <b>customer with both email and phone number</b>.</li>
+              <li>Assign the city of the first two customers as Coimbatore and that of the remaining 
+              customers as Chennai.</li>
+              <li>Create a vehicle object with a registration number. </li>
+              <li>A customer in Coimbatore does a reservation of the vehicle for current date.  
+              Also release the vehicle.</li>
             </ul>
-            <p>
-              Customer objects are created with the availability of <b>only email</b>, 
-              then <b>only phone</b> and last <b>customer with both email and phone number</b>. 
-              Assign the city of the first two customers as Coimbatore and that of the remaining 
-              customers as Chennai. Create a vehicle object with a registration number. 
-              A customer in Coimbatore does a reservation of the vehicle for current date.  
-              Also release the vehicle. </p>
           </div>
         </div>
       </div>
