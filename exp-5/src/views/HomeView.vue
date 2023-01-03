@@ -35,7 +35,12 @@ export default {
     <component v-bind:is="componentSelect" />
   </KeepAlive>
   </main>
-  
+  <footer>
+        <div id="buttons" class="relative">
+            <button class="navitem">Back</button>
+            <button class="navitem" @click="validate()" :hidden="oneValidate">Next</button>
+        </div>
+    </footer> 
 </template>
 
 <style>

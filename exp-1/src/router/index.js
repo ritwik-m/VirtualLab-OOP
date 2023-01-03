@@ -18,12 +18,17 @@ const routes = [
   {
     path: '/screen-three',
     name: 'screen-three',
-    component: () => import(/* webpackChunkName: "scren-three" */ '../views/ScreenThree.vue')
+    component: () => import('../views/ScreenThree.vue')
   },
   {
     path: '/screen-four',
     name: 'screen-four',
-    component: () => import(/* webpackChunkName: "scren-three" */ '../views/ScreenFour.vue')
+    component: () => import('../views/ScreenFour.vue')
+  },
+  {
+    path: '/screen-two-new',
+    name: 'screen-two-new',
+    component: () => import('../views/ScreenTwoNew.vue')
   }
 ]
 

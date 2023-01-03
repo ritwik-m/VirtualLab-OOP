@@ -45,6 +45,28 @@
                 </div>
                 <div class="codebox" :style="{ display: display[13] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 14.png" />
+            </div>
+        </div>
+        </div>
+        <div class="column" style="margin-left: 100px">
+            <div class="row">
+                <div class="codebox" style="max-width: 300px;">
+                    <ul>
+                        <li :class="{completed: valid[0]}">customerID, integer</li>
+                        <li :class="{completed: valid[1]}">email, string</li>
+                        <li :class="{completed: valid[2]}">phone, long integer</li>
+                        <li :class="{completed: valid[3]}">city, string</li>
+                        <li :class="{completed: valid[4]}">customerCount, integer</li>
+                        <li :class="{completed: valid[5]}">getCustomerID(), integer</li>
+                        <li :class="{completed: valid[6]}">getEmail(), string</li>
+                        <li :class="{completed: valid[7]}">getPhone(), long integer</li>
+                        <li :class="{completed: valid[8]}">getCity(), string</li>
+                        <li :class="{completed: valid[9]}">setEmail(), void</li>
+                        <li :class="{completed: valid[10]}">setPhone(), void</li>
+                        <li :class="{completed: valid[11]}">setCity(), void</li>
+                    </ul>
+                    
+
                 </div>
             </div>
             <div class="column" style="margin-left: 100px">
@@ -182,7 +204,8 @@ export default {
         validate_one() {
             if (this.one == "customerID: int") {
                 this.display[0] = "none";
-                this.display[1] = "block";
+            this.display[1] = "block";
+            this.valid[0] = true;
             }
 
             else {
@@ -198,6 +221,7 @@ export default {
             if (this.two == "email: String") {
                 this.display[1] = "none";
                 this.display[2] = "block";
+                this.valid[1] = true;
             }
             else {
                 var x = document.getElementById("snackbar");
@@ -382,6 +406,11 @@ p {
 
 .column {
     flex: 50%;
+}
+
+.completed {
+    color: cadetblue;
+    text-decoration: line-through;
 }
 
 mark1 {
