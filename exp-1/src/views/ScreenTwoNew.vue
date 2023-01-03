@@ -117,7 +117,7 @@ export default {
                 return;
             }
 
-            ///duplicate items that belong to list 13
+            ///duplicate items that belong to list 1-5
             if (items.value[idx].list === 1 || items.value[idx].list === 2 || items.value[idx].list === 3 || items.value[idx].list === 4 || items.value[idx].list === 5)
                 items.value.push({
                     id: items.value.length,

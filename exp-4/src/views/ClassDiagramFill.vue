@@ -49,19 +49,18 @@
             <div class="row">
                 <div class="codebox" style="max-width: 300px;">
                     <ul>
-                        <li>customerID, integer</li>
-                        <li>email, string</li>
-                        <li>phone, long integer</li>
-                        <li>city, string</li>
-                        <li>customerCount, integer</li>
-                        <li>getCustName(), string</li>
-                        <li>getCustomerID(), integer</li>
-                        <li>getEmail(), string</li>
-                        <li>getPhone(), long integer</li>
-                        <li>getCity(), string</li>
-                        <li>setEmail(), void</li>
-                        <li>setPhone(), void</li>
-                        <li>setCity(), void</li>
+                        <li :class="{completed: valid[0]}">customerID, integer</li>
+                        <li :class="{completed: valid[1]}">email, string</li>
+                        <li :class="{completed: valid[2]}">phone, long integer</li>
+                        <li :class="{completed: valid[3]}">city, string</li>
+                        <li :class="{completed: valid[4]}">customerCount, integer</li>
+                        <li :class="{completed: valid[5]}">getCustomerID(), integer</li>
+                        <li :class="{completed: valid[6]}">getEmail(), string</li>
+                        <li :class="{completed: valid[7]}">getPhone(), long integer</li>
+                        <li :class="{completed: valid[8]}">getCity(), string</li>
+                        <li :class="{completed: valid[9]}">setEmail(), void</li>
+                        <li :class="{completed: valid[10]}">setPhone(), void</li>
+                        <li :class="{completed: valid[11]}">setCity(), void</li>
                     </ul>
                     
 
@@ -169,6 +168,7 @@ export default{
             if(this.one == "customerID: int"){
                 this.display[0] = "none";
             this.display[1] = "block";
+            this.valid[0] = true;
             }
 
             else{
@@ -179,7 +179,9 @@ export default{
         validate_two(){
             if(this.two == "email: String"){
                 this.display[1] = "none";
-                this.display[2] = "block";}
+                this.display[2] = "block";
+                this.valid[1] = true;
+            }
             else{
                 alert("Wrong Answer");
             }
@@ -188,7 +190,9 @@ export default{
         validate_three(){
             if(this.three== "phone: long"){
                 this.display[2] = "none";
-                this.display[3] = "block";}
+                this.display[3] = "block";
+                this.valid[2] = true;
+            }
             else{
                 alert("Wrong Answer");
             }
@@ -196,7 +200,9 @@ export default{
         validate_four(){
             if(this.four == "city: String"){
                 this.display[3] = "none";
-                this.display[4] = "block";}
+                this.display[4] = "block";
+                this.valid[3] = true;
+            }
             else{
                 alert("Wrong Answer");
             }
@@ -204,7 +210,9 @@ export default{
         validate_five(){
             if(this.five == "customerCount: int"){
                 this.display[4] = "none";
-                this.display[5] = "block";}
+                this.display[5] = "block";
+                this.valid[4] = true;
+            }
             else{
                 alert("Wrong Answer");
             }
@@ -212,7 +220,9 @@ export default{
         validate_six(){
             if(this.six == "getCustomerID(): int"){
                 this.display[5] = "none";
-                this.display[6] = "block";}
+                this.display[6] = "block";
+                this.valid[5] = true;
+            }
             else{
                 alert("Wrong Answer");
             }
@@ -220,7 +230,9 @@ export default{
         validate_seven(){
             if(this.seven == "getEmail(): String"){
                 this.display[6] = "none";
-                this.display[7] = "block";}
+                this.display[7] = "block";
+                this.valid[6] = true;
+            }
             else{
                 alert("Wrong Answer");
             }
@@ -228,7 +240,9 @@ export default{
         validate_eight(){
             if(this.eight == "getPhone(): long"){
                 this.display[7] = "none";
-                this.display[8] = "block";}
+                this.display[8] = "block";
+                this.valid[7] = true;
+            }
             else{
                 alert("Wrong Answer");
             }
@@ -236,7 +250,9 @@ export default{
         validate_nine(){
             if(this.nine == "getCity(): String"){
                 this.display[8] = "none";
-                this.display[9] = "block";}
+                this.display[9] = "block";
+                this.valid[8] = true;
+            }
             else{
                 alert("Wrong Answer");
             }
@@ -244,7 +260,9 @@ export default{
         validate_ten(){
             if(this.ten == "setEmail(): void"){
                 this.display[9] = "none";
-                this.display[10] = "block";}
+                this.display[10] = "block";
+                this.valid[9] = true;
+            }
             else{
                 alert("Wrong Answer");
             }
@@ -252,7 +270,9 @@ export default{
         validate_eleven(){
             if(this.eleven == "setPhone(): void"){
                 this.display[10] = "none";
-                this.display[11] = "block";}
+                this.display[11] = "block";
+                this.valid[10] = true;
+            }
             else{
                 alert("Wrong Answer");
             }
@@ -260,7 +280,9 @@ export default{
         validate_twelve(){
             if(this.twelve == "setCity(): void"){
                 this.display[11] = "none";
-                this.display[12] = "block";}
+                this.display[12] = "block";
+                this.valid[11] = true;
+            }
             else{
                 alert("Wrong Answer");
             };
@@ -273,7 +295,7 @@ export default{
         button_text: "Incorrect. Try again.",
         button_text_right: "Next",
         correct: false,
-        valid: [false, false],
+        valid: [false, false, false, false, false, false, false, false, false, false, false, false],
         display: ["block", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]
     }
 }
@@ -309,6 +331,11 @@ p {
 
 .column {
     flex: 50%;
+}
+
+.completed {
+    color: cadetblue;
+    text-decoration: line-through;
 }
 
 mark1 {
