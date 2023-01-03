@@ -4,152 +4,224 @@ export default {
   methods: {
     validate_one() {
       if (this.one == "class" && this.two == "Customer") {
-        this.button_value = this.button_text_right;
-        btn2.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[0] = "none";
         this.display[1] = "inherit";
       }
 
       else {
-        this.button_value = this.button_text;
-        btn1.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
 
     validate_two() {
       if (this.three == "String" && this.four == "custName") {
-        this.button_value = this.button_text_right;
-        btn3.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[1] = "none";
         this.display[2] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn2.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
 
     validate_three() {
       if (this.five == "int" && this.six == "customerID") {
-        this.button_value = this.button_text_right;
-        btn4.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[2] = "none";
         this.display[3] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn3.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
     validate_four() {
       if (this.seven == "String" && this.eight == "email") {
-        this.button_value = this.button_text_right;
-        btn5.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[3] = "none";
         this.display[4] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn4.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
     validate_five() {
       if (this.nine == "long" && this.ten == "phone") {
-        this.button_value = this.button_text_right;
-        btn6.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[4] = "none";
         this.display[5] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn5.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
     validate_six() {
       if (this.eleven == "String" && this.twelve == "city") {
-        this.button_value = this.button_text_right;
-        btn7.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[5] = "none";
         this.display[6] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn6.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
     validate_seven() {
       if (this.thirteen == "static" && this.fourteen == "int" && this.fifteen == "customerCount=0") {
-        this.button_value = this.button_text_right;
-        btn8.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[6] = "none";
         this.display[7] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn7.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
     validate_eight() {
       if (this.sixteen == "customerCount++" && this.seventeen == "this") {
-        this.button_value = this.button_text_right;
-        btn9.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[7] = "none";
         this.display[8] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn8.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
     validate_nine() {
       if (this.eighteen == "String custName" && this.nineteen == "String email" && this.twenty == "this" && this.t1 == "this") {
-        this.button_value = this.button_text_right;
-        btn10.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[8] = "none";
         this.display[9] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn9.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
     validate_ten() {
       if (this.t2 == "String custName" && this.t3 == "long phone" && this.t4 == "this" && this.t5 == `setPhone(phone)`) {
-        this.button_value = this.button_text_right;
-        btn11.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[9] = "none";
         this.display[10] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn10.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
 
     validate_eleven() {
       if (this.t6 == "getcustName" && this.t7 == "return custName") {
-        this.button_value = this.button_text_right;
-        btn12.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[10] = "none";
         this.display[11] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn11.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
 
     validate_twelve() {
       if (this.t8 == "void" && this.t9 == "setPhone" && this.t10 == "long phone" && this.t11 == "if" && this.t12 == "this.phone" && this.t13 == "else" && this.t14 == "this.phone") {
-        this.button_value = this.button_text_right;
-        btn12.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[11] = "none";
         this.display[12] = "inherit";
         this.cue = `Congratulations you have successfully completed learning to implement classes. The final code for the class is given below.`;
       }
       else {
-        this.button_value = this.button_text;
-        btn12.style.backgroundColor = "red";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Incorrect. Try again";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
     },
   },
@@ -158,10 +230,8 @@ export default {
       id: 'container',
       class: 'wrapper',
       button_value: 'Next',
-      button_text: "Incorrect. Try again",
-      button_text_right: "Next",
       correct: false,
-      valid: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+      valid: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
       display: ["inherit", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none",]
     }
   }
@@ -173,10 +243,13 @@ export default {
 <template>
 
   <main class="app">
+    <div id="snackbar">Error Message.</div>
+
 
     <div class="row" style="font-family: 'Montserrat' sans-serif;">
       <div class="column">
-        <h1 style="padding: 25px; padding-bottom: 0px;">Fill in the Java code for the following updated Customer class.</h1>
+        <h1 style="padding: 25px; padding-bottom: 0px;">Fill in the Java code for the following updated Customer class.
+        </h1>
         <p style="padding: 25px; padding-top: 0px;">You only have to fill in the spaces provided.</p>
 
         <div
@@ -1073,7 +1146,7 @@ public class Customer {
   background-color: #F9FAFE;
 }
 
-.app{
+.app {
   min-height: 1000px;
   background-color: #F9FAFE;
 }
@@ -1144,7 +1217,7 @@ mark0 {
   box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
-input{
+input {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 4px;
@@ -1189,5 +1262,75 @@ input{
 
 .button-9:focus {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
 </style>
