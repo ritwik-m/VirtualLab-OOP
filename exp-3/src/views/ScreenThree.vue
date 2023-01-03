@@ -7,6 +7,7 @@ export default {
             if (this.one == "Gets-keys-from" && first.value == "1") {
                 this.display[0] = "none";
                 this.display[1] = "block";
+                this.valid[0] = true;
             }
 
             else {
@@ -18,6 +19,7 @@ export default {
             if (this.two == "Makes" && second.value == "2") {
                 this.display[1] = "none";
                 this.display[2] = "block";
+                this.valid[1] = true;
             }
 
             else {
@@ -29,6 +31,7 @@ export default {
             if (this.three == "Books" && third.value == "1") {
                 this.display[2] = "none";
                 this.display[3] = "block";
+                this.valid[2] = true;
             }
 
             else {
@@ -40,6 +43,7 @@ export default {
             if (this.four == "Releases" && fourth.value == "1") {
                 this.display[3] = "none";
                 this.display[4] = "block";
+                this.valid[3] = true;
             }
 
             else {
@@ -51,6 +55,7 @@ export default {
             if (this.five == "Completes" && fifth.value == "2") {
                 this.display[4] = "none";
                 this.display[5] = "block";
+                this.valid[4] = true;
             }
 
             else {
@@ -62,6 +67,7 @@ export default {
             if (this.six == "Rents" && sixth.value =="2") {
                 this.display[5] = "none";
                 this.display[6] = "block";
+                this.valid[5] = true;
             }
 
             else {
@@ -78,8 +84,8 @@ export default {
             button_text: "Incorrect. Try again",
             button_text_right: "Next",
             correct: false,
-            valid: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-            display: ["block", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none",]
+            valid: [false, false, false, false, false, false],
+            display: ["block", "none", "none", "none", "none", "none"]
         }
     }
 
@@ -119,12 +125,12 @@ export default {
                 <div class="row">
                     <div class="codebox" style="max-width: 300px;">
                         <ul>
-                            <li>Completes</li>
-                            <li>Rents</li>
-                            <li>Releases</li>
-                            <li>Books</li>
-                            <li>Makes</li>
-                            <li>Gets-keys-from</li>
+                            <li :class="{completed: valid[5]}">Rents</li>
+                            <li :class="{completed: valid[2]}">Books</li>
+                            <li :class="{completed: valid[3]}">Releases</li>
+                            <li :class="{completed: valid[4]}">Completes</li>
+                            <li :class="{completed: valid[1]}">Makes</li>
+                            <li :class="{completed: valid[0]}">Gets-keys-from</li>
 
                         </ul>
                     </div>
@@ -236,6 +242,11 @@ export default {
 
 .column {
     flex: 50%;
+}
+
+.completed {
+    color: cadetblue;
+    text-decoration: line-through;
 }
 
 .button-9 {

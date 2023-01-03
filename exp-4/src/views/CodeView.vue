@@ -1,3 +1,5 @@
+
+
 <script>
 export default {
 
@@ -11,6 +13,7 @@ export default {
         setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         this.display[0] = "none";
         this.display[1] = "inherit";
+        //Mention 'using java syntax'
       }
 
       else {
