@@ -18,12 +18,19 @@ export default {
   data() {
     return {
       componentSelect: "InstructionsView",
+      reservation_complete: false,
+      reservation_system_complete: false
     };
   },
   methods: {
     reservationCallback(value) {
       console.log("Event reservation triggered", value);
+      this.reservation_complete = true;
     },
+    reservationSystemCallBack(value){
+      console.log("Event reservation system triggered", value);
+      this.reservation_system_complete = true;
+    }
   },
 };
 </script>
@@ -44,10 +51,11 @@ export default {
       <component
         v-bind:is="componentSelect"
         @reservation-complete="reservationCallback"
+        @reservation-system-complete="reservationSystemCallBack"
       />
     </KeepAlive>
   </main>
-  <footer>
+  <footer v-show="(reservation_complete && reservation_system_complete)">
     <div id="buttons" class="relative">
       <button class="navitem" @click="$router.push('/screen-two')">Next</button>
     </div>

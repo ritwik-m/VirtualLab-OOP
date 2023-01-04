@@ -41,7 +41,13 @@
                 </div>
             </div>
         </div>
+        <footer>
+    <div id="buttons" class="relative">
+      <button class="navitem" @click="$router.push('/screen-three')">Next</button>
+    </div>
+  </footer>
     </main>
+    
 </template>
 
 <script>
@@ -73,6 +79,7 @@ export default {
             if (this.three == "String customerName, String email, long phone, Vehicle vehicleObj") {
                 this.display[2] = "none";
                 this.display[3] = "block";
+                this.validated = true;
             }
             else {
                 alert("Wrong Answer");
@@ -87,6 +94,7 @@ export default {
             button_text_right: "Next",
             correct: false,
             valid: [false, false],
+            validated: false,
             display: ["block", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]
         }
     }

@@ -70,6 +70,7 @@ export default {
         btn6.style.backgroundColor = "green";
         this.display[5] = "none";
         this.display[6] = "inherit";
+        this.$emit("reservationSystemComplete", true)
       }
       else {
         this.button_value = this.button_text;
