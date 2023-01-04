@@ -19,7 +19,17 @@ export default {
     return {
       componentSelect: "InstructionsView2"
     }
-  }
+  },
+  methods: {
+    reservationCallback(value) {
+      console.log("Event reservation triggered", value);
+      this.reservation_complete = true;
+    },
+    reservationSystemCallBack(value){
+      console.log("Event reservation system triggered", value);
+      this.reservation_system_complete = true;
+    }
+  },
 }
 </script>
 
@@ -32,7 +42,10 @@ export default {
   <button @click="componentSelect='ReservationSystemView2'">Reservation System Class</button>
   <button @click="componentSelect='ClassView2'">Class diagram</button>
   <KeepAlive>
-    <component v-bind:is="componentSelect" />
+    <component v-bind:is="componentSelect" 
+    @reservation-complete="reservationCallback"
+        @reservation-system-complete="reservationSystemCallBack"
+    />
   </KeepAlive>
   </main>
   
