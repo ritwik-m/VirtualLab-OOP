@@ -3,7 +3,7 @@ import PageOne from '../views/PageOne.vue'
 import PageTwo from '../views/PageTwo.vue'
 import PageThree from '../views/PageThree.vue'
 import PageZero from '../views/PageZero.vue'
-import PageOneNew from '../views/PageOneNew.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,11 +28,6 @@ const router = createRouter({
       name: 'page-three',
       component: PageThree
     },
-    {
-      path: '/screen-one-new',
-      name: 'page-one-new',
-      component: PageOneNew
-    }
   ]
 })
 

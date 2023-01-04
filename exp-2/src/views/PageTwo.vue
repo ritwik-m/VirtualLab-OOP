@@ -3,17 +3,19 @@ import { ref } from 'vue'
 export default {
   setup() {
     const items = ref([
-      { id: 7, word: 'requestVehicle', list: 13 },
-      { id: 14, word: 'signContract', list: 13 },
-      { id: 17, word: '[wait for Vehicle]', list: 13 },
-      { id: 10, word: 'locateReservation', list: 13 },
-      { id: 1, word: 'initiateContract', list: 13 },
-      { id: 5, word: 'releaseContract', list: 13 },
-      { id: 20, word: 'updateKeyStatus', list: 13 },
-      { id: 3, word: '[key handed over]', list: 13 },
+      
+      
       { id: 15, word: '[to give keys]', list: 13 },
-      { id: 8, word: '[vehicle on trip]', list: 13 },
+      { id: 1, word: 'locateReservation', list: 13 },
       { id: 3, word: '[vehicle available]', list: 13 },
+      { id: 5, word: 'releaseContract', list: 13 },
+      { id: 6, word: 'updateKeyStatus', list: 13 },
+      { id: 3, word: 'initiateContract', list: 13 },
+      { id: 13, word: '[key handed over]', list: 13 },
+      { id: 7, word: '[wait for Vehicle]', list: 13 },
+      { id: 2, word: 'requestVehicle', list: 13 },
+      { id: 9, word: '[vehicle on trip]', list: 13 },
+      { id: 4, word: 'signContract', list: 13 },
       { id: 4, word: '[reservation released]', list: 13 },
     ])
 
@@ -112,8 +114,10 @@ export default {
     <div class="flex-horizontal">
       <div class="outer-box">
 
-        <h3>Customer</h3>
+        <div class="flex-boxes">
+     
         <div class="flex-between">
+          <h3>Customer</h3>
           <div class="unidentified drag-el-horizontal" draggable="false">
             <p style="font-weight: 500; padding-left: 15px; font-size:medium;">Acquire a vehicle</p>
 
@@ -137,7 +141,9 @@ export default {
 
         </div>
       </div>
+    </div>
 
+    <div class="flex-boxes">
       <div class="outer-box">
 
         <h3>Clerk</h3>
@@ -179,6 +185,7 @@ export default {
             </div>
           </div>
         </div>
+      </div>
       </div>
 
       <div class="outer-box">
@@ -290,9 +297,10 @@ export default {
 
 .flex-horizontal {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .flex{
@@ -302,11 +310,19 @@ export default {
   justify-content: space-between;
 }
 
+.flex-boxes{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
 .outer-box {
   padding: 20px;
   background-color: #F9FAFE;
   /* box-shadow: 1px 2px 5px 1px #D7DFFF; */
   max-width: 600px;
+  height: fit-content;
   min-width: fit-content;
   border-radius: 10px;
 

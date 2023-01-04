@@ -4,7 +4,6 @@
     <router-link to="/screen-one">Screen One</router-link> |
     <router-link to="/screen-two">Screen Two</router-link> |
     <router-link to="/screen-three">Screen Three</router-link> | 
-    <router-link to="/screen-one-new">Screen One New</router-link> |
   </nav>
   <router-view/>
 </template>
