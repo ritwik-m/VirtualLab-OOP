@@ -155,6 +155,7 @@
                         <button class="button-9" id="btn1" @click="validate_twelve()"> Validate </button>
                         </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[12] }">
+                        <button class="button-9" @click="$router.push('/output')">Next</button>
                     </div>
             </div>
             </div>
@@ -193,6 +194,7 @@ export default {
                 x.innerHTML = "Incorrect. Try again";
                 x.style.backgroundColor = "red";
                 x.className = "show";
+                
                 setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
             }
 
@@ -201,6 +203,7 @@ export default {
             if (this.three == "phone: long") {
                 this.display[2] = "none";
                 this.display[3] = "block";
+                this.valid[2] = true;
             }
             else {
                 var x = document.getElementById("snackbar");
@@ -214,6 +217,7 @@ export default {
             if (this.four == "city: String") {
                 this.display[3] = "none";
                 this.display[4] = "block";
+                this.valid[3] = true;
             }
             else {
                 var x = document.getElementById("snackbar");
@@ -227,6 +231,7 @@ export default {
             if (this.five == "customerCount: int") {
                 this.display[4] = "none";
                 this.display[5] = "block";
+                this.valid[4] = true;
             }
             else {
                 var x = document.getElementById("snackbar");
@@ -240,6 +245,7 @@ export default {
             if (this.six == "getCustomerID(): int") {
                 this.display[5] = "none";
                 this.display[6] = "block";
+                this.valid[5] = true;
             }
             else {
                 var x = document.getElementById("snackbar");
@@ -253,6 +259,7 @@ export default {
             if (this.seven == "getEmail(): String") {
                 this.display[6] = "none";
                 this.display[7] = "block";
+                this.valid[6] = true;
             }
             else {
                 var x = document.getElementById("snackbar");
@@ -266,6 +273,7 @@ export default {
             if (this.eight == "getPhone(): long") {
                 this.display[7] = "none";
                 this.display[8] = "block";
+                this.valid[7] = true;
             }
             else {
                 var x = document.getElementById("snackbar");
@@ -279,6 +287,7 @@ export default {
             if (this.nine == "getCity(): String") {
                 this.display[8] = "none";
                 this.display[9] = "block";
+                this.valid[8] = true;
             }
             else {
                 var x = document.getElementById("snackbar");
@@ -292,6 +301,7 @@ export default {
             if (this.ten == "setEmail(): void") {
                 this.display[9] = "none";
                 this.display[10] = "block";
+                this.valid[9] = true;
             }
             else {
                 var x = document.getElementById("snackbar");
@@ -305,6 +315,7 @@ export default {
             if (this.eleven == "setPhone(): void") {
                 this.display[10] = "none";
                 this.display[11] = "block";
+                this.valid[10] = true;
             }
             else {
                 var x = document.getElementById("snackbar");
@@ -318,6 +329,7 @@ export default {
             if (this.twelve == "setCity(): void") {
                 this.display[11] = "none";
                 this.display[12] = "block";
+                this.valid[11] = true;
             }
             else {
                 var x = document.getElementById("snackbar");

@@ -199,6 +199,7 @@ export default {
         this.$router.push('/screen-two')
       }
       else{
+        alert('There\'s some mistake')
         console.log('There\'s some mistake')
       }
 

@@ -302,9 +302,15 @@ export default {
                             12. <input v-model="twelve">
                             <button class="button-9" id="btn1" @click="validate_twelve()"> Validate </button>
                         </div>
-                        <!--Insert congrats page here at last validate!-->
+                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[12] }">
+                            <h1> Congratulations! You have completed the sequence diagram! </h1>
+                            <br>
+                            <br>
+                            <button class="button-9" id="btn1" @click="$router.push('/completion')"> Next </button>
+                        </div>
+                        
 
-                    </div>
+                    </div>x
                 </div>
             </div>
     </main>
