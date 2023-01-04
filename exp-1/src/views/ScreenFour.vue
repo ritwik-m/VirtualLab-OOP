@@ -15,7 +15,7 @@
 export default {
   methods: {
     next(){
-      this.$router.push('/screen-two-new')
+      this.$router.push('/completion')
     }
   }
 }

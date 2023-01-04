@@ -56,42 +56,29 @@ export default {
         }
       }
 
-      for(let i=0;i<final_list.length;i++){
-        if(final_list[i][0].word.includes('Customer')){
-          if(final_list[i][1].word.includes('Customer name')){
-            this.valid[i] = true
-          }
-        }
-        else if(final_list[i][0].word.includes('Reservation')){
-          if(final_list[i][1].word.includes('Vehicle reservation contract') && final_list[i][2].word.includes('Reservation number') && final_list[i][3].word.includes('Vehicle release date')){
-            this.valid[i] = true
-          }
-        }
-        else if(final_list[i][0].word.includes('Clerk')){
-          if(final_list[i][1].word.includes('Office') && final_list[i][2].word.includes('Clerk name')){
-            this.valid[i] = true
-          }
-        }
-        else if(final_list[i][0].word.includes('Vehicle')){
-          if(final_list[i][1].word.includes('Key')){
-            this.valid[i] = true
-          }
-        }
-      }
-
-      // if(final_list.includes('Customer')){
-      //   let pos = final_list.indexOf('Customer')
-      //   if(final_list[pos+1].includes('Customer name')){
-      //     this.valid[0] = true
+      // for(let i=0;i<final_list.length;i++){
+      //   if(final_list[i][0].word.includes('Customer')){
+      //     if(final_list[i][1].word.includes('Customer name')){
+      //       this.valid[i] = true
+      //     }
+      //   }
+      //   else if(final_list[i][0].word.includes('Reservation')){
+      //     if(final_list[i][1].word.includes('Vehicle reservation contract') && final_list[i][2].word.includes('Reservation number') && final_list[i][3].word.includes('Vehicle release date')){
+      //       this.valid[i] = true
+      //     }
+      //   }
+      //   else if(final_list[i][0].word.includes('Clerk')){
+      //     if(final_list[i][1].word.includes('Office') && final_list[i][2].word.includes('Clerk name')){
+      //       this.valid[i] = true
+      //     }
+      //   }
+      //   else if(final_list[i][0].word.includes('Vehicle')){
+      //     if(final_list[i][1].word.includes('Key')){
+      //       this.valid[i] = true
+      //     }
       //   }
       // }
 
-      if(final_list.includes('Reservation')){
-        let pos = final_list.indexOf('Reservation')
-        if(final_list[pos+1].includes('Vehicle reservation contract') && final_list[pos+2].includes('Reservation number') && final_list[pos+3].includes('Vehicle release date')){
-          this.valid[1] = true
-        }
-      }
       let j = 0;
       let final_string = ''
       for (i = 0; i < final_list.length; i++) {
