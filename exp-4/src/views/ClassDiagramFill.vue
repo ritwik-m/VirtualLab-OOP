@@ -9,44 +9,43 @@
                 </div>
                 <div class="codebox" :style="{ display: display[1] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 2.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[2] }">
+            </div>
+            <div class="codebox" :style="{ display: display[2] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 3.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[3] }">
+            </div>
+            <div class="codebox" :style="{ display: display[3] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 4.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[4] }">
+            </div>
+            <div class="codebox" :style="{ display: display[4] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 5.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[5] }">
+            </div>
+            <div class="codebox" :style="{ display: display[5] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 6.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[6] }">
+            </div>
+            <div class="codebox" :style="{ display: display[6] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 7.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[7] }">
+            </div>
+            <div class="codebox" :style="{ display: display[7] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 8.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[8] }">
+            </div>
+            <div class="codebox" :style="{ display: display[8] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 9.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[9] }">
+            </div>
+            <div class="codebox" :style="{ display: display[9] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 10.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[10] }">
+            </div>
+            <div class="codebox" :style="{ display: display[10] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 11.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[11] }">
+            </div>
+            <div class="codebox" :style="{ display: display[11] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 12.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[12] }">
+            </div>
+            <div class="codebox" :style="{ display: display[12] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 13.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[13] }">
+            </div>
+            <div class="codebox" :style="{ display: display[13] }">
                     <img style="max-width: 800px;" src="..\assets\Screen 14.png" />
             </div>
-        </div>
         </div>
         <div class="column" style="margin-left: 100px">
             <div class="row">
@@ -69,72 +68,44 @@
 
                 </div>
             </div>
-            <div class="column" style="margin-left: 100px">
-                <div class="row">
-                    <div class="codebox" style="max-width: 300px;">
-                        <ul>
-                            <li>customerID, integer</li>
-                            <li>email, string</li>
-                            <li>phone, long integer</li>
-                            <li>city, string</li>
-                            <li>customerCount, integer</li>
-                            <li>getCustName(), string</li>
-                            <li>getCustomerID(), integer</li>
-                            <li>getEmail(), string</li>
-                            <li>getPhone(), long integer</li>
-                            <li>getCity(), string</li>
-                            <li>setEmail(), void</li>
-                            <li>setPhone(), void</li>
-                            <li>setCity(), void</li>
-                        </ul>
-
-
-                    </div>
-                </div>
-                <div class="row" style="margin-top:35px">
+            <div class="row" style="margin-top:35px">
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[0] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         1. <input v-model="one">
                         <button class="button-9" id="btn1" @click="validate_one()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[1] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         2. <input v-model="two">
                         <button class="button-9" id="btn2" @click="validate_two()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[2] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         3. <input v-model="three">
                         <button class="button-9" id="btn3" @click="validate_three()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[3] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         4. <input v-model="four">
                         <button class="button-9" @click="validate_four()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[4] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         5. <input v-model="five">
                         <button class="button-9" id="btn1" @click="validate_five()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[5] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         6. <input v-model="six">
@@ -142,56 +113,50 @@
                     </div>
                     <!--Write codebox divs that request for input from the user as done above for a total of 12 times-->
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[6] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         7. <input v-model="seven">
                         <button class="button-9" id="btn1" @click="validate_seven()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[7] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         8. <input v-model="eight">
                         <button class="button-9" id="btn1" @click="validate_eight()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[8] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         9. <input v-model="nine">
                         <button class="button-9" id="btn1" @click="validate_nine()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[9] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         10. <input v-model="ten">
                         <button class="button-9" id="btn1" @click="validate_ten()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[10] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         11. <input v-model="eleven">
                         <button class="button-9" id="btn1" @click="validate_eleven()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[11] }">
-                        Enter the variables in the right order alongwith the mentioned datatype from the list above to
-                        complete the class diagram
+                        Enter the variables in the right order alongwith the mentioned datatype from the list above to complete the class diagram
                         <br>
                         <br>
                         12. <input v-model="twelve">
                         <button class="button-9" id="btn1" @click="validate_twelve()"> Validate </button>
-                    </div>
+                        </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[12] }">
                     </div>
-                </div>
+            </div>
             </div>
         </div>
     </main>
@@ -204,8 +169,8 @@ export default {
         validate_one() {
             if (this.one == "customerID: int") {
                 this.display[0] = "none";
-            this.display[1] = "block";
-            this.valid[0] = true;
+                this.display[1] = "block";
+                this.valid[0] = true;
             }
 
             else {

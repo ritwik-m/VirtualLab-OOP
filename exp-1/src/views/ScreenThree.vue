@@ -49,6 +49,49 @@ export default {
         final_list.push(this.getList(i))
       }
       console.log(final_list)
+      for(let i=0;i<final_list.length;i++){
+        if(final_list[i].length == 0){
+          alert('Please fill all the boxes')
+          return
+        }
+      }
+
+      for(let i=0;i<final_list.length;i++){
+        if(final_list[i][0].word.includes('Customer')){
+          if(final_list[i][1].word.includes('Customer name')){
+            this.valid[i] = true
+          }
+        }
+        else if(final_list[i][0].word.includes('Reservation')){
+          if(final_list[i][1].word.includes('Vehicle reservation contract') && final_list[i][2].word.includes('Reservation number') && final_list[i][3].word.includes('Vehicle release date')){
+            this.valid[i] = true
+          }
+        }
+        else if(final_list[i][0].word.includes('Clerk')){
+          if(final_list[i][1].word.includes('Office') && final_list[i][2].word.includes('Clerk name')){
+            this.valid[i] = true
+          }
+        }
+        else if(final_list[i][0].word.includes('Vehicle')){
+          if(final_list[i][1].word.includes('Key')){
+            this.valid[i] = true
+          }
+        }
+      }
+
+      // if(final_list.includes('Customer')){
+      //   let pos = final_list.indexOf('Customer')
+      //   if(final_list[pos+1].includes('Customer name')){
+      //     this.valid[0] = true
+      //   }
+      // }
+
+      if(final_list.includes('Reservation')){
+        let pos = final_list.indexOf('Reservation')
+        if(final_list[pos+1].includes('Vehicle reservation contract') && final_list[pos+2].includes('Reservation number') && final_list[pos+3].includes('Vehicle release date')){
+          this.valid[1] = true
+        }
+      }
       let j = 0;
       let final_string = ''
       for (i = 0; i < final_list.length; i++) {
@@ -62,11 +105,17 @@ export default {
 
       if (final_string.includes('Customer Customer name') && final_string.includes('Reservation Vehicle reservation contract Reservation number Vehicle release date') && final_string.includes('Clerk Office Clerk name') && final_string.includes('Vehicle Key')) {
         alert('Correct')
-        this.$router.push('/')
+        // this.$router.push('/')
       }
       else {
         alert('Incorrect')
       }
+    }
+  },
+  data(){
+    return{
+      valid: [false, false, false, false],
+      validated: false
     }
   }
 }
@@ -81,25 +130,29 @@ export default {
       First phrase is the class name.</p>
   </header>
   <div class="flex-horizontal">
-    <div class="drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 6)" @dragenter.prevent @dragover.prevent
+    :class="{ correct: (validated && valid[0]), inCorrect: (validated && !valid[0]), unidentified: !validated }">
       <div v-for="item in getList(6)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 7)" @dragenter.prevent @dragover.prevent
+    :class="{ correct: (validated && valid[0]), inCorrect: (validated && !valid[0]), unidentified: !validated }">
       <div v-for="item in getList(7)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 8)" @dragenter.prevent @dragover.prevent
+    :class="{ correct: (validated && valid[0]), inCorrect: (validated && !valid[0]), unidentified: !validated }">
       <div v-for="item in getList(8)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
       </div>
     </div>
-    <div class="drop-zone" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent>
+    <div class="drop-zone" @drop="onDrop($event, 9)" @dragenter.prevent @dragover.prevent
+    :class="{ correct: (validated && valid[0]), inCorrect: (validated && !valid[0]), unidentified: !validated }">
       <div v-for="item in getList(9)" :key="item.id" class="identified drag-el-horizontal" draggable="true"
         @dragstart="startDrag($event, item)">
         <p>{{ item.word }}</p>
@@ -171,6 +224,25 @@ export default {
 .identified {
   max-width: 100%;
 }
+
+
+h3 {
+  margin-bottom: 0px;
+}
+
+.unidentified {
+  background-color: #fff;
+  color: black;
+}
+
+.inCorrect {
+  border: 1px solid #CB3434;
+}
+
+.correct {
+  border: 1px solid #32A962;
+}
+
 
 .drop-zone-horizontal {
   display: flex;

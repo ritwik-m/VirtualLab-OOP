@@ -192,10 +192,6 @@ export default {
         console.log('Gives the keys not found')
       }
 
-      if(!final_string.includes('vehicle type is not available')){
-        this.valid = false
-        console.log('Vehicle type is not available name not found')
-      }
 
      
       if(this.valid){
