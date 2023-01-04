@@ -310,7 +310,7 @@ export default {
                         </div>
                         
 
-                    </div>x
+                    </div>
                 </div>
             </div>
     </main>

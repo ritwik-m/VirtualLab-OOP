@@ -62,7 +62,7 @@ export default {
         this.button_value = this.button_text_right;
         btn5.style.backgroundColor = "green";
         this.display[4] = "none";
-        this.display[5] = "inherit";
+        this.display[5] = "block";
       }
 
       else {
@@ -77,9 +77,9 @@ export default {
       class: 'wrapper',
       button_value: 'Next',
       button_text: "Incorrect. Try again",
-      button_text_right: "Correct. Next",
+      button_text_right: "Next",
       correct: false,
-      display: ["inherit", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none",]
+      display: ["block", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none",]
     }
   }
 
@@ -378,6 +378,28 @@ public String getName(){
           <br>&emsp;}
           <p id="comment">//Create a setName method</p><br>
           } <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
+        </div>
+
+        <div class="codebox" :style="{ display: display[5]}">
+        <pre>
+public class Person {
+
+  public String name;
+
+  public Person(String name){
+    this.name = name;
+  }
+
+  public String getName(){
+    return name;
+  }
+
+  public void setName(String name){
+    this.name = name;
+  }
+}
+        </pre>
+        <button class="button-9" @click="">Continue</button>
         </div>
 
       </div>

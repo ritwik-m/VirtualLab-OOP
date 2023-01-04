@@ -29,7 +29,7 @@ export default {
       }
     },
 
-    
+
   },
   data() {
     return {
@@ -53,7 +53,8 @@ export default {
 
     <div class="row" style="font-family: Montserrat">
       <div class="column">
-        <h1 style="padding-left: 25px; padding-bottom: 0px;">Fill in the Java code for the following updated Customer class.</h1>
+        <h1 style="padding-left: 25px; padding-bottom: 0px;">Fill in the Java code for the following updated Customer
+          class.</h1>
         <p style="padding-left: 25px;">You only have to fill in the spaces provided.</p>
 
         <div
@@ -79,7 +80,7 @@ export default {
             + setPhone(): void
             <br>
             + getEmail(): String
-            <br>            
+            <br>
             + setEmail(): void
             <br>
             + visitOffice(): void
@@ -109,7 +110,7 @@ export default {
             + setPhone(): void
             <br>
             + getEmail(): String
-            <br>            
+            <br>
             + setEmail(): void
             <br>
             + visitOffice(): void
@@ -139,7 +140,7 @@ export default {
             <mark1>+ setPhone(): void</mark1>
             <br>
             <mark1>+ getEmail(): String</mark1>
-            <br>            
+            <br>
             <mark1>+ setEmail(): void</mark1>
             <br>
             <mark1>+ visitOffice(): void</mark1>
@@ -156,32 +157,33 @@ export default {
         <div class="codebox" id="codebox" :style="{ display: display[0] }">
           public class
           <input spellcheck="false" maxlength="8" style="width: 90px;" v-model='one'>
-          <input spellcheck="false" id="two" maxlength="7" style="width: 85px;" v-model="two"> Person{ <p id="comment">//Create
+          <input spellcheck="false" id="two" maxlength="7" style="width: 85px;" v-model="two"> Person{ <p id="comment">
+            //Create
             a class "Customer" that inherits "Person" class</p><br>
           } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
         </div>
 
         <div class="codebox" id="codebox" :style="{ display: display[1] }">
-        <pre>public class Customer extends Person{
+          <pre>public class Customer extends Person{
 
     private String address;
     private String phoneNumber;
     private String email;</pre>
-        <br>&emsp;public Customer(String name, String address, String phoneNumber, String email){
+          <br>&emsp;public Customer(String name, String address, String phoneNumber, String email){
           <br>&emsp;&emsp;
           <input spellcheck="false" id="three" maxlength="11" style="width: 110px;" v-model="three">;
           <br>&emsp;&emsp;this.address = address;
           <br>&emsp;&emsp;this.phoneNumber = phoneNumber;
           <br>&emsp;&emsp;this.email = email;
           <br>&emsp;
-        };<p id="comment">
+          };<p id="comment">
             //Using the correct keyword, obtain the value of parent class' constructor for "name" attribute</p>
           <br>}<br>
           <button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
         </div>
 
         <div class="codebox" id="codebox" :style="{ display: display[2] }">
-        <pre>public class Customer extends Person{
+          <pre>public class Customer extends Person{
 
       private String address;
       private String phoneNumber;
@@ -222,7 +224,7 @@ export default {
           System.out.println("Customer " + getName() + " is visiting the office.");
       }
 }</pre>
-
+          <button class="button-9" @click="$router.push('/screen-three')"> Continue </button>
         </div>
 
       </div>
@@ -303,7 +305,7 @@ mark0 {
   box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
-input{
+input {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 4px;

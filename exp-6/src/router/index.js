@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/screen-three',
       name: 'screen-three',
       component: () => import('../views/ScreenThree.vue')
+    },
+    {
+      path: '/completion',
+      name: 'completion',
+      component: () => import('../views/CongratulationsPage.vue')
     }
     
   ]

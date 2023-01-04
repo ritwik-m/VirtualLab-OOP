@@ -444,11 +444,82 @@ export default {
             </p><br>
 
             <input spellcheck="false" id="eleven" maxlength="6" style="width: 90px" v-model="eleven">.<input
-              spellcheck="false" id="twelve" style="width: 70px" maxlength="3" v-model="twelve">.<input spellcheck="false"
-              id="thirteen" maxlength="7" style="width: 80px" v-model="thirteen">("Sign contract"); <br>
+              spellcheck="false" id="twelve" style="width: 70px" maxlength="3" v-model="twelve">.<input
+              spellcheck="false" id="thirteen" maxlength="7" style="width: 80px" v-model="thirteen">("Sign contract");
+            <br>
             } <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
           </div>
 
+          <div class="codebox" :style="{ display: display[4] }">
+            <pre>
+public class Clerk extends Person{
+
+  private String address;
+  private String phoneNumber;
+  private String email;
+  private String department;
+  private String position;
+
+  public Customer(String name, String address, String phoneNumber, String email){
+      super(name);
+      this.address = address;
+      this.phoneNumber = phoneNumber;
+      this.email = email;
+      this.department = department;
+      this.position = position;
+  }
+
+  public String getAddress(){
+      return address;
+  }
+
+  public void setAddress(String address){
+      this.address = address;
+  }
+
+  public String getPhoneNumber(){
+      return phoneNumber;
+  }
+
+  public void setPhoneNumber(String phoneNumber){
+      this.phoneNumber = phoneNumber;
+  }
+
+  public String getEmail(){
+      return email;
+  }
+
+  public void setEmail(String email){
+      this.email = email;
+  } 
+
+  public String getDepartment() {
+          return department;
+  }
+
+  public void setDepartment(String department) {
+          this.department = department;
+  }
+
+  public String getPosition() {
+          return position;
+  }
+
+  public void setPosition(String position) {
+          this.position = position;
+  }
+
+  public void requestVehicle(){
+      System.out.println("Requesting a vehicle");
+  }
+
+  public void signContract(){
+      System.out.println("Sign contract");
+  }
+}            
+</pre>
+            <button class="button-9" id="btn5" @click="$router.push('/completion')"> Continue </button>
+          </div>
         </div>
 
       </div>
