@@ -302,6 +302,7 @@ export default {
                             12. <input v-model="twelve">
                             <button class="button-9" id="btn1" @click="validate_twelve()"> Validate </button>
                         </div>
+                        <!--Insert congrats page here at last validate!-->
 
                     </div>
                 </div>

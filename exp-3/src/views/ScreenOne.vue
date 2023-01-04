@@ -323,7 +323,6 @@ export default {
     </div>
     <footer>
       <div id="buttons" class="relative">
-        <button class="navitem">Back</button>
         <button class="navitem" @click="validate()">Next</button>
       </div>
     </footer>
