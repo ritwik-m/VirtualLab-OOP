@@ -1,52 +1,51 @@
 <script>
 export default {
   props:{
-    reservation_completed,
   },
   methods: {
     validate_one() {
       if (this.one == "final" && this.two == "int" && this.three == "reservationID") {
         this.button_value = this.button_text_right;
-        btn2.style.backgroundColor = "green";
+        // btn2.style.backgroundColor = "green";
         this.display[0] = "none";
         this.display[1] = "inherit";
       }
 
       else {
         this.button_value = this.button_text;
-        btn1.style.backgroundColor = "red";
+        // btn1.style.backgroundColor = "red";
       }
     },
 
     validate_two() {
       if (this.four == "Customer" && this.five == "customerObj") {
         this.button_value = this.button_text_right;
-        btn3.style.backgroundColor = "green";
+        // btn3.style.backgroundColor = "green";
         this.display[1] = "none";
         this.display[2] = "inherit";
       }
       else {
         this.button_value = this.button_text;
-        btn2.style.backgroundColor = "red";
+        // btn2.style.backgroundColor = "red";
       }
     },
 
     validate_three() {
       if (this.six == "Vehicle" && this.seven == "vehicleObj") {
         this.button_value = this.button_text_right;
-        btn4.style.backgroundColor = "green";
+        // btn4.style.backgroundColor = "green";
         this.display[2] = "none";
         this.display[3] = "inherit";
       }
       else {
         this.button_value = this.button_text;
-        btn3.style.backgroundColor = "red";
+        // btn3.style.backgroundColor = "red";
       }
     },
     validate_four() {
       if (this.eight == "Customer" && this.nine == "customerObj" && this.ten == "Vehicle" && this.eleven == "vehicleObj") {
         this.button_value = this.button_text_right;
-        btn5.style.backgroundColor = "green";
+        // btn5.style.backgroundColor = "green";
         this.display[3] = "none";
         this.display[4] = "inherit";
       }
@@ -58,15 +57,14 @@ export default {
     validate_five() {
       if (this.twelve == "reservationCount++" && this.thirteen == "reservationID" && this.fourteen == "reservationCount") {
         this.button_value = "Good Job you're done here";
-        btn5.style.backgroundColor = "green";
-        this.reservation_completed = true;
+        // btn5.style.backgroundColor = "green";
         this.display[4] = "none";
         this.display[5] = "inherit";
-        this.$emit('reservation_completed', true)
+        this.$emit("reservationComplete", true)
       }
       else {
         this.button_value = this.button_text;
-        btn5.style.backgroundColor = "red";
+        // btn5.style.backgroundColor = "red";x
       }
     },
 

@@ -1,10 +1,10 @@
 <script>
-import CustomerView from '../components/CustomerViewComponent.vue'
-import ReservationView from '../components/ReservationViewComponent.vue'
-import VehicleView from '../components/VehicleViewComponent.vue'
-import InstructionsView from '../components/InstructionsViewComponent.vue'
-import ReservationSystemView from '../components/ReservationSystemViewComponent.vue'
-import ClassView from '../components/ClassDiagramView.vue'
+import CustomerView from "../components/CustomerViewComponent.vue";
+import ReservationView from "../components/ReservationViewComponent.vue";
+import VehicleView from "../components/VehicleViewComponent.vue";
+import InstructionsView from "../components/InstructionsViewComponent.vue";
+import ReservationSystemView from "../components/ReservationSystemViewComponent.vue";
+import ClassView from "../components/ClassDiagramView.vue";
 
 export default {
   components: {
@@ -13,49 +13,54 @@ export default {
     VehicleView,
     InstructionsView,
     ReservationSystemView,
-    ClassView
+    ClassView,
   },
-  data(){
+  data() {
     return {
-      componentSelect: "InstructionsView"
-    }
+      componentSelect: "InstructionsView",
+    };
   },
   methods: {
-    reservation_completed: function() {
-      return ;
+    reservationCallback(value) {
+      console.log("Event reservation triggered", value);
     },
-  }
-}
+  },
+};
 </script>
 
 <template>
   <main class="app">
-  <button @click="componentSelect='InstructionsView'">Instructions</button>
-  <button @click="componentSelect='CustomerView'">Customer Class</button>
-  <button @click="componentSelect='ReservationView'">Reservation Class</button>
-  <button @click="componentSelect='VehicleView'">Vehicle Class</button>
-  <button @click="componentSelect='ReservationSystemView'">Reservation System Class</button>
-  <button @click="componentSelect='ClassView'">Class diagram</button>
-  <KeepAlive>
-    <component v-bind:is="componentSelect" />
-  </KeepAlive>
+    <button @click="componentSelect = 'InstructionsView'">Instructions</button>
+    <button @click="componentSelect = 'CustomerView'">Customer Class</button>
+    <button @click="componentSelect = 'ReservationView'">
+      Reservation Class
+    </button>
+    <button @click="componentSelect = 'VehicleView'">Vehicle Class</button>
+    <button @click="componentSelect = 'ReservationSystemView'">
+      Reservation System Class
+    </button>
+    <button @click="componentSelect = 'ClassView'">Class diagram</button>
+    <KeepAlive>
+      <component
+        v-bind:is="componentSelect"
+        @reservation-complete="reservationCallback"
+      />
+    </KeepAlive>
   </main>
   <footer>
-        <div id="buttons" class="relative">
-            <button class="navitem" @click="$router.push('/screen-two')">Next</button>
-        </div>
-    </footer> 
+    <div id="buttons" class="relative">
+      <button class="navitem" @click="$router.push('/screen-two')">Next</button>
+    </div>
+  </footer>
 </template>
 
 <style>
-
-
-.app{
-  background-color: #F9FAFE;
+.app {
+  background-color: #f9fafe;
   min-height: 1024px;
 }
 
-button{
+button {
   margin-top: 30px;
   border: none;
   padding: 20px;
@@ -64,7 +69,7 @@ button{
   color: white;
 }
 
-button:first-of-type{
+button:first-of-type {
   margin-left: 30px;
 }
 </style>

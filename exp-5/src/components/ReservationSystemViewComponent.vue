@@ -1,8 +1,5 @@
 <script>
 export default {
-  props: {
-    reservationsystem_completed,
-  },
   methods: {
     validate_one() {
       if (this.one == "Customer[]" && this.two == "Customer[3]") {
@@ -73,7 +70,6 @@ export default {
         btn6.style.backgroundColor = "green";
         this.display[5] = "none";
         this.display[6] = "inherit";
-        this.emit('reservationsystem_completed', true)
       }
       else {
         this.button_value = this.button_text;
