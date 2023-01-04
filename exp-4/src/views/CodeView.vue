@@ -249,7 +249,7 @@ export default {
     <div id="snackbar">Error Message.</div>
 
 
-    <div class="row" style="font-family: 'Montserrat' sans-serif;">
+    <div class="row">
       <div class="column">
         <h1 style="padding: 25px; padding-bottom: 0px;">Fill in the Java code for the following updated Customer class.
         </h1>
@@ -1133,7 +1133,7 @@ public class Customer {
 }
 
         </pre>
-
+          <button class="button-9" id="btn13" @click="$router.push('/output')"> View Output </button>
         </div>
 
 
