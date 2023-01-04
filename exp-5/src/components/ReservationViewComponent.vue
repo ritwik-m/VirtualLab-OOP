@@ -1,6 +1,8 @@
 <script>
 export default {
-
+  props:{
+    reservation_completed,
+  },
   methods: {
     validate_one() {
       if (this.one == "final" && this.two == "int" && this.three == "reservationID") {
@@ -57,8 +59,10 @@ export default {
       if (this.twelve == "reservationCount++" && this.thirteen == "reservationID" && this.fourteen == "reservationCount") {
         this.button_value = "Good Job you're done here";
         btn5.style.backgroundColor = "green";
+        this.reservation_completed = true;
         this.display[4] = "none";
         this.display[5] = "inherit";
+        this.$emit('reservation_completed', true)
       }
       else {
         this.button_value = this.button_text;

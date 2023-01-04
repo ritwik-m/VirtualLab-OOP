@@ -19,6 +19,11 @@ export default {
     return {
       componentSelect: "InstructionsView"
     }
+  },
+  methods: {
+    reservation_completed: function() {
+      return ;
+    },
   }
 }
 </script>
@@ -37,8 +42,7 @@ export default {
   </main>
   <footer>
         <div id="buttons" class="relative">
-            <button class="navitem">Back</button>
-            <button class="navitem" @click="validate()" :hidden="oneValidate">Next</button>
+            <button class="navitem" @click="$router.push('/screen-two')">Next</button>
         </div>
     </footer> 
 </template>
