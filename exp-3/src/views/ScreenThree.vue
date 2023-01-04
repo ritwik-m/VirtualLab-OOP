@@ -64,7 +64,7 @@ export default {
         },
         validate_six() {
             var sixth = document.getElementById('cardinality6')
-            if (this.six == "Rents" && sixth.value =="2") {
+            if (this.six == "Rents" && sixth.value == "2") {
                 this.display[5] = "none";
                 this.display[6] = "block";
                 this.valid[5] = true;
@@ -85,7 +85,7 @@ export default {
             button_text_right: "Next",
             correct: false,
             valid: [false, false, false, false, false, false],
-            display: ["block", "none", "none", "none", "none", "none"]
+            display: ["block", "none", "none", "none", "none", "none","none"]
         }
     }
 
@@ -125,12 +125,12 @@ export default {
                 <div class="row">
                     <div class="codebox" style="max-width: 300px;">
                         <ul>
-                            <li :class="{completed: valid[5]}">Rents</li>
-                            <li :class="{completed: valid[2]}">Books</li>
-                            <li :class="{completed: valid[3]}">Releases</li>
-                            <li :class="{completed: valid[4]}">Completes</li>
-                            <li :class="{completed: valid[1]}">Makes</li>
-                            <li :class="{completed: valid[0]}">Gets-keys-from</li>
+                            <li :class="{ completed: valid[5] }">Rents</li>
+                            <li :class="{ completed: valid[2] }">Books</li>
+                            <li :class="{ completed: valid[3] }">Releases</li>
+                            <li :class="{ completed: valid[4] }">Completes</li>
+                            <li :class="{ completed: valid[1] }">Makes</li>
+                            <li :class="{ completed: valid[0] }">Gets-keys-from</li>
 
                         </ul>
                     </div>
@@ -149,7 +149,8 @@ export default {
 12 [Key HandedOver] : -->
                 <div class="row" style="margin-top:35px">
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[0] }">
-                        Enter the correct relationship and cardinality from the list above for completing the Class diagram
+                        Enter the correct relationship and cardinality from the list above for completing the Class
+                        diagram
                         <br>
                         <br>
                         1. <input v-model="one">
@@ -161,7 +162,8 @@ export default {
                         <button class="button-9" id="btn1" @click="validate_one()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[1] }">
-                        Enter the correct relationship and cardinality from the list above for completing the Class diagram
+                        Enter the correct relationship and cardinality from the list above for completing the Class
+                        diagram
                         <br>
                         <br>
                         2. <input v-model="two">
@@ -173,7 +175,8 @@ export default {
                         <button class="button-9" id="btn2" @click="validate_two()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[2] }">
-                        Enter the correct relationship and cardinality from the list above for completing the Class diagram
+                        Enter the correct relationship and cardinality from the list above for completing the Class
+                        diagram
                         <br>
                         <br>
                         3. <input v-model="three">
@@ -185,7 +188,8 @@ export default {
                         <button class="button-9" id="btn3" @click="validate_three()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[3] }">
-                        Enter the correct relationship and cardinality from the list above for completing the Class diagram
+                        Enter the correct relationship and cardinality from the list above for completing the Class
+                        diagram
                         <br>
                         <br>
                         4. <input v-model="four">
@@ -197,7 +201,8 @@ export default {
                         <button class="button-9" @click="validate_four()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[4] }">
-                        Enter the correct relationship and cardinality from the list above for completing the Class diagram
+                        Enter the correct relationship and cardinality from the list above for completing the Class
+                        diagram
                         <br>
                         <br>
                         5. <input v-model="five">
@@ -209,7 +214,8 @@ export default {
                         <button class="button-9" id="btn1" @click="validate_five()"> Validate </button>
                     </div>
                     <div class="codebox" style="max-width: 350px;" :style="{ display: display[5] }">
-                        Enter the correct relationship and cardinality from the list above for completing the Class diagram
+                        Enter the correct relationship and cardinality from the list above for completing the Class
+                        diagram
                         <br>
                         <br>
                         6. <input v-model="six">
@@ -219,6 +225,13 @@ export default {
                             <option value="2">one-many</option>
                         </select>
                         <button class="button-9" id="btn1" @click="validate_six()"> Validate </button>
+                    </div>
+                    <!--Display that the experiment is complete-->
+                    <div class="codebox" style="max-width: 350px;" :style="{ display: display[6] }">
+                        <h1>Experiment Complete</h1>
+                        <br>
+                        <br>
+                        <button class="button-9" @click="$router.push('/completion')"> Next </button>
                     </div>
 
                 </div>
