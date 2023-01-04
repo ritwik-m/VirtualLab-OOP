@@ -218,7 +218,7 @@ export default {
 
             if (this.valid) {
                 alert('All good')
-                this.$router.push('/screen-three')
+                this.$router.push('/completion')
             }
             else {
                 alert('There\'s some mistake')
@@ -364,7 +364,6 @@ export default {
     </div>
     <footer>
         <div id="buttons" class="relative">
-            <button class="navitem">Back</button>
             <button class="navitem" @click="validate()">Next</button>
         </div>
     </footer>

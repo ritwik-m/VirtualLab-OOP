@@ -105,7 +105,7 @@ export default {
 
       if (final_string.includes('Customer Customer name') && final_string.includes('Reservation Vehicle reservation contract Reservation number Vehicle release date') && final_string.includes('Clerk Office Clerk name') && final_string.includes('Vehicle Key')) {
         alert('Correct')
-        // this.$router.push('/')
+        this.$router.push('/screen-four')
       }
       else {
         alert('Incorrect')
@@ -170,7 +170,6 @@ export default {
   </main>
   <footer>
     <div id="buttons" class="relative">
-      <button class="navitem">Back</button>
       <button class="navitem" @click="validate()">Next</button>
     </div>
   </footer>

@@ -29,6 +29,11 @@ const routes = [
     path: '/screen-two-new',
     name: 'screen-two-new',
     component: () => import('../views/ScreenTwoNew.vue')
+  },
+  {
+    path: '/completion',
+    name: "CongratulationsPage",
+    component: () => import('../views/CongratulationsPage.vue')
   }
 ]
 
