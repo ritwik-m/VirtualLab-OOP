@@ -2,30 +2,48 @@
 export default {
 
   methods: {
+    correct() {
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
+    incorrect() {
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Inorrect. Try again";
+      x.style.backgroundColor = "red";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
     validate_one() {
       if (this.one == "Customer" && this.two == "extends") {
-        this.button_value = this.button_text_right;
-        btn2.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[0] = "none";
         this.display[1] = "inherit";
       }
 
       else {
-        this.button_value = this.button_text;
-        btn1.style.backgroundColor = "red";
+        this.incorrect();
       }
     },
 
     validate_two() {
       if (this.three == "super(name)") {
-        this.button_value = this.button_text_right;
-        btn2.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[1] = "none";
         this.display[2] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn2.style.backgroundColor = "red";
+        this.incorrect();
       }
     },
 
@@ -35,7 +53,7 @@ export default {
     return {
       id: 'container',
       class: 'wrapper',
-      button_value: 'Next',
+      button_value: 'Evaluate',
       button_text: "Incorrect. Try again",
       button_text_right: "Correct. Next",
       correct: false,
@@ -50,6 +68,8 @@ export default {
 <template class="app">
 
   <main>
+    <div id="snackbar">Some text some message..</div>
+
 
     <div class="row" style="font-family: Montserrat">
       <div class="column">
@@ -350,5 +370,75 @@ input {
 
 .button-9:focus {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 </style>
