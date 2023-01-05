@@ -1,9 +1,12 @@
 <template>
   <main class="app">
     <nav>
-    <router-link to="/">Screen One</router-link> |
-    <router-link to="/screen-two">Screen Two</router-link> |
-    <router-link to="/screen-three">Screen Three</router-link>
+    <router-link to="/">Diagram completion</router-link> |
+    <router-link to="/up-down-cast">Up down cast</router-link> |
+    <router-link to="/abstraction">Abstraction</router-link> |
+    <router-link to="/abstraction-execution">Abstraction Execution</router-link> | 
+    <router-link to="/method-completion">Method completion</router-link> |
+    <router-link to="/method-completion-execution">Method completion execution</router-link>
   </nav>
   <router-view/>
   </main> 
