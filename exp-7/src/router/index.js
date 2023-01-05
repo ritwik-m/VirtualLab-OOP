@@ -20,11 +20,6 @@ const router = createRouter({
       component: () => import('../views/AbstractionView.vue')
     },
     {
-      path: '/abstraction-execution',
-      name: 'abstraction-execution',
-      component: () => import('../views/AbstractionExecutionView.vue')
-    },
-    {
       path: '/method-completion',
       name: 'method-completion',
       component: () => import('../views/MethodCompletionView.vue')
