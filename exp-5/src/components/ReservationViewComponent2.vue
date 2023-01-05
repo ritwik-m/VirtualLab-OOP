@@ -2,36 +2,58 @@
 export default {
 
   methods: {
+    correct() {
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
+    incorrect() {
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Inorrect. Try again";
+      x.style.backgroundColor = "red";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
     validate_four() {
       if (this.eight == "String" && this.nine == "customerName" && this.ten == "long" && this.eleven == "phone" && this.twelve == "Vehicle" && this.thirteen == "vehicleObj") {
-        this.button_value = this.button_text_right;
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[0] = "none";
         this.display[1] = "block";
       }
       else {
-        this.button_value = this.button_text;
-        btn4.style.backgroundColor = "red";
+        this.incorrect();
       }
     },
     validate_five() {
       if (this.fourteen == "new" && this.fifteen == "customerName" && this.sixteen == "phone") {
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[1] = "none";
         this.display[2] = "block";
       }
       else {
-        alert("incorrect")
+        this.incorrect();
       }
     },
     validate_six() {
-        this.button_value = "Next";
-        this.display[2] = "none";
-        this.display[3] = "block";
+      this.button_value = "Next";
+      this.display[2] = "none";
+      this.display[3] = "block";
     },
     validate_seven() {
-        this.button_value = "Next";
-        this.display[3] = "none";
-        this.display[4] = "block";
-        this.$emit(reservation-complete, true)
+      this.button_value = "Next";
+      this.display[3] = "none";
+      this.display[4] = "block";
+      this.$emit(reservation - complete, true)
     },
 
   },
@@ -53,13 +75,15 @@ export default {
 
 <template>
   <main class="app">
+    <div id="snackbar">Some text some message..</div>
+
     <div class="row">
 
       <div class="column">
         <h1 style="padding: 25px; padding-bottom: 0px;">Enter your code here .</h1>
         <p style="padding: 25px; padding-top: 0px">Follow instructions provided in the comments</p>
 
-        
+
 
         <div class="codebox" id="codebox" :style="{ display: display[0] }">
           <pre>
@@ -83,7 +107,8 @@ public class Reservation {
           <input spellcheck="false" maxlength="10" style="width: 100px;" v-model='thirteen'>,)
 
           <br>&emsp;
-          <p id="comment">//Create a constructor for Reservation class with by passing Customer parameters and Vehicle object to establish
+          <p id="comment">//Create a constructor for Reservation class with by passing Customer parameters and Vehicle
+            object to establish
             composition</p><br>
           } <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
         </div>
@@ -103,24 +128,25 @@ public class Reservation {
 	
 	public Reservation(String customerName, long phone, Vehicle vehicleObj) {
     </pre>
-    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-		this.customerObj = 
-    <input spellcheck="false" maxlength="3" style="width: 50px;" v-model='fourteen'><!--new-->
-    Customer(<input spellcheck="false" maxlength="12" style="width: 120px;" v-model='fifteen'>,
-    <input spellcheck="false" maxlength="5" style="width: 70px;" v-model='sixteen'>
-    <!--customerName, phone-->);
-    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          this.customerObj =
+          <input spellcheck="false" maxlength="3" style="width: 50px;" v-model='fourteen'><!--new-->
+          Customer(<input spellcheck="false" maxlength="12" style="width: 120px;" v-model='fifteen'>,
+          <input spellcheck="false" maxlength="5" style="width: 70px;" v-model='sixteen'>
+          <!--customerName, phone-->);
+          <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-		this.vehicleObj = vehicleObj;
-    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    reservationCount++;
-    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-		this.reservationID=reservationCount;
+          this.vehicleObj = vehicleObj;
+          <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          reservationCount++;
+          <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          this.reservationID=reservationCount;
 
-       &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           <br>&emsp;&emsp;
           <br>&emsp;}
-          <p id="comment">//Assign new Customer object with customerName and phone values to customerObj - enforcing composition</p><br>
+          <p id="comment">//Assign new Customer object with customerName and phone values to customerObj - enforcing
+            composition</p><br>
           } <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
         </div>
 
@@ -151,10 +177,11 @@ public class Reservation {
 		this.reservationID=reservationCount;
 	}
     </pre>
-    
+
           <br>&emsp;&emsp;
           <br>&emsp;}
-          <p id="comment" style="font-weight: bold;">//Here the second constructor using customerName and email is created similarly - enforcing composition</p><br>
+          <p id="comment" style="font-weight: bold;">//Here the second constructor using customerName and email is
+            created similarly - enforcing composition</p><br>
           } <br><button class="button-9" id="btn6" @click="validate_six()"> {{ button_value }} </button>
         </div>
 
@@ -192,10 +219,11 @@ public class Reservation {
 		this.reservationID=reservationCount;
 	}
     </pre>
-    
+
           <br>&emsp;&emsp;
           <br>&emsp;}
-          <p id="comment" style="font-weight: bold;">//Here the third constructor using customerName email and phone is created similarly - enforcing composition</p><br>
+          <p id="comment" style="font-weight: bold;">//Here the third constructor using customerName email and phone is
+            created similarly - enforcing composition</p><br>
           } <br><button class="button-9" id="btn7" @click="validate_seven()"> {{ button_value }} </button>
         </div>
 
@@ -609,5 +637,75 @@ input {
 
 .button-9:focus {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 </style>

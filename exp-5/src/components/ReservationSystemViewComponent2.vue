@@ -2,68 +2,92 @@
 export default {
 
   methods: {
+    correct() {
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
+    incorrect() {
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Inorrect. Try again";
+      x.style.backgroundColor = "red";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
     validate_one() {
       if (this.one == "Vehicle" && this.two == "5678") {
-        this.button_value = this.button_text_right;
-        btn2.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[0] = "none";
         this.display[1] = "inherit";
       }
 
       else {
-        this.button_value = this.button_text;
-        btn1.style.backgroundColor = "red";
+        this.incorrect();
       }
     },
 
     validate_two() {
       if (this.three == "Reservation" && this.four == "rObjComposition" && this.five == "vobj") {
-        this.button_value = this.button_text_right;
-        btn3.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[1] = "none";
         this.display[2] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn2.style.backgroundColor = "red";
+        this.incorrect();
       }
     },
 
     validate_three() {
       if (this.six == "getCustomerObj" && this.seven == "setCity") {
-        this.button_value = this.button_text_right;
-        btn4.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[2] = "none";
         this.display[3] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn3.style.backgroundColor = "red";
+        this.incorrect();
       }
     },
     validate_four() {
       if (this.eight == "setBookingDate" && this.nine == "new" && this.ten == "Date()") {
-        this.button_value = this.button_text_right;
-        btn5.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[3] = "none";
         this.display[4] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn4.style.backgroundColor = "red";
+        this.incorrect();
       }
     },
     validate_five() {
       if (this.eleven == "getVehicleObj" && this.twelve == "updateKeyStatus") {
-        this.button_value = this.button_text_right;
-        btn5.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "Correct";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[4] = "none";
         this.display[5] = "inherit";
-        this.$emit(reservation-system-complete, true)
+        this.$emit(reservation - system - complete, true)
       }
       else {
-        this.button_value = this.button_text;
-        btn5.style.backgroundColor = "red";
+        this.incorrect();
       }
     },
 
@@ -85,6 +109,8 @@ export default {
 </script>
 <template>
   <main class="app">
+    <div id="snackbar">Some text some message..</div>
+
     <div class="column" style="position:fixed; top: 30%; left: 60%;">
       <div class="column">
         <div class="codebox">
@@ -344,5 +370,75 @@ input {
 
 .button-9:focus {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 </style>

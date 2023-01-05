@@ -1,5 +1,7 @@
 <template>
     <main>
+        <div id="snackbar">Some text some message..</div>
+
         <div class="row">
             <div class="column">
                 <div class="codebox" :style="{ display: display[0] }">
@@ -61,7 +63,12 @@ export default {
             }
 
             else {
-                alert("Wrong Answer");
+
+                var x = document.getElementById("snackbar");
+        x.innerHTML = "Wrong Answer";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
             }
 
         },
@@ -71,7 +78,11 @@ export default {
                 this.display[2] = "block";
             }
             else {
-                alert("Wrong Answer");
+                var x = document.getElementById("snackbar");
+        x.innerHTML = "Wrong Answer";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
             }
 
         },
@@ -82,7 +93,11 @@ export default {
                 this.validated = true;
             }
             else {
-                alert("Wrong Answer");
+                var x = document.getElementById("snackbar");
+        x.innerHTML = "Wrong Answer";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
             }
         },
     },
@@ -217,5 +232,47 @@ input {
 
 .button-9:focus {
     box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }
 </style>

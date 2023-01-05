@@ -3,67 +3,96 @@ export default {
   props:{
   },
   methods: {
+    correct(){
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
+    incorrect(){
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Inorrect. Try again";
+      x.style.backgroundColor = "red";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
     validate_one() {
       if (this.one == "final" && this.two == "int" && this.three == "reservationID") {
-        this.button_value = this.button_text_right;
+        var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         // btn2.style.backgroundColor = "green";
         this.display[0] = "none";
         this.display[1] = "inherit";
       }
 
       else {
-        this.button_value = this.button_text;
+        this.incorrect();
         // btn1.style.backgroundColor = "red";
       }
     },
 
     validate_two() {
       if (this.four == "Customer" && this.five == "customerObj") {
-        this.button_value = this.button_text_right;
-        // btn3.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[1] = "none";
         this.display[2] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
+        this.incorrect();
         // btn2.style.backgroundColor = "red";
       }
     },
 
     validate_three() {
       if (this.six == "Vehicle" && this.seven == "vehicleObj") {
-        this.button_value = this.button_text_right;
-        // btn4.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[2] = "none";
         this.display[3] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
+        this.incorrect();
         // btn3.style.backgroundColor = "red";
       }
     },
     validate_four() {
       if (this.eight == "Customer" && this.nine == "customerObj" && this.ten == "Vehicle" && this.eleven == "vehicleObj") {
-        this.button_value = this.button_text_right;
-        // btn5.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[3] = "none";
         this.display[4] = "inherit";
       }
       else {
-        this.button_value = this.button_text;
-        btn4.style.backgroundColor = "red";
+        this.incorrect();
       }
     },
     validate_five() {
       if (this.twelve == "reservationCount++" && this.thirteen == "reservationID" && this.fourteen == "reservationCount") {
-        this.button_value = "Good Job you're done here";
-        // btn5.style.backgroundColor = "green";
+        var x = document.getElementById("snackbar");
+      x.innerHTML = "Good Job! You're done here.";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[4] = "none";
         this.display[5] = "inherit";
         this.$emit("reservationComplete", true)
       }
       else {
-        this.button_value = this.button_text;
+        this.incorrect();
         // btn5.style.backgroundColor = "red";x
       }
     },
@@ -87,6 +116,8 @@ export default {
 
 <template>
   <main class="app">
+    <div id="snackbar">Some text some message..</div>
+
     <div class="row">
 
       <div class="column">
@@ -600,5 +631,47 @@ input {
 
 .button-9:focus {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }
 </style>
