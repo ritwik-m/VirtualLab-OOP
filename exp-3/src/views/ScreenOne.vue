@@ -92,22 +92,38 @@ export default {
 
       if (this.getList(5).length != this.getList(6).length) {
         console.log('The number of variables and datatypes should match.')
-        alert('The number of variables and datatypes should match.')
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "The number of variables and datatypes should match.";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
 
       if (this.getList(7).length != this.getList(8).length) {
         console.log('The number of variables and datatypes should match.')
-        alert('The number of variables and datatypes should match.')
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "The number of variables and datatypes should match.";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
 
       if (this.getList(9).length != this.getList(10).length) {
         console.log('The number of variables and datatypes should match.')
-        alert('The number of variables and datatypes should match.')
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "The number of variables and datatypes should match.";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
 
       if (this.getList(11).length != this.getList(12).length) {
         console.log('The number of variables and datatypes should match.')
-        alert('The number of variables and datatypes should match.')
+        var x = document.getElementById("snackbar");
+        x.innerHTML = "The number of variables and datatypes should match.";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
       }
 
       else {
@@ -156,23 +172,43 @@ export default {
       {
 
         if (this.valid[0] && this.valid[1] && this.valid[2] && this.valid[3]) {
-          alert("You have successfully completed the exercise!");
+          var x = document.getElementById("snackbar");
+        x.innerHTML = "You have successfully completed the exercise";
+        x.style.backgroundColor = "green";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         }
 
         else if (this.valid[0] == false) {
-          alert("There is a type mismatch / missing entry in Customer")
+          var x = document.getElementById("snackbar");
+        x.innerHTML = "There is a type mismatch / missing entry in Customer";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         }
 
         else if (this.valid[1] == false) {
-          alert("There is a type mismatch / missing entry in Clerk")
+          var x = document.getElementById("snackbar");
+        x.innerHTML = "There is a type mismatch / missing entry in Clerk";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         }
 
         else if (this.valid[2] == false) {
-          alert("There is a type mismatch / missing entry in Vehicle")
+          var x = document.getElementById("snackbar");
+        x.innerHTML = "There is a type mismatch / missing entry in Vehicle";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         }
 
         else if (this.valid[3] == false) {
-          alert("There is a type mismatch / missing entry in Reservation")
+          var x = document.getElementById("snackbar");
+        x.innerHTML = "There is a type mismatch / missing entry in Reservation";
+        x.style.backgroundColor = "red";
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         }
       }
     }
@@ -187,6 +223,8 @@ export default {
     <p>Map the elements and respective datatypes to their classes by dragging and dropping.</p>
   </header>
   <main>
+    <div id="snackbar">Some text some message..</div>
+
     <div class="flexbox">
       <div class="flex-between sticky">
         <h3>Variables</h3>
@@ -508,6 +546,48 @@ h3 {
   border: 1px solid #E8562A;
   cursor: pointer;
   font-weight: bold;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }
 </style>
 
