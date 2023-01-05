@@ -34,9 +34,9 @@ export default {
 <template>
     <main>
         <div class="flex">
-        <div class="codebox" id="codebox" :style="{ display: display[0] }" style="align-self: center;">
+        <div class="codebox" id="codebox" :style="{ display: display[0] }">
             <div>
-                <input spellcheck="false" type="text" id="input1" v-model="one" maxlength="8" width="100px" /> public
+                <input spellcheck="false" type="text" id="input1" v-model="one" maxlength="8" style="width='60px'" /> public
                 class Person {
             </div>
 
