@@ -194,43 +194,43 @@ export default {
     <div class="row">
       <div class="column">
         <div class="codebox" :style="{ display: display[0] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 1.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame1.png" />
         </div>
         <div class="codebox" :style="{ display: display[1] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 2.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame2.png" />
         </div>
         <div class="codebox" :style="{ display: display[2] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 3.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame3.png" />
         </div>
         <div class="codebox" :style="{ display: display[3] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 4.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame4.png" />
         </div>
         <div class="codebox" :style="{ display: display[4] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 5.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame5.png" />
         </div>
         <div class="codebox" :style="{ display: display[5] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 6.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame6.png" />
         </div>
         <div class="codebox" :style="{ display: display[6] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 7.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame7.png" />
         </div>
         <div class="codebox" :style="{ display: display[7] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 8.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame8.png" />
         </div>
         <div class="codebox" :style="{ display: display[8] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 9.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame9.png" />
         </div>
         <div class="codebox" :style="{ display: display[9] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 10.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame10.png" />
         </div>
         <div class="codebox" :style="{ display: display[10] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 11.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame11.png" />
         </div>
         <div class="codebox" :style="{ display: display[11] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 12.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame12.png" />
         </div>
         <div class="codebox" :style="{ display: display[12] }">
-          <img style="max-width: 800px;" src="..\..\assets\Frame 13.png" />
+          <img style="max-width: 800px;" src="..\..\assets\Frame13.png" />
         </div>
 
       </div>
