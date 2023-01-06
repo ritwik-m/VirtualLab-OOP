@@ -8,7 +8,7 @@
 <template>
     <main class="app">
       <div class="codebox" style="align-items: center; justify-content: center; display: flex;">
-  <img src="src\assets\compositionans.png">
+  <img src="..\assets\compositionans.png">
   
       </div>  
       </main>

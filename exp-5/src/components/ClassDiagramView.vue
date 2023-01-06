@@ -8,7 +8,8 @@
 <template>
   <main class="app">
     <div class="codebox" style="align-items: center; justify-content: center; display: flex;">
-      <img src="src\assets\ans.jpg">
+      <!-- import ans.jpg for src -->
+      <img src="..\assets\ans.jpg" alt="class diagram" style="width: 100%; height: 100%;">
 
     </div>
   </main>
