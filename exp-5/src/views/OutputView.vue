@@ -9,7 +9,6 @@ import java.util.Date;
 public class TestDriver {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Customer[] cobj= new Customer[3];
 		cobj[0]=new Customer("ABC", "abc@gmail.com");
 		cobj[1]=new Customer("DEF", 8654678976L);
@@ -27,7 +26,7 @@ public class TestDriver {
             </div>
             <div class="outbox">
                 
-                    <p>Enter the code here</p>
+                    <p>Process finished with exit code 0</p>
                 
                 </div>
         </div>
