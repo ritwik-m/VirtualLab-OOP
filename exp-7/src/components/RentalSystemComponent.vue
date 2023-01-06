@@ -2,7 +2,7 @@
 export default {
   methods: {
     validate_one() {
-      if (this.one == "Person[]" && this.two == "Person[5]") {
+      if (this.one ==  "public" && this.two == "Customer[]" && this.three == "public" && this.four == "Clerk[]" && this.five == "public" && this.six == "Vehicle[]" && this.seven == "public" && this.eight == "Reservation[]") {
         this.button_value = this.button_text_right;
         this.display[0] = "none";
         this.display[1] = "block";
@@ -15,103 +15,63 @@ export default {
         btn1.style.backgroundColor = "red";
       }
     },
-
     validate_two() {
-      if (this.three == "Customer" && this.four == "ABC" && this.five == "abc@gmail.com") {
-        this.button_value = this.button_text_right;
-        
-        this.display[1] = "none";
-        this.display[2] = "block";
-        this.completed[1] = true;
-      }
-      else {
-        this.button_value = this.button_text;
-        btn2.style.backgroundColor = "red";
-      }
+        if(this.nine === "Clerk"){
+            this.button_value = this.button_text_right;
+            this.display[1] = "none";
+            this.display[2] = "block";
+            console.log("two_correct")
+        }
+
+        else{
+            this.button_value = this.button_text;
+            btn2.style.backgroundColor = "red";
+        }
     },
 
-    validate_three() {
-      if (this.six == "Clerk" && this.seven == "EFG" && this.eight == "efg@gmail.com") {
-        this.button_value = this.button_text_right;
-        
-        this.display[2] = "none";
-        this.display[3] = "block";
-        this.completed[2] = true;
+    validate_three(){
+        if(this.ten === "clerkObj[0]"){
+            this.button_value = this.button_text_right;
+            this.display[2] = "none";
+            this.display[3] = "block";
+            console.log("three_correct")
+        }
 
-      }
-      else {
-        this.button_value = this.button_text;
-        btn2.style.backgroundColor = "red";
-      }
+        else{
+            this.button_value = this.button_text;
+            btn3.style.backgroundColor = "red";
+        }
     },
+
     validate_four(){
-      if (this.nine == "Person" && this.ten == "PQR" && this.eleven == "pqr@gmail.com"){
-        this.button_value = this.button_text_right;
-        
-        this.display[3] = "none";
-        this.display[4] = "block";
-        this.completed[3] = true;
-      }
-      else{
-        this.button_value = this.button_text;
-        btn4.style.backgroundColor = "red";
-      }
-    },
-    validate_five(){
-      if (this.twelve === "setCity" && this.thirteen === "Coimbatore"){
-        this.button_value = this.button_text_right;
-        
-        this.display[4] = "none";
-        this.display[5] = "block";
-        this.completed[4] = true;
-      }
-      else{
-        this.button_value = this.button_text;
-        btn5.style.backgroundColor = "red";
-      }
-    },
-    validate_six(){
-      if (this.fourteen === "Vehicle" && this.fifteen === "Vehicle" && this.sixteen === "1234"){
-        this.button_value = this.button_text_right;
-        
-        this.display[5] = "none";
-        this.display[6] = "block";
-        this.completed[5] = true;
-      }
-      else{
-        this.button_value = this.button_text;
-        btn6.style.backgroundColor = "red";
-      }
-    },
-    validate_seven(){
-      if (this.seventeen === "Reservation" && this.eighteen === "Reservation" && this.nineteen === "Customer"){
-        this.button_value = this.button_text_right;
-        
-        this.display[6] = "none";
-        this.display[7] = "block";
-        this.completed[6] = true;
-      }
-      else{
-        this.button_value = this.button_text;
-        btn7.style.backgroundColor = "red";
-      }
-    },
-    validate_eight(){
-      if (this.twenty === "setBookingDate" && this.twentyone === "Date()"){
-        this.button_value = this.button_text_right;
-        
-        this.display[7] = "none";
-        this.display[8] = "block"
-        this.completed[7] = true;
-      }
-      else{
-        this.button_value = this.button_text;
-        btn8.style.backgroundColor = "red";
-      }
-    }
-    
+        if(this.eleven === "Reservation"){
+            this.button_value = this.button_text_right;
+            this.display[3] = "none";
+            this.display[4] = "block";
+            console.log("four_correct")
+        }
 
-  },
+        else{
+            this.button_value = this.button_text;
+            btn4.style.backgroundColor = "red";
+        }
+    },
+
+    validate_five(){
+        if(this.twelve === "assignClerk()"){
+            this.button_value = this.button_text_right;
+            this.display[4] = "none";
+            this.display[5] = "block";
+            console.log("five_correct")
+        }
+
+        else{
+            this.button_value = this.button_text;
+            btn5.style.backgroundColor = "red";
+        }
+    },
+    },
+ 
   data() {
     return {
       id: 'container',
@@ -121,7 +81,7 @@ export default {
       button_text_right: "Next",
       correct: false,
       display: ["block", "none", "none", "none", "none","none","none","none", "none"],
-      completed: [false,false,false,false,false,false,false,false]
+      completed: [false,false,false]
     }
   }
 
@@ -134,14 +94,10 @@ export default {
         <div class="column">
           <div class="codebox">
             <ul style="line-height: 125%;">
-              <li :class="{completed: completed[0]}">Initiate an array of type Person with 5 objects.</li>
-              <li :class="{completed: completed[1]}">Using the concept of <b>upcasting</b>, initiate objects 0, 1 and 2 as instances of the class Customer.</li>
-              <li :class="{completed: completed[2]}">Using the concept of <b>upcasting</b>, initiate object 3 as an instance of of the ckass Clerk.</li>
-              <li :class="{completed: completed[3]}">Initiate object 4 as an instance of class Person using the concept of <b>static binding</b></li>
-              <li :class="{completed: completed[4]}">Set the city for each of the objects based on instructions in the comments</li>
-              <li :class="{completed: completed[5]}">Create an object <b>vobj</b> of type Vehicle with a regNum value of 1234</li>
-              <li :class="{completed: completed[6]}">Create an object <b>robj1</b> of type Reservation passing cobj[0] (with proper typecasting) and vobj as parameters.</li>
-              <li :class="{completed: completed[7]}">Set the booking date for robj1 to the current date.</li>
+              <li :class="{completed: completed[0]}">Initiate object arrays of Customer, Clerk, Vehicle and Reservation classes.</li>
+              <li :class="{completed: completed[1]}">Write a method that assigns the 0th element of the Clerk array called assignClerk</li>
+              <li :class="{completed: completed[2]}">Write a method visitOffice that checks for clerk availability, verifies vehicle 
+                status and signs contract if vehicle is available</li>
             </ul>
           </div>
         </div>
@@ -152,226 +108,114 @@ export default {
               <h1 style="padding: 25px; padding-bottom: 0px;">Enter your code here .</h1>
               <p style="padding: 25px; padding-top: 0px">Follow instructions provided in the comments</p>
       
-              <div class="codebox" id="codebox" :style="{ display: display[0] }">
+              <div class="codebox" :style="{ display: display[0] }">
                 <pre>
-import java.util.Scanner;
-import java.util.Date;
+import java.text.ParseException;
 
-public class TestDriver {
-
-    public static void main(String[] args) {</pre>&emsp;
-                <input spellcheck="false" maxlength="8" style="width: 90px;" v-model='one'> cobj = new   
-                <input spellcheck="false" id="two" maxlength="9" style="width: 95px;" v-model="two">{ <p id="comment">//Create an array of 
-                  time Person with 5 objects</p><br>
+public class RentalSystem {
+</pre>&emsp;
+                <input spellcheck="false" maxlength="6" style="width: 90px;" v-model='one'>   
+                <input spellcheck="false" id="two" maxlength="10" style="width: 95px;" v-model="two"> cobj;
+                <br>&emsp;
+                <input spellcheck="false" maxlength="6" style="width: 90px;" v-model='three'>   
+                <input spellcheck="false" id="two" maxlength="7" style="width: 80px;" v-model="four"> clerkobj;
+                <br>&emsp;
+                <input spellcheck="false" maxlength="6" style="width: 90px;" v-model='five'>   
+                <input spellcheck="false" id="two" maxlength="9" style="width: 90px;" v-model="six"> vobj;
+                <br>&emsp;
+                <input spellcheck="false" maxlength="6" style="width: 90px;" v-model='seven'>   
+                <input spellcheck="false" id="two" maxlength="14" style="width: 120px;" v-model="eight"> robj;
+                 <p id="comment">//Create arrays of Customer, Clerk, Vehicle and Reservation objects</p><br>
                 } <br><button class="button-9" id="btn1" @click="validate_one()"> {{ button_value }} </button>
               </div>
       
-              <div class="codebox" id="codebox" :style="{ display: display[1] }">
+              <div class="codebox" :style="{ display: display[1] }">
                 <pre>
-import java.util.Scanner;
-import java.util.Date;
+import java.text.ParseException;
 
-public class TestDriver {
-
-    public static void main(String[] args) {
-        Person[] cobj= new Person[5];
+public class RentalSystem {
+    public Customer[] cobj;
+	public Clerk[] clerkobj;
+	public Vehicle[] vobj;
+	public Reservation[] robj;
                 </pre>
-                <br>&emsp;&emsp;&emsp;cobj[0] = new
-                <input spellcheck="false" maxlength="8" style="width: 90px;" v-model='three'>("
-                <input spellcheck="false" maxlength="3" style="width: 50px;" v-model='four'>", "
-                <input spellcheck="false" maxlength="13" style="width: 130px;" v-model='five'>")
-                <p id="comment">//Create a new Customer object using name as "ABC" and email "abc@gmail.com"</p><br>
-                } <br><button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
+                <br>&emsp;&emsp;&emsp;public
+                <input spellcheck="false" maxlength="7" style="width: 90px;" v-model='nine'> assignClerk(){"
+                <p id="comment">//Create a method assignClerk() which returns an object of type Clerk</p><br>
+                }   
+                <br><button class="button-9" id="btn2" @click="validate_two()"> {{ button_value }} </button>
               </div>
 
               <div class="codebox" id="codebox" :style="{ display: display[2] }">
                 <pre>
-import java.util.Scanner;
-import java.util.Date;
+import java.text.ParseException;
 
-public class TestDriver {
+public class RentalSystem {
+    public Customer[] cobj;
+	public Clerk[] clerkobj;
+	public Vehicle[] vobj;
+	public Reservation[] robj;
 
-    public static void main(String[] args) {
-        Person[] cobj= new Person[5];
-        cobj[0] = new Customer("ABC", "abc@gmail.com");
-        cobj[1] = new Customer("DEF", 8654678976L);
-        cobj[2] = new Customer("GHI", "ghi@gmail.com", 1234567890L);
+    public Clerk assignClerk()
+	{
                 </pre>
-                <br>&emsp;&emsp;&emsp;cobj[3] = new
-                <input spellcheck="false" maxlength="6" style="width: 90px;" v-model='six'>("
-                <input spellcheck="false" maxlength="3" style="width: 60px;" v-model='seven'>", "
-                <input spellcheck="false" maxlength="13" style="width: 130px;" v-model='eight'>")
-                <p id="comment">//Create a new Clerk object using name as "EFG" and email as "efg@gmail.com"</p><br>
-                } <br><button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
+                <br>&emsp;&emsp;&emsp;return this.
+                <input spellcheck="false" maxlength="11" style="width: 110px;" v-model='ten'>;
+                <p id="comment">//Return 0th object of the clerkObj array</p><br>
+                } 
+                <br><button class="button-9" id="btn3" @click="validate_three()"> {{ button_value }} </button>
+                
               </div>
 
               <div class="codebox" id="codebox" :style="{ display: display[3] }">
                 <pre>
-import java.util.Scanner;
-import java.util.Date;
+import java.text.ParseException;
 
-public class TestDriver {
+public class RentalSystem {
+    public Customer[] cobj;
+	public Clerk[] clerkobj;
+	public Vehicle[] vobj;
+	public Reservation[] robj;
 
-    public static void main(String[] args) {
-        Person[] cobj= new Person[5];
-        cobj[0] = new Customer("ABC", "abc@gmail.com");
-        cobj[1] = new Customer("DEF", 8654678976L);
-        cobj[2] = new Customer("GHI", "ghi@gmail.com", 1234567890L);
-        cobj[3] = new Clerk("EFG", "efg@gmail.com")
+    public Clerk assignClerk()
+	{   
+        return this.clerkObj[0];
+    }
                 </pre>
-                <br>&emsp;&emsp;&emsp;cobj[3] = new
-                <input spellcheck="false" maxlength="6" style="width: 60px;" v-model='nine'>("
-                <input spellcheck="false" maxlength="3" style="width: 50px;" v-model='ten'>", "
-                <input spellcheck="false" maxlength="13" style="width: 130px;" v-model='eleven'>")
-                <p id="comment">//Create a new Person object using name as "PQR" and email as "pqr@gmail.com"</p><br>
-                } <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
-              </div>
-      
-              <div class="codebox" id="codebox" :style="{ display: display[4] }">
-                <pre>
-import java.util.Scanner;
-import java.util.Date;
-
-public class TestDriver {
-
-    public static void main(String[] args) {
-        Person[] cobj = new Person[5];gmail.com");
-        cobj[1] = new Customer("DEF", 8654678976L);
-        cobj[2] = new Customer("GHI", "ghi@gmail.com", 1234567890L);
-        cobj[3] = new Clerk("EFG", "efg@gmail.com")
-        cobj[4] = new Person("PQR", "pqr@gmail.com")
-      
-      </pre>
-          <br>&emsp;&emsp;&emsp;cobj[0].
-                <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='twelve'>(
-                <input spellcheck="false" maxlength="10" style="width: 110px;" v-model='thirteen'>);
-                <br>&emsp;
-                <p id="comment">//Set the City of first object to "Coimbatore"</p><br>&emsp;}
-                <br>
-                } <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
-              </div>
-
-              <div class="codebox" id="codebox" :style="{ display: display[5] }">
-                <pre>
-import java.util.Scanner;
-import java.util.Date;
-
-public class TestDriver {
-
-    public static void main(String[] args) {
-        Person[] cobj = new Person[5];
-        cobj[0] = new Customer("ABC", "abc@gmail.com");
-        cobj[1] = new Customer("DEF", 8654678976L);
-        cobj[2] = new Customer("GHI", "ghi@gmail.com", 1234567890L);
-        cobj[3] = new Clerk("EFG", "efg@gmail.com")
-        cobj[4] = new Person("PQR", "pqr@gmail.com")
-        cobj[0].setCity("Coimbatore");
-        cobj[1].setCity("Coimbatore");
-        cobj[2].setCity("Chennai");
-        cobj[3].setCity("Coimbatore");
-      </pre>    &emsp;&emsp;&emsp;
-                <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='fourteen'> vobj = new
-                <input spellcheck="false" maxlength="7" style="width: 75px;" v-model='fifteen'>(
-                <input spellcheck="false" maxlength="4" style="width: 60px;" v-model='sixteen'>;)
+                <br>&emsp;&emsp;&emsp;public void visitOffice(
+                <input spellcheck="false" maxlength="11" style="width: 110px;" v-model='eleven  '> res) throws ParseException{
+                <p id="comment">//Pass an object of Reservation as parameter</p><br>
+                } 
+                <br><button class="button-9" id="btn4" @click="validate_four()"> {{ button_value }} </button>
                 
-                <br>&emsp;}
-                <p id="comment">//Create a new Vehicle object with value "1234"</p><br>
-                } <br><button class="button-9" id="btn6" @click="validate_six()"> {{ button_value }} </button>
               </div>
+              
 
-
-              <div class="codebox" id="codebox" :style="{ display: display[6] }">
+              <div class="codebox" :style="{ display: display[4] }">
                 <pre>
-import java.util.Scanner;
-import java.util.Date;
+import java.text.ParseException;
 
-public class TestDriver {
+public class RentalSystem {
+    public Customer[] cobj;
+	public Clerk[] clerkobj;
+	public Vehicle[] vobj;
+	public Reservation[] robj;
 
-    public static void main(String[] args) {
-        Person[] cobj = new Person[5];
-        cobj[0] = new Customer("ABC", "abc@gmail.com");
-        cobj[1] = new Customer("DEF", 8654678976L);
-        cobj[2] = new Customer("GHI", "ghi@gmail.com", 1234567890L);
-        cobj[3] = new Clerk("EFG", "efg@gmail.com")
-        cobj[4] = new Person("PQR", "pqr@gmail.com")
-        cobj[0].setCity("Coimbatore");
-        cobj[1].setCity("Coimbatore");
-        cobj[2].setCity("Chennai");
-        cobj[3].setCity("Coimbatore");
+    public Clerk assignClerk()
+	{   
+        return this.clerkObj[0];
+    }
 
-        Vehicle vobj = new Vehicle("1234"); 
-      </pre>    &emsp;&emsp;&emsp;
-                <!--Reservation robj1= new Reservation((Customer)cobj[0],vobj);-->
-                <input spellcheck="false" maxlength="11" style="width: 100px;" v-model='seventeen'> robj = new
-                <input spellcheck="false" maxlength="11" style="width: 100px;" v-model='eighteen'>((
-                <input spellcheck="false" maxlength="8" style="width: 85px;" v-model='nineteen'>)cobj[0], vobj);
+    public void visitOffice(Reservation res) throws ParseException{
+                </pre>
+                <br>&emsp;&emsp;&emsp;Clerk cl = 
+                <input spellcheck="false" maxlength="13" style="width: 110px;" v-model='twelve'>;
+                <p id="comment">//Call a function to assign a clerk object to the cl variable</p><br>
+                } 
+                <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
                 
-                <br>&emsp;}
-                <p id="comment">//Use downcasting to pass Person cobj[0] and vobj as parameters to create a Reservation object.</p>
-                <p id="comment">//Clue: cobj[0] is of type Person but Reservation only takes Customer objects.</p>
-                <br>
-                } <br><button class="button-9" id="btn7" @click="validate_seven()"> {{ button_value }} </button>
               </div>
-
-
-            <div class="codebox" id="codebox" :style="{ display: display[7] }">
-                <pre>
-import java.util.Scanner;
-import java.util.Date;
-
-public class TestDriver {
-
-    public static void main(String[] args) {
-        Person[] cobj = new Person[5];
-        cobj[0] = new Customer("ABC", "abc@gmail.com");
-        cobj[1] = new Customer("DEF", 8654678976L);
-        cobj[2] = new Customer("GHI", "ghi@gmail.com", 1234567890L);
-        cobj[3] = new Clerk("EFG", "efg@gmail.com")
-        cobj[4] = new Person("PQR", "pqr@gmail.com")
-        cobj[0].setCity("Coimbatore");
-        cobj[1].setCity("Coimbatore");
-        cobj[2].setCity("Chennai");
-        cobj[3].setCity("Coimbatore");
-
-        Vehicle vobj = new Vehicle("1234"); 
-        Reservation robj1= new Reservation((Customer)cobj[0],vobj);
-      </pre>    &emsp;&emsp;&emsp;
-                robj1.<input spellcheck="false" maxlength="14" style="width: 130px;" v-model='twenty'>(new
-                <input spellcheck="false" maxlength="8" style="width: 60px;" v-model='twentyone'>);
-                
-                <br>&emsp;}
-                <p id="comment">//Set the booking date for robj1 to today's date</p>
-                
-                <br>
-                } <br><button class="button-9" id="btn8" @click="validate_eight()"> {{ button_value }} </button>
-              </div>
-
-              <div class="codebox" id="codebox" :style="{ display: display[8] }">
-                <pre>
-import java.util.Scanner;
-import java.util.Date;
-
-public class TestDriver {
-
-    public static void main(String[] args) {
-        Person[] cobj = new Person[5];
-        cobj[0] = new Customer("ABC", "abc@gmail.com");
-        cobj[1] = new Customer("DEF", 8654678976L);
-        cobj[2] = new Customer("GHI", "ghi@gmail.com", 1234567890L);
-        cobj[3] = new Clerk("EFG", "efg@gmail.com")
-        cobj[4] = new Person("PQR", "pqr@gmail.com")
-        cobj[0].setCity("Coimbatore");
-        cobj[1].setCity("Coimbatore");
-        cobj[2].setCity("Chennai");
-        cobj[3].setCity("Coimbatore");
-
-        Vehicle vobj = new Vehicle("1234"); 
-        Reservation robj1= new Reservation((Customer)cobj[0],vobj);
-
-        robj1.setBookingDate(new Date());
-      </pre>    
-      <button class="button-9" id="btn8" @click="$router.push('/abstraction')"> {{ button_value }} </button>
-              </div>
+              
 
 
             </div>
