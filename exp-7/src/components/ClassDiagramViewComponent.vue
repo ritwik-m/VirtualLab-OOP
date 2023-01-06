@@ -1,8 +1,7 @@
 <template>
     <main class="app">
       <div class="codebox" style="align-items: center; justify-content: center; display: flex;">
-        <img src="src\assets\ans.jpg">
-  
+        <img src="..\assets\Screen.png" style="width: 100%; height: 100%; object-fit: contain;">
       </div>
     </main>
   </template>

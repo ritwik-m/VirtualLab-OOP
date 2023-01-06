@@ -90,7 +90,7 @@ export default {
 </script>
 <template>
     <main class="app">
-      <div class = "column" style="position:fixed; top: 30%; left: 60%;">
+      <div class = "column" style="position:fixed; top: 30%; left: 70%;">
         <div class="column">
           <div class="codebox">
             <ul style="line-height: 125%;">
@@ -214,7 +214,43 @@ public class RentalSystem {
                 } 
                 <br><button class="button-9" id="btn5" @click="validate_five()"> {{ button_value }} </button>
                 
-              </div>
+            </div>
+
+            <div class="codebox" :style="{display: display[5]}" style="width: 100ch;">
+                <pre>                    
+import java.text.ParseException;
+
+public class RentalSystem {
+	public Customer[] cobj;
+	public Clerk[] clerkobj;
+	public Vehicle[] vobj;
+	public Reservation[] robj;
+	
+	public Clerk assignClerk()
+	{
+		return this.clerkobj[0];
+	}
+	
+	public void visitOffice(Reservation res) throws ParseException
+	{
+		Clerk cl = assignClerk();
+		if(cl !=null)
+		{
+			if (cl.requestVehicle(res).compareTo("initiate contract")==0)
+			{
+				System.out.println("Vehicle is available, initiating contract..");
+				System.out.println(cl.signContract(res));
+			}
+			else
+				System.out.println("Vehicle is on trip, please wait");
+		}
+		else 
+			System.out.println("wait for clerk");
+	}
+}
+
+                </pre>
+            </div>
               
 
 

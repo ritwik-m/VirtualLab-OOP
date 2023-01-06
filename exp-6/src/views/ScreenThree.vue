@@ -63,6 +63,8 @@ export default {
       x.style.backgroundColor = "green";
       x.className = "show";
       setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+      this.display[3] = "none";
+        this.display[4] = "inherit";
       }
       else {
         this.incorrect();

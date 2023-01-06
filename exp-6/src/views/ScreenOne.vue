@@ -426,8 +426,10 @@ public class Person {
   }
 }
         </pre>
-          <button class="button-9" @click="">Continue</button>
+          <button class="button-9" @click="$router.push('/screen-two')">Continue</button>
         </div>
+
+  
 
       </div>
     </div>
