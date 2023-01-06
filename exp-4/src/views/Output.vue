@@ -7,8 +7,10 @@
 
 <template>
     <main>
-        <div class="codebox">
-            <pre>
+        <div class="row">
+            <div class="column">
+                <div class="codebox">
+                    <pre>
 
 import java.util.Scanner;
 
@@ -27,12 +29,91 @@ public class TestDriver {
 	}
 
     </pre>
+                </div>
+            </div>
+            <div class="column">
+                <div class="codebox" :style="{ display: display[0] }">
+                    <img style="max-width: 650px;" src="..\assets\image1.png" />
+                </div>
+                <div class="codebox" :style="{ display: display[1] }">
+                    <img style="max-width: 650px;" src="..\assets\image2.png" />
+                </div>
+                <div class="codebox" :style="{ display: display[2] }">
+                    <img style="max-width: 650px;" src="..\assets\image3.png" />
+                </div>
+                <div class="codebox" :style="{ display: display[3] }">
+                    <img style="max-width: 650px;" src="..\assets\image4.png" />
+                </div>
+                <div class="codebox" :style="{ display: display[4] }">
+                    <img style="max-width: 650px;" src="..\assets\image5.png" />
+                </div>
+                <div class="codebox" :style="{ display: display[5] }">
+                    <img style="max-width: 650px;" src="..\assets\image6.png" />
+                </div>
+                <div class="codebox" :style="{ display: display[6] }">
+                    <img style="max-width: 650px;" src="..\assets\image7.png" />
+                </div>
+            </div>
         </div>
     </main>
-    <footer style="margin-left: 25px;">
-        <button class="button-9" @click="$router.push('/completion')">Next</button>
+    <footer style="display: flex; justify-content: center; align-items: center;">
+        <button class="button-9" @click="validate_one()" :style="{ display: display[0] }">Next</button>
+        <button class="button-9" @click="validate_two()" :style="{ display: display[1] }">Next</button>
+        <button class="button-9" @click="validate_three()" :style="{ display: display[2] }">Next</button>
+        <button class="button-9" @click="validate_four()" :style="{ display: display[3] }">Next</button>
+        <button class="button-9" @click="validate_five()" :style="{ display: display[4] }">Next</button>
+        <button class="button-9" @click="validate_six()" :style="{ display: display[5] }">Next</button>
+        <button class="button-9" @click="$router.push('/completion')" :style="{ display: display[6] }">Next</button>
+        <!-- @click="$router.push('/completion')" -->
     </footer>
 </template>
+
+<script>
+
+export default {
+    methods: {
+        validate_one() {
+                this.display[0] = "none";
+                this.display[1] = "block";
+        },
+        validate_two() {
+                this.display[1] = "none";
+                this.display[2] = "block";
+        },
+        validate_three() {
+                this.display[2] = "none";
+                this.display[3] = "block";
+        },
+        validate_four() {
+                this.display[3] = "none";
+                this.display[4] = "block";
+        },
+        validate_five() {
+                this.display[4] = "none";
+                this.display[5] = "block";
+        },
+        validate_six() {
+                this.display[5] = "none";
+                this.display[6] = "block";
+        },
+
+
+    },
+    data() {
+        return {
+            id: 'container',
+            class: 'wrapper',
+            button_text: "Incorrect. Try again.",
+            button_text_right: "Next",
+            correct: false,
+            valid: [false, false],
+            display: ["block", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none"]
+        }
+    }
+}
+
+
+</script>
 
 <style scoped>
 * {
