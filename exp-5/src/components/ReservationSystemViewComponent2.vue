@@ -84,7 +84,7 @@ export default {
         setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.display[4] = "none";
         this.display[5] = "inherit";
-        this.$emit(reservation - system - complete, true)
+        this.$emit("reservationSystemComplete", true)
       }
       else {
         this.incorrect();

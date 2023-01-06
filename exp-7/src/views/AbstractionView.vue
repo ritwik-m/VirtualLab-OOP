@@ -36,7 +36,7 @@ export default {
         <div class="flex">
         <div class="codebox" id="codebox" :style="{ display: display[0] }">
             <div>
-                <input spellcheck="false" type="text" id="input1" v-model="one" maxlength="8" style="width='60px'" /> public
+                <input spellcheck="false" type="text" id="input1" v-model="one" maxlength="8"/> public
                 class Person {
             </div>
 
@@ -106,7 +106,7 @@ export default {
         </pre>
         <button class="button-9" id="btn1" @click="validate_one">{{button_value}}</button>
         </div>
-        <div class="codebox">
+        <div class="codebox" :style="{display: display[0]}">
             Convert the class Person into an abstract class
         </div>
     </div>
@@ -114,6 +114,8 @@ export default {
 
         <div class="flex">
             <div class="codebox" id="codebox" :style="{ display: display[1] }">
+                <h3 style="font-family: monospace;">Person.java</h3>
+                <p class="comment">//Note that person is now abstract</p>
             <pre>
 
 abstract public class Person {
@@ -127,64 +129,64 @@ abstract public class Person {
 		
 	}
 	
-	public Person(String name, String email) {
-		this.name = name;
-		this.setEmail(email);
-	}
-	
-	public Person(String name, long phone) {
-		this.name = name;
-		this.setPhone(phone);
-	}
-	
-	public Person(String name, String email, long phone) {
-		this.name = name;
-		this.email =email;
-		this.setPhone(phone);
-	}
-
-	public String getName() {
-		return name;
-	}
-	
-	
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public long getPhone() {
-		return phone;
-	}
-
-	public void setPhone(long phone) {		
-		if(phone >= 0000000000L && phone &lt;= 9999999999L)
-			this.phone = phone;
-		else
-			this.phone = 9999999999L;
-		
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
+	...
 }
 
         </pre>
-        <button class="button-9" id="btn1" @click="$router.push('/abstraction-execution')">{{button_value}}</button>
-        </div>
-        <div class="codebox" :style="{display: display[1]}">
+
+        <div>
+            <h3 style="font-family: monospace;">Test Driver.java</h3>
+            <pre>
+...
+
+public class TestDriver {
+	
+	public static void main(String[] args) throws ParseException {
+
+		
+		Person[] cobj= new Person[5];
+		
+		cobj[0]=new Customer("ABC", "abc@gmail.com"); //upcasting
+		cobj[1]=new Customer("DEF", 8654678976L); //upcasting
+                cobj[2]=new Customer("GHI", "ghi@gmail.com", 1234567890L); //upcasting
+		cobj[3]=new Clerk("EFG","efg@gmail.com"); //upcasting
+		cobj[4]=new Person("PQR","pqr@gmail.com"); 
+		
+		cobj[0].setCity("Coimbatore");
+		cobj[1].setCity("Coimbatore");
+		cobj[2].setCity("Chennai");
+		cobj[3].setCity("Coimbatore");
+		
+		Vehicle vobj=new Vehicle(1234);
+		
+		//Downcasting required from Person to Customer
+		Reservation robj1= new Reservation((Customer)cobj[0],vobj);
+		robj1.setBookingDate(new Date());
+
+	}	
+}
+
+            </pre>
+
 
         </div>
+        
         </div>
+        <div class="outbox" :style="{display: display[1]}">
+                    <p>OUTPUT</p>   
+                   <p style="color: #FF6262;">prog.Java:12: Abstract classes cannot be instantiated. They can only be extended.</p>
+                   <p style="color: #FF6262;">&emsp; &emsp; cobj[4]=new Person("PQR","pqr@gmail.com")</p><br>
+                    <p style="color: #FF6262;">1 Error</p>
+
+                    <div style="height: 100px; background-color: #202020;"></div>
+                    <h4 style="font-family: monospace; color: inherit; background-color: inherit;">EXPLANATION</h4>
+                    <p>As stated in the error, abstract classes cannot be instantiated. 
+                        To access the attributes and methods defined here, the classes have to be extended. 
+                        In our example, Person is being extended by Customer and Clerk.</p>
+
+                        <button class="button-9" id="btn1" @click="$router.push('/abstraction-execution')">{{button_value}}</button>
+                </div>
+            </div>
         
     </main>
 </template>
@@ -221,6 +223,15 @@ p {
     display: table;
     clear: both;
 }
+
+.comment {
+  margin-left: 15px;
+  font-style: italic;
+  color: gray;
+  font-size: small;
+}
+
+
 
 
 mark1 {
@@ -261,14 +272,39 @@ mark0 {
 }
 
 
+
+
 .codebox {
     height: 80%;
     width: 50%;
     margin: 25px;
     padding: 25px;
     border-radius: 10px;
-    background-color: #F9FAFE;
+    
     box-shadow: 2px 3px 10px 2px #D7DFFF;
+}
+
+.outbox {
+    height: 80%;
+    min-height: 50vh;
+    width: 50%;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #202020;
+    color: white;
+    font-size: medium;
+    font-family: monospace;
+    font-weight: bold;
+    box-shadow: 2px 3px 10px 2px #D7DFFF;
+}
+
+.outbox p{
+    background-color: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
 }
 
 input {

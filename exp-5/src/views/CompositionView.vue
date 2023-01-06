@@ -17,7 +17,9 @@ export default {
   },
   data(){
     return {
-      componentSelect: "InstructionsView2"
+      componentSelect: "InstructionsView2",
+      reservation_complete: false,
+      reservation_system_complete: false
     }
   },
   methods: {
@@ -48,7 +50,11 @@ export default {
     />
   </KeepAlive>
   </main>
-  
+  <footer v-show="(reservation_complete && reservation_system_complete)">
+    <div id="buttons" class="relative">
+      <button class="navitem" @click="$router.push('/screen-four')">Next</button>
+    </div>
+  </footer>
 </template>
 
 <style>

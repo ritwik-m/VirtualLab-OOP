@@ -3,7 +3,8 @@
     <nav>
     <router-link to="/">Screen One</router-link> |
     <router-link to="/screen-two">Screen Two</router-link> |
-    <router-link to="/screen-three">Screen Three</router-link>
+    <router-link to="/screen-three">Screen Three</router-link> |
+    <router-link to="/screen-four">Screen Four</router-link>
   </nav>
   <router-view/>
   </main> 
