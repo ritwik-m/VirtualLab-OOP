@@ -2,128 +2,167 @@
 export default {
 
   methods: {
+    incorrect() {
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Incorrect. Try again";
+      x.style.backgroundColor = "red";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
+    correct1() {
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
+
     validate_one() {
       if (this.one == "requestVehicle") {
+        this.correct1();
         this.display[0] = "none";
         this.display[1] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
     validate_two() {
       if (this.two == "locateReservation(customer 1)") {
+        this.correct1();
         this.display[1] = "none";
         this.display[2] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
     validate_three() {
       if (this.three == "[Vehicle on Trip]") {
+        this.correct1();
         this.display[2] = "none";
         this.display[3] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
     validate_four() {
       if (this.four == "[Wait for Vehicle]") {
+        this.correct1();
         this.display[3] = "none";
         this.display[4] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
     validate_five() {
       if (this.five == "[Vehicle available]") {
+        this.correct1();
         this.display[4] = "none";
         this.display[5] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
     validate_six() {
       if (this.six == "initiateContract") {
+        this.correct1();
         this.display[5] = "none";
         this.display[6] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
     validate_seven() {
       if (this.seven == "SignContract") {
+        this.correct1();
         this.display[6] = "none";
         this.display[7] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
     validate_eight() {
       if (this.eight == "releaseContract") {
+        this.correct1();
         this.display[7] = "none";
         this.display[8] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
     validate_nine() {
       if (this.nine == "[Reservation released]") {
+        this.correct1();
         this.display[8] = "none";
         this.display[9] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
     validate_ten() {
       if (this.ten == "updateKeyStatus") {
+        this.correct1();
         this.display[9] = "none";
         this.display[10] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
     validate_eleven() {
       if (this.eleven == "[To Give Key]") {
+        this.correct1();
         this.display[10] = "none";
         this.display[11] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
     validate_twelve() {
       if (this.twelve == "[Key HandedOver]") {
+        this.correct1();
         this.display[11] = "none";
         this.display[12] = "block";
       }
 
       else {
+        this.incorrect();
         this.button_value = this.button_text;
       }
     },
 
-    
+
   },
   data() {
     return {
@@ -132,7 +171,7 @@ export default {
       button_text: "Incorrect. Try again",
       button_text_right: "Next",
       correct: false,
-      valid: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+      valid: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
       display: ["block", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none", "none",]
     }
   }
@@ -142,70 +181,72 @@ export default {
 </script>
 
 <template>
-    <main>
-        <div class="row">
-            <div class="column">
-                <div class="codebox" :style="{ display: display[0] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 1.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[1] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 2.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[2] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 3.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[3] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 4.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[4] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 5.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[5] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 6.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[6] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 7.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[7] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 8.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[8] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 9.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[9] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 10.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[10] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 11.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[11] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 12.png" />
-                </div>
-                <div class="codebox" :style="{ display: display[12] }">
-                    <img style="max-width: 800px;" src="..\..\assets\Frame 13.png" />
-                </div>
+  <main>
+    <div id="snackbar">Some text some message..</div>
 
-            </div>
-            <div class="column" style="margin-left: 100px">
-                <div class="row">
-                    <div class="codebox" style="max-width: 300px;">
-                        <ul>
-                            <li>[Vehicle available]</li>
-                            <li>releaseContract</li>
-                            <li>locateReservation(customer 1)</li>
-                            <li>[Vehicle on Trip]</li>
-                            <li>[To Give Key]</li>
-                            <li>[Reservation released]</li>
-                            <li>initiateContract</li>
-                            <li>requestVehicle</li>
-                            <li>SignContract</li>
-                            <li>[Key HandedOver]</li>
-                            <li>[Wait for Vehicle]</li>
-                            <li>updateKeyStatus</li>
-                        </ul>
-                    </div>
-                    </div>
-                    <!-- 1 : requestVehicle
+    <div class="row">
+      <div class="column">
+        <div class="codebox" :style="{ display: display[0] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 1.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[1] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 2.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[2] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 3.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[3] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 4.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[4] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 5.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[5] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 6.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[6] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 7.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[7] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 8.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[8] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 9.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[9] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 10.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[10] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 11.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[11] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 12.png" />
+        </div>
+        <div class="codebox" :style="{ display: display[12] }">
+          <img style="max-width: 800px;" src="..\..\assets\Frame 13.png" />
+        </div>
+
+      </div>
+      <div class="column" style="margin-left: 100px">
+        <div class="row">
+          <div class="codebox" style="max-width: 300px;">
+            <ul>
+              <li>[Vehicle available]</li>
+              <li>releaseContract</li>
+              <li>locateReservation(customer 1)</li>
+              <li>[Vehicle on Trip]</li>
+              <li>[To Give Key]</li>
+              <li>[Reservation released]</li>
+              <li>initiateContract</li>
+              <li>requestVehicle</li>
+              <li>SignContract</li>
+              <li>[Key HandedOver]</li>
+              <li>[Wait for Vehicle]</li>
+              <li>updateKeyStatus</li>
+            </ul>
+          </div>
+        </div>
+        <!-- 1 : requestVehicle
 2 : locateReservation(customer 1)
 4 [Wait for Vehicle] :
 3 [Vehicle on Trip] :
@@ -217,120 +258,120 @@ export default {
 10 : updateKeyStatus
 11 [To Give Key] : 
 12 [Key HandedOver] : -->
-                    <div class="row" style="margin-top:35px">
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[0] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            1. <input v-model="one">
-                            <button class="button-9" id="btn1" @click="validate_one()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[1] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            2. <input v-model="two">
-                            <button class="button-9" id="btn2" @click="validate_two()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[2] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            3. <input v-model="three">
-                            <button class="button-9" id="btn3" @click="validate_three()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[3] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            4. <input v-model="four">
-                            <button class="button-9" @click="validate_four()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[4] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            5. <input v-model="five">
-                            <button class="button-9" id="btn1" @click="validate_five()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[5] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            6. <input v-model="six">
-                            <button class="button-9" id="btn1" @click="validate_six()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[6] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            7. <input v-model="seven">
-                            <button class="button-9" id="btn1" @click="validate_seven()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[7] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            8. <input v-model="eight">
-                            <button class="button-9" id="btn1" @click="validate_eight()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[8] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            9. <input v-model="nine">
-                            <button class="button-9" id="btn1" @click="validate_nine()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[9] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            10. <input v-model="ten">
-                            <button class="button-9" id="btn1" @click="validate_ten()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[10] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            11. <input v-model="eleven">
-                            <button class="button-9" id="btn1" @click="validate_eleven()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[11] }" >
-                            Enter the correct answer from the list above for completing the sequence diagram
-                            <br>
-                            <br>
-                            12. <input v-model="twelve">
-                            <button class="button-9" id="btn1" @click="validate_twelve()"> Validate </button>
-                        </div>
-                        <div class="codebox" style="max-width: 350px;" :style="{ display: display[12] }">
-                            <h1> Congratulations! You have completed the sequence diagram! </h1>
-                            <br>
-                            <br>
-                            <button class="button-9" id="btn1" @click="$router.push('/completion')"> Next </button>
-                        </div>
-                        
+        <div class="row" style="margin-top:35px">
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[0] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            1. <input v-model="one">
+            <button class="button-9" id="btn1" @click="validate_one()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[1] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            2. <input v-model="two">
+            <button class="button-9" id="btn2" @click="validate_two()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[2] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            3. <input v-model="three">
+            <button class="button-9" id="btn3" @click="validate_three()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[3] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            4. <input v-model="four">
+            <button class="button-9" @click="validate_four()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[4] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            5. <input v-model="five">
+            <button class="button-9" id="btn1" @click="validate_five()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[5] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            6. <input v-model="six">
+            <button class="button-9" id="btn1" @click="validate_six()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[6] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            7. <input v-model="seven">
+            <button class="button-9" id="btn1" @click="validate_seven()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[7] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            8. <input v-model="eight">
+            <button class="button-9" id="btn1" @click="validate_eight()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[8] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            9. <input v-model="nine">
+            <button class="button-9" id="btn1" @click="validate_nine()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[9] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            10. <input v-model="ten">
+            <button class="button-9" id="btn1" @click="validate_ten()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[10] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            11. <input v-model="eleven">
+            <button class="button-9" id="btn1" @click="validate_eleven()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[11] }">
+            Enter the correct answer from the list above for completing the sequence diagram
+            <br>
+            <br>
+            12. <input v-model="twelve">
+            <button class="button-9" id="btn1" @click="validate_twelve()"> Validate </button>
+          </div>
+          <div class="codebox" style="max-width: 350px;" :style="{ display: display[12] }">
+            <h1> Congratulations! You have completed the sequence diagram! </h1>
+            <br>
+            <br>
+            <button class="button-9" id="btn1" @click="$router.push('/completion')"> Next </button>
+          </div>
 
-                    </div>
-                </div>
-            </div>
-    </main>
+
+        </div>
+      </div>
+    </div>
+  </main>
 </template>
 
 <style scoped>
 .codebox {
-    max-width: 800px;
-    padding: 25px;
-    border-radius: 10px;
-    background-color: #F9FAFE;
-    box-shadow: 2px 3px 10px 2px #D7DFFF;
+  max-width: 800px;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #F9FAFE;
+  box-shadow: 2px 3px 10px 2px #D7DFFF;
 }
 
 .row {
-    display: flex;
+  display: flex;
 }
 
 .column {
-    flex: 50%;
+  flex: 50%;
 }
 
 .button-9 {
@@ -368,5 +409,75 @@ export default {
 
 .button-9:focus {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 </style>

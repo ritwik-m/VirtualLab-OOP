@@ -141,6 +141,14 @@ export default {
         }
     },
     methods: {
+        incorrect(msg) {
+            var x = document.getElementById("snackbar");
+            x.innerHTML = msg;
+            x.style.backgroundColor = "red";
+            x.className = "show";
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+        },
+
         validate() {
             let final_list = []
             let i = 0;
@@ -217,12 +225,16 @@ export default {
 
 
             if (this.valid) {
-                alert('All good')
+                var x = document.getElementById("snackbar");
+                x.innerHTML = "Correct";
+                x.style.backgroundColor = "green";
+                x.className = "show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
                 this.$router.push('/completion')
             }
             else {
-                alert('There\'s some mistake')
-                console.log('There\'s some mistake')
+                this.incorrect('Incorrect. Please try again');
+                console.log('There\'s some mistake');
             }
 
             console.log(final_string)
@@ -238,6 +250,8 @@ export default {
             phrase
             boxes. Some boxes take multiple words.</p>
     </header>
+    <div id="snackbar">Some text some message..</div>
+
     <div class="flexbox">
         <div class="outer-box">
             <div class="flex-horizontal">
@@ -509,25 +523,94 @@ export default {
 }
 
 .navitem {
-  width: 100px;
-  height: 50px;
-  padding: 10px;
-  text-align: center;
-  border: none;
-  background-color: #272971;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-weight: normal;
-  font-size: large;
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    background-color: #272971;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: large;
 }
 
 .navitem:hover {
-  background-color: #fff;
-  color: #272971;
-  border: 1px solid #272971;
-  cursor: pointer;
-  font-weight: bold;
+    background-color: #fff;
+    color: #272971;
+    border: 1px solid #272971;
+    cursor: pointer;
+    font-weight: bold;
 }
 
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
 </style>

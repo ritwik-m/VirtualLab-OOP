@@ -509,8 +509,6 @@ h3 {
   /* height: 100%; */
   /* width: 98%; */
 
-  overflow: hidden;
-
   margin: 15px;
   padding: 15px
 }

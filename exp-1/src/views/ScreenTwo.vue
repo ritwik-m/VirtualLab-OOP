@@ -110,6 +110,13 @@ export default {
     }
   },
   methods:{
+    incorrect(msg) {
+      var x = document.getElementById("snackbar");
+      x.innerHTML = msg;
+      x.style.backgroundColor = "red";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
     validate(){
       let final_list = []
       let i = 0;
@@ -130,53 +137,53 @@ export default {
 
       if(!final_string.includes('customer')){
         this.valid = false
-        console.log('Customer not found')
+        this.incorrect("Customer not Found");
       }
 
       if(!final_string.includes('clerk')){
         this.valid = false
-        console.log('Clerk not found')
+        this.incorrect('Clerk not found')
       }
 
       if(!final_string.includes('office')){
         this.valid = false
-        console.log('Office not found')
+        this.incorrect('Office not found')
       }
 
 
       if(!final_string.includes('vehicle')){
         this.valid = false
-        console.log('Vehicle not found')
+        this.incorrect('Vehicle not found')
       }
 
       if(!final_string.includes('reservation')){
         this.valid = false
-        console.log('Reservation not found')
+        this.incorrect('Reservation not found')
       }
 
       if(!final_string.includes('customer name')){
         this.valid = false
-        console.log('Customer name not found')
+        this.incorrect('Customer name not found')
       }
 
       if(!final_string.includes('key')){
         this.valid = false
-        console.log('Key not found')
+        this.incorrect('Key not found')
       }
 
       if(!final_string.includes('vehicle reservation contract')){
         this.valid = false
-        console.log('Vehicle reservation contract not found')
+        this.incorrect('Vehicle reservation contract not found')
       }
 
       if(!final_string.includes('reservation number')){
         this.valid = false
-        console.log('Reservation number not found')
+        this.incorrect('Reservation number not found')
       }
 
       if(!final_string.includes('vehicle release date')){
         this.valid = false
-        console.log('Vehicle release date not found')
+        this.incorrect('Vehicle release date not found')
       }
 
   
@@ -184,8 +191,7 @@ export default {
         this.$router.push('/screen-three')
       }
       else{
-        alert('There\'s some mistake')
-        console.log('There\'s some mistake')
+        this.incorrect('There\'s some mistake')
       }
 
       console.log(final_string)
@@ -200,6 +206,7 @@ export default {
     <p>To identify noun phrases, drag words from the scenario description sentences and drop them into the noun phrase
       boxes. Some boxes take multiple words.</p>
   </header>
+  <div id="snackbar">Some text some message..</div>
   <div style="padding: 0; margin-left: 25ch;">
     <h3 style="margin-left: 15px; margin-bottom: 0">Sample: </h3>
     <img src="../assets/sample-1.png" alt="Sample image" class="image">
@@ -447,6 +454,75 @@ export default {
   border: 1px solid #272971;
   cursor: pointer;
   font-weight: bold;
+}
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 </style>

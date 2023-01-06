@@ -148,6 +148,13 @@ export default {
     }
   },
   methods:{
+    incorrect(msg) {
+      var x = document.getElementById("snackbar");
+      x.innerHTML = msg;
+      x.style.backgroundColor = "red";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
     validate(){
       let final_list = []
       let i = 0;
@@ -199,7 +206,7 @@ export default {
         this.$router.push('/screen-two')
       }
       else{
-        alert('There\'s some mistake')
+        this.incorrect('Incorrect. Please try again')
         console.log('There\'s some mistake')
       }
 
@@ -214,6 +221,8 @@ export default {
     <h1>Step 1: Identifying verb phrases</h1>
     <p>To identify verb phrases, drag words from the scenario description sentences and drop them into the noun phrase boxes. Some boxes take multiple words.</p>
   </header>
+  <div id="snackbar">Some text some message..</div>
+
   <div class="flexbox">
         <div class="outer-box">
             <div class="flex-horizontal">
@@ -479,5 +488,74 @@ export default {
   font-weight: bold;
 }
 
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
 
 </style>
