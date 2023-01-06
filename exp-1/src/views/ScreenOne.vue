@@ -35,6 +35,13 @@ export default {
     }
   },
   methods: {
+    incorrect() {
+      var x = document.getElementById("snackbar");
+      x.innerHTML = "Please drag all the sentences into the timeline";
+      x.style.backgroundColor = "red";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
+    },
     validate() {
       let final_list = []
 
@@ -47,7 +54,7 @@ export default {
       for (let i = 2; i < 7; i++) {
         console.log(this.getList(i))
         if(this.getList(i).length==0){
-          alert("Please drag all the sentences into the timeline")
+          this.incorrect();
           this.validated=false;
           return
         }
@@ -57,7 +64,7 @@ export default {
       console.log(final_list.length)
 
       if(final_list.length!=5){
-        alert("Please drag all the sentences into the timeline")
+        this.incorrect();
         this.validated=false;
         return
       }
@@ -103,12 +110,20 @@ export default {
       }
 
       if(this.valid[0] && this.valid[1] && this.valid[2] && this.valid[3] && this.valid[4]){
-        alert("Correct")
+        var x = document.getElementById("snackbar");
+      x.innerHTML = "Correct";
+      x.style.backgroundColor = "green";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
         this.$router.push('/screen-two')
       }
 
       else{
-        alert("Incorrect, try again!")
+        
+      x.innerHTML = "Incorrect. Try again";
+      x.style.backgroundColor = "red";
+      x.className = "show";
+      setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000)
       }
 
     },
@@ -129,6 +144,8 @@ export default {
       onto the blanks in the timeline given below to continue.</p>
   </header>
   <main>
+    <div id="snackbar">Some text some message..</div>
+
     <div class="flex-parent">
       <div class="flexbox">
         <div class="drop-zone" @drop="onDrop($event, 1)" @dragenter.prevent @dragover.prevent>
@@ -347,5 +364,75 @@ export default {
   border: 1px solid #E8562A;
   cursor: pointer;
   font-weight: bold;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 </style>
