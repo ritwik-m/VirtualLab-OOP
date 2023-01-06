@@ -1,3 +1,10 @@
+ <!--Designed & Developed by:
+    Nirmal K (@cyberwizard1001)⁶
+    Nitin Ravi (@nitinravi)
+    Ritwik M (@ritwikm) &
+    Nalinadevi K 
+ for the Ministry of Education (MOE) virtual-labs project, Govt. Of India -->
+
 <script>
 import CustomerView from "../components/CustomerViewComponent.vue";
 import ReservationView from "../components/ReservationViewComponent.vue";
