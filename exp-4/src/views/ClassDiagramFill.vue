@@ -12,46 +12,46 @@
         <div class="row">
             <div class="column">
                 <div class="codebox" :style="{ display: display[0] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 1.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen1.png" />
                 </div>
                 <div class="codebox" :style="{ display: display[1] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 2.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen2.png" />
             </div>
             <div class="codebox" :style="{ display: display[2] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 3.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen3.png" />
             </div>
             <div class="codebox" :style="{ display: display[3] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 4.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen4.png" />
             </div>
             <div class="codebox" :style="{ display: display[4] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 5.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen5.png" />
             </div>
             <div class="codebox" :style="{ display: display[5] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 6.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen6.png" />
             </div>
             <div class="codebox" :style="{ display: display[6] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 7.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen7.png" />
             </div>
             <div class="codebox" :style="{ display: display[7] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 8.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen8.png" />
             </div>
             <div class="codebox" :style="{ display: display[8] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 9.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen9.png" />
             </div>
             <div class="codebox" :style="{ display: display[9] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 10.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen10.png" />
             </div>
             <div class="codebox" :style="{ display: display[10] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 11.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen11.png" />
             </div>
             <div class="codebox" :style="{ display: display[11] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 12.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen12.png" />
             </div>
             <div class="codebox" :style="{ display: display[12] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 13.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen13.png" />
             </div>
             <div class="codebox" :style="{ display: display[13] }">
-                    <img style="max-width: 800px;" src="..\assets\Screen 14.png" />
+                    <img style="max-width: 800px;" src="..\assets\Screen14.png" />
             </div>
         </div>
         <div class="column" style="margin-left: 100px">
