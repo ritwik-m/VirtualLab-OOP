@@ -509,22 +509,25 @@ export default {
 }
 
 .navitem {
-    width: 100px;
-    height: 50px;
-    padding: 10px;
-    text-align: center;
-    border: none;
-    background-color: #E8562A;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  background-color: #272971;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: large;
 }
 
 .navitem:hover {
-    background-color: #fff;
-    color: #E8562A;
-    border: 1px solid #E8562A;
-    cursor: pointer;
-    font-weight: bold;
+  background-color: #fff;
+  color: #272971;
+  border: 1px solid #272971;
+  cursor: pointer;
+  font-weight: bold;
 }
+
 </style>

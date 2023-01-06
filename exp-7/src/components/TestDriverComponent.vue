@@ -412,6 +412,11 @@ p {
   clear: both;
 }
 
+.completed{
+  color: cadetblue;
+  text-decoration: line-through;
+}
+
 
 mark1 {
   background-color: rgb(176, 230, 183);

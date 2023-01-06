@@ -53,7 +53,7 @@ export default {
       this.button_value = "Next";
       this.display[3] = "none";
       this.display[4] = "block";
-      this.$emit(reservation - complete, true)
+      this.$emit("reservationComplete", true)
     },
 
   },

@@ -15,6 +15,11 @@ const router = createRouter({
       component: () => import('../views/CompositionView.vue')
     },
     {
+      path: '/screen-four',
+      name: 'screen-four',
+      component: () => import('../views/OutputView.vue')
+    },
+    {
       path: '/screen-two',
       name: 'screen-two',
       component: () => import('../views/CompositionClassDiagram.vue')

@@ -7,6 +7,7 @@ import VehicleView from "../components/VehicleViewComponent.vue";
 import InstructionsView from "../components/InstructionsViewComponent.vue";
 import ReservationSystemView from "../components/TestDriverComponent.vue";
 import ClassView from "../components/ClassDiagramViewComponent.vue";
+import RentalSystem from '../components/RentalSystemComponent.vue';
 
 export default {
   components: {
@@ -17,7 +18,8 @@ export default {
     ReservationSystemView,
     ClassView,
     PersonView,
-    ClerkView
+    ClerkView,
+    RentalSystem,
   },
   data() {
     return {
@@ -29,6 +31,10 @@ export default {
     testDriverCallBack(value){
       console.log("Test driver callback triggered", value);
       this.testdriver_completed = true;
+    },
+    rentalSystemCallBack(value){
+      console.log("Rental system callback triggered", value);
+      this.rental_system_completed = true;
     }
   },
 };
@@ -44,6 +50,7 @@ export default {
       Reservation Class
     </button>
     <button @click="componentSelect = 'VehicleView'">Vehicle Class</button>
+    <button @click="componentSelect = 'RentalSystem'">Rental System</button>
     <button @click="componentSelect = 'ReservationSystemView'">
       Test Driver Class
     </button>
@@ -52,6 +59,7 @@ export default {
       <component
         v-bind:is="componentSelect"
         @testdriver-complete="testDriverCallBack"
+        @rental-system-complete="rentalSystemCallBack"
       />
     </KeepAlive>
   </main>
